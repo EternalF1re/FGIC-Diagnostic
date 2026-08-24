@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import json
 import random
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -13,7 +14,6 @@ from sklearn.model_selection import StratifiedKFold
 from torch.utils.data import DataLoader, Dataset, DistributedSampler, Subset
 from torchvision import transforms
 from torchvision.transforms import functional as TF
-
 
 MEAN = (0.485, 0.456, 0.406)
 STD = (0.229, 0.224, 0.225)
@@ -138,7 +138,12 @@ def build_loaders(
 ):
     records = load_records(dataset_config, dataset)
     train_idx, heldout_idx = fold_indices(records, fold, seed)
-    common = dict(batch_size=batch_size, num_workers=workers, pin_memory=torch.cuda.is_available(), persistent_workers=workers > 0)
+    common = {
+        "batch_size": batch_size,
+        "num_workers": workers,
+        "pin_memory": torch.cuda.is_available(),
+        "persistent_workers": workers > 0,
+    }
     generator = torch.Generator().manual_seed(seed)
     train_subset = Subset(RecordDataset(records, train_transform(method, dataset)), train_idx.tolist())
     sampler = DistributedSampler(

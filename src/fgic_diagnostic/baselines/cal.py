@@ -9,7 +9,6 @@ from torch import Tensor, nn
 
 from ..models import create_backbone
 
-
 EPSILON = 1e-6
 
 
@@ -25,7 +24,7 @@ class BasicConv2d(nn.Module):
 
 class BAP(nn.Module):
     def forward(self, features: Tensor, attentions: Tensor) -> tuple[Tensor, Tensor, Tensor]:
-        batch, channels, height, width = features.shape
+        batch, _channels, height, width = features.shape
         if attentions.shape[-2:] != (height, width):
             attentions = F.interpolate(attentions, size=(height, width), mode="bilinear", align_corners=False)
         matrix = torch.einsum("bmhw,bchw->bmc", attentions, features).div(float(height * width)).reshape(batch, -1)

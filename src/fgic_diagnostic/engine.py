@@ -12,8 +12,10 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
-from .baselines.l2_sp import build_optimizer as l2_optimizer, set_iteration_lr
-from .baselines.mc_loss import build_optimizer as mc_optimizer, set_epoch_lr
+from .baselines.l2_sp import build_optimizer as l2_optimizer
+from .baselines.l2_sp import set_iteration_lr
+from .baselines.mc_loss import build_optimizer as mc_optimizer
+from .baselines.mc_loss import set_epoch_lr
 from .data import build_loaders, seed_everything
 from .metrics import classification_metrics
 from .models import DFAGModel, build_model

@@ -8,7 +8,6 @@ import torch
 import torch.nn.functional as F
 from torch import Tensor, nn
 
-
 FEATURE_DIM = 2048
 
 
