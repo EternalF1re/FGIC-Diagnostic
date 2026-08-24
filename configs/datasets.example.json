@@ -1,0 +1,20 @@
+{
+  "datasets": {
+    "cub": {
+      "num_classes": 200,
+      "development_manifest": "../data/manifests/cub_development.csv"
+    },
+    "cars": {
+      "num_classes": 196,
+      "development_manifest": "../data/manifests/cars_development.csv"
+    },
+    "flowers": {
+      "num_classes": 102,
+      "development_manifest": "../data/manifests/flowers_development.csv"
+    },
+    "classifyleaves": {
+      "num_classes": 176,
+      "development_manifest": "../data/manifests/classifyleaves_development.csv"
+    }
+  }
+}
