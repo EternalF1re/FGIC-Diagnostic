@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import time
 from contextlib import nullcontext
@@ -253,6 +254,7 @@ def run_experiment(
     started = time.time()
     config_path = Path(experiment_config).resolve()
     config = json.loads(config_path.read_text(encoding="utf-8"))
+    config_sha256 = hashlib.sha256(config_path.read_bytes()).hexdigest()
     method = str(config["method"])
     dataset = str(config["dataset"])
     if method == "cal":
@@ -287,7 +289,8 @@ def run_experiment(
     history: list[dict[str, Any]] = []
     manifest: dict[str, Any] = {
         "status": "RUNNING", "method": method, "dataset": dataset, "fold": fold, "seed": 42,
-        "experiment_config": str(config_path), "device": str(device), "original_view": True,
+        "experiment_config": str(config_path), "config_sha256": config_sha256,
+        "device": str(device), "original_view": True,
         "tta": False, "cross_fold_ensemble": False, "train_count": len(train_idx), "heldout_count": len(heldout_idx),
     }
     (output / "run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

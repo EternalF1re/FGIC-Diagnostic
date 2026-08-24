@@ -19,7 +19,7 @@ This repository is deliberately not presented as a leaderboard or a SOTA-claim p
 Python 3.9 or newer is required. The versions used by the paper are recorded in `requirements-lock.txt`; the portable lower bounds are in `pyproject.toml`.
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/EternalF1re/FGIC-Diagnostic.git
 cd FGIC-Diagnostic
 python -m venv .venv
 source .venv/bin/activate
@@ -96,6 +96,34 @@ bash reproduce/controlled_comparison.sh
 
 The scripts are intentionally fail-closed: output directories are never silently reused. Independent large runs may instead be placed into the shared dynamic GPU queue described in `docs/DYNAMIC_GPU_SCHEDULING.md`.
 
+### Paper section mapping
+
+| Paper section | Experiment scope | Reproduction entry point | Public reproduction configurations |
+|---|---|---|---|
+| Section 4.3 | Inception-ResNet-v2 cross-dataset evaluation on CUB-200-2011, Stanford Cars and Oxford Flowers-102 | `reproduce/cross_dataset.sh` | `configs/cross_dataset/` |
+| Section 4.7 | Cross-architecture evaluation on Classify Leaves with ResNet-50 and ConvNeXt-Tiny | `reproduce/cross_backbone.sh` | `configs/cross_backbone/` |
+| Section 4.8 | Common-ResNet-50 controlled reimplementation on CUB-200-2011 and Stanford Cars | `reproduce/main_results.sh` and `reproduce/controlled_comparison.sh` | `configs/controlled/` |
+
+The experiment cells above are independently frozen protocol contexts. Their effect sizes must not be treated as directly comparable repeated estimates.
+
+### Configuration identity
+
+SHA-256 values for every public experiment configuration are listed in `docs/CONFIG_SHA256.csv`. Each new `fgic train` run also records the exact `config_sha256` in its `run_manifest.json`.
+
+The formal Section 4.3 run used the monolithic config SHA-256 `7f667c125983ca82ec36214b727ee8fbe3215f21562abd260f4018559f87e3e5`. The formal Section 4.7 run used the monolithic config SHA-256 `1a075d4241358e4681f2e7c70523a85bf286d97193fb1104b18bd713c5006fee`. Their public per-method JSON files are path-free projections of those protocols, so their file hashes are intentionally different from the monolithic formal hashes. The Section 4.8 files under `configs/controlled/` are byte-identical copies of the corresponding frozen formal per-method configs.
+
+A public config hash can be verified independently with:
+
+```bash
+sha256sum configs/controlled/ours_ft_cub.json
+```
+
+On PowerShell, use `Get-FileHash configs\controlled\ours_ft_cub.json -Algorithm SHA256`.
+
+### Five-fold split reproduction
+
+All public runners construct folds with `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` over the ordered development manifest. The implementation is `fold_indices` in `src/fgic_diagnostic/data.py`. Reproducing a fold therefore requires the same ordered `path,label,sample_id` manifest and the same zero-based fold ID (`0` through `4`). Each development sample appears in exactly one held-out fold, and final metrics are recomputed from pooled OOF predictions rather than averaged across fold-level metrics.
+
 ## OOF aggregation and paired statistics
 
 ```bash
@@ -127,3 +155,7 @@ Large checkpoints, datasets, raw OOF arrays and machine-local logs are intention
 ## License and attribution
 
 The repository is released under the MIT License. Controlled baseline implementations are adaptations of MIT-licensed upstream repositories; see `THIRD_PARTY_NOTICES.md`. Datasets and pretrained weights retain their own licenses.
+
+## Availability
+
+This is the public project repository for the code, frozen configuration files and protocol documentation: https://github.com/EternalF1re/FGIC-Diagnostic. Historical formal job ledgers are not claimed as part of the current public release; newly reproduced runs emit their own `run_manifest.json` and training history.
