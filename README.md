@@ -19,8 +19,8 @@ This repository is deliberately not presented as a leaderboard or a SOTA-claim p
 Python 3.9 or newer is required. The versions used by the paper are recorded in `requirements-lock.txt`; the portable lower bounds are in `pyproject.toml`.
 
 ```bash
-git clone https://github.com/EternalF1re/FGIC-Diagnostic.git
-cd FGIC-Diagnostic
+git clone <REPOSITORY_URL> fgic-diagnostic
+cd fgic-diagnostic
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -158,4 +158,4 @@ The repository is released under the MIT License. Controlled baseline implementa
 
 ## Availability
 
-This is the public project repository for the code, frozen configuration files and protocol documentation: https://github.com/EternalF1re/FGIC-Diagnostic. Historical formal job ledgers are not claimed as part of the current public release; newly reproduced runs emit their own `run_manifest.json` and training history.
+During double-anonymized review, the code, frozen configuration files and protocol documentation are provided through the anonymous artifact link accompanying the manuscript. A permanent public repository will be disclosed after the review process. Historical formal job ledgers are not claimed as part of this review artifact; newly reproduced runs emit their own `run_manifest.json` and training history.
