@@ -1,0 +1,24 @@
+$ PYTHONPATH=src python -m pytest tests/test_published_config_bytes.py -q
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____________ test_git_index_config_bytes_match_documented_hashes _____________
+
+    def test_git_index_config_bytes_match_documented_hashes():
+        root = Path(__file__).resolve().parents[1]
+        if not (root / ".git").exists():
+            pytest.skip("Archive has no Git index; artifact verifier checks extracted bytes instead")
+        with (root / "docs/CONFIG_SHA256.csv").open(encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle):
+                indexed = subprocess.check_output(["git", "show", ":" + row["config_path"]], cwd=root)
+>               assert hashlib.sha256(indexed).hexdigest() == row["sha256"], row["config_path"]
+E               AssertionError: configs/controlled/cal_cars.json
+E               assert '7545a00de33d...82a83a8e6d790' == '7226d2fbb83b...b7b1239d4f61f'
+E
+E                 - 7226d2fbb83b8c267fc186401ae691d0f2c02baa3611c5c74cdb7b1239d4f61f
+E                 + 7545a00de33dfeab6885a2dbc4b11f6ab778a42226d10eaf96882a83a8e6d790
+
+tests\test_published_config_bytes.py:18: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_published_config_bytes.py::test_git_index_config_bytes_match_documented_hashes
+1 failed in 0.07s
+exit_code=1

@@ -10,3 +10,5 @@
 *.csv text eol=lf
 # Preserve historical artifact bytes exactly, including sanitized .log files.
 paper_artifacts/** -text
+# Frozen configuration hashes refer to original bytes, including CRLF.
+configs/**/*.json -text

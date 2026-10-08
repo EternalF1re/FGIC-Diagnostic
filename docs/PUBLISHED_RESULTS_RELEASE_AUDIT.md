@@ -11,7 +11,7 @@ Maintained package version: 1.0.0; this tag adds historical results and verifica
 - 132 OOF configuration source references and 24 maintained portable config hashes verified. Two alpha=0.5 comparator configuration references remain missing and are explicitly documented.
 - 640 historical recorded config/code hashes matched original local source bytes before publication. Redacted public copies have separately recorded hashes; matching a source hash is local provenance evidence, not proof available solely from a redacted copy.
 - Full recomputation: PASS, zero differences outside 1e-12 tolerance. Historical numbers and independently computed numbers are retained separately in `publication_validation/full_verification.json`.
-- Unit tests: 25 passed, 0 failed in the final run. Ruff: PASS. Artifact privacy scan: 2,377 files, 928 structured JSON files, zero findings. Pattern-based scanning cannot prove absence of every possible secret.
+- Unit tests: 26 passed, 0 failed in the final run. Ruff: PASS. Artifact privacy scan: 2,377 files, 928 structured JSON files, zero findings. Pattern-based scanning cannot prove absence of every possible secret.
 
 No training, GPU profiling, experiment-output replacement or checkpoint reselection was performed. Original source hashes were checked again after export. Public copies intentionally redact private paths/identities and transcode legacy logs.
 
@@ -35,3 +35,5 @@ The exporter needs the owner's real historical workspace and cannot reconstruct 
 The current submitted main manuscript/SI was not available for exact table-number/text-rounding reconciliation; the mapping is experiment/section-level. Diagnostic summaries are real historical outputs, but large feature tensors, logits, checkpoints and dataset images are omitted. See `REPRODUCIBILITY_GAPS.md` and `PAPER_TABLE_MAPPING.md`. No DOI is asserted.
 
 The GitHub release ZIP contains the complete committed public source, artifacts, environment and test records, plus an audit receipt, changed-file list and full Git diff against the base commit. It excludes `.git`, private source-path inventories, original images and weights. Git attributes preserve artifact bytes across platforms.
+
+Fresh extraction initially detected that Git's historical text normalization changed public config CRLF bytes into LF and invalidated their documented hashes. The JSON content/protocols were identical. This release preserves the original configuration bytes with `configs/**/*.json -text`, re-stages those existing files, and adds a Git-index hash regression test. This is a byte-preservation fix, not a hyperparameter or training change. Raw failure evidence is retained in `publication_validation/config_byte_regression_before.txt`.
