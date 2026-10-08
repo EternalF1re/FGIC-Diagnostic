@@ -1,0 +1,405 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "instruction_snapshot_hash",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\manifests\\instruction_FC4D9CD4DA231A1117581AD0EE06F40AFA521B83A4FA770E704648DE731D4307.txt"
+    },
+    {
+      "check": "analysis_plan_frozen",
+      "status": "PASS",
+      "detail": "sha256=fa510dbcc69955cd0fb04a70aa52606cbdcda681807a8f5621107a65abb68e49"
+    },
+    {
+      "check": "baseline_three_seed_audit",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_dataset_exact",
+      "status": "PASS",
+      "detail": "dataset equals Phase2B"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_split_exact",
+      "status": "PASS",
+      "detail": "split equals Phase2B"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_protocol_exact",
+      "status": "PASS",
+      "detail": "protocol equals Phase2B"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_seed",
+      "status": "PASS",
+      "detail": "{'training_seed': 42, 'same_training_seed_every_fold': True, 'seed_plus_fold': False, 'controlled_sources': ['python random', 'numpy', 'torch CPU', 'torch CUDA', 'DataLoader generator', 'worker_init_fn']}"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_terminal_residual_off",
+      "status": "PASS",
+      "detail": "{'run_id': 'mhsa_lambda_0_1_seed42', 'architecture_family': 'deep_narrow_mhsa', 'shortcut_lambda': 0.1, 'training_seed': 42, 'folds': [0, 1, 2, 3, 4], 'output_subdir': 'mhsa_lambda_0_1_seed42', 'mhsa': True, 'mhsa_heads': 4, 'attention_dropout': 0.1, 'terminal_residual': False, 'token_sequence': ['f1', 'f2', 'f3', 'f4', 'f5']}"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_parameter_count",
+      "status": "PASS",
+      "detail": "{'total_parameters': 55340880, 'trainable_parameters': 55340880, 'frozen_parameters': 0, 'backbone_parameters': 54306464, 'head_parameters': 1034416}"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_lambda",
+      "status": "PASS",
+      "detail": "lambda=0.1"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_token_trace",
+      "status": "PASS",
+      "detail": "{'backbone_gap': (3, 1536), 'input_projection': (3, 256), 'mapping_stage_1': (3, 256), 'mapping_stage_2': (3, 256), 'mapping_stage_3': (3, 256), 'mapping_stage_4': (3, 256), 'mapping_stage_5': (3, 256), 'stacked_stages': (3, 5, 256), 'attention_output': (3, 5, 256), 'fused_stages': (3, 5, 256), 'mean_pooling_pre_classifier': (3, 256), 'logits': (3, 176), 'attention_weights': (3, 4, 5, 5)}"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_attention_shape",
+      "status": "PASS",
+      "detail": "torch.Size([3, 4, 5, 5])"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_attention_rows",
+      "status": "PASS",
+      "detail": "attention key distributions sum to one"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_mhsa_fields",
+      "status": "PASS",
+      "detail": "MultiheadAttention(\n  (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)\n)"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_two_layernorms",
+      "status": "PASS",
+      "detail": "pre-LN and fusion-LN present"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_fusion_formula",
+      "status": "PASS",
+      "detail": "LN(S + MHSA(LN(S))); max_abs_error=9.537e-07"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_output_shape",
+      "status": "PASS",
+      "detail": "logits=torch.Size([3, 176]), features=torch.Size([3, 256])"
+    },
+    {
+      "check": "mhsa_lambda_0_1_seed42_f0_excluded",
+      "status": "PASS",
+      "detail": "['f1', 'f2', 'f3', 'f4', 'f5']"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_dataset_exact",
+      "status": "PASS",
+      "detail": "dataset equals Phase2B"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_split_exact",
+      "status": "PASS",
+      "detail": "split equals Phase2B"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_protocol_exact",
+      "status": "PASS",
+      "detail": "protocol equals Phase2B"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_seed",
+      "status": "PASS",
+      "detail": "{'training_seed': 42, 'same_training_seed_every_fold': True, 'seed_plus_fold': False, 'controlled_sources': ['python random', 'numpy', 'torch CPU', 'torch CUDA', 'DataLoader generator', 'worker_init_fn']}"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_terminal_residual_off",
+      "status": "PASS",
+      "detail": "{'run_id': 'mhsa_lambda_0_7_seed42', 'architecture_family': 'deep_narrow_mhsa', 'shortcut_lambda': 0.7, 'training_seed': 42, 'folds': [0, 1, 2, 3, 4], 'output_subdir': 'mhsa_lambda_0_7_seed42', 'mhsa': True, 'mhsa_heads': 4, 'attention_dropout': 0.1, 'terminal_residual': False, 'token_sequence': ['f1', 'f2', 'f3', 'f4', 'f5']}"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_parameter_count",
+      "status": "PASS",
+      "detail": "{'total_parameters': 55340880, 'trainable_parameters': 55340880, 'frozen_parameters': 0, 'backbone_parameters': 54306464, 'head_parameters': 1034416}"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_lambda",
+      "status": "PASS",
+      "detail": "lambda=0.7"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_token_trace",
+      "status": "PASS",
+      "detail": "{'backbone_gap': (3, 1536), 'input_projection': (3, 256), 'mapping_stage_1': (3, 256), 'mapping_stage_2': (3, 256), 'mapping_stage_3': (3, 256), 'mapping_stage_4': (3, 256), 'mapping_stage_5': (3, 256), 'stacked_stages': (3, 5, 256), 'attention_output': (3, 5, 256), 'fused_stages': (3, 5, 256), 'mean_pooling_pre_classifier': (3, 256), 'logits': (3, 176), 'attention_weights': (3, 4, 5, 5)}"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_attention_shape",
+      "status": "PASS",
+      "detail": "torch.Size([3, 4, 5, 5])"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_attention_rows",
+      "status": "PASS",
+      "detail": "attention key distributions sum to one"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_mhsa_fields",
+      "status": "PASS",
+      "detail": "MultiheadAttention(\n  (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)\n)"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_two_layernorms",
+      "status": "PASS",
+      "detail": "pre-LN and fusion-LN present"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_fusion_formula",
+      "status": "PASS",
+      "detail": "LN(S + MHSA(LN(S))); max_abs_error=7.153e-07"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_output_shape",
+      "status": "PASS",
+      "detail": "logits=torch.Size([3, 176]), features=torch.Size([3, 256])"
+    },
+    {
+      "check": "mhsa_lambda_0_7_seed42_f0_excluded",
+      "status": "PASS",
+      "detail": "['f1', 'f2', 'f3', 'f4', 'f5']"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_dataset_exact",
+      "status": "PASS",
+      "detail": "dataset equals Phase2B"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_split_exact",
+      "status": "PASS",
+      "detail": "split equals Phase2B"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_protocol_exact",
+      "status": "PASS",
+      "detail": "protocol equals Phase2B"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_seed",
+      "status": "PASS",
+      "detail": "{'training_seed': 42, 'same_training_seed_every_fold': True, 'seed_plus_fold': False, 'controlled_sources': ['python random', 'numpy', 'torch CPU', 'torch CUDA', 'DataLoader generator', 'worker_init_fn']}"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_terminal_residual_off",
+      "status": "PASS",
+      "detail": "{'run_id': 'mhsa_lambda_1_0_seed42', 'architecture_family': 'deep_narrow_mhsa', 'shortcut_lambda': 1.0, 'training_seed': 42, 'folds': [0, 1, 2, 3, 4], 'output_subdir': 'mhsa_lambda_1_0_seed42', 'mhsa': True, 'mhsa_heads': 4, 'attention_dropout': 0.1, 'terminal_residual': False, 'token_sequence': ['f1', 'f2', 'f3', 'f4', 'f5']}"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_parameter_count",
+      "status": "PASS",
+      "detail": "{'total_parameters': 55340880, 'trainable_parameters': 55340880, 'frozen_parameters': 0, 'backbone_parameters': 54306464, 'head_parameters': 1034416}"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_lambda",
+      "status": "PASS",
+      "detail": "lambda=1.0"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_token_trace",
+      "status": "PASS",
+      "detail": "{'backbone_gap': (3, 1536), 'input_projection': (3, 256), 'mapping_stage_1': (3, 256), 'mapping_stage_2': (3, 256), 'mapping_stage_3': (3, 256), 'mapping_stage_4': (3, 256), 'mapping_stage_5': (3, 256), 'stacked_stages': (3, 5, 256), 'attention_output': (3, 5, 256), 'fused_stages': (3, 5, 256), 'mean_pooling_pre_classifier': (3, 256), 'logits': (3, 176), 'attention_weights': (3, 4, 5, 5)}"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_attention_shape",
+      "status": "PASS",
+      "detail": "torch.Size([3, 4, 5, 5])"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_attention_rows",
+      "status": "PASS",
+      "detail": "attention key distributions sum to one"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_mhsa_fields",
+      "status": "PASS",
+      "detail": "MultiheadAttention(\n  (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)\n)"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_two_layernorms",
+      "status": "PASS",
+      "detail": "pre-LN and fusion-LN present"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_fusion_formula",
+      "status": "PASS",
+      "detail": "LN(S + MHSA(LN(S))); max_abs_error=4.768e-07"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_output_shape",
+      "status": "PASS",
+      "detail": "logits=torch.Size([3, 176]), features=torch.Size([3, 256])"
+    },
+    {
+      "check": "mhsa_lambda_1_0_seed42_f0_excluded",
+      "status": "PASS",
+      "detail": "['f1', 'f2', 'f3', 'f4', 'f5']"
+    },
+    {
+      "check": "baseline_seed45_dataset_exact",
+      "status": "PASS",
+      "detail": "dataset equals Phase2B"
+    },
+    {
+      "check": "baseline_seed45_split_exact",
+      "status": "PASS",
+      "detail": "split equals Phase2B"
+    },
+    {
+      "check": "baseline_seed45_protocol_exact",
+      "status": "PASS",
+      "detail": "protocol equals Phase2B"
+    },
+    {
+      "check": "baseline_seed45_seed",
+      "status": "PASS",
+      "detail": "{'training_seed': 45, 'same_training_seed_every_fold': True, 'seed_plus_fold': False, 'controlled_sources': ['python random', 'numpy', 'torch CPU', 'torch CUDA', 'DataLoader generator', 'worker_init_fn']}"
+    },
+    {
+      "check": "baseline_seed45_terminal_residual_off",
+      "status": "PASS",
+      "detail": "{'run_id': 'baseline_seed45', 'architecture_family': 'baseline', 'shortcut_lambda': None, 'training_seed': 45, 'folds': [0, 1, 2, 3, 4], 'output_subdir': 'baseline_seed45', 'mhsa': False, 'mhsa_heads': None, 'attention_dropout': None, 'terminal_residual': False, 'token_sequence': None}"
+    },
+    {
+      "check": "baseline_seed45_parameter_count",
+      "status": "PASS",
+      "detail": "{'total_parameters': 57114448, 'trainable_parameters': 57114448, 'frozen_parameters': 0, 'backbone_parameters': 54306464, 'head_parameters': 2807984}"
+    },
+    {
+      "check": "baseline_seed45_baseline_trace",
+      "status": "PASS",
+      "detail": "{'backbone_gap': (3, 1536), 'hidden_1': (3, 1024), 'feature_pre_classifier': (3, 1024), 'logits': (3, 176)}"
+    },
+    {
+      "check": "baseline_seed45_no_mhsa",
+      "status": "PASS",
+      "detail": "baseline contains no MHSA"
+    },
+    {
+      "check": "baseline_seed46_dataset_exact",
+      "status": "PASS",
+      "detail": "dataset equals Phase2B"
+    },
+    {
+      "check": "baseline_seed46_split_exact",
+      "status": "PASS",
+      "detail": "split equals Phase2B"
+    },
+    {
+      "check": "baseline_seed46_protocol_exact",
+      "status": "PASS",
+      "detail": "protocol equals Phase2B"
+    },
+    {
+      "check": "baseline_seed46_seed",
+      "status": "PASS",
+      "detail": "{'training_seed': 46, 'same_training_seed_every_fold': True, 'seed_plus_fold': False, 'controlled_sources': ['python random', 'numpy', 'torch CPU', 'torch CUDA', 'DataLoader generator', 'worker_init_fn']}"
+    },
+    {
+      "check": "baseline_seed46_terminal_residual_off",
+      "status": "PASS",
+      "detail": "{'run_id': 'baseline_seed46', 'architecture_family': 'baseline', 'shortcut_lambda': None, 'training_seed': 46, 'folds': [0, 1, 2, 3, 4], 'output_subdir': 'baseline_seed46', 'mhsa': False, 'mhsa_heads': None, 'attention_dropout': None, 'terminal_residual': False, 'token_sequence': None}"
+    },
+    {
+      "check": "baseline_seed46_parameter_count",
+      "status": "PASS",
+      "detail": "{'total_parameters': 57114448, 'trainable_parameters': 57114448, 'frozen_parameters': 0, 'backbone_parameters': 54306464, 'head_parameters': 2807984}"
+    },
+    {
+      "check": "baseline_seed46_baseline_trace",
+      "status": "PASS",
+      "detail": "{'backbone_gap': (3, 1536), 'hidden_1': (3, 1024), 'feature_pre_classifier': (3, 1024), 'logits': (3, 176)}"
+    },
+    {
+      "check": "baseline_seed46_no_mhsa",
+      "status": "PASS",
+      "detail": "baseline contains no MHSA"
+    },
+    {
+      "check": "fold0_assignment",
+      "status": "PASS",
+      "detail": "train=14682, val=3671"
+    },
+    {
+      "check": "fold0_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    },
+    {
+      "check": "fold1_assignment",
+      "status": "PASS",
+      "detail": "train=14682, val=3671"
+    },
+    {
+      "check": "fold1_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    },
+    {
+      "check": "fold2_assignment",
+      "status": "PASS",
+      "detail": "train=14682, val=3671"
+    },
+    {
+      "check": "fold2_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    },
+    {
+      "check": "fold3_assignment",
+      "status": "PASS",
+      "detail": "train=14683, val=3670"
+    },
+    {
+      "check": "fold3_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    },
+    {
+      "check": "fold4_assignment",
+      "status": "PASS",
+      "detail": "train=14683, val=3670"
+    },
+    {
+      "check": "fold4_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    },
+    {
+      "check": "formal_scope_25",
+      "status": "PASS",
+      "detail": "25"
+    },
+    {
+      "check": "mhsa_scope_15",
+      "status": "PASS",
+      "detail": "('mhsa_lambda_0_1_seed42', 'mhsa_lambda_0_7_seed42', 'mhsa_lambda_1_0_seed42')"
+    },
+    {
+      "check": "baseline_scope_10",
+      "status": "PASS",
+      "detail": "('baseline_seed45', 'baseline_seed46')"
+    }
+  ],
+  "formal_runs": 25,
+  "mhsa_runs": 15,
+  "baseline_runs": 10,
+  "source_hashes": {
+    "phase2b_train_one": "d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c",
+    "phase2b_screen_core": "d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921",
+    "round2a_common": "ecfc1cb1acf33a899f49968eb68ff10b40fd5ff6a9dfcbe960e158c7ff9c3463",
+    "round2a_train_one": "592ecbcb1d4c3f9df50349c8fd97e46c5bf0952c745e1e47af4099aa317ff1ae"
+  },
+  "expected_model_counts": {
+    "baseline": 57114448,
+    "deep_narrow_mhsa": 55340880
+  },
+  "training_performed": false,
+  "forbidden_variants_absent": true
+}

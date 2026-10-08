@@ -1,0 +1,40 @@
+{"event": "START", "time": 1786255114.2934945, "run_id": "baseline_seed43", "fold": 0, "device": "cuda:0", "pid": 84764}
+{"event": "START", "time": 1786255114.307494, "run_id": "baseline_seed44", "fold": 0, "device": "cuda:1", "pid": 85144}
+{"event": "EXIT", "time": 1786269851.4916794, "run_id": "baseline_seed43", "fold": 0, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786269851.5196812, "run_id": "baseline_seed43", "fold": 1, "device": "cuda:0", "pid": 34332}
+{"event": "EXIT", "time": 1786273933.557364, "run_id": "baseline_seed44", "fold": 0, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786273933.5783744, "run_id": "baseline_seed44", "fold": 1, "device": "cuda:1", "pid": 83132}
+{"event": "EXIT", "time": 1786284738.768077, "run_id": "baseline_seed43", "fold": 1, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786284738.7890782, "run_id": "baseline_seed43", "fold": 2, "device": "cuda:0", "pid": 88416}
+{"event": "EXIT", "time": 1786292482.6567976, "run_id": "baseline_seed44", "fold": 1, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786292482.6747985, "run_id": "baseline_seed44", "fold": 2, "device": "cuda:1", "pid": 42020}
+{"event": "EXIT", "time": 1786299205.158463, "run_id": "baseline_seed43", "fold": 2, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786299205.1754558, "run_id": "baseline_seed43", "fold": 3, "device": "cuda:0", "pid": 35272}
+{"event": "EXIT", "time": 1786310189.1008363, "run_id": "baseline_seed44", "fold": 2, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786310189.1178286, "run_id": "baseline_seed44", "fold": 3, "device": "cuda:1", "pid": 85452}
+{"event": "EXIT", "time": 1786313310.2558177, "run_id": "baseline_seed43", "fold": 3, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786313310.2718098, "run_id": "baseline_seed43", "fold": 4, "device": "cuda:0", "pid": 33412}
+{"event": "EXIT", "time": 1786327445.5119042, "run_id": "baseline_seed43", "fold": 4, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786327445.5289035, "run_id": "lambda_0_7_seed42", "fold": 0, "device": "cuda:0", "pid": 94080}
+{"event": "EXIT", "time": 1786327955.7282848, "run_id": "baseline_seed44", "fold": 3, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786327955.7472787, "run_id": "baseline_seed44", "fold": 4, "device": "cuda:1", "pid": 83664}
+{"event": "EXIT", "time": 1786342152.971864, "run_id": "lambda_0_7_seed42", "fold": 0, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786342152.9909122, "run_id": "lambda_0_7_seed42", "fold": 1, "device": "cuda:0", "pid": 80236}
+{"event": "EXIT", "time": 1786346385.0874705, "run_id": "baseline_seed44", "fold": 4, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786346385.111472, "run_id": "lambda_0_9_seed42", "fold": 0, "device": "cuda:1", "pid": 45804}
+{"event": "EXIT", "time": 1786356860.0295174, "run_id": "lambda_0_7_seed42", "fold": 1, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786356860.0481584, "run_id": "lambda_0_7_seed42", "fold": 2, "device": "cuda:0", "pid": 31628}
+{"event": "EXIT", "time": 1786365414.3966548, "run_id": "lambda_0_9_seed42", "fold": 0, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786365414.4053726, "run_id": "lambda_0_9_seed42", "fold": 1, "device": "cuda:1", "pid": 36164}
+{"event": "EXIT", "time": 1786371867.4709191, "run_id": "lambda_0_7_seed42", "fold": 2, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786371867.4749193, "run_id": "lambda_0_7_seed42", "fold": 3, "device": "cuda:0", "pid": 9916}
+{"event": "EXIT", "time": 1786384232.0488374, "run_id": "lambda_0_9_seed42", "fold": 1, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786384232.0528302, "run_id": "lambda_0_9_seed42", "fold": 2, "device": "cuda:1", "pid": 53240}
+{"event": "EXIT", "time": 1786386122.759209, "run_id": "lambda_0_7_seed42", "fold": 3, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786386122.7632012, "run_id": "lambda_0_7_seed42", "fold": 4, "device": "cuda:0", "pid": 87400}
+{"event": "EXIT", "time": 1786400287.8973753, "run_id": "lambda_0_7_seed42", "fold": 4, "device": "cuda:0", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "EXIT", "time": 1786401998.575371, "run_id": "lambda_0_9_seed42", "fold": 2, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786401998.5793636, "run_id": "lambda_0_9_seed42", "fold": 3, "device": "cuda:1", "pid": 64296}
+{"event": "EXIT", "time": 1786419975.453577, "run_id": "lambda_0_9_seed42", "fold": 3, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}
+{"event": "START", "time": 1786419975.4605677, "run_id": "lambda_0_9_seed42", "fold": 4, "device": "cuda:1", "pid": 92044}
+{"event": "EXIT", "time": 1786437502.33908, "run_id": "lambda_0_9_seed42", "fold": 4, "device": "cuda:1", "exit_code": 0, "log": "<LOCAL_PATH>"}

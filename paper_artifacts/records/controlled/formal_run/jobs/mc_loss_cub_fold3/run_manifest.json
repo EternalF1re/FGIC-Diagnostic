@@ -1,0 +1,77 @@
+{
+  "status": "COMPLETE",
+  "formal_result": true,
+  "job": {
+    "job_id": "mc_loss_cub_fold3",
+    "ordinal": 14,
+    "method": "mc_loss",
+    "dataset": "cub",
+    "fold": 3,
+    "seed": 42,
+    "config_path": "configs/mc_loss_cub.json",
+    "config_sha256": "9f38209114009fe341a1b53c3323ec2629a36815021cff9bb2fe55b059bba59b",
+    "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+    "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+    "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+    "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+    "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+    "input_resolution": [
+      299,
+      299
+    ],
+    "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+    "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+    "depends_on": null,
+    "resources": {
+      "gpu_count": 1,
+      "ddp_processes": 1,
+      "per_process_batch": null,
+      "device_affinity_required": false
+    },
+    "execution_blocker": null,
+    "status": "PLANNED_NOT_AUTHORIZED"
+  },
+  "started_unix": 1787236564.5911264,
+  "device": "cuda:0",
+  "runner_sha256": "e6588fe0334b6bcc60cd0070b4dae300a703e9ab3a4c921b0a96b0966a333a0a",
+  "runtime_sha256": "f76e5747cb066907e24549f98709b4fcace26d777eed08e69d66af2bd03ee0e5",
+  "protocol_core_sha256": "a4ec8e36e4850f6710d4b9854b315e77ff3e084ccd2bb28c3cac80c5906e6f42",
+  "cars_lookup_implementation": "one_pass_per_split_filename_index_v1",
+  "no_official_test_access": true,
+  "tta": false,
+  "fold_ensemble": false,
+  "runtime_precision": "BF16 autocast training; FP32 parameters/optimizer and deterministic FP32 original-view inference",
+  "activation_checkpointing": true,
+  "pin_memory": false,
+  "completed_unix": 1787245815.2428095,
+  "elapsed_seconds": 9250.651683330536,
+  "train_count": 4795,
+  "heldout_count": 1199,
+  "best_checkpoint": "<LOCAL_PATH>",
+  "best_checkpoint_sha256": "551e5cf268a07f5555d63bb368856c95e9c84419573596fe79a5a598767cce25",
+  "best_stage1_checkpoint": "<LOCAL_PATH>",
+  "best_stage1_sha256": "551e5cf268a07f5555d63bb368856c95e9c84419573596fe79a5a598767cce25",
+  "stage1_export": null,
+  "bn_recalibration": null,
+  "final_export": {
+    "path": "<LOCAL_PATH>",
+    "sha256": "e0c9a5fb293de8f0ca44601688d9deaf404555c83056935f1b86e08e1f51a718",
+    "alignment": {
+      "count": true,
+      "sample_ids": true,
+      "labels": true,
+      "dataset_indices": true,
+      "fold_ids": true,
+      "unique_ids": true,
+      "finite_logits": true,
+      "all_pass": true
+    },
+    "metrics": {
+      "accuracy": 0.6613844870725605,
+      "macro_f1": 0.6570282311820036,
+      "balanced_accuracy": 0.6609999999999999
+    }
+  },
+  "all_finite": true,
+  "checkpoint_roundtrip": true
+}

@@ -1,0 +1,42 @@
+{
+  "phase": "Phase2C P3",
+  "training_performed": false,
+  "integrity": "PASS",
+  "scope": "Phase2B controlled #1/#2 heads (no MHSA; not the full historical MS-LFA head)",
+  "feature_definition": "post-shortcut outputs f1..f5 exactly used in forward; [N_fold,256] each",
+  "formula_centered_linear_cka": "||Xc^T Yc||_F^2 / sqrt(||Xc^T Xc||_F^2 ||Yc^T Yc||_F^2)",
+  "cka_accumulation": "float64",
+  "folds_are_independent_models_not_training_seeds": true,
+  "folds": [
+    {
+      "fold": 0,
+      "n": 3671,
+      "sample_ids_aligned": true,
+      "labels_aligned": true
+    },
+    {
+      "fold": 1,
+      "n": 3671,
+      "sample_ids_aligned": true,
+      "labels_aligned": true
+    },
+    {
+      "fold": 2,
+      "n": 3671,
+      "sample_ids_aligned": true,
+      "labels_aligned": true
+    },
+    {
+      "fold": 3,
+      "n": 3670,
+      "sample_ids_aligned": true,
+      "labels_aligned": true
+    },
+    {
+      "fold": 4,
+      "n": 3670,
+      "sample_ids_aligned": true,
+      "labels_aligned": true
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 5070 Ti",
+  "torch_version": "2.8.0+cu129",
+  "backend": {
+    "flash_sdp_enabled": false,
+    "mem_efficient_sdp_enabled": false,
+    "math_sdp_enabled": true,
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": false,
+    "cublas_workspace_config": ":4096:8"
+  },
+  "repeatability": {
+    "logits": {
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "features": {
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "input_grad": {
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0
+    },
+    "mhsa_weight_grad": {
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0
+    }
+  },
+  "warning_count": 0,
+  "warnings": [],
+  "nondeterministic_warning_count": 0,
+  "round2a_common_sha256": "ecfc1cb1acf33a899f49968eb68ff10b40fd5ff6a9dfcbe960e158c7ff9c3463",
+  "audit_script_sha256": "35d70a94cdf89d2502129bca34840feba54980d15ade657c227c9d6e17b4bd50",
+  "training_performed": false
+}

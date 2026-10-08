@@ -1,0 +1,743 @@
+{
+  "status": "PASS",
+  "session_id": "pid-40820-1787058136740427900",
+  "created_local": "2026-08-18T21:02:26+0800",
+  "same_python_process": true,
+  "same_gpu_session": true,
+  "training_performed": false,
+  "checkpoint_loaded": false,
+  "real_dataset_used": false,
+  "environment": {
+    "python": "3.9.23",
+    "python_executable": "<LOCAL_PATH>",
+    "torch": "2.8.0+cu129",
+    "cuda_runtime": "12.9",
+    "cudnn": 91002,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_index": 0,
+    "thop": "0.1.1",
+    "gpu_state_before": {
+      "name": "NVIDIA GeForce RTX 5070 Ti",
+      "utilization_percent": 8,
+      "memory_used_mib": 333,
+      "temperature_c": 50
+    },
+    "gpu_state_after": {
+      "name": "NVIDIA GeForce RTX 5070 Ti",
+      "utilization_percent": 2,
+      "memory_used_mib": 609,
+      "temperature_c": 53
+    }
+  },
+  "protocol": {
+    "input_shape": [
+      1,
+      3,
+      299,
+      299
+    ],
+    "dtype": "FP32",
+    "batch_size": 1,
+    "synthetic_input": true,
+    "shared_identical_input_values": true,
+    "warmup_forwards": 10,
+    "measured_forwards": 30,
+    "latency_timer": "time.perf_counter_ns with CUDA synchronization immediately before and after each forward",
+    "inference_context": "torch.inference_mode",
+    "amp": false,
+    "fp16": false,
+    "torch_compile": false,
+    "flops_convention": "2 x THOP MACs",
+    "manuscript_primary_round": "round1_manuscript",
+    "order_sanity_round": "round2_order_sanity"
+  },
+  "architecture_audit": {
+    "Ours-FT": {
+      "model": "Ours-FT",
+      "status": "PASS",
+      "counts": {
+        "resident_parameters": 57114448,
+        "executed_parameters": 57114448,
+        "backbone_parameters": 54306464,
+        "head_or_gate_parameters": 2807984,
+        "anchor_branch_parameters": 0,
+        "plastic_branch_parameters": 0
+      },
+      "checks": {
+        "resident_parameter_sanity_exact": true,
+        "one_backbone_branch": true,
+        "backbone_pooled_dimension_1536": true,
+        "conventional_head_type": true,
+        "fc1_1536_to_1024": true,
+        "fc2_1024_to_1024": true,
+        "classifier_1024_to_classes": true,
+        "dropout_0_2": true,
+        "batchnorm_and_silu": true,
+        "dfag_absent": true
+      }
+    },
+    "Progressive Head": {
+      "model": "Progressive Head",
+      "status": "PASS",
+      "counts": {
+        "resident_parameters": 55076688,
+        "executed_parameters": 55076688,
+        "backbone_parameters": 54306464,
+        "head_or_gate_parameters": 770224,
+        "anchor_branch_parameters": 0,
+        "plastic_branch_parameters": 0
+      },
+      "checks": {
+        "resident_parameter_sanity_exact": true,
+        "one_backbone_branch": true,
+        "projection_1536_to_256": true,
+        "five_mapping_blocks": true,
+        "mapping_sequence_exact": true,
+        "shortcut_lambda_exact_0_7": true,
+        "arithmetic_mean_f1_to_f5": true,
+        "aggregation_dropout_0_2": true,
+        "mhsa_absent": true,
+        "terminal_residual_absent": true,
+        "dfag_absent": true
+      }
+    },
+    "DFAG": {
+      "model": "DFAG",
+      "status": "PASS",
+      "counts": {
+        "resident_parameters": 114523808,
+        "executed_parameters": 111715824,
+        "backbone_parameters": 108612928,
+        "head_or_gate_parameters": 294912,
+        "anchor_branch_parameters": 57114448,
+        "plastic_branch_parameters": 57114448
+      },
+      "checks": {
+        "resident_parameter_sanity_exact": true,
+        "standalone_dfag_type": true,
+        "anchor_and_plastic_branches": true,
+        "two_distinct_backbones": true,
+        "both_backbones_inception_resnet_v2": true,
+        "feature_dimension_1536": true,
+        "reduction_16": true,
+        "gate_structure_exact": true,
+        "gate_linears_bias_free": true,
+        "gate_parameters_exact_294912": true,
+        "gate_receives_only_f_spec_source": true,
+        "elementwise_gated_fusion_source": true,
+        "progressive_head_absent": true,
+        "mhsa_absent": true,
+        "anchor_frozen": true
+      }
+    }
+  },
+  "rounds": {
+    "round1_manuscript": {
+      "Ours-FT": {
+        "model": "Ours-FT",
+        "resident_parameters": 57114448,
+        "executed_parameters": 57114448,
+        "backbone_parameters": 54306464,
+        "head_or_gate_parameters": 2807984,
+        "anchor_branch_parameters": 0,
+        "plastic_branch_parameters": 0,
+        "resident_parameters_m": 57.114448,
+        "executed_parameters_m": 57.114448,
+        "head_or_gate_parameters_m": 2.807984,
+        "thop_reported_executed_parameters": 57053904,
+        "macs": 13157402912.0,
+        "macs_g": 13.157402912,
+        "flops_2x_macs": 26314805824.0,
+        "flops_g": 26.314805824,
+        "backbone_forwards_per_input": 1,
+        "runtime_route_check": {
+          "status": "PASS",
+          "counters": {
+            "backbone": 1,
+            "anchor_backbone": 0,
+            "plastic_backbone": 0,
+            "gate": 0
+          },
+          "checks": {
+            "logits_shape_1_by_num_classes": true,
+            "one_backbone_forward_observed": true
+          }
+        },
+        "allocator_checkpoints": {
+          "clean_before_model_bytes": 0,
+          "after_model_before_input_bytes": 231710208,
+          "after_model_and_input_bytes": 232783360
+        },
+        "latency_mean_ms": 15.146039999999998,
+        "latency_sample_sd_ms": 0.9043102433766091,
+        "latency_median_ms": 14.931750000000001,
+        "latency_p95_ms": 16.978324999999998,
+        "latency_min_ms": 14.0698,
+        "latency_max_ms": 17.6629,
+        "latency_samples_ms": [
+          14.3377,
+          14.8809,
+          14.986,
+          14.1064,
+          15.6907,
+          14.7877,
+          16.3963,
+          15.5641,
+          15.421,
+          14.3517,
+          15.4296,
+          14.1834,
+          15.1696,
+          14.5095,
+          15.0623,
+          15.7819,
+          15.476,
+          14.5458,
+          15.6553,
+          17.6629,
+          14.8942,
+          14.241,
+          14.9693,
+          14.7519,
+          16.5804,
+          14.0698,
+          17.3039,
+          14.5283,
+          14.6368,
+          14.4068
+        ],
+        "resident_allocated_before_forward_bytes": 241303040,
+        "resident_allocated_before_forward_mib": 230.12451171875,
+        "absolute_peak_allocated_bytes": 258126336,
+        "absolute_peak_allocated_mib": 246.16845703125,
+        "incremental_forward_peak_bytes": 16823296,
+        "incremental_forward_peak_mib": 16.0439453125,
+        "warmup_forwards": 10,
+        "measured_forwards": 30
+      },
+      "Progressive Head": {
+        "model": "Progressive Head",
+        "resident_parameters": 55076688,
+        "executed_parameters": 55076688,
+        "backbone_parameters": 54306464,
+        "head_or_gate_parameters": 770224,
+        "anchor_branch_parameters": 0,
+        "plastic_branch_parameters": 0,
+        "resident_parameters_m": 55.076688,
+        "executed_parameters_m": 55.076688,
+        "head_or_gate_parameters_m": 0.770224,
+        "thop_reported_executed_parameters": 55016144,
+        "macs": 13155364128.0,
+        "macs_g": 13.155364128,
+        "flops_2x_macs": 26310728256.0,
+        "flops_g": 26.310728256,
+        "backbone_forwards_per_input": 1,
+        "runtime_route_check": {
+          "status": "PASS",
+          "counters": {
+            "backbone": 1,
+            "anchor_backbone": 0,
+            "plastic_backbone": 0,
+            "gate": 0
+          },
+          "checks": {
+            "logits_shape_1_by_num_classes": true,
+            "one_backbone_forward_observed": true
+          }
+        },
+        "allocator_checkpoints": {
+          "clean_before_model_bytes": 8519680,
+          "after_model_before_input_bytes": 232401920,
+          "after_model_and_input_bytes": 233475072
+        },
+        "latency_mean_ms": 14.964103333333332,
+        "latency_sample_sd_ms": 0.5283952396633138,
+        "latency_median_ms": 14.9362,
+        "latency_p95_ms": 15.794820000000001,
+        "latency_min_ms": 14.068,
+        "latency_max_ms": 16.3058,
+        "latency_samples_ms": [
+          15.1434,
+          14.9578,
+          15.0194,
+          14.8294,
+          14.5367,
+          14.5587,
+          15.2811,
+          15.6497,
+          15.5761,
+          14.8089,
+          15.8031,
+          14.9827,
+          15.0353,
+          16.3058,
+          15.7847,
+          14.9702,
+          14.6302,
+          14.2011,
+          14.6791,
+          15.41,
+          15.0572,
+          14.5063,
+          14.7534,
+          14.0759,
+          14.2806,
+          14.068,
+          15.4196,
+          14.7742,
+          14.9099,
+          14.9146
+        ],
+        "resident_allocated_before_forward_bytes": 233475072,
+        "resident_allocated_before_forward_mib": 222.6591796875,
+        "absolute_peak_allocated_bytes": 250668032,
+        "absolute_peak_allocated_mib": 239.0556640625,
+        "incremental_forward_peak_bytes": 17192960,
+        "incremental_forward_peak_mib": 16.396484375,
+        "warmup_forwards": 10,
+        "measured_forwards": 30
+      },
+      "DFAG": {
+        "model": "DFAG",
+        "resident_parameters": 114523808,
+        "executed_parameters": 111715824,
+        "backbone_parameters": 108612928,
+        "head_or_gate_parameters": 294912,
+        "anchor_branch_parameters": 57114448,
+        "plastic_branch_parameters": 57114448,
+        "resident_parameters_m": 114.523808,
+        "executed_parameters_m": 111.715824,
+        "head_or_gate_parameters_m": 0.294912,
+        "thop_reported_executed_parameters": 111594736,
+        "macs": 26312290880.0,
+        "macs_g": 26.31229088,
+        "flops_2x_macs": 52624581760.0,
+        "flops_g": 52.62458176,
+        "backbone_forwards_per_input": 2,
+        "runtime_route_check": {
+          "status": "PASS",
+          "counters": {
+            "backbone": 0,
+            "anchor_backbone": 1,
+            "plastic_backbone": 1,
+            "gate": 1
+          },
+          "checks": {
+            "logits_shape_1_by_num_classes": true,
+            "anchor_backbone_forward_observed_once": true,
+            "plastic_backbone_forward_observed_once": true,
+            "gate_forward_observed_once": true,
+            "gate_input_identity_is_f_spec": true
+          }
+        },
+        "allocator_checkpoints": {
+          "clean_before_model_bytes": 8519680,
+          "after_model_before_input_bytes": 473259008,
+          "after_model_and_input_bytes": 474528768
+        },
+        "latency_mean_ms": 29.983786666666667,
+        "latency_sample_sd_ms": 1.2094850793033671,
+        "latency_median_ms": 29.883699999999997,
+        "latency_p95_ms": 32.3903,
+        "latency_min_ms": 28.5714,
+        "latency_max_ms": 33.6396,
+        "latency_samples_ms": [
+          30.2349,
+          31.4186,
+          32.3975,
+          31.1991,
+          28.9073,
+          29.1259,
+          30.5726,
+          30.366,
+          32.3815,
+          29.9757,
+          30.0438,
+          29.5882,
+          29.0108,
+          28.8,
+          29.9088,
+          29.0749,
+          28.6274,
+          29.9523,
+          29.0741,
+          28.5714,
+          28.9646,
+          29.2847,
+          30.6707,
+          29.2995,
+          29.8586,
+          33.6396,
+          30.0043,
+          29.9371,
+          29.0832,
+          29.5405
+        ],
+        "resident_allocated_before_forward_bytes": 474528768,
+        "resident_allocated_before_forward_mib": 452.5458984375,
+        "absolute_peak_allocated_bytes": 491358208,
+        "absolute_peak_allocated_mib": 468.595703125,
+        "incremental_forward_peak_bytes": 16829440,
+        "incremental_forward_peak_mib": 16.0498046875,
+        "warmup_forwards": 10,
+        "measured_forwards": 30
+      }
+    },
+    "round2_order_sanity": {
+      "DFAG": {
+        "model": "DFAG",
+        "resident_parameters": 114523808,
+        "executed_parameters": 111715824,
+        "backbone_parameters": 108612928,
+        "head_or_gate_parameters": 294912,
+        "anchor_branch_parameters": 57114448,
+        "plastic_branch_parameters": 57114448,
+        "resident_parameters_m": 114.523808,
+        "executed_parameters_m": 111.715824,
+        "head_or_gate_parameters_m": 0.294912,
+        "thop_reported_executed_parameters": 111594736,
+        "macs": 26312290880.0,
+        "macs_g": 26.31229088,
+        "flops_2x_macs": 52624581760.0,
+        "flops_g": 52.62458176,
+        "backbone_forwards_per_input": 2,
+        "runtime_route_check": {
+          "status": "PASS",
+          "counters": {
+            "backbone": 0,
+            "anchor_backbone": 1,
+            "plastic_backbone": 1,
+            "gate": 1
+          },
+          "checks": {
+            "logits_shape_1_by_num_classes": true,
+            "anchor_backbone_forward_observed_once": true,
+            "plastic_backbone_forward_observed_once": true,
+            "gate_forward_observed_once": true,
+            "gate_input_identity_is_f_spec": true
+          }
+        },
+        "allocator_checkpoints": {
+          "clean_before_model_bytes": 8519680,
+          "after_model_before_input_bytes": 473259008,
+          "after_model_and_input_bytes": 474528768
+        },
+        "latency_mean_ms": 30.337973333333334,
+        "latency_sample_sd_ms": 1.1245917567119048,
+        "latency_median_ms": 30.057000000000002,
+        "latency_p95_ms": 32.00248,
+        "latency_min_ms": 28.6445,
+        "latency_max_ms": 33.0525,
+        "latency_samples_ms": [
+          30.5821,
+          29.7644,
+          29.4582,
+          29.8,
+          30.0932,
+          29.1965,
+          29.1045,
+          29.0982,
+          29.4543,
+          29.6952,
+          31.1458,
+          28.6445,
+          30.8912,
+          29.2781,
+          29.5426,
+          31.2906,
+          29.5476,
+          30.062,
+          31.9662,
+          31.2968,
+          30.9962,
+          30.052,
+          29.9384,
+          28.6884,
+          32.0068,
+          31.0755,
+          30.7201,
+          33.0525,
+          31.7001,
+          31.9972
+        ],
+        "resident_allocated_before_forward_bytes": 474528768,
+        "resident_allocated_before_forward_mib": 452.5458984375,
+        "absolute_peak_allocated_bytes": 491358208,
+        "absolute_peak_allocated_mib": 468.595703125,
+        "incremental_forward_peak_bytes": 16829440,
+        "incremental_forward_peak_mib": 16.0498046875,
+        "warmup_forwards": 10,
+        "measured_forwards": 30
+      },
+      "Progressive Head": {
+        "model": "Progressive Head",
+        "resident_parameters": 55076688,
+        "executed_parameters": 55076688,
+        "backbone_parameters": 54306464,
+        "head_or_gate_parameters": 770224,
+        "anchor_branch_parameters": 0,
+        "plastic_branch_parameters": 0,
+        "resident_parameters_m": 55.076688,
+        "executed_parameters_m": 55.076688,
+        "head_or_gate_parameters_m": 0.770224,
+        "thop_reported_executed_parameters": 55016144,
+        "macs": 13155364128.0,
+        "macs_g": 13.155364128,
+        "flops_2x_macs": 26310728256.0,
+        "flops_g": 26.310728256,
+        "backbone_forwards_per_input": 1,
+        "runtime_route_check": {
+          "status": "PASS",
+          "counters": {
+            "backbone": 1,
+            "anchor_backbone": 0,
+            "plastic_backbone": 0,
+            "gate": 0
+          },
+          "checks": {
+            "logits_shape_1_by_num_classes": true,
+            "one_backbone_forward_observed": true
+          }
+        },
+        "allocator_checkpoints": {
+          "clean_before_model_bytes": 8519680,
+          "after_model_before_input_bytes": 232401920,
+          "after_model_and_input_bytes": 233475072
+        },
+        "latency_mean_ms": 15.783440000000002,
+        "latency_sample_sd_ms": 0.692477127021735,
+        "latency_median_ms": 15.6124,
+        "latency_p95_ms": 17.27287,
+        "latency_min_ms": 14.6366,
+        "latency_max_ms": 17.5029,
+        "latency_samples_ms": [
+          16.2837,
+          17.216,
+          14.9655,
+          16.1476,
+          15.7569,
+          14.6366,
+          15.5113,
+          15.2428,
+          15.6815,
+          15.5482,
+          15.6482,
+          15.4473,
+          15.4178,
+          15.2749,
+          16.0416,
+          17.3194,
+          16.4745,
+          15.4976,
+          15.5766,
+          16.6387,
+          16.2742,
+          15.7563,
+          15.674,
+          15.3022,
+          15.4923,
+          15.1275,
+          17.5029,
+          15.2634,
+          15.7363,
+          15.0474
+        ],
+        "resident_allocated_before_forward_bytes": 233475072,
+        "resident_allocated_before_forward_mib": 222.6591796875,
+        "absolute_peak_allocated_bytes": 250668032,
+        "absolute_peak_allocated_mib": 239.0556640625,
+        "incremental_forward_peak_bytes": 17192960,
+        "incremental_forward_peak_mib": 16.396484375,
+        "warmup_forwards": 10,
+        "measured_forwards": 30
+      },
+      "Ours-FT": {
+        "model": "Ours-FT",
+        "resident_parameters": 57114448,
+        "executed_parameters": 57114448,
+        "backbone_parameters": 54306464,
+        "head_or_gate_parameters": 2807984,
+        "anchor_branch_parameters": 0,
+        "plastic_branch_parameters": 0,
+        "resident_parameters_m": 57.114448,
+        "executed_parameters_m": 57.114448,
+        "head_or_gate_parameters_m": 2.807984,
+        "thop_reported_executed_parameters": 57053904,
+        "macs": 13157402912.0,
+        "macs_g": 13.157402912,
+        "flops_2x_macs": 26314805824.0,
+        "flops_g": 26.314805824,
+        "backbone_forwards_per_input": 1,
+        "runtime_route_check": {
+          "status": "PASS",
+          "counters": {
+            "backbone": 1,
+            "anchor_backbone": 0,
+            "plastic_backbone": 0,
+            "gate": 0
+          },
+          "checks": {
+            "logits_shape_1_by_num_classes": true,
+            "one_backbone_forward_observed": true
+          }
+        },
+        "allocator_checkpoints": {
+          "clean_before_model_bytes": 8519680,
+          "after_model_before_input_bytes": 241065472,
+          "after_model_and_input_bytes": 242966016
+        },
+        "latency_mean_ms": 14.96144,
+        "latency_sample_sd_ms": 0.6914383432257417,
+        "latency_median_ms": 14.771650000000001,
+        "latency_p95_ms": 16.236539999999998,
+        "latency_min_ms": 14.2048,
+        "latency_max_ms": 17.4537,
+        "latency_samples_ms": [
+          14.7968,
+          14.711,
+          14.788,
+          14.7553,
+          14.9697,
+          15.825,
+          15.8544,
+          14.7181,
+          16.5492,
+          14.852,
+          15.5146,
+          14.799,
+          15.2467,
+          14.6803,
+          17.4537,
+          14.7976,
+          14.2048,
+          14.7144,
+          14.5165,
+          14.5645,
+          15.0664,
+          14.4196,
+          14.4605,
+          15.2574,
+          14.6415,
+          14.3425,
+          14.3999,
+          14.8942,
+          14.4327,
+          14.6169
+        ],
+        "resident_allocated_before_forward_bytes": 242966016,
+        "resident_allocated_before_forward_mib": 231.71044921875,
+        "absolute_peak_allocated_bytes": 259789312,
+        "absolute_peak_allocated_mib": 247.75439453125,
+        "incremental_forward_peak_bytes": 16823296,
+        "incremental_forward_peak_mib": 16.0439453125,
+        "warmup_forwards": 10,
+        "measured_forwards": 30
+      }
+    }
+  },
+  "relative_to_ours_ft": {
+    "Progressive Head": {
+      "resident_parameters": {
+        "ratio": 0.9643214620580768,
+        "percent_change": -3.5678537941923216
+      },
+      "flops": {
+        "ratio": 0.9998450466240462,
+        "percent_change": -0.015495337595383685
+      },
+      "latency": {
+        "ratio": 0.9879878392856043,
+        "percent_change": -1.2012160714395703
+      },
+      "absolute_peak_memory": {
+        "ratio": 0.9711059936170171,
+        "percent_change": -2.8894006382982895
+      }
+    },
+    "DFAG": {
+      "resident_parameters": {
+        "ratio": 2.005163527099133,
+        "percent_change": 100.51635270991328
+      },
+      "flops": {
+        "ratio": 1.9998088571113295,
+        "percent_change": 99.98088571113296
+      },
+      "latency": {
+        "ratio": 1.9796452846200507,
+        "percent_change": 97.96452846200508
+      },
+      "absolute_peak_memory": {
+        "ratio": 1.9035570551003367,
+        "percent_change": 90.35570551003367
+      }
+    }
+  },
+  "order_effect": {
+    "predeclared_rule": "Round 1 is manuscript primary; round 2 is sanity only; abs(mean difference) <= 5% means no obvious order effect.",
+    "threshold_percent": 5.0,
+    "models": {
+      "Ours-FT": {
+        "round1_latency_mean_ms": 15.146039999999998,
+        "round2_latency_mean_ms": 14.96144,
+        "round2_minus_round1_percent": -1.2188004257218221,
+        "within_predeclared_5_percent": true
+      },
+      "Progressive Head": {
+        "round1_latency_mean_ms": 14.964103333333332,
+        "round2_latency_mean_ms": 15.783440000000002,
+        "round2_minus_round1_percent": 5.475347559526367,
+        "within_predeclared_5_percent": false
+      },
+      "DFAG": {
+        "round1_latency_mean_ms": 29.983786666666667,
+        "round2_latency_mean_ms": 30.337973333333334,
+        "round2_minus_round1_percent": 1.181260627966041,
+        "within_predeclared_5_percent": true
+      }
+    },
+    "status": "WARN"
+  },
+  "historical_consistency": {
+    "status": "PASS",
+    "models": {
+      "Ours-FT": {
+        "resident_parameters_expected": 57114448,
+        "resident_parameters_exact_match": true,
+        "historical_flops_g": 26.314805824,
+        "flops_relative_error_percent": 0.0,
+        "flops_within_0_1_percent": true
+      },
+      "Progressive Head": {
+        "resident_parameters_expected": 55076688,
+        "resident_parameters_exact_match": true,
+        "historical_flops_g": 26.310728256,
+        "flops_relative_error_percent": 0.0,
+        "flops_within_0_1_percent": true
+      },
+      "DFAG": {
+        "resident_parameters_expected": 114523808,
+        "resident_parameters_exact_match": true,
+        "historical_flops_g": 52.624581632,
+        "flops_relative_error_percent": 2.432323231715827e-07,
+        "flops_within_0_1_percent": true
+      }
+    },
+    "historical_latency_context_not_used_in_final_table": {
+      "old_progressive_session": {
+        "Ours-FT": 14.1310688,
+        "Progressive Head": 14.250305
+      },
+      "old_dfag_session": {
+        "Ours-FT": 15.168940766652424,
+        "DFAG": 30.376856422424318
+      }
+    }
+  },
+  "interpretation_boundaries": [
+    "Descriptive efficiency comparison under this exact profiling protocol only.",
+    "No old-session latency or memory value is used in the final table.",
+    "DFAG has two complete backbone forwards and is not lightweight.",
+    "No data loading or preprocessing time is included."
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "experiment_family": "controlled_reimplementation_under_common_evaluation_protocol",
+  "method": "cal",
+  "dataset": "cub",
+  "num_classes": 200,
+  "backbone": {
+    "provider": "timm/resnet50.a1_in1k",
+    "timm_model_name": "resnet50",
+    "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+    "loaded_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+    "classifier_rule": "load identical pretrained num_classes=0 backbone first; then attach method-specific module",
+    "input": [
+      3,
+      299,
+      299
+    ],
+    "final_convolution_feature": [
+      2048,
+      10,
+      10
+    ],
+    "pooled_feature": [
+      2048
+    ],
+    "normalization": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    }
+  },
+  "split": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "training_seed_every_fold": 42,
+  "checkpoint_selection": "strict maximum deterministic original-view held-out accuracy; exact tie keeps earlier checkpoint",
+  "evaluation": {
+    "pooled_oof": true,
+    "each_development_sample_exactly_once": true,
+    "original_view": true,
+    "tta": false,
+    "cross_fold_ensemble": false,
+    "metrics": [
+      "accuracy",
+      "macro_f1",
+      "balanced_accuracy"
+    ],
+    "official_test_excluded_from_training_selection_and_oof": true
+  },
+  "training_authorized": false,
+  "formal_status": "PLANNED_NOT_AUTHORIZED",
+  "training": {
+    "architecture": "32 attention maps; 1x1 Conv+BN+ReLU; BAP; signed sqrt; L2 norm; bias-free classifier",
+    "primary_logits": "causal_effect_p_minus_p_cf",
+    "raw_logits": "diagnostic_only",
+    "epochs": 160,
+    "optimizer": "SGD",
+    "momentum": 0.9,
+    "weight_decay": 1e-05,
+    "lr": 0.001,
+    "schedule": "1e-3*0.9^((epoch+fraction)/2)",
+    "feature_center_beta": 0.05,
+    "crop_theta": [
+      0.4,
+      0.6
+    ],
+    "drop_theta": [
+      0.2,
+      0.5
+    ],
+    "fake_attention_train": "Uniform(0,2)",
+    "fake_attention_eval": "all ones",
+    "topology": {
+      "global_batch": 16,
+      "gpus": 2,
+      "ddp_processes": 2,
+      "per_process_batch": 8,
+      "sync_batch_norm": true
+    },
+    "augmentation_id": "cal_official_train_299_v1",
+    "execution_status": "BLOCKED_CURRENT_WINDOWS_PYTORCH_HAS_NO_NCCL_AND_GLOO_CUDA_DEVICE_UNSUPPORTED"
+  }
+}

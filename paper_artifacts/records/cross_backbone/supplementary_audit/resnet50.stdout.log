@@ -1,0 +1,6 @@
+{"backbone": "resnet50", "fold": 0, "alpha0_pass": true, "alpha1_pass": true}
+{"backbone": "resnet50", "fold": 1, "alpha0_pass": true, "alpha1_pass": true}
+{"backbone": "resnet50", "fold": 2, "alpha0_pass": true, "alpha1_pass": true}
+{"backbone": "resnet50", "fold": 3, "alpha0_pass": true, "alpha1_pass": true}
+{"backbone": "resnet50", "fold": 4, "alpha0_pass": true, "alpha1_pass": true}
+{"status": "COMPLETE", "output": "<LOCAL_PATH>"}

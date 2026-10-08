@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "created_unix": 1786820616.1847627,
+  "environment": {
+    "python": "3.9.23",
+    "torch": "2.8.0+cu129",
+    "cuda": "12.9",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "thop": "0.1.1"
+  },
+  "protocol": {
+    "dtype": "FP32",
+    "batch": 1,
+    "input": "299x299",
+    "warmup": 10,
+    "measured_forwards": 30,
+    "flops_convention": "2 x THOP MACs"
+  },
+  "profiles": [
+    {
+      "method": "current_single_branch_baseline",
+      "device": "NVIDIA GeForce RTX 5070 Ti",
+      "input": "1x3x299x299 FP32",
+      "resident_parameters": 57114448,
+      "resident_parameters_millions": 57.114448,
+      "executed_parameters": 57114448,
+      "gate_parameters": 0,
+      "thop_reported_parameters": 57053904,
+      "macs": 13157402912.0,
+      "macs_giga": 13.157402912,
+      "flops_2xmacs": 26314805824.0,
+      "gflops_2xmacs": 26.314805824,
+      "backbone_forwards_per_view": 1,
+      "latency_mean_ms": 15.168940766652424,
+      "latency_sd_ms": 0.5908175820578088,
+      "latency_median_ms": 15.026031970977783,
+      "latency_p95_ms": 16.027542114257812,
+      "peak_max_memory_allocated_bytes": 284954112,
+      "resident_allocated_before_forward_bytes": 268131840,
+      "incremental_peak_bytes": 16822272,
+      "warmup": 10,
+      "measured_forwards": 30
+    },
+    {
+      "method": "unified_standalone_dynamic_dfag",
+      "device": "NVIDIA GeForce RTX 5070 Ti",
+      "input": "1x3x299x299 FP32",
+      "resident_parameters": 114523808,
+      "resident_parameters_millions": 114.523808,
+      "executed_parameters": 111715824,
+      "gate_parameters": 294912,
+      "thop_reported_parameters": 111594736,
+      "macs": 26312290880.0,
+      "macs_giga": 26.31229088,
+      "flops_2xmacs": 52624581760.0,
+      "gflops_2xmacs": 52.62458176,
+      "backbone_forwards_per_view": 2,
+      "latency_mean_ms": 30.376856422424318,
+      "latency_sd_ms": 0.41352647168424156,
+      "latency_median_ms": 30.34318447113037,
+      "latency_p95_ms": 31.05739116668701,
+      "peak_max_memory_allocated_bytes": 519693312,
+      "resident_allocated_before_forward_bytes": 502864896,
+      "incremental_peak_bytes": 16828416,
+      "warmup": 10,
+      "measured_forwards": 30
+    }
+  ],
+  "relative": {
+    "resident_parameter_ratio_dfag_to_baseline": 2.005163527099133,
+    "gflops_ratio_dfag_to_baseline": 1.9998088571113295,
+    "latency_ratio_dfag_to_baseline": 2.0025693876532995
+  },
+  "hard_checks": {
+    "dfag_executes_two_backbones": true,
+    "dfag_gflops_near_double": true,
+    "gate_count_exact": true
+  }
+}

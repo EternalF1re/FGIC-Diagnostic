@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE",
+  "started_unix": 1786853534.7453458,
+  "target_seeds": [
+    45,
+    46
+  ],
+  "formal_jobs": 10,
+  "queue": "shared_dynamic_gpu_queue",
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "only_new_training": "seed45/46 unified standalone dynamic DFAG",
+  "seed47_plus": false,
+  "fixed_g_training": false,
+  "anchor_sweep": false,
+  "gating_source_ablation": false,
+  "ssph_joint": false,
+  "progressive_head_training": false,
+  "classification": "FAIL",
+  "completed_unix": 1786887766.0957758,
+  "elapsed_seconds": 34231.35043001175,
+  "automatic_followup_launched": false
+}

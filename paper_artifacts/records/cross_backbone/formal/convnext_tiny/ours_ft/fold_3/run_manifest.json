@@ -1,0 +1,79 @@
+{
+  "status": "COMPLETE",
+  "run_type": "formal",
+  "backbone": "convnext_tiny",
+  "method": "ours_ft",
+  "fold": 3,
+  "split_id": "skf42_fold3",
+  "training_seed": 42,
+  "device": "cuda:1",
+  "started_unix": 1787089812.983303,
+  "config_sha256": "1a075d4241358e4681f2e7c70523a85bf286d97193fb1104b18bd713c5006fee",
+  "runner_sha256": "ceb08c86c53a0fcbe8f0f3e9bc04c404e65eeb3ad190dafaa915260102fcdb21",
+  "old_cross_backbone_checkpoint_used": false,
+  "joint_configuration": false,
+  "completed_unix": 1787098773.749715,
+  "elapsed_seconds": 8960.76641201973,
+  "environment": {
+    "python_executable": "<LOCAL_PATH>",
+    "python_version": "3.9.23",
+    "torch": "2.8.0+cu129",
+    "torchvision": "0.23.0+cu129",
+    "timm": "1.0.21",
+    "numpy": "1.24.3",
+    "sklearn": "1.6.1",
+    "device": "cuda:1",
+    "cuda_runtime": "12.9",
+    "cudnn": 91002,
+    "gpu_name": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_memory_bytes": 17094475776
+  },
+  "parameter_counts": {
+    "resident_parameters": 29841680,
+    "executed_parameters": 29841680,
+    "backbone_parameters": 27820128,
+    "head_parameters": 2021552,
+    "gate_parameters": 0,
+    "branch_count": 1
+  },
+  "batch_size": 64,
+  "bn_adaptation_batches_completed": 50,
+  "best_stage1_epoch_zero_based": 123,
+  "best_stage1_accuracy": 0.979291553133515,
+  "best_stage1_checkpoint": "<LOCAL_PATH>",
+  "best_stage1_sha256": "52fb3b890335b4fa29854e96f111b0f84dee4cc021094256ccb0f40c831e8f9e",
+  "best_stage2_epoch_zero_based": 40,
+  "best_stage2_accuracy": 0.976566757493188,
+  "best_stage2_checkpoint": "<LOCAL_PATH>",
+  "best_stage2_sha256": "5717c551cd628833db70d12cf99512e6bbc391c2d2f542be8893c46da8b2cc04",
+  "dfag_stage1_source": null,
+  "interpolation": {
+    "formula": "alpha*Stage1+(1-alpha)*Stage2",
+    "alpha": 0.5,
+    "floating_state_tensors_interpolated": 194,
+    "nonfloating_state_tensors_copied_from_stage2": 2
+  },
+  "metrics": {
+    "stage1": {
+      "accuracy": 0.979291553133515,
+      "macro_f1": 0.9815712463718924,
+      "balanced_accuracy": 0.9822474815616544
+    },
+    "stage2": {
+      "accuracy": 0.976566757493188,
+      "macro_f1": 0.9788903269233459,
+      "balanced_accuracy": 0.9796961630768318
+    },
+    "alpha0.5": {
+      "accuracy": 0.9790190735694823,
+      "macro_f1": 0.9813947726565021,
+      "balanced_accuracy": 0.9823869613892271
+    }
+  },
+  "technical_checks": {
+    "checkpoint_restore": true,
+    "prediction_schema": true,
+    "all_finite": true,
+    "amp": true
+  }
+}

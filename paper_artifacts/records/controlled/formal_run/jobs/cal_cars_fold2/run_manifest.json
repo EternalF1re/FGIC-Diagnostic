@@ -1,0 +1,81 @@
+{
+  "status": "COMPLETE",
+  "formal_result": true,
+  "job": {
+    "job_id": "cal_cars_fold2",
+    "ordinal": 28,
+    "method": "cal",
+    "dataset": "cars",
+    "fold": 2,
+    "seed": 42,
+    "config_path": "configs/cal_cars.json",
+    "config_sha256": "7226d2fbb83b8c267fc186401ae691d0f2c02baa3611c5c74cdb7b1239d4f61f",
+    "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+    "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+    "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+    "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+    "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+    "input_resolution": [
+      299,
+      299
+    ],
+    "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+    "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+    "depends_on": null,
+    "resources": {
+      "gpu_count": 2,
+      "ddp_processes": 2,
+      "per_process_batch": 8,
+      "device_affinity_required": true
+    },
+    "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+    "status": "PLANNED_NOT_AUTHORIZED"
+  },
+  "started_unix": 1787440249.550426,
+  "topology": {
+    "world_size": 2,
+    "backend": "nccl",
+    "per_rank_batch": 8,
+    "global_batch": 16,
+    "sync_batch_norm": true
+  },
+  "primary_logits": "causal_effect_p_minus_p_cf",
+  "no_official_test_access": true,
+  "tta": false,
+  "fold_ensemble": false,
+  "pin_memory": false,
+  "runner_sha256": "c630e7742f2354f4ac4f3ae9386b08ce0bf2028dc6d2b4879eda36591e284841",
+  "launcher_sha256": "df657acdbc8f6465bb9980336914e2ede4d2207f89b3ba60dcd09214c97f9f64",
+  "runtime_sha256": "f76e5747cb066907e24549f98709b4fcace26d777eed08e69d66af2bd03ee0e5",
+  "protocol_core_sha256": "a4ec8e36e4850f6710d4b9854b315e77ff3e084ccd2bb28c3cac80c5906e6f42",
+  "cars_lookup_implementation": "one_pass_per_split_filename_index_v1",
+  "completed_unix": 1787458544.5805483,
+  "elapsed_seconds": 18295.03012228012,
+  "train_count": 6515,
+  "heldout_count": 1629,
+  "best_epoch": 54,
+  "best_checkpoint": "<LOCAL_PATH>",
+  "best_checkpoint_sha256": "9fb35a854365656da3fc4e233472db98eef129f933d04e8239311e7b3a6a86ab",
+  "final_export": {
+    "path": "<LOCAL_PATH>",
+    "sha256": "e9ccf7677c38568164d648792f9d51bf5dbb1835beada717bdc22066431d8f79",
+    "alignment": {
+      "count": true,
+      "sample_ids": true,
+      "labels": true,
+      "dataset_indices": true,
+      "fold_ids": true,
+      "unique_ids": true,
+      "finite_logits": true,
+      "all_pass": true
+    },
+    "metrics": {
+      "accuracy": 0.8606507059545734,
+      "macro_f1": 0.8576712738137313,
+      "balanced_accuracy": 0.8605219468739879
+    }
+  },
+  "all_finite": true,
+  "checkpoint_roundtrip": true,
+  "syncbn_count": 54
+}

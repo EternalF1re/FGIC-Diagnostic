@@ -1,0 +1,36 @@
+{
+  "job_id": "flowers__ours_ft__fold_3",
+  "dataset": "Oxford Flowers-102",
+  "method": "Ours-FT",
+  "shortcut_lambda": null,
+  "fold": 3,
+  "stage1": {
+    "validation": {
+      "accuracy": 0.9803921568627451,
+      "macro_f1": 0.9798319327731093,
+      "balanced_accuracy": 0.9803921568627451
+    },
+    "secondary_official_test": {
+      "accuracy": 0.9585298422507725,
+      "macro_f1": 0.95509160260605,
+      "balanced_accuracy": 0.9619134077778217
+    },
+    "best_epoch_zero_based": 111,
+    "best_validation_accuracy": 0.9803921568627451
+  },
+  "stage2": {
+    "validation": {
+      "accuracy": 0.9828431372549019,
+      "macro_f1": 0.982570806100218,
+      "balanced_accuracy": 0.9828431372549019
+    },
+    "secondary_official_test": {
+      "accuracy": 0.9582045861115629,
+      "macro_f1": 0.9535473945092697,
+      "balanced_accuracy": 0.9620033562083233
+    },
+    "best_epoch_zero_based": 2,
+    "best_validation_accuracy": 0.9828431372549019
+  },
+  "representation_diagnostics": {}
+}

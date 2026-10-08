@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "experiment_id": "PHASE2D_ROUND2A",
+  "scope": [
+    "mhsa_lambda_0_1_seed42",
+    "mhsa_lambda_0_7_seed42",
+    "mhsa_lambda_1_0_seed42",
+    "baseline_seed45",
+    "baseline_seed46"
+  ],
+  "forbidden_scope": [
+    "lambda=0.5",
+    "lambda=0.8",
+    "terminal residual",
+    "DFAG",
+    "earlier-anchor DFAG",
+    "learnable lambda",
+    "different MHSA heads",
+    "other unplanned ablations"
+  ],
+  "dataset": {
+    "name": "Classify Leaves",
+    "root": "<LOCAL_PATH>",
+    "train_csv": "<LOCAL_PATH>",
+    "input_size": [
+      3,
+      299,
+      299
+    ],
+    "num_classes": 176,
+    "label_mapping": "order of first appearance in train.csv"
+  },
+  "split": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "split_random_state": 42
+  },
+  "seed": {
+    "training_seed": 45,
+    "same_training_seed_every_fold": true,
+    "seed_plus_fold": false,
+    "controlled_sources": [
+      "python random",
+      "numpy",
+      "torch CPU",
+      "torch CUDA",
+      "DataLoader generator",
+      "worker_init_fn"
+    ]
+  },
+  "architectures": {
+    "#0": {
+      "name": "original_baseline",
+      "backbone": "timm inception_resnet_v2 pretrained ImageNet; num_classes=0; GAP feature 1536-D",
+      "head": "1536 -> Linear(1024) -> BN -> SiLU -> Dropout(0.2) -> Linear(1024) -> BN -> SiLU -> Dropout(0.2) -> Linear(176)",
+      "feature_extraction_location": "second 1024-D block output after Dropout and immediately before final Linear"
+    },
+    "#1": {
+      "name": "matched_deep_narrow_lambda_1",
+      "backbone": "identical to #0",
+      "head": "1536 -> input projection 256 -> five [Linear(256), BN, SiLU, Dropout(0.3)] mapping blocks with fixed residual lambda=1.0 -> stack five stage outputs -> arithmetic mean aggregation -> Dropout(0.2) -> Linear(176)",
+      "mhsa": false,
+      "terminal_global_identity_late_addition": false,
+      "aggregation": "unweighted arithmetic mean of all five post-shortcut stage tensors",
+      "feature_extraction_location": "256-D mean aggregation after Dropout and immediately before classifier"
+    },
+    "#2": {
+      "name": "scaling_only_lambda_0_1",
+      "identical_to": "#1 except fixed shortcut lambda",
+      "shortcut_lambda": 0.1,
+      "mhsa": false,
+      "terminal_global_identity_late_addition": false,
+      "aggregation": "unweighted arithmetic mean of all five post-shortcut stage tensors",
+      "feature_extraction_location": "256-D mean aggregation after Dropout and immediately before classifier"
+    },
+    "round2a_mhsa": {
+      "name": "deep_narrow_progressive_mapping_with_mhsa",
+      "backbone": "identical to Phase2B #0/#1",
+      "progressive_mapping": "f_i=F_i(f_{i-1})+lambda*f_{i-1}; five 256-D post-shortcut stages",
+      "tokens": "[f1,f2,f3,f4,f5]; f0 excluded",
+      "attention": "S_norm=LN(S); 4-head MHSA(dropout=0.1); S_fusion=LN(S+MHSA(S_norm))",
+      "aggregation": "unweighted mean pooling of five fused stages",
+      "terminal_global_identity_late_addition": false,
+      "feature_extraction_location": "256-D fused mean pooling after Dropout and before classifier"
+    }
+  },
+  "common_training_protocol": {
+    "batch_size": 64,
+    "num_workers": 4,
+    "pretrained_backbone": true,
+    "stage1_epochs": 150,
+    "stage2_epochs": 60,
+    "optimizer": "AdamW",
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_eps": 1e-08,
+    "stage1_backbone_lr": 0.0001,
+    "stage1_head_lr": 0.001,
+    "stage1_weight_decay": 0.001,
+    "stage1_warmup_epochs": 3,
+    "stage1_scheduler": "linear warmup then CosineAnnealingLR(T_max=147, eta_min=1e-5)",
+    "stage1_label_smoothing": 0.05,
+    "stage2_all_parameter_lr": 5e-05,
+    "stage2_weight_decay": 0.0005,
+    "stage2_scheduler": "CosineAnnealingLR(T_max=60, eta_min=1e-6)",
+    "stage2_label_smoothing": 0.03,
+    "loss_class_weight": "inverse class frequency from the fold training partition, clipped [0.2,5.0], mean-normalized; minority-below-median multiplier 1.1",
+    "amp": true,
+    "amp_dtype": "float16",
+    "amp_grad_scaler_init_scale": 4096,
+    "amp_overflow_behavior": "skip optimizer update for that batch, record count, and let GradScaler reduce scale",
+    "gradient_clip_norm": 5.0,
+    "bn_adaptation_batches_before_stage2": 50,
+    "checkpoint_selection": "maximum deterministic original-view held-out validation accuracy; exact tie selects earlier epoch; stage2 final checkpoint only from stage2",
+    "evaluation_rule": "eval mode, deterministic Resize(299,299)+ImageNet normalization, original view, FP32 logits",
+    "stage1_batch_augmentation": "CutMix p=0.5 alpha=1.0; Mixup p=0.4 alpha=0.4; none p=0.1; alpha linearly decays after 70% epochs",
+    "stage2_batch_augmentation": "none",
+    "spatial_augmentation_both_stages": [
+      "Resize(299,299)",
+      "RandomHorizontalFlip(p=0.5)",
+      "RandomVerticalFlip(p=0.5)",
+      "RandomRotation(180, fill white)",
+      "ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1)",
+      "RandomAffine(degrees=0, shear=5)",
+      "ToTensor",
+      "ImageNet normalization"
+    ],
+    "bn_adaptation": "50 no-grad training-mode batches from stage2 train loader before stage2 optimizer creation",
+    "formal_smoke_is_separate": true
+  },
+  "reporting": {
+    "primary": "pooled held-out OOF accuracy",
+    "secondary": [
+      "macro-F1",
+      "balanced accuracy",
+      "per-fold accuracy"
+    ],
+    "paired": [
+      "#0 vs #1",
+      "#1 vs #2"
+    ],
+    "bootstrap_replicates": 100000,
+    "bootstrap_seed": 20260807,
+    "mcnemar": "exact two-sided binomial test on correctness discordants"
+  },
+  "round2a_run": {
+    "run_id": "baseline_seed45",
+    "architecture_family": "baseline",
+    "shortcut_lambda": null,
+    "training_seed": 45,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "output_subdir": "baseline_seed45",
+    "mhsa": false,
+    "mhsa_heads": null,
+    "attention_dropout": null,
+    "terminal_residual": false,
+    "token_sequence": null
+  },
+  "provenance": {
+    "source_phase2b_config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\configs\\controlled_screen.json",
+    "source_phase2b_config_sha256": "751ced4f261d822cf20f59bbb346e95f8de465d6bf2075586822a9c213682659",
+    "allowed_differences": [
+      "training_seed"
+    ],
+    "round2a_instruction_sha256": "FC4D9CD4DA231A1117581AD0EE06F40AFA521B83A4FA770E704648DE731D4307",
+    "round2a_analysis_plan_sha256": "fa510dbcc69955cd0fb04a70aa52606cbdcda681807a8f5621107a65abb68e49",
+    "step1_audit_status": "PASS"
+  }
+}

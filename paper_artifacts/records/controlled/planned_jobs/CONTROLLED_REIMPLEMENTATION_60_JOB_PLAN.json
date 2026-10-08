@@ -1,0 +1,1811 @@
+{
+  "schema_version": 1,
+  "experiment": "final_controlled_reimplementation",
+  "formal_job_count": 60,
+  "training_authorized": false,
+  "formal_jobs_started": 0,
+  "scheduler_policy": "single-GPU independent jobs use shared dynamic queue; DFAG waits for same-fold Ours-FT; CAL requires exclusive two-GPU topology lease",
+  "fail_closed": true,
+  "jobs": [
+    {
+      "job_id": "l2_sp_cub_fold0",
+      "ordinal": 1,
+      "method": "l2_sp",
+      "dataset": "cub",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cub.json",
+      "config_sha256": "067c2c4a04c9183642a4c94527341176226ef896c9f5ba7dffc560dd8fa31d2f",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "l2_sp_cub_fold1",
+      "ordinal": 2,
+      "method": "l2_sp",
+      "dataset": "cub",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cub.json",
+      "config_sha256": "067c2c4a04c9183642a4c94527341176226ef896c9f5ba7dffc560dd8fa31d2f",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "l2_sp_cub_fold2",
+      "ordinal": 3,
+      "method": "l2_sp",
+      "dataset": "cub",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cub.json",
+      "config_sha256": "067c2c4a04c9183642a4c94527341176226ef896c9f5ba7dffc560dd8fa31d2f",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "l2_sp_cub_fold3",
+      "ordinal": 4,
+      "method": "l2_sp",
+      "dataset": "cub",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cub.json",
+      "config_sha256": "067c2c4a04c9183642a4c94527341176226ef896c9f5ba7dffc560dd8fa31d2f",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "l2_sp_cub_fold4",
+      "ordinal": 5,
+      "method": "l2_sp",
+      "dataset": "cub",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cub.json",
+      "config_sha256": "067c2c4a04c9183642a4c94527341176226ef896c9f5ba7dffc560dd8fa31d2f",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "l2_sp_cars_fold0",
+      "ordinal": 6,
+      "method": "l2_sp",
+      "dataset": "cars",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cars.json",
+      "config_sha256": "5af7842381f758cfaf57a25e8c586339aa0e35c855d326b5339fd85cd1341d60",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "l2_sp_cars_fold1",
+      "ordinal": 7,
+      "method": "l2_sp",
+      "dataset": "cars",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cars.json",
+      "config_sha256": "5af7842381f758cfaf57a25e8c586339aa0e35c855d326b5339fd85cd1341d60",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "l2_sp_cars_fold2",
+      "ordinal": 8,
+      "method": "l2_sp",
+      "dataset": "cars",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cars.json",
+      "config_sha256": "5af7842381f758cfaf57a25e8c586339aa0e35c855d326b5339fd85cd1341d60",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "l2_sp_cars_fold3",
+      "ordinal": 9,
+      "method": "l2_sp",
+      "dataset": "cars",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cars.json",
+      "config_sha256": "5af7842381f758cfaf57a25e8c586339aa0e35c855d326b5339fd85cd1341d60",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "l2_sp_cars_fold4",
+      "ordinal": 10,
+      "method": "l2_sp",
+      "dataset": "cars",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/l2_sp_cars.json",
+      "config_sha256": "5af7842381f758cfaf57a25e8c586339aa0e35c855d326b5339fd85cd1341d60",
+      "source_commit": "1426356195d79613b12c94ad8d6d0db576b09261",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_l2_sp_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cub_fold0",
+      "ordinal": 11,
+      "method": "mc_loss",
+      "dataset": "cub",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cub.json",
+      "config_sha256": "9f38209114009fe341a1b53c3323ec2629a36815021cff9bb2fe55b059bba59b",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cub_fold1",
+      "ordinal": 12,
+      "method": "mc_loss",
+      "dataset": "cub",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cub.json",
+      "config_sha256": "9f38209114009fe341a1b53c3323ec2629a36815021cff9bb2fe55b059bba59b",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cub_fold2",
+      "ordinal": 13,
+      "method": "mc_loss",
+      "dataset": "cub",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cub.json",
+      "config_sha256": "9f38209114009fe341a1b53c3323ec2629a36815021cff9bb2fe55b059bba59b",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cub_fold3",
+      "ordinal": 14,
+      "method": "mc_loss",
+      "dataset": "cub",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cub.json",
+      "config_sha256": "9f38209114009fe341a1b53c3323ec2629a36815021cff9bb2fe55b059bba59b",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cub_fold4",
+      "ordinal": 15,
+      "method": "mc_loss",
+      "dataset": "cub",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cub.json",
+      "config_sha256": "9f38209114009fe341a1b53c3323ec2629a36815021cff9bb2fe55b059bba59b",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cars_fold0",
+      "ordinal": 16,
+      "method": "mc_loss",
+      "dataset": "cars",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cars.json",
+      "config_sha256": "af666e9a64aafed6f249251397c477ca5dd634fce6e2317d74b8f6cf71f58691",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cars_fold1",
+      "ordinal": 17,
+      "method": "mc_loss",
+      "dataset": "cars",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cars.json",
+      "config_sha256": "af666e9a64aafed6f249251397c477ca5dd634fce6e2317d74b8f6cf71f58691",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cars_fold2",
+      "ordinal": 18,
+      "method": "mc_loss",
+      "dataset": "cars",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cars.json",
+      "config_sha256": "af666e9a64aafed6f249251397c477ca5dd634fce6e2317d74b8f6cf71f58691",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cars_fold3",
+      "ordinal": 19,
+      "method": "mc_loss",
+      "dataset": "cars",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cars.json",
+      "config_sha256": "af666e9a64aafed6f249251397c477ca5dd634fce6e2317d74b8f6cf71f58691",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "mc_loss_cars_fold4",
+      "ordinal": 20,
+      "method": "mc_loss",
+      "dataset": "cars",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/mc_loss_cars.json",
+      "config_sha256": "af666e9a64aafed6f249251397c477ca5dd634fce6e2317d74b8f6cf71f58691",
+      "source_commit": "befb3692cd0d5382eb32fa4e093226247f609fd9",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_mc_loss_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cub_fold0",
+      "ordinal": 21,
+      "method": "cal",
+      "dataset": "cub",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/cal_cub.json",
+      "config_sha256": "fd35c96a75309e92220955172adb644b8e1bcfccf716d6344abca5292376d1ac",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cub_fold1",
+      "ordinal": 22,
+      "method": "cal",
+      "dataset": "cub",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/cal_cub.json",
+      "config_sha256": "fd35c96a75309e92220955172adb644b8e1bcfccf716d6344abca5292376d1ac",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cub_fold2",
+      "ordinal": 23,
+      "method": "cal",
+      "dataset": "cub",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/cal_cub.json",
+      "config_sha256": "fd35c96a75309e92220955172adb644b8e1bcfccf716d6344abca5292376d1ac",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cub_fold3",
+      "ordinal": 24,
+      "method": "cal",
+      "dataset": "cub",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/cal_cub.json",
+      "config_sha256": "fd35c96a75309e92220955172adb644b8e1bcfccf716d6344abca5292376d1ac",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cub_fold4",
+      "ordinal": 25,
+      "method": "cal",
+      "dataset": "cub",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/cal_cub.json",
+      "config_sha256": "fd35c96a75309e92220955172adb644b8e1bcfccf716d6344abca5292376d1ac",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cars_fold0",
+      "ordinal": 26,
+      "method": "cal",
+      "dataset": "cars",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/cal_cars.json",
+      "config_sha256": "7226d2fbb83b8c267fc186401ae691d0f2c02baa3611c5c74cdb7b1239d4f61f",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cars_fold1",
+      "ordinal": 27,
+      "method": "cal",
+      "dataset": "cars",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/cal_cars.json",
+      "config_sha256": "7226d2fbb83b8c267fc186401ae691d0f2c02baa3611c5c74cdb7b1239d4f61f",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cars_fold2",
+      "ordinal": 28,
+      "method": "cal",
+      "dataset": "cars",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/cal_cars.json",
+      "config_sha256": "7226d2fbb83b8c267fc186401ae691d0f2c02baa3611c5c74cdb7b1239d4f61f",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cars_fold3",
+      "ordinal": 29,
+      "method": "cal",
+      "dataset": "cars",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/cal_cars.json",
+      "config_sha256": "7226d2fbb83b8c267fc186401ae691d0f2c02baa3611c5c74cdb7b1239d4f61f",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "cal_cars_fold4",
+      "ordinal": 30,
+      "method": "cal",
+      "dataset": "cars",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/cal_cars.json",
+      "config_sha256": "7226d2fbb83b8c267fc186401ae691d0f2c02baa3611c5c74cdb7b1239d4f61f",
+      "source_commit": "0ba9d5084f2532eeb21c9ef051c23f8b339595ff",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_cal_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 2,
+        "ddp_processes": 2,
+        "per_process_batch": 8,
+        "device_affinity_required": true
+      },
+      "execution_blocker": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cub_fold0",
+      "ordinal": 31,
+      "method": "ours_ft",
+      "dataset": "cub",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cub.json",
+      "config_sha256": "e36a0d032a4dab44e6842025eb0f5473708656a3d3a985fbeb8f24c64012fdef",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cub_fold1",
+      "ordinal": 32,
+      "method": "ours_ft",
+      "dataset": "cub",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cub.json",
+      "config_sha256": "e36a0d032a4dab44e6842025eb0f5473708656a3d3a985fbeb8f24c64012fdef",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cub_fold2",
+      "ordinal": 33,
+      "method": "ours_ft",
+      "dataset": "cub",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cub.json",
+      "config_sha256": "e36a0d032a4dab44e6842025eb0f5473708656a3d3a985fbeb8f24c64012fdef",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cub_fold3",
+      "ordinal": 34,
+      "method": "ours_ft",
+      "dataset": "cub",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cub.json",
+      "config_sha256": "e36a0d032a4dab44e6842025eb0f5473708656a3d3a985fbeb8f24c64012fdef",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cub_fold4",
+      "ordinal": 35,
+      "method": "ours_ft",
+      "dataset": "cub",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cub.json",
+      "config_sha256": "e36a0d032a4dab44e6842025eb0f5473708656a3d3a985fbeb8f24c64012fdef",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cars_fold0",
+      "ordinal": 36,
+      "method": "ours_ft",
+      "dataset": "cars",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cars.json",
+      "config_sha256": "012e845433ff36e49e1508aab3a0b0c6e478891d1473a69ee3fb3bf965d280cb",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cars_fold1",
+      "ordinal": 37,
+      "method": "ours_ft",
+      "dataset": "cars",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cars.json",
+      "config_sha256": "012e845433ff36e49e1508aab3a0b0c6e478891d1473a69ee3fb3bf965d280cb",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cars_fold2",
+      "ordinal": 38,
+      "method": "ours_ft",
+      "dataset": "cars",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cars.json",
+      "config_sha256": "012e845433ff36e49e1508aab3a0b0c6e478891d1473a69ee3fb3bf965d280cb",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cars_fold3",
+      "ordinal": 39,
+      "method": "ours_ft",
+      "dataset": "cars",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cars.json",
+      "config_sha256": "012e845433ff36e49e1508aab3a0b0c6e478891d1473a69ee3fb3bf965d280cb",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "ours_ft_cars_fold4",
+      "ordinal": 40,
+      "method": "ours_ft",
+      "dataset": "cars",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/ours_ft_cars.json",
+      "config_sha256": "012e845433ff36e49e1508aab3a0b0c6e478891d1473a69ee3fb3bf965d280cb",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_ours_ft_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cub_fold0",
+      "ordinal": 41,
+      "method": "progressive",
+      "dataset": "cub",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/progressive_cub.json",
+      "config_sha256": "932cece71e92718b0752c34fa6a5bb8faa7120c2336432b90d3780c393f10e87",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cub_fold1",
+      "ordinal": 42,
+      "method": "progressive",
+      "dataset": "cub",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/progressive_cub.json",
+      "config_sha256": "932cece71e92718b0752c34fa6a5bb8faa7120c2336432b90d3780c393f10e87",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cub_fold2",
+      "ordinal": 43,
+      "method": "progressive",
+      "dataset": "cub",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/progressive_cub.json",
+      "config_sha256": "932cece71e92718b0752c34fa6a5bb8faa7120c2336432b90d3780c393f10e87",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cub_fold3",
+      "ordinal": 44,
+      "method": "progressive",
+      "dataset": "cub",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/progressive_cub.json",
+      "config_sha256": "932cece71e92718b0752c34fa6a5bb8faa7120c2336432b90d3780c393f10e87",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cub_fold4",
+      "ordinal": 45,
+      "method": "progressive",
+      "dataset": "cub",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/progressive_cub.json",
+      "config_sha256": "932cece71e92718b0752c34fa6a5bb8faa7120c2336432b90d3780c393f10e87",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cars_fold0",
+      "ordinal": 46,
+      "method": "progressive",
+      "dataset": "cars",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/progressive_cars.json",
+      "config_sha256": "55cfdd60c0c32bb7b91ab461925689506c44aa1f09db1b8e1840bed6cb8c532d",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cars_fold1",
+      "ordinal": 47,
+      "method": "progressive",
+      "dataset": "cars",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/progressive_cars.json",
+      "config_sha256": "55cfdd60c0c32bb7b91ab461925689506c44aa1f09db1b8e1840bed6cb8c532d",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cars_fold2",
+      "ordinal": 48,
+      "method": "progressive",
+      "dataset": "cars",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/progressive_cars.json",
+      "config_sha256": "55cfdd60c0c32bb7b91ab461925689506c44aa1f09db1b8e1840bed6cb8c532d",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cars_fold3",
+      "ordinal": 49,
+      "method": "progressive",
+      "dataset": "cars",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/progressive_cars.json",
+      "config_sha256": "55cfdd60c0c32bb7b91ab461925689506c44aa1f09db1b8e1840bed6cb8c532d",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "progressive_cars_fold4",
+      "ordinal": 50,
+      "method": "progressive",
+      "dataset": "cars",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/progressive_cars.json",
+      "config_sha256": "55cfdd60c0c32bb7b91ab461925689506c44aa1f09db1b8e1840bed6cb8c532d",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_progressive_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": null,
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cub_fold0",
+      "ordinal": 51,
+      "method": "dfag",
+      "dataset": "cub",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/dfag_cub.json",
+      "config_sha256": "b9afde9c8408eba229b15f978bd45938e89c387371e2f055d66f8e81f5a155fe",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cub_fold0",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cub_fold1",
+      "ordinal": 52,
+      "method": "dfag",
+      "dataset": "cub",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/dfag_cub.json",
+      "config_sha256": "b9afde9c8408eba229b15f978bd45938e89c387371e2f055d66f8e81f5a155fe",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cub_fold1",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cub_fold2",
+      "ordinal": 53,
+      "method": "dfag",
+      "dataset": "cub",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/dfag_cub.json",
+      "config_sha256": "b9afde9c8408eba229b15f978bd45938e89c387371e2f055d66f8e81f5a155fe",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cub_fold2",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cub_fold3",
+      "ordinal": 54,
+      "method": "dfag",
+      "dataset": "cub",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/dfag_cub.json",
+      "config_sha256": "b9afde9c8408eba229b15f978bd45938e89c387371e2f055d66f8e81f5a155fe",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cub_fold3",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cub_fold4",
+      "ordinal": 55,
+      "method": "dfag",
+      "dataset": "cub",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/dfag_cub.json",
+      "config_sha256": "b9afde9c8408eba229b15f978bd45938e89c387371e2f055d66f8e81f5a155fe",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cub_fold4",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cars_fold0",
+      "ordinal": 56,
+      "method": "dfag",
+      "dataset": "cars",
+      "fold": 0,
+      "seed": 42,
+      "config_path": "configs/dfag_cars.json",
+      "config_sha256": "b4d919e739d25245992b4ed0e9b809e836adac69d7e726c4a89542a788154914",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cars_fold0",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cars_fold1",
+      "ordinal": 57,
+      "method": "dfag",
+      "dataset": "cars",
+      "fold": 1,
+      "seed": 42,
+      "config_path": "configs/dfag_cars.json",
+      "config_sha256": "b4d919e739d25245992b4ed0e9b809e836adac69d7e726c4a89542a788154914",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cars_fold1",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cars_fold2",
+      "ordinal": 58,
+      "method": "dfag",
+      "dataset": "cars",
+      "fold": 2,
+      "seed": 42,
+      "config_path": "configs/dfag_cars.json",
+      "config_sha256": "b4d919e739d25245992b4ed0e9b809e836adac69d7e726c4a89542a788154914",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cars_fold2",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cars_fold3",
+      "ordinal": 59,
+      "method": "dfag",
+      "dataset": "cars",
+      "fold": 3,
+      "seed": 42,
+      "config_path": "configs/dfag_cars.json",
+      "config_sha256": "b4d919e739d25245992b4ed0e9b809e836adac69d7e726c4a89542a788154914",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cars_fold3",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    },
+    {
+      "job_id": "dfag_cars_fold4",
+      "ordinal": 60,
+      "method": "dfag",
+      "dataset": "cars",
+      "fold": 4,
+      "seed": 42,
+      "config_path": "configs/dfag_cars.json",
+      "config_sha256": "b4d919e739d25245992b4ed0e9b809e836adac69d7e726c4a89542a788154914",
+      "source_commit": "workspace-audited-final-cross-backbone-semantics",
+      "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+      "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+      "input_resolution": [
+        299,
+        299
+      ],
+      "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+      "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+      "depends_on": "ours_ft_cars_fold4",
+      "resources": {
+        "gpu_count": 1,
+        "ddp_processes": 1,
+        "per_process_batch": null,
+        "device_affinity_required": false
+      },
+      "execution_blocker": null,
+      "status": "PLANNED_NOT_AUTHORIZED"
+    }
+  ]
+}

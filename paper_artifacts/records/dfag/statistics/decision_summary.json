@@ -1,0 +1,27 @@
+{
+  "classification": "BORDERLINE",
+  "reason": "Type B1: 3/3 positive against both primary references, but paired-CI evidence does not reach PASS",
+  "evidence": {
+    "stage1": {
+      "positive_seeds": 3,
+      "nonnegative_seeds": 3,
+      "mean_delta_pp": 0.05085453785938313,
+      "ci_fully_positive_seeds": 0,
+      "ci_fully_negative_seeds": 0,
+      "negative_direction_seeds": 0
+    },
+    "alpha_0_5": {
+      "positive_seeds": 3,
+      "nonnegative_seeds": 3,
+      "mean_delta_pp": 0.08173050727401376,
+      "ci_fully_positive_seeds": 0,
+      "ci_fully_negative_seeds": 0,
+      "negative_direction_seeds": 0
+    }
+  },
+  "independent_unit": "training seed",
+  "pooled_55059_significance_test": false,
+  "effect_magnitude_interpreted_with_dual_branch_cost": true,
+  "recommendation": "recommend seeds45/46 confirmation",
+  "automatic_seed45_46_launch": false
+}

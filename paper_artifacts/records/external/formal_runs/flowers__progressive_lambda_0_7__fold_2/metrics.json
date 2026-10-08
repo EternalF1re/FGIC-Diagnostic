@@ -1,0 +1,36 @@
+{
+  "job_id": "flowers__progressive_lambda_0_7__fold_2",
+  "dataset": "Oxford Flowers-102",
+  "method": "Progressive Head",
+  "shortcut_lambda": 0.7,
+  "fold": 2,
+  "stage1": {
+    "validation": {
+      "accuracy": 0.9877450980392157,
+      "macro_f1": 0.9875505757858699,
+      "balanced_accuracy": 0.9877450980392157
+    },
+    "secondary_official_test": {
+      "accuracy": 0.953651000162628,
+      "macro_f1": 0.9484866615646423,
+      "balanced_accuracy": 0.956014044392331
+    },
+    "best_epoch_zero_based": 85,
+    "best_validation_accuracy": 0.9877450980392157
+  },
+  "stage2": {
+    "validation": {
+      "accuracy": 0.9779411764705882,
+      "macro_f1": 0.9775910364145659,
+      "balanced_accuracy": 0.9779411764705882
+    },
+    "secondary_official_test": {
+      "accuracy": 0.9544641405106521,
+      "macro_f1": 0.9490458244605605,
+      "balanced_accuracy": 0.9543710504427414
+    },
+    "best_epoch_zero_based": 1,
+    "best_validation_accuracy": 0.9779411764705882
+  },
+  "representation_diagnostics": {}
+}

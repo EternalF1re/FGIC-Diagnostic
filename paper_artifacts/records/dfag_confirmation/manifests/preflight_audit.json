@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "all_passed": true,
+  "created_unix": 1786853888.951138,
+  "formal_jobs": 10,
+  "target_seeds": [
+    45,
+    46
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "checks": {
+    "static_preflight_pass": true,
+    "target_seeds_exact_45_46": true,
+    "five_folds_per_seed": true,
+    "ten_new_training_jobs": true,
+    "ten_comparator_tasks_complete": true,
+    "all_comparator_manifests_pass": true,
+    "alpha05_oof_18353_per_seed": true,
+    "sample_ids_exact_across_comparators": true,
+    "labels_exact_across_comparators": true,
+    "fold_mapping_exact_across_comparators": true,
+    "anchor_parameters_frozen": true,
+    "anchor_remains_eval": true,
+    "anchor_state_unchanged_in_train_mode_forward": true,
+    "anchor_bn_unchanged_in_train_mode_forward": true,
+    "plastic_stage2_bn_refresh_50": true,
+    "stage2_epochs_60": true,
+    "gate_definition_exact": true,
+    "no_ssph_mhsa_terminal_joint": true,
+    "no_fixed_gate_anchor_sweep_or_gating_source_training": true,
+    "formal_output_dirs_still_empty": true,
+    "seed42_44_and_all_protected_artifacts_unchanged": true,
+    "no_pooled_91765_significance_test": true,
+    "no_automatic_followup_scheduled": true
+  },
+  "comparator_ledger": [
+    {
+      "seed": 45,
+      "fold": 0,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed45\\fold_0\\alpha_0_5.npz",
+      "artifact_sha256": "8fc4e489c8cc42fab8cb210d82427560dde8f81d608523262ed34d5c6dfc442e",
+      "stage1_sha256": "924a33e678eef43f90b96c13597599206aee4bce1ad66681a415a11395eab726",
+      "stage2_sha256": "9eb9adc2e159e52b345d153a47accc8df67b94ea1f69fca9f6ba6bb793897535"
+    },
+    {
+      "seed": 45,
+      "fold": 1,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed45\\fold_1\\alpha_0_5.npz",
+      "artifact_sha256": "a77e3717cbb805296e7953234ef3068082aeae37017360ad29e54cc97f064a2f",
+      "stage1_sha256": "fd2727c1ed16c5bd1bd3aba4685a3b980f29d718c3aa3110e587946d9853f7fa",
+      "stage2_sha256": "90b6abd0801d3586c6ba518dcd39ad32881b8c4f46281fada9eb839527025366"
+    },
+    {
+      "seed": 45,
+      "fold": 2,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed45\\fold_2\\alpha_0_5.npz",
+      "artifact_sha256": "1f5c5fbe5115ffff4546cd9a47221038332d5a88a37191a5aaa962f4b3a8c494",
+      "stage1_sha256": "24b748963c0350d8cbf15eeed6b938467ae07ff0106369c670c1209895d28232",
+      "stage2_sha256": "712ac3c2a7d84ac7982e4238726f9a2e5ba82b2979ed16556400f76fe70ce81c"
+    },
+    {
+      "seed": 45,
+      "fold": 3,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed45\\fold_3\\alpha_0_5.npz",
+      "artifact_sha256": "7d44a9eaa106921076d145fe2f00fa07edfb098c71b896d586da41bd208de675",
+      "stage1_sha256": "b4b77e7aae30ce6c3d4aad94662ca93e46259e0d4502bd410a59954d58f226c9",
+      "stage2_sha256": "8f578930a1c4c1868d614ccd56adb306d6816bf3244cc86a70534778ce80944a"
+    },
+    {
+      "seed": 45,
+      "fold": 4,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed45\\fold_4\\alpha_0_5.npz",
+      "artifact_sha256": "4c89417d2b605b5c09496b4840a4870139b6864fca1a02b7386441ca9d17e1c0",
+      "stage1_sha256": "2a9fe199c7792dc401fa073bb4b1f4f483f05285f375f70832a8768dd26de4ba",
+      "stage2_sha256": "d7755dac8e19a2c6fbb5cc8914edda3ab25d877a7cfbdd7cc92ca60feb13f9a1"
+    },
+    {
+      "seed": 46,
+      "fold": 0,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed46\\fold_0\\alpha_0_5.npz",
+      "artifact_sha256": "b37bbef045e520e3a84b914ca4abd40a6cf737dcadd2ecafc2bade810d819af2",
+      "stage1_sha256": "9210894eb9245d52dad4c019d911287ef29095e52abe1ab10fd8d841c81cf36c",
+      "stage2_sha256": "a7a8bfb35269ad43fdc004d440c0739a4743abad97ec1a778204a79d61527bce"
+    },
+    {
+      "seed": 46,
+      "fold": 1,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed46\\fold_1\\alpha_0_5.npz",
+      "artifact_sha256": "b6d008bc690a2d62e35aa9319a2af501cb3bbee0c8725f0fca8d6ad19312ecec",
+      "stage1_sha256": "1266dc5651fc11df65cc4079f03aac1d6aea0b778fc033b4b1d5f9218f3ff22c",
+      "stage2_sha256": "de8f2a8d8188dd01c36fec7238ea97f51a26aa8fc2670a8f019cedfde4518869"
+    },
+    {
+      "seed": 46,
+      "fold": 2,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed46\\fold_2\\alpha_0_5.npz",
+      "artifact_sha256": "2c8f3237e3f28a33120dd06efe87952afcf769a064051833a6fd398c162fbb7d",
+      "stage1_sha256": "f7e94837f905b0bed60c05e6e51e083b7c5b42810c04e8bef61d09e675d56c4b",
+      "stage2_sha256": "2c5b3b17ca7222eda9f85a802055cbf8588534c5adf958efd8cb3242f0c05565"
+    },
+    {
+      "seed": 46,
+      "fold": 3,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed46\\fold_3\\alpha_0_5.npz",
+      "artifact_sha256": "8e63826c41028f7e41a1340d168f1563160293946e01e0005635a26916f075e8",
+      "stage1_sha256": "a097858979d08bbedb82104b17d75a454cc8d04909f303fd73edd322dd7ddced",
+      "stage2_sha256": "2c24f4430c99c3fca06fb89586644d331ce5528b035b98f57e7e1f39af3321c7"
+    },
+    {
+      "seed": 46,
+      "fold": 4,
+      "status": "COMPLETE",
+      "endpoint_fidelity_pass": true,
+      "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed46\\fold_4\\alpha_0_5.npz",
+      "artifact_sha256": "f8a48b6a9bd98004b38ca445c87b251b60a2078d803161420d6fd5b5502d6e63",
+      "stage1_sha256": "ffbd241154673d45bf1dcd9e493db1b29ea0d927203b88ff24c173ad3cc0c562",
+      "stage2_sha256": "22ad3424642fc164dc677ba31cda856219a0efde870a619240e29f050c39fb0d"
+    }
+  ],
+  "protected_source_changes": [],
+  "training_authorized": true
+}

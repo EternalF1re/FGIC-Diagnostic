@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETE",
+  "started_unix": 1786769471.8778455,
+  "formal_jobs": 15,
+  "queue": "shared_dynamic_gpu_queue",
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "seed45_46": false,
+  "fixed_g_training": false,
+  "anchor_sweep": false,
+  "gating_source_ablation": false,
+  "ssph_joint": false,
+  "completed_unix": 1786820681.684406,
+  "elapsed_seconds": 51209.80656051636
+}

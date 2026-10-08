@@ -1,0 +1,39 @@
+{
+  "phase": "Phase2D Round2A",
+  "source_config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\configs\\controlled_screen.json",
+  "source_config_sha256": "751ced4f261d822cf20f59bbb346e95f8de465d6bf2075586822a9c213682659",
+  "instruction_sha256": "FC4D9CD4DA231A1117581AD0EE06F40AFA521B83A4FA770E704648DE731D4307",
+  "analysis_plan_sha256": "fa510dbcc69955cd0fb04a70aa52606cbdcda681807a8f5621107a65abb68e49",
+  "effective_configs": [
+    {
+      "run_id": "mhsa_lambda_0_1_seed42",
+      "config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\configs\\mhsa_lambda_0_1_seed42.json",
+      "sha256": "8316dfd080a451ea8c367f8a2d0d4aba1bfdbd94bbfc383c703303f9dabece30"
+    },
+    {
+      "run_id": "mhsa_lambda_0_7_seed42",
+      "config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\configs\\mhsa_lambda_0_7_seed42.json",
+      "sha256": "3f57a2d32aeacc8a2261163ca70691f8f4b4d942901f894a97acf968fb6ea9d7"
+    },
+    {
+      "run_id": "mhsa_lambda_1_0_seed42",
+      "config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\configs\\mhsa_lambda_1_0_seed42.json",
+      "sha256": "3cce568b10a5f80fd0033bbb3148f24b77946e96bce3e97ef8009806945b8073"
+    },
+    {
+      "run_id": "baseline_seed45",
+      "config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\configs\\baseline_seed45.json",
+      "sha256": "a47942053aef73b44a1e944f4ce800e992045abe39256b7b6be399a53bdea6af"
+    },
+    {
+      "run_id": "baseline_seed46",
+      "config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\configs\\baseline_seed46.json",
+      "sha256": "ce5ba654d3128b1c8c60bed34aa498443269c2ade2fd7453278ae56101164e46"
+    }
+  ],
+  "new_mhsa_formal_runs": 15,
+  "new_baseline_formal_runs": 10,
+  "formal_runs": 25,
+  "training_authorized": true,
+  "stop_after_round2a": true
+}

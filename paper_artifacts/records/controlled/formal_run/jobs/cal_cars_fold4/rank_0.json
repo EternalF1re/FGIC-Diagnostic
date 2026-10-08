@@ -1,0 +1,10 @@
+{
+  "rank": 0,
+  "local_rank": 0,
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "world_size": 2,
+  "backend": "nccl",
+  "syncbn_count": 54,
+  "center_updates": 65120,
+  "status": "PASS"
+}

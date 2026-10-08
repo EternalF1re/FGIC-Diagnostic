@@ -1,0 +1,4 @@
+$ python -m ruff check src tests scripts/verify_published_results.py scripts/export_historical_results.py
+All checks passed!
+
+exit_code=0

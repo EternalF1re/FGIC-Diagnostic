@@ -1,0 +1,1015 @@
+请开始 Phase 2D Round 1 正式受控实验。
+
+项目根目录：
+<EXPERIMENT_ROOT>
+
+本轮目标只有两个：
+
+A. 用独立 training seeds 确认 baseline 中 Stage1 → Stage2
+   performance decline 是否稳定存在；
+
+B. 在完全相同协议下测试更温和的 shortcut scaling：
+   λ=0.7 和 λ=0.9，
+   判断 λ=0.1 是否确实过于激进，
+   以及 moderate λ 是否能在 representation continuity
+   与 inter-stage transformation 之间取得更合理平衡。
+
+============================================================
+0. 最高优先级规则
+============================================================
+
+1. 严格复用 Phase2B controlled protocol。
+
+2. 不允许为了结果更好而修改：
+   - architecture
+   - augmentation
+   - optimizer
+   - scheduler
+   - class weighting
+   - checkpoint selection
+   - batch size
+   - BN adaptation
+   - evaluation protocol
+
+3. 本轮禁止运行：
+   - MHSA #3
+   - scaling+MHSA #4
+   - terminal residual #5
+   - 新 #6
+   - DFAG retraining
+   - earlier-anchor experiment
+   - bias variant
+   - λ=0.5
+   - λ=0.8
+   - 其他 λ
+
+4. 不允许根据中途结果自动增加实验。
+
+5. 完成 Round 1 后必须 STOP，等待人工 review。
+
+6. 不修改论文和 Fig.1–Fig.4。
+
+============================================================
+1. 新实验目录
+============================================================
+
+请创建：
+
+<EXPERIMENT_ROOT>\
+phase2_controlled_validation\
+phase2d_round1\
+
+建议结构：
+
+phase2d_round1/
+    configs/
+    baseline_seed43/
+    baseline_seed44/
+    lambda_0_7_seed42/
+    lambda_0_9_seed42/
+    oof/
+    representation/
+    statistics/
+    manifests/
+    logs/
+    00_PHASE2D_ROUND1_REPORT.md
+
+不要覆盖 Phase2B / Phase2C 的任何 artifact。
+
+============================================================
+2. 固定训练协议
+============================================================
+
+数据集：
+Classify Leaves
+
+num_classes:
+176
+
+input:
+299 × 299
+
+split：
+StratifiedKFold
+n_splits = 5
+shuffle = True
+split_random_state = 42
+
+重要：
+五个 fold 的 split 必须与 Phase2B 完全一致。
+
+------------------------------------------------------------
+training seed 语义
+------------------------------------------------------------
+
+Phase2B 原实验：
+
+training_seed = 42
+
+并且每个 fold 使用同一个 training seed，
+不是 seed + fold。
+
+本轮保持完全相同语义。
+
+baseline seed43：
+所有 5 folds 均使用 training_seed=43
+
+baseline seed44：
+所有 5 folds 均使用 training_seed=44
+
+λ=0.7：
+所有 5 folds 使用 training_seed=42
+
+λ=0.9：
+所有 5 folds 使用 training_seed=42
+
+============================================================
+3. Round 1 四个正式配置
+============================================================
+
+------------------------------------------------------------
+R1-A：Original baseline，seed=43
+------------------------------------------------------------
+
+必须与 Phase2B #0 architecture 完全一致：
+
+Inception-ResNet-v2 pretrained backbone
+
+GAP 1536-D
+
+classification head：
+
+1536
+→ Linear(1024)
+→ BN
+→ SiLU
+→ Dropout(0.2)
+→ Linear(1024)
+→ BN
+→ SiLU
+→ Dropout(0.2)
+→ Linear(176)
+
+training_seed = 43
+
+5 folds
+
+------------------------------------------------------------
+R1-B：Original baseline，seed=44
+------------------------------------------------------------
+
+和 R1-A 完全相同。
+
+唯一差异：
+
+training_seed = 44
+
+------------------------------------------------------------
+R1-C：Deep/narrow λ=0.7，seed=42
+------------------------------------------------------------
+
+必须与 Phase2B #1/#2 matched deep/narrow architecture 完全一致：
+
+1536
+→ input projection 256
+→ five mapping blocks
+
+每个 block：
+
+Linear(256)
+→ BN
+→ SiLU
+→ Dropout(0.3)
+
+然后：
+
+f_i = F_i(f_{i-1}) + λ f_{i-1}
+
+这里固定：
+
+λ = 0.7
+
+之后：
+
+stack f1...f5
+→ arithmetic mean
+→ Dropout(0.2)
+→ Linear(176)
+
+明确：
+
+MHSA = False
+
+terminal residual = False
+
+aggregation = arithmetic mean
+
+training_seed = 42
+
+5 folds
+
+------------------------------------------------------------
+R1-D：Deep/narrow λ=0.9，seed=42
+------------------------------------------------------------
+
+与 R1-C 完全一致。
+
+唯一差异：
+
+λ = 0.9
+
+============================================================
+4. Stage 1 协议
+============================================================
+
+150 epochs
+
+AdamW
+
+backbone LR:
+1e-4
+
+head LR:
+1e-3
+
+weight decay:
+1e-3
+
+warmup:
+3 epochs
+
+scheduler：
+
+linear warmup
+then
+CosineAnnealingLR(
+    T_max=147,
+    eta_min=1e-5
+)
+
+label smoothing:
+0.05
+
+batch size:
+64
+
+num_workers:
+4
+
+AMP:
+开启
+
+gradient clipping:
+norm = 5.0
+
+class weighting：
+
+必须基于每个 fold 的 training partition 计算：
+
+w_c = N / (C * n_c)
+
+少于该 fold 类别数量中位数的类别：
+× 1.1
+
+clip:
+[0.2, 5.0]
+
+最后：
+mean-normalize
+
+禁止使用 full train.csv class weights。
+
+------------------------------------------------------------
+Stage1 augmentation
+------------------------------------------------------------
+
+spatial augmentation 与 Phase2B 完全一致。
+
+batch-level：
+
+CutMix:
+p=0.5
+alpha=1.0
+
+Mixup:
+p=0.4
+alpha=0.4
+
+none:
+p=0.1
+
+前 70% Stage1 schedule 保持原增强强度。
+
+达到 70% 后，
+Mixup / CutMix strength
+在剩余 epoch 中线性衰减。
+
+不要修改原实现细节。
+
+------------------------------------------------------------
+Stage1 checkpoint
+------------------------------------------------------------
+
+每个 fold：
+
+按 deterministic original-view
+held-out validation accuracy
+
+选择唯一 best Stage1 checkpoint。
+
+如 accuracy 完全相同：
+选择更早 epoch。
+
+记录：
+
+best_stage1_epoch
+best_stage1_accuracy
+checkpoint SHA256
+
+============================================================
+5. Stage 2 协议
+============================================================
+
+从每个 fold 的 selected Stage1 checkpoint
+继续进入 Stage2。
+
+60 epochs
+
+在创建 Stage2 optimizer 之前：
+
+plastic model：
+
+train mode
+no_grad
+
+最多使用 50 个 augmented training batches
+refresh BatchNorm running statistics。
+
+这一阶段：
+
+不更新 trainable parameters。
+
+然后开始正式 Stage2 optimization。
+
+Stage2：
+
+AdamW
+
+lr:
+5e-5
+
+weight decay:
+5e-4
+
+CosineAnnealingLR：
+
+T_max=60
+eta_min=1e-6
+
+no warmup
+
+label smoothing:
+0.03
+
+Mixup:
+OFF
+
+CutMix:
+OFF
+
+spatial augmentation：
+保持 Phase2B Stage2 设置。
+
+AMP：
+保持一致。
+
+gradient clipping：
+norm=5.0
+
+best Stage2 checkpoint：
+
+必须来自 Stage2 epochs。
+
+selection rule 与 Phase2B 完全一致。
+
+============================================================
+6. 每一个正式 run 必须保存
+============================================================
+
+四配置 × 五折：
+
+共 20 个正式 runs。
+
+每个 run 保存：
+
+1. config
+2. run log
+3. Stage1 best checkpoint
+4. Stage2 best checkpoint
+5. Stage1 epoch history
+6. Stage2 epoch history
+7. best epoch
+8. best accuracy
+9. checkpoint SHA256
+10. AMP overflow counts
+11. runtime
+12. exit status
+
+保证所有文件唯一命名，
+禁止 GPU 并行时互相覆盖。
+
+============================================================
+7. OOF evaluation
+============================================================
+
+Stage1 和 Stage2 都必须做独立 OOF。
+
+使用：
+
+model.eval()
+torch.inference_mode()
+
+deterministic original view
+
+Resize(299,299)
+ImageNet normalization
+
+FP32 logits
+
+不做：
+HFlip TTA
+VFlip TTA
+fold ensemble
+
+每个配置每个阶段：
+
+18,353 / 18,353 samples
+
+检查：
+
+no duplicates
+no missing
+sample IDs aligned
+labels aligned
+fold assignments aligned
+
+计算：
+
+Accuracy
+Macro-F1
+Balanced Accuracy
+
+分别报告：
+
+per-fold
+pooled OOF
+
+============================================================
+8. Stage1 → Stage2 paired analysis
+============================================================
+
+对：
+
+baseline seed43
+baseline seed44
+λ=0.7 seed42
+λ=0.9 seed42
+
+分别做：
+
+Stage1 OOF
+vs
+Stage2 OOF
+
+计算：
+
+Δ Stage2 - Stage1 pp
+
+paired bootstrap 95% CI
+100,000 replicates
+
+exact two-sided McNemar
+
+prediction_changed_n
+
+n11
+n10
+n01
+n00
+
+correctness_discordant_n
+
+fold directions：
+
+positive / negative / equal
+
+Macro-F1 delta
+
+Balanced Accuracy delta
+
+============================================================
+9. Baseline multi-seed 汇总
+============================================================
+
+已有：
+
+#0 seed42
+来自 Phase2B
+
+新增：
+
+#0 seed43
+#0 seed44
+
+最后生成 baseline 三 seed 汇总。
+
+每个 seed 单独报告：
+
+Stage1 pooled OOF
+Stage2 pooled OOF
+Stage2 - Stage1 Δ
+McNemar
+CI
+5-fold direction
+
+然后跨：
+
+seed42
+seed43
+seed44
+
+汇总：
+
+Stage1 Accuracy mean ± std
+
+Stage2 Accuracy mean ± std
+
+Δ mean ± std
+
+Stage1 Macro-F1 mean ± std
+Stage2 Macro-F1 mean ± std
+
+Stage1 Balanced Acc mean ± std
+Stage2 Balanced Acc mean ± std
+
+重要：
+
+不要把：
+
+3 seeds × 5 folds = 15
+
+当成 15 个独立 training replicates。
+
+独立 repetition 单位是：
+training seed。
+
+五折属于同一 seed 下的 OOF construction / diagnostics。
+
+============================================================
+10. λ=0.7 / 0.9 与现有 seed42 配置直接比较
+============================================================
+
+复用 Phase2B 已有：
+
+#0 baseline λ=N/A
+#1 deep/narrow λ=1.0
+#2 deep/narrow λ=0.1
+
+它们均为：
+training_seed=42
+same folds
+
+加入新：
+
+λ=0.7
+λ=0.9
+
+形成：
+
+baseline
+λ=0.1
+λ=0.7
+λ=0.9
+λ=1.0
+
+但注意：
+
+baseline architecture 与 λ variants 不同，
+所以 scaling sensitivity 主曲线只使用：
+
+λ=0.1
+λ=0.7
+λ=0.9
+λ=1.0
+
+baseline 单独作为 architecture reference。
+
+------------------------------------------------------------
+正式 paired comparisons
+------------------------------------------------------------
+
+至少计算：
+
+λ=0.7 vs λ=1.0
+λ=0.9 vs λ=1.0
+
+λ=0.7 vs λ=0.1
+λ=0.9 vs λ=0.1
+
+λ=0.7 vs baseline #0
+λ=0.9 vs baseline #0
+
+分别在：
+
+Stage1
+Stage2
+
+做 paired OOF analysis。
+
+输出：
+
+delta pp
+95% CI
+McNemar
+n10/n01
+prediction changes
+fold directions
+Macro-F1 delta
+Balanced Accuracy delta
+
+============================================================
+11. Representation diagnostic
+============================================================
+
+对于所有 deep/narrow λ variants：
+
+λ=0.1
+λ=0.7
+λ=0.9
+λ=1.0
+
+都使用真实、对应 λ 训练得到的 checkpoint。
+
+不要做 inference-time 临时修改 λ。
+
+------------------------------------------------------------
+11.1 Stage1 和 Stage2 都分析
+------------------------------------------------------------
+
+这是本轮非常重要的一点。
+
+分别从：
+
+best Stage1 checkpoint
+best Stage2 checkpoint
+
+提取 held-out OOF：
+
+f1
+f2
+f3
+f4
+f5
+
+必须是实际：
+
+post-shortcut stage output
+
+shape 应为：
+
+[N_fold,256]
+
+------------------------------------------------------------
+11.2 Pairwise cosine
+------------------------------------------------------------
+
+10 个 pair：
+
+f1-f2
+f1-f3
+...
+f4-f5
+
+逐 sample cosine。
+
+输出：
+
+mean
+std
+median
+p05
+p25
+p75
+p95
+
+同时：
+
+mean off-diagonal cosine
+
+每 fold + pooled descriptive summary。
+
+------------------------------------------------------------
+11.3 Fold-wise centered linear CKA
+------------------------------------------------------------
+
+每 fold 内计算。
+
+不要跨 fold 拼 feature matrix 后算统一 CKA。
+
+10 个 pair。
+
+输出：
+
+每 fold CKA matrix
+
+以及 5-fold mean ± std。
+
+不要把 folds 当 independent seeds。
+
+------------------------------------------------------------
+11.4 Adjacent change
+------------------------------------------------------------
+
+计算：
+
+||f_i - f_{i-1}||_2
+
+以及：
+
+||f_i - f_{i-1}||_2 /
+(||f_{i-1}||_2 + 1e-12)
+
+以及：
+
+1 - cosine(f_i,f_{i-1})
+
+注意：
+
+normalized change > 1
+不能自动解释为 orthogonality。
+
+============================================================
+12. 新增：每层 representation norm
+============================================================
+
+这是本轮新增重点。
+
+对：
+
+f1
+f2
+f3
+f4
+f5
+
+逐 sample 计算：
+
+L2 norm
+
+分别报告：
+
+mean
+std
+median
+p05
+p25
+p75
+p95
+
+针对：
+
+λ=0.1
+λ=0.7
+λ=0.9
+λ=1.0
+
+以及：
+
+Stage1
+Stage2
+
+都生成 norm trajectory。
+
+目的是观察：
+
+不同 λ 下 representation scale
+是否随 depth 保持稳定或明显变化。
+
+不要把 norm decline
+直接解释成 representation degradation。
+
+============================================================
+13. λ^5 只作为解析辅助量
+============================================================
+
+报告中可以给：
+
+λ^5
+
+表示：
+
+连续五个 shortcut-only paths
+对应的纯 shortcut path coefficient。
+
+例如：
+
+0.1^5
+0.7^5
+0.9^5
+1.0^5
+
+但必须明确：
+
+λ^5 只描述
+“uninterrupted shortcut-only path”
+的直接系数。
+
+禁止写：
+
+λ=0.1 等价于完全删除 residual connection。
+
+因为每一层局部仍存在：
+
+λ f_{i-1}
+
+并且 F_i 的输入也包含前面传播的信息。
+
+============================================================
+14. 本轮核心科学问题
+============================================================
+
+Round1 只回答：
+
+Q1.
+Stage1→Stage2 performance decline
+是否在 baseline 的独立 training seeds
+43 和 44 中继续出现？
+
+Q2.
+λ=0.7 / 0.9
+是否相比 λ=1.0：
+
+降低过高的 inter-stage similarity，
+
+但又不像 λ=0.1
+产生那么强的 representation transformation？
+
+Q3.
+λ=0.7 / 0.9
+是否在 Stage1 和 Stage2 performance 上
+比 λ=0.1 / λ=1 更有竞争力？
+
+Q4.
+Stage2 是否对不同 λ
+产生不同程度的 performance erosion？
+
+Q5.
+representation geometry：
+
+cosine
+CKA
+adjacent change
+feature norm
+
+与 classification accuracy
+之间是否存在明显 trade-off？
+
+============================================================
+15. 不要自动得出的结论
+============================================================
+
+即使结果看起来明显，也不要自动写：
+
+- lower cosine = better
+- lower CKA = better
+- norm stability = better
+- λ=0.7 or 0.9 is optimal
+- Stage2 universally harms performance
+- scaling improves FGIC
+- λ=0.1 destroys semantics
+- λ=0.1 removes residual structure
+
+本轮仍然是 controlled experimental evidence。
+
+============================================================
+16. Integrity
+============================================================
+
+所有正式结果完成后检查：
+
+1. 20/20 runs COMPLETE
+2. exit code 0
+3. no NaN / Inf
+4. logits argmax == prediction
+5. OOF 18,353 complete
+6. no duplicate samples
+7. same fold assignment
+8. correct training seed
+9. correct λ
+10. config hash / checkpoint hash
+11. Stage1/Stage2 epoch count correct
+12. no accidental MHSA
+13. no terminal residual
+14. no unexpected architecture changes
+15. class weights aligned
+16. no file collision caused by 2-GPU parallel jobs
+
+若出现任何异常：
+不要自动忽略。
+
+写入：
+
+INTEGRITY_FAILURES.md
+
+============================================================
+17. GPU 并行
+============================================================
+
+当前有 2× RTX 5070 Ti。
+
+允许同时运行两个独立正式 run，
+但必须保证：
+
+- 每 run 独立输出目录
+- 独立 log
+- 独立 checkpoint path
+- 不共享 writable temp artifact
+- 不发生文件覆盖
+
+可以按：
+
+GPU0：
+baseline seed43 / λ=0.7
+
+GPU1：
+baseline seed44 / λ=0.9
+
+交错调度。
+
+============================================================
+18. Round 1 完成后的 STOP GATE
+============================================================
+
+全部完成后：
+
+禁止自动：
+
+- 补 λ=0.8
+- 补 λ=0.5
+- 启动 MHSA
+- 启动 terminal residual
+- 启动 DFAG
+- 补更多 seeds
+
+必须输出结果并等待人工 review。
+
+============================================================
+19. 最终回复格式
+============================================================
+
+完成后不要只说“训练完成”。
+
+请按下面顺序回复：
+
+1. 完整性
+   - 20/20 是否成功
+   - 是否出现异常
+
+2. Baseline multi-seed
+   - seed42/43/44
+   - Stage1
+   - Stage2
+   - Δ
+   - cross-seed mean ± std
+
+3. λ screen
+   - λ=0.1
+   - λ=0.7
+   - λ=0.9
+   - λ=1.0
+   - Stage1 / Stage2 performance
+
+4. paired statistics
+   - 所有关键 direct comparisons
+
+5. representation geometry
+   - cosine
+   - CKA
+   - adjacent change
+   - feature norm
+
+6. Stage1→Stage2
+   - 不同 λ 的 erosion magnitude
+
+7. 三个最重要发现
+
+8. 当前仍然不能声称什么
+
+9. 是否有 evidence 支持进入下一轮
+   但不要自动执行
+
+10. 所有关键输出路径
+
+再次强调：
+
+Round 1 完成即停止。

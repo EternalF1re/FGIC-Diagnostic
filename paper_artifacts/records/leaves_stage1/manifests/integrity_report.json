@@ -1,0 +1,193 @@
+{
+  "phase": "Phase2C P7",
+  "status": "PASS",
+  "training_performed": false,
+  "checks": [
+    {
+      "check": "instruction_sha256",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2c_inference_diagnostic\\manifests\\instruction_E1EC0AD1AE186BF8E6AEE0599F628F4A203A45F4270DD3D84C504ED5077DF337.txt"
+    },
+    {
+      "check": "no_training_or_parameter_updates",
+      "status": "PASS",
+      "detail": "no backward/optimizer.step/scaler.step calls"
+    },
+    {
+      "check": "p0_59_fields",
+      "status": "PASS",
+      "detail": "rows=59"
+    },
+    {
+      "check": "p0_oof_alignment",
+      "status": "PASS",
+      "detail": "Phase2A/Phase2B IDs, labels, folds"
+    },
+    {
+      "check": "p1_15_reproduction_gates",
+      "status": "PASS",
+      "detail": "pass=15/15"
+    },
+    {
+      "check": "p1_#0_oof_integrity",
+      "status": "PASS",
+      "detail": "n=18353, logits=(18353, 176)"
+    },
+    {
+      "check": "p1_#0_stage2_alignment",
+      "status": "PASS",
+      "detail": "exact IDs/labels"
+    },
+    {
+      "check": "p1_#1_oof_integrity",
+      "status": "PASS",
+      "detail": "n=18353, logits=(18353, 176)"
+    },
+    {
+      "check": "p1_#1_stage2_alignment",
+      "status": "PASS",
+      "detail": "exact IDs/labels"
+    },
+    {
+      "check": "p1_#1_cross_variant_labels",
+      "status": "PASS",
+      "detail": "exact"
+    },
+    {
+      "check": "p1_#2_oof_integrity",
+      "status": "PASS",
+      "detail": "n=18353, logits=(18353, 176)"
+    },
+    {
+      "check": "p1_#2_stage2_alignment",
+      "status": "PASS",
+      "detail": "exact IDs/labels"
+    },
+    {
+      "check": "p1_#2_cross_variant_labels",
+      "status": "PASS",
+      "detail": "exact"
+    },
+    {
+      "check": "p1_deterministic_spotchecks",
+      "status": "PASS",
+      "detail": "15/15 bitwise repeated first batch"
+    },
+    {
+      "check": "p2_expected_accuracies",
+      "status": "PASS",
+      "detail": "exact pooled values"
+    },
+    {
+      "check": "p3_10_feature_manifests",
+      "status": "PASS",
+      "detail": "count=10"
+    },
+    {
+      "check": "p3_source_prediction_and_repeat",
+      "status": "PASS",
+      "detail": "all folds"
+    },
+    {
+      "check": "p3_#1_fold0_shape_finite",
+      "status": "PASS",
+      "detail": "n=3671, D=256"
+    },
+    {
+      "check": "p3_#1_fold1_shape_finite",
+      "status": "PASS",
+      "detail": "n=3671, D=256"
+    },
+    {
+      "check": "p3_#1_fold2_shape_finite",
+      "status": "PASS",
+      "detail": "n=3671, D=256"
+    },
+    {
+      "check": "p3_#1_fold3_shape_finite",
+      "status": "PASS",
+      "detail": "n=3670, D=256"
+    },
+    {
+      "check": "p3_#1_fold4_shape_finite",
+      "status": "PASS",
+      "detail": "n=3670, D=256"
+    },
+    {
+      "check": "p3_#1_oof_coverage",
+      "status": "PASS",
+      "detail": "18,353 unique IDs"
+    },
+    {
+      "check": "p3_#2_fold0_shape_finite",
+      "status": "PASS",
+      "detail": "n=3671, D=256"
+    },
+    {
+      "check": "p3_#2_fold1_shape_finite",
+      "status": "PASS",
+      "detail": "n=3671, D=256"
+    },
+    {
+      "check": "p3_#2_fold2_shape_finite",
+      "status": "PASS",
+      "detail": "n=3671, D=256"
+    },
+    {
+      "check": "p3_#2_fold3_shape_finite",
+      "status": "PASS",
+      "detail": "n=3670, D=256"
+    },
+    {
+      "check": "p3_#2_fold4_shape_finite",
+      "status": "PASS",
+      "detail": "n=3670, D=256"
+    },
+    {
+      "check": "p3_#2_oof_coverage",
+      "status": "PASS",
+      "detail": "18,353 unique IDs"
+    },
+    {
+      "check": "p3_cosine_pairwise.csv_finite",
+      "status": "PASS",
+      "detail": "rows=100"
+    },
+    {
+      "check": "p3_cosine_fold_summary.csv_finite",
+      "status": "PASS",
+      "detail": "rows=65"
+    },
+    {
+      "check": "p3_cka_foldwise.csv_finite",
+      "status": "PASS",
+      "detail": "rows=50"
+    },
+    {
+      "check": "p3_cka_summary.csv_finite",
+      "status": "PASS",
+      "detail": "rows=30"
+    },
+    {
+      "check": "p3_adjacent_change.csv_finite",
+      "status": "PASS",
+      "detail": "rows=120"
+    },
+    {
+      "check": "p4_oof_integrity",
+      "status": "PASS",
+      "detail": "standalone DFAG D_g=1536"
+    },
+    {
+      "check": "p5_recovery_classification",
+      "status": "PASS",
+      "detail": "EXPLORATORY / PROVENANCE PARTIAL"
+    },
+    {
+      "check": "diagnostic_plots_nonempty",
+      "status": "PASS",
+      "detail": "files=10"
+    }
+  ],
+  "failures": []
+}

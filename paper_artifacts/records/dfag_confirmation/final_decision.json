@@ -1,0 +1,51 @@
+{
+  "classification": "FAIL",
+  "criteria": {
+    "A_stage1_5_of_5_positive": true,
+    "B_alpha_0_5_5_of_5_positive": true,
+    "C_at_least_one_primary_has_3_of_5_strictly_positive_ci": false,
+    "D_other_primary_has_no_negative_direction_or_fully_negative_ci": true
+  },
+  "supporting_reference_for_C": [],
+  "reference_checked_for_D": [
+    "stage1",
+    "alpha_0_5"
+  ],
+  "evidence": {
+    "stage1": {
+      "seed_deltas_pp": {
+        "42": 0.0272435024246675,
+        "43": 0.032692202909601,
+        "44": 0.0926279082438807,
+        "45": 0.06538440581921323,
+        "46": 0.06538440581921323
+      },
+      "positive_seed_count": 5,
+      "negative_direction_seed_count": 0,
+      "ci_strictly_positive_count": 0,
+      "ci_fully_below_zero_count": 0,
+      "mean_delta_pp": 0.05666648504331513,
+      "sample_sd_delta_pp": 0.026859385482192313
+    },
+    "alpha_0_5": {
+      "seed_deltas_pp": {
+        "42": 0.032692202909601,
+        "43": 0.1253201111534929,
+        "44": 0.0871792077589472,
+        "45": 0.05448700484934621,
+        "46": 0.13621751212335997
+      },
+      "positive_seed_count": 5,
+      "negative_direction_seed_count": 0,
+      "ci_strictly_positive_count": 0,
+      "ci_fully_below_zero_count": 0,
+      "mean_delta_pp": 0.08717920775894947,
+      "sample_sd_delta_pp": 0.044432807797910014
+    }
+  },
+  "independent_unit": "training seed",
+  "pooled_91765_significance_test": false,
+  "borderline_allowed": false,
+  "additional_seed47_plus_authorized": false,
+  "rule": "PASS iff A and B and C and D; otherwise FAIL"
+}

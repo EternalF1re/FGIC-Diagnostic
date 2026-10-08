@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "stage": "STATIC_PRE_COMPARATOR",
+  "created_unix": 1786853611.6601446,
+  "formal_jobs": 10,
+  "target_seeds": [
+    45,
+    46
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "checks": {
+    "old_phase2f_integrity_pass": true,
+    "old_phase2f_classification_borderline": true,
+    "target_seeds_exact_45_46": true,
+    "five_folds_exact": true,
+    "ten_formal_jobs_exact": true,
+    "ten_stage1_sources_available": true,
+    "source_sha256_exact": true,
+    "state_schema_identical": true,
+    "split_provenance_available": true,
+    "plastic_stage2_protocol_identical_to_old_phase2f": true,
+    "dg_1536": true,
+    "r_16_hidden_96": true,
+    "bias_false": true,
+    "gate_parameters_exact": true,
+    "fspec_only_conditioning": true,
+    "fusion_formula_exact": true,
+    "common_anchor_plastic_initialization": true,
+    "anchor_frozen_eval": true,
+    "no_ssph_mhsa_terminal_joint": true,
+    "no_fixed_gate_training": true,
+    "no_anchor_or_gating_source_ablation": true,
+    "new_output_dirs_absent": true,
+    "protected_snapshot_saved": true,
+    "protected_sources_unchanged_during_static_preflight": true,
+    "disk_free_at_least_12gb": true
+  },
+  "source_ledger": [
+    {
+      "seed": 45,
+      "fold": 0,
+      "selected_stage1_epoch_zero_based": 111,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed45\\fold_0\\best_stage1.pth",
+      "sha256": "924a33e678eef43f90b96c13597599206aee4bce1ad66681a415a11395eab726",
+      "state_key_count": 1320,
+      "state_schema_sha256": "3a5bf5b64893c641210be708d789622e184f99c1995d5371337246b5e9d43350",
+      "pass": true
+    },
+    {
+      "seed": 45,
+      "fold": 1,
+      "selected_stage1_epoch_zero_based": 138,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed45\\fold_1\\best_stage1.pth",
+      "sha256": "fd2727c1ed16c5bd1bd3aba4685a3b980f29d718c3aa3110e587946d9853f7fa",
+      "state_key_count": 1320,
+      "state_schema_sha256": "b5af1e7dfc108555d7bbdd5cb9b9cbcaee5c8e39d5d8db466257d08c8087b716",
+      "pass": true
+    },
+    {
+      "seed": 45,
+      "fold": 2,
+      "selected_stage1_epoch_zero_based": 133,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed45\\fold_2\\best_stage1.pth",
+      "sha256": "24b748963c0350d8cbf15eeed6b938467ae07ff0106369c670c1209895d28232",
+      "state_key_count": 1320,
+      "state_schema_sha256": "063103d5d019ec1e4184bd8b5836c471766ad161bddf2ed6c7e333864727c7df",
+      "pass": true
+    },
+    {
+      "seed": 45,
+      "fold": 3,
+      "selected_stage1_epoch_zero_based": 78,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed45\\fold_3\\best_stage1.pth",
+      "sha256": "b4b77e7aae30ce6c3d4aad94662ca93e46259e0d4502bd410a59954d58f226c9",
+      "state_key_count": 1320,
+      "state_schema_sha256": "04a794a953d8fa8baf74490aa52604fb64e5c693aa0fcdaa6991a94e4ba19f1d",
+      "pass": true
+    },
+    {
+      "seed": 45,
+      "fold": 4,
+      "selected_stage1_epoch_zero_based": 149,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed45\\fold_4\\best_stage1.pth",
+      "sha256": "2a9fe199c7792dc401fa073bb4b1f4f483f05285f375f70832a8768dd26de4ba",
+      "state_key_count": 1320,
+      "state_schema_sha256": "8342922a4a2b218f0e6b2c6eba05a3162041524051bf2694f3eb1168c89f306a",
+      "pass": true
+    },
+    {
+      "seed": 46,
+      "fold": 0,
+      "selected_stage1_epoch_zero_based": 108,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed46\\fold_0\\best_stage1.pth",
+      "sha256": "9210894eb9245d52dad4c019d911287ef29095e52abe1ab10fd8d841c81cf36c",
+      "state_key_count": 1320,
+      "state_schema_sha256": "80e3fa8a51e986fab9cbc4a603bcde1ebe4b2b78b87e84aea23c595e85a377bf",
+      "pass": true
+    },
+    {
+      "seed": 46,
+      "fold": 1,
+      "selected_stage1_epoch_zero_based": 101,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed46\\fold_1\\best_stage1.pth",
+      "sha256": "1266dc5651fc11df65cc4079f03aac1d6aea0b778fc033b4b1d5f9218f3ff22c",
+      "state_key_count": 1320,
+      "state_schema_sha256": "bc73ef17aed08bf672569e7da6e16b320a70501cfe46a8fe953a54417057ad19",
+      "pass": true
+    },
+    {
+      "seed": 46,
+      "fold": 2,
+      "selected_stage1_epoch_zero_based": 100,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed46\\fold_2\\best_stage1.pth",
+      "sha256": "f7e94837f905b0bed60c05e6e51e083b7c5b42810c04e8bef61d09e675d56c4b",
+      "state_key_count": 1320,
+      "state_schema_sha256": "05bd36f927945b024f327d6a1cd2a11b79c2f9747c97ccfd29f8c03b7269ee21",
+      "pass": true
+    },
+    {
+      "seed": 46,
+      "fold": 3,
+      "selected_stage1_epoch_zero_based": 112,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed46\\fold_3\\best_stage1.pth",
+      "sha256": "a097858979d08bbedb82104b17d75a454cc8d04909f303fd73edd322dd7ddced",
+      "state_key_count": 1320,
+      "state_schema_sha256": "979d826e2206521fb6ccfc78aacf0ad758d6f779b52c9b6949a4dbf61f425e35",
+      "pass": true
+    },
+    {
+      "seed": 46,
+      "fold": 4,
+      "selected_stage1_epoch_zero_based": 89,
+      "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed46\\fold_4\\best_stage1.pth",
+      "sha256": "ffbd241154673d45bf1dcd9e493db1b29ea0d927203b88ff24c173ad3cc0c562",
+      "state_key_count": 1320,
+      "state_schema_sha256": "795803b5eab2a5c9702ffe2bcfe214621aee823e6afd335c5a57a09c4ad2027d",
+      "pass": true
+    }
+  ],
+  "parameter_counts": {
+    "resident_parameters": 114523808,
+    "executed_parameters": 111715824,
+    "trainable_parameters": 57409360,
+    "frozen_parameters": 57114448,
+    "gate_parameters": 294912,
+    "anchor_branch_parameters": 57114448,
+    "plastic_branch_parameters": 57114448
+  },
+  "protected_snapshot": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\manifests\\protected_sources_before.json",
+  "protected_source_changes": [],
+  "free_bytes": 81417777152
+}

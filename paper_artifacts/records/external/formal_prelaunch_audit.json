@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "generated_at": "2026-08-17 09:45:37 +0800",
+  "instruction_sha256": "BD71375E67A7B6F53AD1797EE0C9E338F601A08ADFCFB4A82D05031BCB3027B5",
+  "formal_jobs_started": 0,
+  "checks": {
+    "config_sha_match": true,
+    "source_ledger_sha": "e784505f07d7f97e75644cf49735c1ec8111524ff9922c7e5aeaf2f878e27f6f",
+    "source_ledger_rows": true,
+    "source_ledger_unique": true,
+    "source_ledger_pending": true,
+    "stage1_smoothing": true,
+    "stage2_smoothing": true,
+    "batch_size": true,
+    "transforms": {
+      "cub_rotation_absent": true,
+      "cars_rotation_absent": true,
+      "flowers_rotation_present": true,
+      "vertical_flip_absent": true,
+      "affine_degrees_zero": true
+    },
+    "architecture": {
+      "Ours-FT:": {
+        "mhsa_absent": true,
+        "terminal_residual_absent": true,
+        "lambda_exact": true,
+        "five_mapping_blocks": true
+      },
+      "Progressive Head:0.1": {
+        "mhsa_absent": true,
+        "terminal_residual_absent": true,
+        "lambda_exact": true,
+        "five_mapping_blocks": true
+      },
+      "Progressive Head:0.7": {
+        "mhsa_absent": true,
+        "terminal_residual_absent": true,
+        "lambda_exact": true,
+        "five_mapping_blocks": true
+      },
+      "Progressive Head:1.0": {
+        "mhsa_absent": true,
+        "terminal_residual_absent": true,
+        "lambda_exact": true,
+        "five_mapping_blocks": true
+      }
+    },
+    "dataset_counts": {
+      "CUB-200-2011": {
+        "development": 5994,
+        "official_test": 5794
+      },
+      "Stanford Cars": {
+        "development": 8144,
+        "official_test": 8041
+      },
+      "Oxford Flowers-102": {
+        "development": 2040,
+        "official_test": 6149
+      }
+    }
+  },
+  "source_hashes": {
+    "config": "7f667c125983ca82ec36214b727ee8fbe3215f21562abd260f4018559f87e3e5",
+    "ledger": "e784505f07d7f97e75644cf49735c1ec8111524ff9922c7e5aeaf2f878e27f6f",
+    "formal_common": "1473be66357b533b5b2be0a4519b0bbc06bdff4a2bb110f37cbec5e4a5ef1ef2",
+    "runner": "29b2ccc62624b4d6824420ba55a73ba13146fa2d067c616800dc832331dde3f7",
+    "orchestrator": "cbe5a11189103f49f35de25d3cc64fc7dafdead249b7223d47da92499a2fd73d",
+    "aggregator": "8ac4e56f7f4782f9457670dac282ab7462f7a3c1f241e2c64a39c73779fbd306"
+  }
+}

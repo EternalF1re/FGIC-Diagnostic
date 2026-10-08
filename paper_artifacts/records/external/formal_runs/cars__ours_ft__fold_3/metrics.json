@@ -1,0 +1,36 @@
+{
+  "job_id": "cars__ours_ft__fold_3",
+  "dataset": "Stanford Cars",
+  "method": "Ours-FT",
+  "shortcut_lambda": null,
+  "fold": 3,
+  "stage1": {
+    "validation": {
+      "accuracy": 0.8987108655616943,
+      "macro_f1": 0.8934754768942905,
+      "balanced_accuracy": 0.8961431000971818
+    },
+    "secondary_official_test": {
+      "accuracy": 0.9113294366372342,
+      "macro_f1": 0.9096339787736404,
+      "balanced_accuracy": 0.9103765192186657
+    },
+    "best_epoch_zero_based": 147,
+    "best_validation_accuracy": 0.8987108655616943
+  },
+  "stage2": {
+    "validation": {
+      "accuracy": 0.8968692449355433,
+      "macro_f1": 0.8915710242426969,
+      "balanced_accuracy": 0.8940678652413347
+    },
+    "secondary_official_test": {
+      "accuracy": 0.9124487004103967,
+      "macro_f1": 0.911213483696649,
+      "balanced_accuracy": 0.9117227973456161
+    },
+    "best_epoch_zero_based": 4,
+    "best_validation_accuracy": 0.8968692449355433
+  },
+  "representation_diagnostics": {}
+}

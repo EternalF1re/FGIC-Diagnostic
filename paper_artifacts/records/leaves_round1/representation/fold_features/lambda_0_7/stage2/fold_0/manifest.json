@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "lambda_key": "lambda_0_7",
+  "lambda": 0.7,
+  "stage": 2,
+  "fold": 0,
+  "n": 3671,
+  "shape": [
+    3671,
+    5,
+    256
+  ],
+  "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_7_seed42\\fold_0\\best_stage2.pth",
+  "checkpoint_sha256": "53c17dae7948751e3f06fc50f35d26469034fa3f3d5df7e321db1613e59a10e0",
+  "source_predictions_exact": true,
+  "manual_forward_exact": true,
+  "training_performed": false
+}

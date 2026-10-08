@@ -1,0 +1,9 @@
+{
+  "status": "ALL_COMPLETE",
+  "allowed_tasks": 15,
+  "variants": [
+    "#0",
+    "#1",
+    "#2"
+  ]
+}

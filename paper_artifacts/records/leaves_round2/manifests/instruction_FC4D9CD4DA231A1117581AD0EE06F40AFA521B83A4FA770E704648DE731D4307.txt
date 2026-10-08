@@ -1,0 +1,944 @@
+请继续 Phase 2D controlled validation。
+
+这是一个正式实验任务，不是 exploratory run。
+
+本轮名称：
+
+Phase2D Round2A — MHSA × Shortcut-Scaling Interaction
++ Baseline Five-Seed Confirmation
+
+最高原则：
+
+1. 严格复用 Phase2B / Phase2D Round1 的 unified controlled protocol。
+2. 不允许改变数据划分、增强、优化器、scheduler、Stage1/Stage2 流程或 evaluation protocol。
+3. 不允许根据中途结果自行增加 λ、seed、MHSA variant 或其他实验。
+4. 本轮结束后必须 STOP，等待人工审计。
+5. 不运行：
+   - λ=0.5
+   - λ=0.8
+   - terminal residual
+   - DFAG
+   - earlier-anchor DFAG
+   - learnable λ
+   - 不同 MHSA heads
+   - 其他未经指定的 ablation。
+6. 不重新训练已经存在的 no-MHSA seed42 对照，优先直接读取并核验既有正式 OOF/checkpoint。
+7. 所有新增正式实验必须保存完整 manifest、checkpoint、OOF、history、配置和 SHA-256。
+8. 所有统计必须基于真实 held-out OOF prediction，不使用 TTA，不混用历史 Phase2A 数据。
+
+==================================================
+STEP 0 — 在训练前冻结分析计划
+==================================================
+
+在任何新训练启动前，创建：
+
+phase2_controlled_validation/phase2d_round2a/
+ROUND2A_ANALYSIS_PLAN.md
+
+明确记录以下内容。
+
+--------------------------------------------------
+Primary scientific question
+--------------------------------------------------
+
+Does the effect of MHSA depend on the similarity level of
+progressively transformed representations induced by λ?
+
+--------------------------------------------------
+Factorial design
+--------------------------------------------------
+
+Factor A:
+shortcut coefficient λ ∈ {0.1, 0.7, 1.0}
+
+Factor B:
+MHSA ∈ {OFF, ON}
+
+training_seed = 42
+
+已有 OFF arms：
+
+λ=0.1, no MHSA, seed42
+λ=0.7, no MHSA, seed42
+λ=1.0, no MHSA, seed42
+
+本轮只训练 ON arms。
+
+--------------------------------------------------
+Primary outcome
+--------------------------------------------------
+
+Stage2 pooled OOF Accuracy
+
+Secondary:
+
+Macro-F1
+Balanced Accuracy
+
+--------------------------------------------------
+Primary MHSA effect
+--------------------------------------------------
+
+对每个 λ：
+
+Δ_MHSA(λ)
+=
+Accuracy(λ + MHSA)
+-
+Accuracy(λ without MHSA)
+
+--------------------------------------------------
+Primary interaction contrast
+--------------------------------------------------
+
+I_0.1_vs_1.0
+=
+Δ_MHSA(0.1)
+-
+Δ_MHSA(1.0)
+
+这是本轮最重要的统计量。
+
+必须在相同的 18,353 个 OOF samples 上通过
+sample-level paired bootstrap
+直接计算 difference-in-differences。
+
+bootstrap repetitions:
+100,000
+
+bootstrap seed:
+20260807
+
+报告：
+
+point estimate
+95% percentile CI
+
+不要用三个单独 McNemar p-value 的视觉差异
+代替 interaction analysis。
+
+--------------------------------------------------
+Secondary interaction contrasts
+--------------------------------------------------
+
+同时报告：
+
+Δ_MHSA(0.1) - Δ_MHSA(0.7)
+
+Δ_MHSA(0.7) - Δ_MHSA(1.0)
+
+这些属于 secondary analysis。
+
+--------------------------------------------------
+Pairwise MHSA comparisons
+--------------------------------------------------
+
+对每个 λ：
+
+MHSA ON vs MHSA OFF
+
+报告：
+
+Accuracy delta
+95% paired bootstrap CI
+McNemar exact two-sided p
+n10
+n01
+changed prediction count
+
+Macro-F1 delta
+Balanced-Accuracy delta
+
+==================================================
+STEP 1 — 零训练成本核验 baseline seed42/43/44
+==================================================
+
+在启动新模型前，先读取现有正式 baseline：
+
+seed42
+seed43
+seed44
+
+分别读取：
+
+Stage1 OOF prediction
+Stage2 OOF prediction
+ground-truth labels
+sample identifiers
+fold identifiers
+
+先验证：
+
+1. 三个 seed 的 OOF sample order 完全一致。
+2. labels 完全一致。
+3. 每个样本恰好一次 OOF。
+4. checkpoint hashes 不同且不存在误复用。
+5. prediction 文件来自正确 run。
+
+然后分别在：
+
+Stage1
+Stage2
+
+计算三组 pair：
+
+42 vs 43
+42 vs 44
+43 vs 44
+
+对于每一对，必须分别报告：
+
+A. pairwise prediction disagreement
+
+定义：
+
+pred_seedA != pred_seedB
+
+输出：
+
+count
+percentage
+
+这个量回答：
+两个模型的预测解是否真的不同。
+
+B. correctness discordants
+
+定义：
+
+A_correct_B_wrong
+A_wrong_B_correct
+
+输出：
+
+n10
+n01
+n10+n01
+
+这个量回答：
+相同 performance 是否只是 gain/loss 抵消。
+
+C. error-set overlap
+
+至少报告：
+
+both wrong count
+A-only wrong
+B-only wrong
+error-set Jaccard
+
+不要把 prediction disagreement 和 correctness discordants
+混成一个统计量。
+
+生成：
+
+baseline_seed42_44_pairwise_prediction_audit.csv
+
+和：
+
+BASELINE_THREE_SEED_PREDICTION_AUDIT.md
+
+只有核验通过才继续正式解释
+“Stage2 performance-level convergence”。
+
+如果 Stage2 seed 间 prediction disagreement
+异常低到个位数或极小量级：
+
+STOP
+报告潜在 checkpoint / OOF / pipeline reuse 问题，
+不要继续论文解释。
+
+如果 disagreement 明显存在，
+但 correctness discordants 基本抵消，
+则只允许使用：
+
+performance-level convergence
+
+不要使用：
+
+solution convergence
+same solution
+attractor
+representation convergence
+
+==================================================
+STEP 2 — Round2A 正式训练：3 个 MHSA arms
+==================================================
+
+运行：
+
+A1:
+λ = 0.1
+MHSA = ON
+terminal residual = OFF
+training_seed = 42
+5 folds
+
+A2:
+λ = 0.7
+MHSA = ON
+terminal residual = OFF
+training_seed = 42
+5 folds
+
+A3:
+λ = 1.0
+MHSA = ON
+terminal residual = OFF
+training_seed = 42
+5 folds
+
+共：
+
+3 configurations × 5 folds
+= 15 formal runs
+
+--------------------------------------------------
+必须完全匹配已有 controlled protocol
+--------------------------------------------------
+
+dataset:
+Classify Leaves
+
+fold:
+5-fold StratifiedKFold
+
+split_random_state:
+42
+
+training_seed:
+42
+
+Stage1:
+150 epochs
+
+optimizer:
+AdamW
+
+backbone lr:
+1e-4
+
+head lr:
+1e-3
+
+weight decay:
+1e-3
+
+warmup:
+3 epochs
+
+scheduler:
+cosine
+
+label smoothing:
+0.05
+
+Mixup:
+alpha 0.4
+p 0.4
+
+CutMix:
+alpha 1.0
+p 0.5
+
+Mixup/CutMix strength：
+前 70% schedule 不变，
+随后按现有 Phase2B 正式实现线性降低。
+
+Stage2:
+60 epochs
+
+optimizer:
+AdamW
+
+lr:
+5e-5
+
+weight decay:
+5e-4
+
+cosine schedule
+
+label smoothing:
+0.03
+
+Stage2:
+NO Mixup
+NO CutMix
+
+保留现有 spatial augmentation。
+
+Stage2 optimizer step 前：
+
+50 batches
+train mode
+no_grad
+只刷新 BatchNorm running statistics
+不更新参数。
+
+继续：
+
+AMP
+gradient clipping = 5
+
+保持现有 per-fold Leaves class weights。
+
+不得修改任何现有 protocol 字段。
+
+==================================================
+STEP 3 — MHSA 架构必须严格匹配论文设计
+==================================================
+
+progressive mapping：
+
+f_i = F_i(f_{i-1}) + λ f_{i-1}
+
+N = 5
+H = 256
+
+F_i：
+
+Linear(256,256)
+BatchNorm
+SiLU
+Dropout(0.3)
+
+使用：
+
+S = [f1,f2,f3,f4,f5]
+
+注意：
+
+f0 不进入 MHSA token sequence。
+
+MHSA：
+
+4 heads
+attention dropout = 0.1
+
+按照当前 Method 定义：
+
+S_norm = LN(S)
+
+S_attn = MHSA(S_norm)
+
+S_fusion = LN(S + S_attn)
+
+随后：
+
+mean pooling
+
+得到：
+
+f_deep
+
+本轮：
+
+禁止 terminal f0 residual。
+
+也就是说暂时不要：
+
+f0 + f_deep
+
+本轮只隔离测试：
+
+progressive mappings
++
+MHSA
+
+相对于：
+
+progressive mappings only
+
+不要让 terminal residual 混入交互。
+
+==================================================
+STEP 4 — Stage1 / Stage2 都保存正式 OOF
+==================================================
+
+每个配置都必须保存：
+
+Stage1 selected checkpoint OOF
+Stage2 final/formal OOF
+
+包括：
+
+sample_id
+fold
+ground_truth
+prediction
+logits/probabilities
+
+确保：
+
+18,353 samples
+exactly once each
+
+重新计算：
+
+Accuracy
+Macro-F1
+Balanced Accuracy
+
+Stage1 与 Stage2 都保存。
+
+==================================================
+STEP 5 — Representation geometry
+==================================================
+
+对三个 MHSA configs：
+
+λ=0.1
+λ=0.7
+λ=1.0
+
+Stage1 和 Stage2 都重新抽取：
+
+f1
+f2
+f3
+f4
+f5
+
+只使用 held-out OOF samples。
+
+继续使用 Round1 相同定义，
+计算：
+
+1. pairwise cosine
+2. mean off-diagonal cosine
+3. centered linear CKA
+4. adjacent normalized change
+5. per-layer feature norm
+
+目的：
+
+确认 MHSA joint training 是否改变了
+此前 λ 对 progressive-representation geometry 的影响。
+
+不要假设 geometry 会保持不变。
+
+输出格式尽量与 Round1：
+
+cosine_foldwise.csv
+cosine_pooled_summary.csv
+cka_foldwise.csv
+cka_summary.csv
+adjacent_change.csv
+feature_norms.csv
+
+兼容。
+
+==================================================
+STEP 6 — Attention diagnostic
+==================================================
+
+这是本轮新增的关键诊断。
+
+必须从真实 held-out OOF forward pass 中
+保存/读取 MHSA attention weights。
+
+不要使用训练样本统计代替 OOF。
+
+不要先平均后再算 entropy。
+
+--------------------------------------------------
+正确统计层级
+--------------------------------------------------
+
+原始 attention tensor 应保留：
+
+sample
+× head
+× query
+× key
+
+这里 token 数为 5：
+
+f1 ... f5
+
+对每一个：
+
+(sample, head, query)
+
+attention distribution over keys
+
+分别计算：
+
+A. normalized entropy
+
+H = -Σ p_k log(p_k)
+
+H_norm = H / log(5)
+
+B. maximum attention share
+
+max_k p_k
+
+先在：
+
+sample × head × query
+
+层面计算这两个量，
+
+然后再汇总。
+
+绝对禁止：
+
+先对 samples / heads / queries 求平均 attention vector，
+再对 mean attention vector 求 entropy。
+
+因为：
+
+H(mean A) != mean H(A)
+
+--------------------------------------------------
+建议输出
+--------------------------------------------------
+
+attention_token_level_stats.csv
+
+至少包含：
+
+lambda
+stage
+fold
+sample_id
+head
+query
+entropy_normalized
+max_attention_share
+
+如果文件过大，可额外保存 compact summary，
+但原始统计必须可复算。
+
+汇总：
+
+每个 λ × stage：
+
+mean
+std
+median
+p05
+p25
+p75
+p95
+
+并提供 fold-wise summary。
+
+--------------------------------------------------
+暂时不做的解释
+--------------------------------------------------
+
+不要自动写：
+
+lower λ -> better attention
+more concentrated attention -> better performance
+attention polarization
+Delta AttnRes mechanism confirmed
+
+只报告测得的关系。
+
+==================================================
+STEP 7 — Baseline seed45/46 并行确认
+==================================================
+
+如果资源允许，在另一计算资源上与 Round2A 并行：
+
+Baseline seed45
+Baseline seed46
+
+每个：
+
+5 folds
+
+严格使用与 seed42/43/44
+完全相同的 baseline architecture 和 protocol。
+
+共：
+
+2 seeds × 5 folds
+= 10 runs
+
+不得因 Round2A 结果改变这两个 baseline run。
+
+完成后 baseline 形成：
+
+seed42
+seed43
+seed44
+seed45
+seed46
+
+五个 independent training seeds。
+
+生成：
+
+baseline_fiveseed_per_seed.csv
+baseline_fiveseed_summary.csv
+
+报告：
+
+Stage1 Accuracy / Macro-F1 / Balanced Acc
+Stage2 Accuracy / Macro-F1 / Balanced Acc
+Stage2 - Stage1 delta
+
+跨 seed：
+
+mean
+sample SD
+min
+max
+range
+
+不要把：
+
+5 seeds × 5 folds = 25
+
+作为 25 个独立实验重复。
+
+seed 才是独立 training replicate。
+
+==================================================
+STEP 8 — 五 seed prediction-level convergence audit
+==================================================
+
+baseline seed45/46 完成后，
+
+把 STEP 1 的 prediction audit
+扩展至五个 seeds。
+
+对：
+
+42,43,44,45,46
+
+所有 pairwise combinations：
+
+C(5,2)=10 pairs
+
+分别在：
+
+Stage1
+Stage2
+
+计算：
+
+prediction disagreement
+correctness discordants
+error overlap
+
+生成：
+
+baseline_fiveseed_pairwise_prediction_audit.csv
+
+重点回答：
+
+1. Stage2 accuracy variance 是否继续明显低于 Stage1？
+2. Stage2 模型的 prediction disagreement 是否仍然较大？
+3. 如果 accuracy 收缩，但 predictions 仍明显不同，
+   则可描述为：
+   performance-level convergence
+   而不是 solution-level convergence。
+
+不要自行使用：
+attractor
+same basin
+same solution
+
+==================================================
+STEP 9 — Round2A interaction statistics
+==================================================
+
+已有 no-MHSA arms：
+
+λ=0.1
+λ=0.7
+λ=1.0
+
+与新增 MHSA arms逐样本对齐。
+
+首先计算：
+
+Δ_MHSA(0.1)
+Δ_MHSA(0.7)
+Δ_MHSA(1.0)
+
+然后 primary interaction：
+
+I =
+Δ_MHSA(0.1)
+-
+Δ_MHSA(1.0)
+
+必须使用相同 OOF sample index
+做 100,000 次 paired bootstrap。
+
+对每次 bootstrap：
+
+重新抽样 OOF sample indices with replacement
+
+计算：
+
+[Acc(MHSA_0.1) - Acc(noMHSA_0.1)]
+-
+[Acc(MHSA_1.0) - Acc(noMHSA_1.0)]
+
+保存 bootstrap distribution 或其可复核摘要。
+
+输出：
+
+interaction_point_estimate_pp
+CI95_low
+CI95_high
+
+建议同时给：
+
+bootstrap two-sided p-like tail probability
+
+但 primary inference 以 CI 为准。
+
+secondary：
+
+Δ0.1 - Δ0.7
+Δ0.7 - Δ1.0
+
+也同样报告 CI。
+
+==================================================
+STEP 10 — 不允许越界的结论
+==================================================
+
+本轮不预设结果。
+
+如果 interaction CI 明显不跨 0：
+
+只能表述：
+
+MHSA effect differs across tested shortcut-strength settings.
+
+然后再根据方向讨论。
+
+不能直接说：
+
+attention exploits diversity
+
+除非 attention diagnostic
+也提供一致方向证据。
+
+如果 interaction CI 跨 0：
+
+只能表述：
+
+No detectable λ-dependent MHSA interaction
+was observed under the controlled protocol.
+
+不要为了寻找显著结果继续自动尝试：
+
+λ=0.5
+λ=0.8
+不同 heads
+不同 dropout
+不同 attention depth
+
+==================================================
+STEP 11 — Postflight audit
+==================================================
+
+训练完成后进行严格审计。
+
+至少确认：
+
+1. 15 个 MHSA formal fold runs 均完成。
+2. baseline seed45/46 如启动，则 10 个 runs 均完成。
+3. 所有 Stage1/Stage2 checkpoint 存在。
+4. 所有 OOF coverage = 18,353 exactly once。
+5. prediction 与 logits argmax 一致。
+6. sample ordering 可跨模型严格配对。
+7. config fields 与 Phase2B/Round1 除目标因素外一致。
+8. checkpoint SHA-256。
+9. history epoch counts：
+   Stage1 = 150
+   Stage2 = 60
+10. MHSA configs：
+    terminal residual = OFF
+11. no-MHSA reference artifacts 未被覆盖。
+12. attention tensor rows / sample-head-query count 正确。
+13. bootstrap statistics 可复算。
+
+生成：
+
+manifests/postflight_audit.json
+
+==================================================
+STEP 12 — 最终输出
+==================================================
+
+整理：
+
+ROUND2A_RESULTS_AUDIT.md
+
+结构至少包括：
+
+1. Integrity summary
+2. Zero-cost three-seed baseline prediction audit
+3. New MHSA pooled OOF results
+4. Δ_MHSA for λ=0.1 / 0.7 / 1.0
+5. Primary interaction contrast
+6. Secondary interaction contrasts
+7. Representation geometry with/without MHSA
+8. Attention entropy / max-share analysis
+9. Baseline five-seed results
+10. Five-seed performance-level convergence audit
+11. What is supported
+12. What is not supported
+13. Exact list of output files
+
+同时生成 machine-readable：
+
+oof/round2a_oof_metrics.csv
+
+statistics/mhsa_effect_by_lambda.csv
+statistics/mhsa_lambda_interaction.csv
+statistics/baseline_fiveseed_per_seed.csv
+statistics/baseline_fiveseed_summary.csv
+statistics/baseline_fiveseed_pairwise_prediction_audit.csv
+
+representations/cosine_foldwise.csv
+representations/cosine_pooled_summary.csv
+representations/cka_foldwise.csv
+representations/cka_summary.csv
+representations/adjacent_change.csv
+representations/feature_norms.csv
+
+attention/attention_summary.csv
+attention/attention_foldwise.csv
+
+以及原始 attention statistics 的可复算文件。
+
+==================================================
+STOP GATE
+==================================================
+
+完成以上指定任务后：
+
+STOP。
+
+不要自动运行：
+
+terminal residual
+λ=0.5
+λ=0.8
+更多 training seeds for MS-LFA
+DFAG
+earlier anchor
+learnable λ
+其他 attention variants
+
+先把：
+
+ROUND2A_RESULTS_AUDIT.md
+
+和核心 CSV 汇总给我。
+
+这轮结果需要人工审计后，
+再决定 Phase2D Round2B。

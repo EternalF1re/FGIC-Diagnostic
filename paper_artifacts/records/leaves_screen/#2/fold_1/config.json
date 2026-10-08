@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "experiment_id": "PR-D-26-08203_PHASE2B_S1",
+  "scope": ["#0", "#1", "#2"],
+  "forbidden_scope": ["#3", "#4", "#5", "DFAG retraining"],
+  "dataset": {
+    "name": "Classify Leaves",
+    "root": "<LOCAL_PATH>",
+    "train_csv": "<LOCAL_PATH>",
+    "input_size": [3, 299, 299],
+    "num_classes": 176,
+    "label_mapping": "order of first appearance in train.csv"
+  },
+  "split": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "split_random_state": 42
+  },
+  "seed": {
+    "training_seed": 42,
+    "same_training_seed_every_fold": true,
+    "seed_plus_fold": false,
+    "controlled_sources": ["python random", "numpy", "torch CPU", "torch CUDA", "DataLoader generator", "worker_init_fn"]
+  },
+  "architectures": {
+    "#0": {
+      "name": "original_baseline",
+      "backbone": "timm inception_resnet_v2 pretrained ImageNet; num_classes=0; GAP feature 1536-D",
+      "head": "1536 -> Linear(1024) -> BN -> SiLU -> Dropout(0.2) -> Linear(1024) -> BN -> SiLU -> Dropout(0.2) -> Linear(176)",
+      "feature_extraction_location": "second 1024-D block output after Dropout and immediately before final Linear"
+    },
+    "#1": {
+      "name": "matched_deep_narrow_lambda_1",
+      "backbone": "identical to #0",
+      "head": "1536 -> input projection 256 -> five [Linear(256), BN, SiLU, Dropout(0.3)] mapping blocks with fixed residual lambda=1.0 -> stack five stage outputs -> arithmetic mean aggregation -> Dropout(0.2) -> Linear(176)",
+      "mhsa": false,
+      "terminal_global_identity_late_addition": false,
+      "aggregation": "unweighted arithmetic mean of all five post-shortcut stage tensors",
+      "feature_extraction_location": "256-D mean aggregation after Dropout and immediately before classifier"
+    },
+    "#2": {
+      "name": "scaling_only_lambda_0_1",
+      "identical_to": "#1 except fixed shortcut lambda",
+      "shortcut_lambda": 0.1,
+      "mhsa": false,
+      "terminal_global_identity_late_addition": false,
+      "aggregation": "unweighted arithmetic mean of all five post-shortcut stage tensors",
+      "feature_extraction_location": "256-D mean aggregation after Dropout and immediately before classifier"
+    }
+  },
+  "common_training_protocol": {
+    "batch_size": 64,
+    "num_workers": 4,
+    "pretrained_backbone": true,
+    "stage1_epochs": 150,
+    "stage2_epochs": 60,
+    "optimizer": "AdamW",
+    "adam_betas": [0.9, 0.999],
+    "adam_eps": 1e-8,
+    "stage1_backbone_lr": 0.0001,
+    "stage1_head_lr": 0.001,
+    "stage1_weight_decay": 0.001,
+    "stage1_warmup_epochs": 3,
+    "stage1_scheduler": "linear warmup then CosineAnnealingLR(T_max=147, eta_min=1e-5)",
+    "stage1_label_smoothing": 0.05,
+    "stage2_all_parameter_lr": 0.00005,
+    "stage2_weight_decay": 0.0005,
+    "stage2_scheduler": "CosineAnnealingLR(T_max=60, eta_min=1e-6)",
+    "stage2_label_smoothing": 0.03,
+    "loss_class_weight": "inverse class frequency from the fold training partition, clipped [0.2,5.0], mean-normalized; minority-below-median multiplier 1.1",
+    "amp": true,
+    "amp_dtype": "float16",
+    "amp_grad_scaler_init_scale": 4096,
+    "amp_overflow_behavior": "skip optimizer update for that batch, record count, and let GradScaler reduce scale",
+    "gradient_clip_norm": 5.0,
+    "bn_adaptation_batches_before_stage2": 50,
+    "checkpoint_selection": "maximum deterministic original-view held-out validation accuracy; exact tie selects earlier epoch; stage2 final checkpoint only from stage2",
+    "evaluation_rule": "eval mode, deterministic Resize(299,299)+ImageNet normalization, original view, FP32 logits",
+    "stage1_batch_augmentation": "CutMix p=0.5 alpha=1.0; Mixup p=0.4 alpha=0.4; none p=0.1; alpha linearly decays after 70% epochs",
+    "stage2_batch_augmentation": "none",
+    "spatial_augmentation_both_stages": [
+      "Resize(299,299)",
+      "RandomHorizontalFlip(p=0.5)",
+      "RandomVerticalFlip(p=0.5)",
+      "RandomRotation(180, fill white)",
+      "ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1)",
+      "RandomAffine(degrees=0, shear=5)",
+      "ToTensor",
+      "ImageNet normalization"
+    ],
+    "bn_adaptation": "50 no-grad training-mode batches from stage2 train loader before stage2 optimizer creation",
+    "formal_smoke_is_separate": true
+  },
+  "reporting": {
+    "primary": "pooled held-out OOF accuracy",
+    "secondary": ["macro-F1", "balanced accuracy", "per-fold accuracy"],
+    "paired": ["#0 vs #1", "#1 vs #2"],
+    "bootstrap_replicates": 100000,
+    "bootstrap_seed": 20260807,
+    "mcnemar": "exact two-sided binomial test on correctness discordants"
+  }
+}

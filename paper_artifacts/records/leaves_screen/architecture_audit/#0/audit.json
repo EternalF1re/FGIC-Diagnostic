@@ -1,0 +1,131 @@
+{
+  "variant": "#0",
+  "formal_training": false,
+  "separate_from_formal_seed_stream": true,
+  "device": "cuda:0",
+  "pretrained_backbone": true,
+  "config_path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\configs\\controlled_screen.json",
+  "config_sha256": "751ced4f261d822cf20f59bbb346e95f8de465d6bf2075586822a9c213682659",
+  "batch_size": 64,
+  "sample_ids_first_batch": [
+    6839,
+    5440,
+    5991,
+    14466,
+    11506,
+    11995,
+    12222,
+    3712,
+    12212,
+    3801,
+    18330,
+    12183,
+    10546,
+    7321,
+    16020,
+    5938,
+    9032,
+    18024,
+    5273,
+    7402,
+    12661,
+    6848,
+    13452,
+    1096,
+    8545,
+    10812,
+    3261,
+    11333,
+    14048,
+    9929,
+    9727,
+    17825,
+    1117,
+    4863,
+    13014,
+    5900,
+    939,
+    15421,
+    3746,
+    11017,
+    6018,
+    9607,
+    89,
+    5417,
+    2527,
+    15550,
+    7754,
+    8824,
+    3506,
+    9840,
+    5092,
+    6327,
+    5312,
+    8937,
+    17376,
+    1255,
+    8172,
+    9799,
+    17885,
+    16972,
+    7871,
+    9620,
+    3624,
+    9647
+  ],
+  "names_first_five": [
+    "images/6839.jpg",
+    "images/5440.jpg",
+    "images/5991.jpg",
+    "images/14466.jpg",
+    "images/11506.jpg"
+  ],
+  "output_shape": [
+    64,
+    176
+  ],
+  "feature_shape": [
+    64,
+    1024
+  ],
+  "expected_output_shape": [
+    64,
+    176
+  ],
+  "loss": 5.6798505783081055,
+  "loss_finite": true,
+  "all_trainable_gradients_present": true,
+  "all_present_gradients_finite": true,
+  "forward_backward_elapsed_seconds": 0.6516770000000012,
+  "peak_cuda_memory_bytes": 12202352128,
+  "tensor_graph": {
+    "backbone_gap": [
+      64,
+      1536
+    ],
+    "hidden_1": [
+      64,
+      1024
+    ],
+    "feature_pre_classifier": [
+      64,
+      1024
+    ],
+    "logits": [
+      64,
+      176
+    ]
+  },
+  "counts": {
+    "total_parameters": 57114448,
+    "trainable_parameters": 57114448,
+    "frozen_parameters": 0,
+    "backbone_parameters": 54306464,
+    "head_parameters": 2807984
+  },
+  "mhsa_module_count": 0,
+  "has_terminal_global_identity_late_addition": null,
+  "aggregation": "not applicable",
+  "shortcut_lambda": null,
+  "passed": true
+}

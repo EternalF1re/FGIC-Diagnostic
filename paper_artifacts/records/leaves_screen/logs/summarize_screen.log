@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\phase2b_screen\summarize_screen.py", line 187, in <module>
+    main()
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\phase2b_screen\summarize_screen.py", line 183, in main
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+UnicodeEncodeError: 'gbk' codec can't encode character '\u2212' in position 207: illegal multibyte sequence

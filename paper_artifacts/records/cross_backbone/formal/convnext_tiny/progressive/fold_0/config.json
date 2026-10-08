@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "experiment_id": "FINAL_CROSS_BACKBONE_EVALUATION_20260818",
+  "authority": {
+    "classify_leaves_config": "phase2_controlled_validation/phase2b_screen/configs/controlled_screen.json",
+    "classify_leaves_config_sha256": "751ced4f261d822cf20f59bbb346e95f8de465d6bf2075586822a9c213682659",
+    "standalone_dfag_config": "phase2_controlled_validation/phase2f_unified_standalone_dfag/configs/seed42.json",
+    "standalone_dfag_implementation": "phase2_controlled_validation/phase2f_unified_standalone_dfag/scripts/dfag_common.py",
+    "checkpoint_state_interpolation": "phase2_controlled_validation/phase2d_checkpoint_state_interpolation/scripts/csi_common_v2.py",
+    "old_cross_backbone_results_reused": false,
+    "old_cross_backbone_checkpoints_reused": false
+  },
+  "dataset": {
+    "name": "Classify Leaves",
+    "root": "<LOCAL_PATH>",
+    "train_csv": "<LOCAL_PATH>",
+    "input_size": [
+      3,
+      299,
+      299
+    ],
+    "num_classes": 176,
+    "label_mapping": "order of first appearance in train.csv"
+  },
+  "split": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "split_random_state": 42
+  },
+  "seed": {
+    "training_seed": 42,
+    "same_training_seed_every_fold": true,
+    "seed_plus_fold": false
+  },
+  "backbones": {
+    "resnet50": {
+      "timm_model_name": "resnet50",
+      "expected_dimension": 2048,
+      "actual_dimension": 2048,
+      "pretrained_hf_hub_id": "timm/resnet50.a1_in1k",
+      "batch_size": 64
+    },
+    "convnext_tiny": {
+      "timm_model_name": "convnext_tiny",
+      "expected_dimension": 768,
+      "actual_dimension": 768,
+      "pretrained_hf_hub_id": "timm/convnext_tiny.in12k_ft_in1k",
+      "batch_size": 64
+    }
+  },
+  "configurations": {
+    "ours_ft": {
+      "head": "D -> Linear(1024) -> BatchNorm1d -> SiLU -> Dropout(0.2) -> Linear(1024) -> BatchNorm1d -> SiLU -> Dropout(0.2) -> Linear(176)"
+    },
+    "progressive": {
+      "hidden_dimension": 256,
+      "mapping_blocks": 5,
+      "mapping_block": "Linear(256,256) -> BatchNorm1d -> SiLU -> Dropout(0.3)",
+      "shortcut_lambda": 0.7,
+      "aggregation": "arithmetic mean f1..f5 -> Dropout(0.2) -> Linear(176)",
+      "mhsa": false,
+      "terminal_residual": false,
+      "dfag": false
+    },
+    "dfag": {
+      "mode": "standalone dynamic",
+      "reduction": 16,
+      "gate_bias": false,
+      "gate_input": "f_spec only",
+      "fusion": "g*f_anc + (1-g)*f_spec",
+      "stage1_retrained": false,
+      "stage1_source": "same-backbone same-fold Ours-FT selected Stage-1 checkpoint from this experiment",
+      "progressive_head": false,
+      "mhsa": false
+    }
+  },
+  "common_training_protocol": {
+    "num_workers": 4,
+    "pretrained_backbone": true,
+    "stage1_epochs": 150,
+    "stage2_epochs": 60,
+    "optimizer": "AdamW",
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_eps": 1e-08,
+    "stage1_backbone_lr": 0.0001,
+    "stage1_head_lr": 0.001,
+    "stage1_weight_decay": 0.001,
+    "stage1_warmup_epochs": 3,
+    "stage1_scheduler": "linear warmup then CosineAnnealingLR(T_max=147, eta_min=1e-5)",
+    "stage1_label_smoothing": 0.05,
+    "stage2_all_parameter_lr": 5e-05,
+    "stage2_weight_decay": 0.0005,
+    "stage2_scheduler": "CosineAnnealingLR(T_max=60, eta_min=1e-6)",
+    "stage2_label_smoothing": 0.03,
+    "loss_class_weight": "inverse class frequency from fold training partition; clipped [0.2,5.0]; minority-below-median x1.1; mean-normalized",
+    "amp": true,
+    "amp_dtype": "float16",
+    "amp_grad_scaler_init_scale": 4096,
+    "gradient_clip_norm": 5.0,
+    "bn_adaptation_batches_before_stage2": 50,
+    "checkpoint_selection": "maximum deterministic original-view held-out validation accuracy; exact tie selects earlier epoch; stage2 final checkpoint only from stage2",
+    "stage1_batch_augmentation": "CutMix p=0.5 alpha=1.0; Mixup p=0.4 alpha=0.4; none p=0.1; alpha linearly decays after 70% epochs",
+    "stage2_batch_augmentation": "none",
+    "spatial_augmentation_both_stages": [
+      "Resize(299,299)",
+      "RandomHorizontalFlip(p=0.5)",
+      "RandomVerticalFlip(p=0.5)",
+      "RandomRotation(180, fill white)",
+      "ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1)",
+      "RandomAffine(degrees=0, shear=5)",
+      "ToTensor",
+      "ImageNet normalization"
+    ],
+    "validation_transform": "Resize(299,299) -> ToTensor -> ImageNet normalization",
+    "evaluation": "eval mode; original view; pooled five-fold OOF",
+    "tta": false,
+    "fold_ensemble": false
+  },
+  "interpolation": {
+    "alpha": 0.5,
+    "formula": "alpha*Stage1 + (1-alpha)*Stage2",
+    "floating_state_tensors": "interpolate complete state",
+    "nonfloating_state_tensors": "copy Stage2",
+    "training": false,
+    "bn_refresh": false
+  },
+  "formal_matrix": {
+    "backbones": [
+      "resnet50",
+      "convnext_tiny"
+    ],
+    "configurations": [
+      "ours_ft",
+      "progressive",
+      "dfag"
+    ],
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "jobs": 30
+  },
+  "statistics": {
+    "primary_unit": "paired pooled five-fold OOF sample",
+    "bootstrap_replicates": 100000,
+    "bootstrap_seed": 20260818,
+    "mcnemar": "exact two-sided binomial test",
+    "folds": "descriptive strata only"
+  }
+}

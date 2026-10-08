@@ -1,0 +1,6 @@
+{"backbone": "convnext_tiny", "fold": 0, "alpha0_pass": true, "alpha1_pass": true}
+{"backbone": "convnext_tiny", "fold": 1, "alpha0_pass": true, "alpha1_pass": true}
+{"backbone": "convnext_tiny", "fold": 2, "alpha0_pass": true, "alpha1_pass": true}
+{"backbone": "convnext_tiny", "fold": 3, "alpha0_pass": true, "alpha1_pass": true}
+{"backbone": "convnext_tiny", "fold": 4, "alpha0_pass": true, "alpha1_pass": true}
+{"status": "COMPLETE", "output": "<LOCAL_PATH>"}

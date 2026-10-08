@@ -1,0 +1,1 @@
+{"status": "COMPLETE", "job_id": "l2_sp_cub_fold3", "metrics": {"accuracy": 0.6872393661384487, "macro_f1": 0.6846307695572402, "balanced_accuracy": 0.687}}

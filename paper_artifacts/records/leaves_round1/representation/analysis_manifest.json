@@ -1,0 +1,86 @@
+{
+  "status": "COMPLETE",
+  "training_performed": false,
+  "lambda_keys": [
+    "lambda_0_1",
+    "lambda_0_7",
+    "lambda_0_9",
+    "lambda_1_0"
+  ],
+  "stages": [
+    1,
+    2
+  ],
+  "folds": 5,
+  "feature_dimension": 256,
+  "feature_files": 40,
+  "cosine_definition": "sample-wise cosine for each of 10 f1..f5 pairs",
+  "cka_definition": "centered linear CKA computed fold-wise in float64",
+  "coverage": [
+    {
+      "lambda_key": "lambda_0_1",
+      "lambda": 0.1,
+      "stage": 1,
+      "n": 18353,
+      "unique_n": 18353,
+      "covers_0_to_18352": true
+    },
+    {
+      "lambda_key": "lambda_0_1",
+      "lambda": 0.1,
+      "stage": 2,
+      "n": 18353,
+      "unique_n": 18353,
+      "covers_0_to_18352": true
+    },
+    {
+      "lambda_key": "lambda_0_7",
+      "lambda": 0.7,
+      "stage": 1,
+      "n": 18353,
+      "unique_n": 18353,
+      "covers_0_to_18352": true
+    },
+    {
+      "lambda_key": "lambda_0_7",
+      "lambda": 0.7,
+      "stage": 2,
+      "n": 18353,
+      "unique_n": 18353,
+      "covers_0_to_18352": true
+    },
+    {
+      "lambda_key": "lambda_0_9",
+      "lambda": 0.9,
+      "stage": 1,
+      "n": 18353,
+      "unique_n": 18353,
+      "covers_0_to_18352": true
+    },
+    {
+      "lambda_key": "lambda_0_9",
+      "lambda": 0.9,
+      "stage": 2,
+      "n": 18353,
+      "unique_n": 18353,
+      "covers_0_to_18352": true
+    },
+    {
+      "lambda_key": "lambda_1_0",
+      "lambda": 1.0,
+      "stage": 1,
+      "n": 18353,
+      "unique_n": 18353,
+      "covers_0_to_18352": true
+    },
+    {
+      "lambda_key": "lambda_1_0",
+      "lambda": 1.0,
+      "stage": 2,
+      "n": 18353,
+      "unique_n": 18353,
+      "covers_0_to_18352": true
+    }
+  ],
+  "scope_boundary": "descriptive mechanism diagnostic; folds are not independent seeds"
+}

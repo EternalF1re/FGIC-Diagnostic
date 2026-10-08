@@ -150,7 +150,22 @@ The reference snapshot is retained for forensic traceability. It contains origin
 
 ## Results and checkpoints
 
-Large checkpoints, datasets, raw OOF arrays and machine-local logs are intentionally excluded. Published numeric tables should be accompanied by their final audit documents and configuration hashes. The repository does not fabricate downloadable weights that were not approved for release.
+Historical sample-level OOF predictions and research records are now published in `paper_artifacts/`. They come from actual completed experiments, with original source hashes, public file hashes, training seeds, folds and configuration identities. `paper_artifacts/MANIFEST.csv` lists every published file.
+
+No model training or GPU is required to check the archived numbers:
+
+```bash
+python -m pip install numpy pandas scipy scikit-learn
+python scripts/verify_published_results.py --artifact-root paper_artifacts --output verification.json
+```
+
+The default command recomputes pooled Accuracy, Macro-F1, Balanced Accuracy, all recorded paired recipes including 100,000 bootstrap draws, exact two-sided McNemar, and independent-seed mean/sample SD. It also validates file hashes, unique sample IDs, common development pools and saved training/held-out splits. `--skip-bootstrap` is a faster integrity/metrics/p-value check and explicitly does not verify confidence intervals.
+
+Historical OOF CSVs can be checked directly. The existing `fgic train` and `reproduce/` entry points generate new experiment results; they are not substitutes for the archived result files. Diagnostic summaries such as CKA and gate variation are copied historical statistics; full feature tensors are omitted. Checkpoints, dataset images and original logits/probabilities are excluded for volume/licensing reasons. Sanitized historical logs, configs and manifests are included, with original and public hashes distinguished.
+
+See [provenance](docs/RESULTS_PROVENANCE.md), [paper mapping](docs/PAPER_TABLE_MAPPING.md), [known gaps](docs/REPRODUCIBILITY_GAPS.md), and [dataset access](docs/DATA_AVAILABILITY.md). The latest submitted manuscript/SI table numbers were not available for exact text-level reconciliation; the current mapping is at experiment/section level.
+
+The fixed results snapshot is [v1.1.0-paper-artifacts](https://github.com/EternalF1re/FGIC-Diagnostic/releases/tag/v1.1.0-paper-artifacts). See the [release audit](docs/PUBLISHED_RESULTS_RELEASE_AUDIT.md) for coverage, actual test counts, environment and raw verification outputs.
 
 ## License and attribution
 
@@ -158,4 +173,4 @@ The repository is released under the MIT License. Controlled baseline implementa
 
 ## Availability
 
-This is the public project repository for the code, frozen configuration files and protocol documentation: https://github.com/EternalF1re/FGIC-Diagnostic. Historical formal job ledgers are not claimed as part of the current public release; newly reproduced runs emit their own `run_manifest.json` and training history.
+The code, frozen configuration files, historical OOF predictions, recorded statistics and sanitized experiment provenance are available at https://github.com/EternalF1re/FGIC-Diagnostic. Coverage and omissions are documented above. Newly reproduced runs emit their own `run_manifest.json` and training history.

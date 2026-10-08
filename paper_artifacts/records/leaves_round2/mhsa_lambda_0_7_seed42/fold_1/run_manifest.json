@@ -1,0 +1,106 @@
+{
+  "status": "COMPLETE",
+  "phase": "Phase2D Round2A",
+  "run_id": "mhsa_lambda_0_7_seed42",
+  "fold": 1,
+  "split_id": "skf42_fold1",
+  "split_random_state": 42,
+  "training_seed": 42,
+  "shortcut_lambda": 0.7,
+  "architecture_family": "deep_narrow_mhsa",
+  "mhsa": true,
+  "mhsa_heads": 4,
+  "attention_dropout": 0.1,
+  "terminal_residual": false,
+  "token_sequence": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5"
+  ],
+  "device": "cuda:1",
+  "started_unix": 1786499652.546504,
+  "formal_training": true,
+  "config_sha256": "3f57a2d32aeacc8a2261163ca70691f8f4b4d942901f894a97acf968fb6ea9d7",
+  "round2a_runner_sha256": "592ecbcb1d4c3f9df50349c8fd97e46c5bf0952c745e1e47af4099aa317ff1ae",
+  "phase2b_train_one_sha256": "d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c",
+  "phase2b_screen_core_sha256": "d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921",
+  "completed_unix": 1786517470.8461907,
+  "elapsed_seconds": 17818.299686670303,
+  "environment": {
+    "python_executable": "<LOCAL_PATH>",
+    "python_version": "3.9.23",
+    "torch": "2.8.0+cu129",
+    "torchvision": "0.23.0+cu129",
+    "timm": "1.0.21",
+    "numpy": "1.24.3",
+    "sklearn": "1.6.1",
+    "device": "cuda:1",
+    "cuda_runtime": "12.9",
+    "cudnn": 91002,
+    "gpu_index": 1,
+    "gpu_name": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_memory_bytes": 17094475776
+  },
+  "model_counts": {
+    "total_parameters": 55340880,
+    "trainable_parameters": 55340880,
+    "frozen_parameters": 0,
+    "backbone_parameters": 54306464,
+    "head_parameters": 1034416
+  },
+  "bn_adaptation_batches_completed": 50,
+  "best_stage1_checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\mhsa_lambda_0_7_seed42\\fold_1\\best_stage1.pth",
+  "best_stage1_sha256": "a836c253468f08c9d36162a1c1bf897300c2188792372b1c0134cf6a247362ab",
+  "best_stage1_epoch_zero_based": 110,
+  "best_stage1_accuracy": 0.9782075728684282,
+  "best_stage2_checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\mhsa_lambda_0_7_seed42\\fold_1\\best_stage2.pth",
+  "best_stage2_sha256": "af5604571e082a680eadfbdbba2a5158f3d71765547fe00e882242069634757d",
+  "best_stage2_epoch_zero_based": 1,
+  "best_stage2_accuracy": 0.9773903568509943,
+  "stage1_amp_overflow_batches_total": 9,
+  "stage2_amp_overflow_batches_total": 1,
+  "history_counts": {
+    "stage1": 150,
+    "stage2": 60
+  },
+  "validation_artifacts": {
+    "stage1": {
+      "logits": "stage1_validation_logits.npy",
+      "features": "stage1_validation_features.npy",
+      "labels": "stage1_validation_labels.npy",
+      "sample_ids": "stage1_validation_sample_ids.npy",
+      "image_names": "stage1_validation_image_names.npy",
+      "predictions": "stage1_validation_predictions.npy"
+    },
+    "stage2": {
+      "logits": "stage2_validation_logits.npy",
+      "features": "stage2_validation_features.npy",
+      "labels": "stage2_validation_labels.npy",
+      "sample_ids": "stage2_validation_sample_ids.npy",
+      "image_names": "stage2_validation_image_names.npy",
+      "predictions": "stage2_validation_predictions.npy"
+    }
+  },
+  "metrics": {
+    "run_id": "mhsa_lambda_0_7_seed42",
+    "fold": 1,
+    "n": 3671,
+    "stage1": {
+      "accuracy": 0.9782075728684282,
+      "macro_f1": 0.9805099992872844,
+      "balanced_accuracy": 0.9817727354102265,
+      "best_epoch_zero_based": 110,
+      "best_accuracy": 0.9782075728684282
+    },
+    "stage2": {
+      "accuracy": 0.9773903568509943,
+      "macro_f1": 0.980056605213328,
+      "balanced_accuracy": 0.9805892613250126,
+      "best_epoch_zero_based": 1,
+      "best_accuracy": 0.9773903568509943
+    },
+    "feature_extraction_location": "256-D fused mean pooling after Dropout and before classifier"
+  }
+}

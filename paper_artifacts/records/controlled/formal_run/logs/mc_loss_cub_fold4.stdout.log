@@ -1,0 +1,1 @@
+{"status": "COMPLETE", "job_id": "mc_loss_cub_fold4", "metrics": {"accuracy": 0.679465776293823, "macro_f1": 0.6737303547845344, "balanced_accuracy": 0.6793333333333332}}

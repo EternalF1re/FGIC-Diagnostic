@@ -1,0 +1,22 @@
+{
+  "status": "FORMAL_RUNNING",
+  "time": 1787062127.2352643,
+  "smoke_status": "PASS",
+  "smoke_batches_per_stage": 16,
+  "formal_jobs": 30,
+  "shared_queue": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_cross_backbone_evaluation\\formal_queue.sqlite",
+  "workers": [
+    {
+      "gpu": 0,
+      "pid": 5468,
+      "stdout": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_cross_backbone_evaluation\\logs\\formal_workers\\gpu0.out.log",
+      "stderr": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_cross_backbone_evaluation\\logs\\formal_workers\\gpu0.err.log"
+    },
+    {
+      "gpu": 1,
+      "pid": 55740,
+      "stdout": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_cross_backbone_evaluation\\logs\\formal_workers\\gpu1.out.log",
+      "stderr": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_cross_backbone_evaluation\\logs\\formal_workers\\gpu1.err.log"
+    }
+  ]
+}

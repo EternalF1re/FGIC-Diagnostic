@@ -1,0 +1,31 @@
+{
+  "status": "ALL_10_COMPARATORS_COMPLETE",
+  "tasks": 10,
+  "training": false,
+  "started_unix": 1786853614.1659236,
+  "completed_unix": 1786853839.3054326,
+  "scheduler_summary": {
+    "status": "ALL_COMPLETE",
+    "task_count": 10,
+    "counts": {
+      "COMPLETE": 10
+    },
+    "devices": [
+      "cuda:0",
+      "cuda:1"
+    ],
+    "completed_by_device": {
+      "cuda:0": 5,
+      "cuda:1": 5
+    },
+    "busy_seconds_by_device": {
+      "cuda:0": 225.1345431804657,
+      "cuda:1": 225.12954664230347
+    },
+    "longest_first": true,
+    "started_unix": 1786853614.1659236,
+    "finished_unix": 1786853839.3054326,
+    "wall_seconds": 225.13950896263123,
+    "fail_closed": true
+  }
+}

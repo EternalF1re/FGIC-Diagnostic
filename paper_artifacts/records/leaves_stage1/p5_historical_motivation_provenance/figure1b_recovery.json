@@ -1,0 +1,48 @@
+{
+  "status": "EXPLORATORY / PROVENANCE PARTIAL",
+  "classification": "PROVENANCE_INCOMPLETE",
+  "source_log": "<EXPERIMENT_ROOT>\\实验进程\\未使用微残差且将x放入注意力中计算的注意力分数分配.txt",
+  "source_log_sha256": "b686ff1b7630e8443e7f3104e597277c03695a0e8f350dd8b3e3c9d50a205c52",
+  "source_log_mtime": 1774112648.0858538,
+  "recovered": {
+    "record_count": 5,
+    "model_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "epoch": 150,
+    "source_labels": [
+      "x0",
+      "f1",
+      "f2",
+      "f3",
+      "f4",
+      "f5"
+    ],
+    "rounded_mean_weights": [
+      0.27656000000000003,
+      0.16155999999999998,
+      0.10922000000000001,
+      0.08326,
+      0.0824,
+      0.28696
+    ]
+  },
+  "not_recovered": [
+    "exact fold identity",
+    "checkpoint path/hash",
+    "dataset assertion",
+    "training seed",
+    "sample count",
+    "sample population",
+    "attention head aggregation",
+    "query aggregation",
+    "code version that generated this six-source log"
+  ],
+  "safe_use": "May be described only as an exploratory historical five-record attention summary with partial provenance.",
+  "unsafe_use": "Must not be presented as a current #0 result, a representation-similarity measurement, or a fully reproducible quantitative experiment.",
+  "training_performed": false
+}

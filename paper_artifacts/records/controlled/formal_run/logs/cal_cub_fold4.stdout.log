@@ -1,0 +1,1 @@
+{"status": "COMPLETE", "job_id": "cal_cub_fold4", "metrics": {"accuracy": 0.8297161936560935, "macro_f1": 0.8284367576867576, "balanced_accuracy": 0.8294999999999999}}

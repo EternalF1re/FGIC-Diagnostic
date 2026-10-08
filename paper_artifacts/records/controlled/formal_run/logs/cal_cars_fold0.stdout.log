@@ -1,0 +1,1 @@
+{"status": "COMPLETE", "job_id": "cal_cars_fold0", "metrics": {"accuracy": 0.8717004297114794, "macro_f1": 0.8693844947762305, "balanced_accuracy": 0.8705357142857143}}

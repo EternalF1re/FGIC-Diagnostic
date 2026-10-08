@@ -1,0 +1,676 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "instruction",
+      "status": "PASS",
+      "detail": "3643a4a9cb1951ce5601efe72d918620060a17cdb8edbb9fae616e02832395ff"
+    },
+    {
+      "check": "old_directory_separate",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_weight_interpolation"
+    },
+    {
+      "check": "round2a_snapshot",
+      "status": "PASS",
+      "detail": "saved"
+    },
+    {
+      "check": "id_42_0",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_42_0_1",
+      "status": "PASS",
+      "detail": "01dd5f5ed26759a7f71ee7395153af4b428c9b3e978c0ae71939699af2a37672"
+    },
+    {
+      "check": "ckpt_id_42_0_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_42_0_2",
+      "status": "PASS",
+      "detail": "883208992c36585f5b4f13189f669166acea4fed8a4b706c100538b7bcdcd043"
+    },
+    {
+      "check": "ckpt_id_42_0_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_42_0",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_42_1",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_42_1_1",
+      "status": "PASS",
+      "detail": "0836ce78e00a782e4a14fdf159706a610c2bf11cb6d3f9b27d45f9b5208cd134"
+    },
+    {
+      "check": "ckpt_id_42_1_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_42_1_2",
+      "status": "PASS",
+      "detail": "158559841c702df56ef5c69923d60eef788cddaa8864f7795d64d6d341bc3fe2"
+    },
+    {
+      "check": "ckpt_id_42_1_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_42_1",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_42_2",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_42_2_1",
+      "status": "PASS",
+      "detail": "faa536d970967c3d46eb89a9eb1c95d4d27924d19e72387f74627c9f646f2ee3"
+    },
+    {
+      "check": "ckpt_id_42_2_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_42_2_2",
+      "status": "PASS",
+      "detail": "5663424c42a8a71b6563d9d025e30361ee030f10cb04afaeeabb131447f77a00"
+    },
+    {
+      "check": "ckpt_id_42_2_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_42_2",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_42_3",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_42_3_1",
+      "status": "PASS",
+      "detail": "89fb943b9ab79d207ee52bc20c392680edc4cdb8c6e122ed5cd149ea2cdf7a2d"
+    },
+    {
+      "check": "ckpt_id_42_3_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_42_3_2",
+      "status": "PASS",
+      "detail": "8be030462db412309a6dc6d82c52866f4083fe2e5b4d826e53abf103ce52917f"
+    },
+    {
+      "check": "ckpt_id_42_3_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_42_3",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_42_4",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_42_4_1",
+      "status": "PASS",
+      "detail": "d83dd9f7aec8f1598e50e2be8c543b040f2c5cdacfa3039e23f4ff92abe5fd9a"
+    },
+    {
+      "check": "ckpt_id_42_4_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_42_4_2",
+      "status": "PASS",
+      "detail": "acd7a72679c894bc83098df58a56221f20545f031e56ef076440689f53632f59"
+    },
+    {
+      "check": "ckpt_id_42_4_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_42_4",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "oof_42_1",
+      "status": "PASS",
+      "detail": "18353 aligned"
+    },
+    {
+      "check": "oof_42_2",
+      "status": "PASS",
+      "detail": "18353 aligned"
+    },
+    {
+      "check": "id_43_0",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_43_0_1",
+      "status": "PASS",
+      "detail": "80f6f6a7c00ddc6cdddd1212d06d4379d80b7733a7be865a8b3a2cff70a03ef2"
+    },
+    {
+      "check": "ckpt_id_43_0_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_43_0_2",
+      "status": "PASS",
+      "detail": "7e53f71573141d9ceda268a773052502a595231b492f25d9f2828872a0581df1"
+    },
+    {
+      "check": "ckpt_id_43_0_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_43_0",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_43_1",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_43_1_1",
+      "status": "PASS",
+      "detail": "11e16b466cc2ebc30689cecedbfb0724ff739ce09c61e586e24df739e2a8d500"
+    },
+    {
+      "check": "ckpt_id_43_1_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_43_1_2",
+      "status": "PASS",
+      "detail": "741f130c8a3832f9d9e191e37f4293740179496635180ba1efc7840cf168c626"
+    },
+    {
+      "check": "ckpt_id_43_1_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_43_1",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_43_2",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_43_2_1",
+      "status": "PASS",
+      "detail": "1e5eeee30b1722efadbffd30dd6de5843d897702786b5f9153ca51c448eb42e9"
+    },
+    {
+      "check": "ckpt_id_43_2_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_43_2_2",
+      "status": "PASS",
+      "detail": "04cd3a580e400de2bbdc0180f9a98302f4550f3639f9f67400cccc7e8e259425"
+    },
+    {
+      "check": "ckpt_id_43_2_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_43_2",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_43_3",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_43_3_1",
+      "status": "PASS",
+      "detail": "b27290b207c43d4109fd2764b16141291de8a16268d77062694bcfe622940501"
+    },
+    {
+      "check": "ckpt_id_43_3_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_43_3_2",
+      "status": "PASS",
+      "detail": "051d6599a856072b621614f44db13e36e46a40e94972d07ded09153d44af45f7"
+    },
+    {
+      "check": "ckpt_id_43_3_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_43_3",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_43_4",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_43_4_1",
+      "status": "PASS",
+      "detail": "6c306159ffea89ffcf886d6285dd9ba3740199417f43578c5e2d7ce658fbe7a3"
+    },
+    {
+      "check": "ckpt_id_43_4_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_43_4_2",
+      "status": "PASS",
+      "detail": "bde8f5f3d2a23f1bb8e52b63366f0b07630e9a106ddb0289e7bdce9cd9f59227"
+    },
+    {
+      "check": "ckpt_id_43_4_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_43_4",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "oof_43_1",
+      "status": "PASS",
+      "detail": "18353 aligned"
+    },
+    {
+      "check": "oof_43_2",
+      "status": "PASS",
+      "detail": "18353 aligned"
+    },
+    {
+      "check": "id_44_0",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_44_0_1",
+      "status": "PASS",
+      "detail": "9b8888ea9677c2afc6fdb76685c18d963459ba44675b7f2f3bdb5781a9842dad"
+    },
+    {
+      "check": "ckpt_id_44_0_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_44_0_2",
+      "status": "PASS",
+      "detail": "ada4f1765ae6d256b761e2cf0ec9d1a1371aa5ed1311001a1c0990781507f690"
+    },
+    {
+      "check": "ckpt_id_44_0_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_44_0",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_44_1",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_44_1_1",
+      "status": "PASS",
+      "detail": "639f74e21da6c1fa3f6ced44e12527c44541d46810baed7ea419b78611023854"
+    },
+    {
+      "check": "ckpt_id_44_1_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_44_1_2",
+      "status": "PASS",
+      "detail": "6ebea29665d7f9fa1e2c301e10177ddd0eb7fb4e0239f85689dc3ced14243453"
+    },
+    {
+      "check": "ckpt_id_44_1_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_44_1",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_44_2",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_44_2_1",
+      "status": "PASS",
+      "detail": "a657b6a5272e495baefd70efa58b0ee21fafe1b592a12559daaf041618d267e3"
+    },
+    {
+      "check": "ckpt_id_44_2_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_44_2_2",
+      "status": "PASS",
+      "detail": "f4b1ceebc9f6021fc5b8ffdfdd66a0b24adbb74e935def34288e14b5288bfc9d"
+    },
+    {
+      "check": "ckpt_id_44_2_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_44_2",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_44_3",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_44_3_1",
+      "status": "PASS",
+      "detail": "166d3d03fffac998d0be4614772643a1b15268c29c7a1a086574123f8dc3a140"
+    },
+    {
+      "check": "ckpt_id_44_3_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_44_3_2",
+      "status": "PASS",
+      "detail": "353e133ae36385d7c58d18a2b0fa497758a6d4369d61d4954e0886158c0577dc"
+    },
+    {
+      "check": "ckpt_id_44_3_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_44_3",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "id_44_4",
+      "status": "PASS",
+      "detail": "formal pair"
+    },
+    {
+      "check": "hash_44_4_1",
+      "status": "PASS",
+      "detail": "10305effa72b09ea5933d1a97a381957e1e701c275b05326c77635fb37bf755b"
+    },
+    {
+      "check": "ckpt_id_44_4_1",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "hash_44_4_2",
+      "status": "PASS",
+      "detail": "12ffdeea4b2ccd325e312138e2b870b7fa1fb47db9543a5a7afff56ad7f763f9"
+    },
+    {
+      "check": "ckpt_id_44_4_2",
+      "status": "PASS",
+      "detail": "identity"
+    },
+    {
+      "check": "schema_44_4",
+      "status": "PASS",
+      "detail": "1320"
+    },
+    {
+      "check": "oof_44_1",
+      "status": "PASS",
+      "detail": "18353 aligned"
+    },
+    {
+      "check": "oof_44_2",
+      "status": "PASS",
+      "detail": "18353 aligned"
+    },
+    {
+      "check": "forbidden_torch.optim",
+      "status": "PASS",
+      "detail": "torch.optim"
+    },
+    {
+      "check": "forbidden_backward(",
+      "status": "PASS",
+      "detail": "backward("
+    },
+    {
+      "check": "forbidden_reset_running_stats",
+      "status": "PASS",
+      "detail": "reset_running_stats"
+    },
+    {
+      "check": "forbidden_adapt_batch_norm",
+      "status": "PASS",
+      "detail": "adapt_batch_norm"
+    },
+    {
+      "check": "forbidden_model.train()",
+      "status": "PASS",
+      "detail": "model.train()"
+    },
+    {
+      "check": "required_model.eval()",
+      "status": "PASS",
+      "detail": "model.eval()"
+    },
+    {
+      "check": "required_alpha in (0.,1.)",
+      "status": "PASS",
+      "detail": "alpha in (0.,1.)"
+    },
+    {
+      "check": "required_ENDPOINT FIDELITY FAIL",
+      "status": "PASS",
+      "detail": "ENDPOINT FIDELITY FAIL"
+    },
+    {
+      "check": "required_make_state",
+      "status": "PASS",
+      "detail": "make_state"
+    }
+  ],
+  "entries": [
+    {
+      "seed": 42,
+      "fold": 0,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_0\\best_stage1.pth",
+      "stage1_sha256": "01dd5f5ed26759a7f71ee7395153af4b428c9b3e978c0ae71939699af2a37672",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_0\\best_stage2.pth",
+      "stage2_sha256": "883208992c36585f5b4f13189f669166acea4fed8a4b706c100538b7bcdcd043"
+    },
+    {
+      "seed": 42,
+      "fold": 1,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_1\\best_stage1.pth",
+      "stage1_sha256": "0836ce78e00a782e4a14fdf159706a610c2bf11cb6d3f9b27d45f9b5208cd134",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_1\\best_stage2.pth",
+      "stage2_sha256": "158559841c702df56ef5c69923d60eef788cddaa8864f7795d64d6d341bc3fe2"
+    },
+    {
+      "seed": 42,
+      "fold": 2,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_2\\best_stage1.pth",
+      "stage1_sha256": "faa536d970967c3d46eb89a9eb1c95d4d27924d19e72387f74627c9f646f2ee3",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_2\\best_stage2.pth",
+      "stage2_sha256": "5663424c42a8a71b6563d9d025e30361ee030f10cb04afaeeabb131447f77a00"
+    },
+    {
+      "seed": 42,
+      "fold": 3,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_3\\best_stage1.pth",
+      "stage1_sha256": "89fb943b9ab79d207ee52bc20c392680edc4cdb8c6e122ed5cd149ea2cdf7a2d",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_3\\best_stage2.pth",
+      "stage2_sha256": "8be030462db412309a6dc6d82c52866f4083fe2e5b4d826e53abf103ce52917f"
+    },
+    {
+      "seed": 42,
+      "fold": 4,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_4\\best_stage1.pth",
+      "stage1_sha256": "d83dd9f7aec8f1598e50e2be8c543b040f2c5cdacfa3039e23f4ff92abe5fd9a",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0\\fold_4\\best_stage2.pth",
+      "stage2_sha256": "acd7a72679c894bc83098df58a56221f20545f031e56ef076440689f53632f59"
+    },
+    {
+      "seed": 43,
+      "fold": 0,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_0\\best_stage1.pth",
+      "stage1_sha256": "80f6f6a7c00ddc6cdddd1212d06d4379d80b7733a7be865a8b3a2cff70a03ef2",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_0\\best_stage2.pth",
+      "stage2_sha256": "7e53f71573141d9ceda268a773052502a595231b492f25d9f2828872a0581df1"
+    },
+    {
+      "seed": 43,
+      "fold": 1,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_1\\best_stage1.pth",
+      "stage1_sha256": "11e16b466cc2ebc30689cecedbfb0724ff739ce09c61e586e24df739e2a8d500",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_1\\best_stage2.pth",
+      "stage2_sha256": "741f130c8a3832f9d9e191e37f4293740179496635180ba1efc7840cf168c626"
+    },
+    {
+      "seed": 43,
+      "fold": 2,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_2\\best_stage1.pth",
+      "stage1_sha256": "1e5eeee30b1722efadbffd30dd6de5843d897702786b5f9153ca51c448eb42e9",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_2\\best_stage2.pth",
+      "stage2_sha256": "04cd3a580e400de2bbdc0180f9a98302f4550f3639f9f67400cccc7e8e259425"
+    },
+    {
+      "seed": 43,
+      "fold": 3,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_3\\best_stage1.pth",
+      "stage1_sha256": "b27290b207c43d4109fd2764b16141291de8a16268d77062694bcfe622940501",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_3\\best_stage2.pth",
+      "stage2_sha256": "051d6599a856072b621614f44db13e36e46a40e94972d07ded09153d44af45f7"
+    },
+    {
+      "seed": 43,
+      "fold": 4,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_4\\best_stage1.pth",
+      "stage1_sha256": "6c306159ffea89ffcf886d6285dd9ba3740199417f43578c5e2d7ce658fbe7a3",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_4\\best_stage2.pth",
+      "stage2_sha256": "bde8f5f3d2a23f1bb8e52b63366f0b07630e9a106ddb0289e7bdce9cd9f59227"
+    },
+    {
+      "seed": 44,
+      "fold": 0,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_0\\best_stage1.pth",
+      "stage1_sha256": "9b8888ea9677c2afc6fdb76685c18d963459ba44675b7f2f3bdb5781a9842dad",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_0\\best_stage2.pth",
+      "stage2_sha256": "ada4f1765ae6d256b761e2cf0ec9d1a1371aa5ed1311001a1c0990781507f690"
+    },
+    {
+      "seed": 44,
+      "fold": 1,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_1\\best_stage1.pth",
+      "stage1_sha256": "639f74e21da6c1fa3f6ced44e12527c44541d46810baed7ea419b78611023854",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_1\\best_stage2.pth",
+      "stage2_sha256": "6ebea29665d7f9fa1e2c301e10177ddd0eb7fb4e0239f85689dc3ced14243453"
+    },
+    {
+      "seed": 44,
+      "fold": 2,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_2\\best_stage1.pth",
+      "stage1_sha256": "a657b6a5272e495baefd70efa58b0ee21fafe1b592a12559daaf041618d267e3",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_2\\best_stage2.pth",
+      "stage2_sha256": "f4b1ceebc9f6021fc5b8ffdfdd66a0b24adbb74e935def34288e14b5288bfc9d"
+    },
+    {
+      "seed": 44,
+      "fold": 3,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_3\\best_stage1.pth",
+      "stage1_sha256": "166d3d03fffac998d0be4614772643a1b15268c29c7a1a086574123f8dc3a140",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_3\\best_stage2.pth",
+      "stage2_sha256": "353e133ae36385d7c58d18a2b0fa497758a6d4369d61d4954e0886158c0577dc"
+    },
+    {
+      "seed": 44,
+      "fold": 4,
+      "stage1": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_4\\best_stage1.pth",
+      "stage1_sha256": "10305effa72b09ea5933d1a97a381957e1e701c275b05326c77635fb37bf755b",
+      "stage2": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_4\\best_stage2.pth",
+      "stage2_sha256": "12ffdeea4b2ccd325e312138e2b870b7fa1fb47db9543a5a7afff56ad7f763f9"
+    }
+  ],
+  "checkpoint_count": 30,
+  "state_tensor_keys": 1320,
+  "oof_n": 18353,
+  "source_hashes_saved": true,
+  "round2a_snapshot_saved": true,
+  "old_interpolation_snapshot_saved": true,
+  "check_count": 108,
+  "global_endpoint_gate_required": true,
+  "intermediate_alpha_authorized_only_after_gate": true
+}

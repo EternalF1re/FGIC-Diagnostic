@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checks": {
+    "all_165_complete": true,
+    "zero_gradient": true,
+    "no_bn_refresh": true,
+    "endpoint_gate": true,
+    "source_unchanged": true,
+    "round2a_unchanged": true,
+    "old_interpolation_unchanged": true,
+    "oof_exact": true,
+    "no_posthoc_selection": true,
+    "no_dfag": true
+  },
+  "completed_at": 1786523264.719647
+}

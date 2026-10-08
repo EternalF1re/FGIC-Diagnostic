@@ -1,0 +1,12 @@
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.0, "endpoint": {"stage": 2, "sample_ids_exact": true, "labels_exact": true, "predictions_exact": true, "logits_bitwise_equal": true, "max_abs_logit_difference": 0.0}, "elapsed": 24.841816902160645}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 1.0, "endpoint": {"stage": 1, "sample_ids_exact": true, "labels_exact": true, "predictions_exact": true, "logits_bitwise_equal": true, "max_abs_logit_difference": 0.0}, "elapsed": 23.803766012191772}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.1, "endpoint": null, "elapsed": 24.271409511566162}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.2, "endpoint": null, "elapsed": 24.210034370422363}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.3, "endpoint": null, "elapsed": 24.21723246574402}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.4, "endpoint": null, "elapsed": 25.358279943466187}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.5, "endpoint": null, "elapsed": 24.144508361816406}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.6, "endpoint": null, "elapsed": 24.303142309188843}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.7, "endpoint": null, "elapsed": 24.06198477745056}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.8, "endpoint": null, "elapsed": 24.269723415374756}
+{"status": "COMPLETE", "seed": 42, "fold": 0, "alpha": 0.9, "endpoint": null, "elapsed": 24.15698790550232}
+{"status": "TASK_COMPLETE", "seed": 42, "fold": 0, "alphas": 11}

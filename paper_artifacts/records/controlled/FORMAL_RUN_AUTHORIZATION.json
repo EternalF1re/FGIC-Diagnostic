@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "ready_for_formal_run": true,
+  "training_authorized": true,
+  "formal_jobs_started": 0,
+  "authorized_unix": 1787212965.6805148,
+  "plan_sha256": "1e4af9ba95615f58a08fe01371f9f0714ed4baf0e5768b5522ba1a28a5935e91",
+  "checks": {
+    "plan_sha": true,
+    "planned_copy_sha": true,
+    "job_count": true,
+    "source_gate": true,
+    "l2_source_trace": true,
+    "mc_inference_fidelity": true,
+    "adaptation_table_frozen": true,
+    "config_l2_sp_cub_fold0": true,
+    "config_l2_sp_cub_fold1": true,
+    "config_l2_sp_cub_fold2": true,
+    "config_l2_sp_cub_fold3": true,
+    "config_l2_sp_cub_fold4": true,
+    "config_l2_sp_cars_fold0": true,
+    "config_l2_sp_cars_fold1": true,
+    "config_l2_sp_cars_fold2": true,
+    "config_l2_sp_cars_fold3": true,
+    "config_l2_sp_cars_fold4": true,
+    "config_mc_loss_cub_fold0": true,
+    "config_mc_loss_cub_fold1": true,
+    "config_mc_loss_cub_fold2": true,
+    "config_mc_loss_cub_fold3": true,
+    "config_mc_loss_cub_fold4": true,
+    "config_mc_loss_cars_fold0": true,
+    "config_mc_loss_cars_fold1": true,
+    "config_mc_loss_cars_fold2": true,
+    "config_mc_loss_cars_fold3": true,
+    "config_mc_loss_cars_fold4": true,
+    "config_cal_cub_fold0": true,
+    "config_cal_cub_fold1": true,
+    "config_cal_cub_fold2": true,
+    "config_cal_cub_fold3": true,
+    "config_cal_cub_fold4": true,
+    "config_cal_cars_fold0": true,
+    "config_cal_cars_fold1": true,
+    "config_cal_cars_fold2": true,
+    "config_cal_cars_fold3": true,
+    "config_cal_cars_fold4": true,
+    "config_ours_ft_cub_fold0": true,
+    "config_ours_ft_cub_fold1": true,
+    "config_ours_ft_cub_fold2": true,
+    "config_ours_ft_cub_fold3": true,
+    "config_ours_ft_cub_fold4": true,
+    "config_ours_ft_cars_fold0": true,
+    "config_ours_ft_cars_fold1": true,
+    "config_ours_ft_cars_fold2": true,
+    "config_ours_ft_cars_fold3": true,
+    "config_ours_ft_cars_fold4": true,
+    "config_progressive_cub_fold0": true,
+    "config_progressive_cub_fold1": true,
+    "config_progressive_cub_fold2": true,
+    "config_progressive_cub_fold3": true,
+    "config_progressive_cub_fold4": true,
+    "config_progressive_cars_fold0": true,
+    "config_progressive_cars_fold1": true,
+    "config_progressive_cars_fold2": true,
+    "config_progressive_cars_fold3": true,
+    "config_progressive_cars_fold4": true,
+    "config_dfag_cub_fold0": true,
+    "config_dfag_cub_fold1": true,
+    "config_dfag_cub_fold2": true,
+    "config_dfag_cub_fold3": true,
+    "config_dfag_cub_fold4": true,
+    "config_dfag_cars_fold0": true,
+    "config_dfag_cars_fold1": true,
+    "config_dfag_cars_fold2": true,
+    "config_dfag_cars_fold3": true,
+    "config_dfag_cars_fold4": true,
+    "implementation_common/core.py": true,
+    "implementation_methods/l2_sp/model.py": true,
+    "implementation_methods/mc_loss/model.py": true,
+    "implementation_methods/cal/model.py": true,
+    "implementation_scripts/run_unit_tests.py": true,
+    "implementation_scripts/run_smoke.py": true,
+    "implementation_scripts/cal_ddp_preflight.py": true,
+    "l2_upstream_commit": true,
+    "mc_upstream_commit": true,
+    "cal_upstream_commit": true,
+    "pretrained_artifact": true,
+    "loaded_backbone_state_preflight": true,
+    "cub_fold_manifest": true,
+    "cub_class_map": true,
+    "cars_fold_manifest": true,
+    "cars_class_map": true,
+    "l2_sp_optimization_smoke": true,
+    "mc_loss_optimization_smoke": true,
+    "cal_optimization_smoke": true,
+    "cal_environment_closed": true,
+    "formal_runners_compile": true
+  },
+  "live_data_identity": {
+    "cub": {
+      "fold_manifest_sha256": "5c6434e484d5cfe9cbcf295c8e12b12f928203393f3949dc22a3159de7ea8189",
+      "class_map_sha256": "cdc625a9975bce41577d2e50a86b006fe854835d069c805d97d2237d835e1f00"
+    },
+    "cars": {
+      "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+      "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc"
+    }
+  },
+  "optimization_smokes": {
+    "l2_sp": {
+      "status": "PASS",
+      "formal_result": false,
+      "formal_training": false,
+      "dataset": "cub",
+      "fold": 0,
+      "seed": 42,
+      "method": "l2_sp",
+      "mini_epochs": 2,
+      "steps_per_mini_epoch": 3,
+      "device": "cuda:0",
+      "started_unix": 1787207889.0395122,
+      "completed_unix": 1787207901.3753324,
+      "elapsed_seconds": 12.335820436477661,
+      "optimization_steps": 6,
+      "loss_trace": [
+        7.133346080780029,
+        7.1329874992370605,
+        7.163577079772949,
+        7.100140571594238,
+        7.09896183013916,
+        7.12882137298584
+      ],
+      "loss_finite": true,
+      "loss_no_abnormal_explosion": true,
+      "backward": true,
+      "optimizer_step": true,
+      "scheduler": {
+        "observed": {
+          "0": 0.01,
+          "5999": 0.01,
+          "6000": 0.001,
+          "8999": 0.001
+        },
+        "expected": {
+          "0": 0.01,
+          "5999": 0.01,
+          "6000": 0.001,
+          "8999": 0.001
+        },
+        "pass": true
+      },
+      "checkpoint_selection": true,
+      "selected_mini_epoch": 0,
+      "checkpoint_roundtrip": true,
+      "checkpoint_sha256": "150982f8c94cac349b5c51fe963bc6d02b88bf67aa4103c5efa529c91ec3ab41",
+      "heldout_export": true,
+      "heldout_export_sha256": "6864cb243cc673436fa55f454b62e8e6747e1b10e4681d589ebd1ffaf43705a2",
+      "heldout_expected_count": 1199,
+      "heldout_exported_count": 1199,
+      "heldout_alignment": {
+        "count": true,
+        "sample_ids": true,
+        "labels": true,
+        "dataset_indices": true,
+        "fold_ids": true,
+        "unique_ids": true,
+        "finite_logits": true,
+        "all_pass": true
+      },
+      "heldout_reload_alignment": {
+        "count": true,
+        "sample_ids": true,
+        "labels": true,
+        "dataset_indices": true,
+        "fold_ids": true,
+        "unique_ids": true,
+        "finite_logits": true,
+        "all_pass": true
+      },
+      "epoch_records": [
+        {
+          "mini_epoch": 0,
+          "steps": 3,
+          "mean_loss": 7.143303553263347,
+          "heldout_accuracy_technical_only": 0.005838198498748957,
+          "lr": 0.01,
+          "alignment": {
+            "count": true,
+            "sample_ids": true,
+            "labels": true,
+            "dataset_indices": true,
+            "fold_ids": true,
+            "unique_ids": true,
+            "finite_logits": true,
+            "all_pass": true
+          }
+        },
+        {
+          "mini_epoch": 1,
+          "steps": 3,
+          "mean_loss": 7.109307924906413,
+          "heldout_accuracy_technical_only": 0.005838198498748957,
+          "lr": 0.01,
+          "alignment": {
+            "count": true,
+            "sample_ids": true,
+            "labels": true,
+            "dataset_indices": true,
+            "fold_ids": true,
+            "unique_ids": true,
+            "finite_logits": true,
+            "all_pass": true
+          }
+        }
+      ],
+      "smoke_accuracy_used_for_tuning": false,
+      "smoke_accuracy_formal_result": false,
+      "runtime_precision": "torch.autocast(cuda,bfloat16); parameters and optimizer states remain FP32",
+      "activation_checkpointing": "timm ResNet-50 native set_grad_checkpointing(True)",
+      "logical_batch_preserved": 64
+    },
+    "mc_loss": {
+      "status": "PASS",
+      "formal_result": false,
+      "formal_training": false,
+      "dataset": "cub",
+      "fold": 0,
+      "seed": 42,
+      "method": "mc_loss",
+      "mini_epochs": 2,
+      "steps_per_mini_epoch": 3,
+      "device": "cuda:0",
+      "started_unix": 1787207889.0384452,
+      "completed_unix": 1787207900.1407526,
+      "elapsed_seconds": 11.102307319641113,
+      "optimization_steps": 6,
+      "loss_trace": [
+        5.328937530517578,
+        5.303129196166992,
+        5.334536075592041,
+        5.324015140533447,
+        5.294479846954346,
+        5.2676496505737305
+      ],
+      "loss_finite": true,
+      "loss_no_abnormal_explosion": true,
+      "backward": true,
+      "optimizer_step": true,
+      "scheduler": {
+        "observed": {
+          "0": [
+            0.0001,
+            0.01
+          ],
+          "149": [
+            0.0001,
+            0.01
+          ],
+          "150": [
+            1e-05,
+            0.001
+          ],
+          "224": [
+            1e-05,
+            0.001
+          ],
+          "225": [
+            1.0000000000000002e-06,
+            0.0001
+          ],
+          "299": [
+            1.0000000000000002e-06,
+            0.0001
+          ]
+        },
+        "expected": {
+          "0": [
+            0.0001,
+            0.01
+          ],
+          "149": [
+            0.0001,
+            0.01
+          ],
+          "150": [
+            1e-05,
+            0.001
+          ],
+          "224": [
+            1e-05,
+            0.001
+          ],
+          "225": [
+            1e-06,
+            0.0001
+          ],
+          "299": [
+            1e-06,
+            0.0001
+          ]
+        },
+        "pass": true
+      },
+      "checkpoint_selection": true,
+      "selected_mini_epoch": 0,
+      "checkpoint_roundtrip": true,
+      "checkpoint_sha256": "d71781cc2ab87447fa5ffa1e8e3528b672b1d32fb4e44d97647445cbc3434c7d",
+      "heldout_export": true,
+      "heldout_export_sha256": "8a55dfb4fbeb26aafc9a18ac273d4c40d3653bc226e5ec4c450d61de18db714c",
+      "heldout_expected_count": 1199,
+      "heldout_exported_count": 1199,
+      "heldout_alignment": {
+        "count": true,
+        "sample_ids": true,
+        "labels": true,
+        "dataset_indices": true,
+        "fold_ids": true,
+        "unique_ids": true,
+        "finite_logits": true,
+        "all_pass": true
+      },
+      "heldout_reload_alignment": {
+        "count": true,
+        "sample_ids": true,
+        "labels": true,
+        "dataset_indices": true,
+        "fold_ids": true,
+        "unique_ids": true,
+        "finite_logits": true,
+        "all_pass": true
+      },
+      "epoch_records": [
+        {
+          "mini_epoch": 0,
+          "steps": 3,
+          "mean_loss": 5.322200934092204,
+          "heldout_accuracy_technical_only": 0.006672226855713094,
+          "lr": [
+            0.0001,
+            0.01
+          ],
+          "alignment": {
+            "count": true,
+            "sample_ids": true,
+            "labels": true,
+            "dataset_indices": true,
+            "fold_ids": true,
+            "unique_ids": true,
+            "finite_logits": true,
+            "all_pass": true
+          }
+        },
+        {
+          "mini_epoch": 1,
+          "steps": 3,
+          "mean_loss": 5.295381546020508,
+          "heldout_accuracy_technical_only": 0.0050041701417848205,
+          "lr": [
+            0.0001,
+            0.01
+          ],
+          "alignment": {
+            "count": true,
+            "sample_ids": true,
+            "labels": true,
+            "dataset_indices": true,
+            "fold_ids": true,
+            "unique_ids": true,
+            "finite_logits": true,
+            "all_pass": true
+          }
+        }
+      ],
+      "smoke_accuracy_used_for_tuning": false,
+      "smoke_accuracy_formal_result": false,
+      "runtime_precision": "torch.autocast(cuda,bfloat16); parameters and optimizer states remain FP32",
+      "activation_checkpointing": "timm ResNet-50 native set_grad_checkpointing(True)",
+      "logical_batch_preserved": 32
+    },
+    "cal": {
+      "status": "PASS",
+      "formal_result": false,
+      "formal_training": false,
+      "method": "cal",
+      "dataset": "cub",
+      "fold": 0,
+      "seed": 42,
+      "topology": {
+        "gpus": 2,
+        "world_size": 2,
+        "backend": "nccl",
+        "per_rank_batch": 8,
+        "global_batch": 16,
+        "sync_batch_norm": true,
+        "syncbn_count": 54
+      },
+      "primary_logits": "causal_effect_p_minus_p_cf",
+      "optimization_steps_per_rank": 4,
+      "loss_trace": [
+        11.634468078613281,
+        11.727405548095703,
+        11.603741645812988,
+        11.4828519821167
+      ],
+      "loss_finite": true,
+      "loss_no_abnormal_explosion": true,
+      "backward": true,
+      "optimizer_step": true,
+      "feature_center_update": true,
+      "crop_drop_second_forward": true,
+      "scheduler": {
+        "formula": "1e-3*0.9^((epoch+fraction)/2)",
+        "observed": {
+          "0+0.0": 0.001,
+          "0+0.5": 0.0009740037464252968,
+          "1+0.0": 0.0009486832980505138,
+          "159+0.999": 2.1848601012457107e-07
+        },
+        "expected": {
+          "0+0.0": 0.001,
+          "0+0.5": 0.0009740037464252968,
+          "1+0.0": 0.0009486832980505138,
+          "159+0.999": 2.1848601012457107e-07
+        },
+        "pass": true
+      },
+      "checkpoint_selection": true,
+      "selected_mini_epoch": 0,
+      "checkpoint_roundtrip": true,
+      "checkpoint_sha256": "1e811c5df92b4ce566cc0329543a1e0a82c4fd2a92086d14fba28fafa22c2bfb",
+      "heldout_export": true,
+      "heldout_export_sha256": "cdfb2e707f9c4b51e62b81b78ff6bcaddc7863003c2dd37e6839c124659871f9",
+      "heldout_expected_count": 1199,
+      "heldout_exported_count": 1199,
+      "heldout_alignment": {
+        "count": true,
+        "sample_ids": true,
+        "labels": true,
+        "dataset_indices": true,
+        "fold_ids": true,
+        "unique_ids": true,
+        "finite_logits": true,
+        "all_pass": true
+      },
+      "heldout_reload_alignment": {
+        "count": true,
+        "sample_ids": true,
+        "labels": true,
+        "dataset_indices": true,
+        "fold_ids": true,
+        "unique_ids": true,
+        "finite_logits": true,
+        "all_pass": true
+      },
+      "epoch_records": [
+        {
+          "mini_epoch": 0,
+          "steps_per_rank": 2,
+          "mean_loss_across_ranks": 11.680936813354492,
+          "last_lr": 0.0009998244145574989,
+          "heldout_accuracy_technical_only": 0.006672226823866367,
+          "rank0_alignment": {
+            "count": true,
+            "sample_ids": true,
+            "labels": true,
+            "dataset_indices": true,
+            "fold_ids": true,
+            "unique_ids": true,
+            "finite_logits": true,
+            "all_pass": true
+          }
+        },
+        {
+          "mini_epoch": 1,
+          "steps_per_rank": 2,
+          "mean_loss_across_ranks": 11.543296813964844,
+          "last_lr": 0.0009485167230738321,
+          "heldout_accuracy_technical_only": 0.0033361134119331837,
+          "rank0_alignment": {
+            "count": true,
+            "sample_ids": true,
+            "labels": true,
+            "dataset_indices": true,
+            "fold_ids": true,
+            "unique_ids": true,
+            "finite_logits": true,
+            "all_pass": true
+          }
+        }
+      ],
+      "smoke_accuracy_used_for_tuning": false,
+      "smoke_accuracy_formal_result": false,
+      "elapsed_seconds": 15.392666578292847,
+      "dataloader_pin_memory": false,
+      "dataloader_pin_memory_reason": "WSL2 pin-memory allocator failure; data/order/batch/model unchanged"
+    }
+  },
+  "prelaunch_retries": {
+    "l2_sp": [
+      "l2_sp_optimization_smoke_attempt1_offline_cache_failure",
+      "l2_sp_optimization_smoke_attempt2_fp32_oom",
+      "l2_sp_optimization_smoke_attempt3_bf16_oom",
+      "l2_sp_optimization_smoke_attempt4_wsl_pin_memory_failure"
+    ],
+    "mc_loss": [
+      "mc_loss_optimization_smoke_attempt1_offline_cache_failure",
+      "mc_loss_optimization_smoke_attempt2_fp32_oom",
+      "mc_loss_optimization_smoke_attempt3_bf16_oom",
+      "mc_loss_optimization_smoke_attempt4_wsl_pin_memory_failure"
+    ],
+    "final_attempt": "PASS"
+  },
+  "runner_sha256": {
+    "scripts/formal_single_job.py": "d48aff0c069ccedb972699a9a651f98d6d4def58a01507cd6b98243e4100ccc0",
+    "scripts/formal_cal_job.py": "dfb7558d45be3b603489b734e574bdaf8804b0d6cf24edd33bca0ad97dc753f7",
+    "scripts/formal_cal_job_v2.py": "df657acdbc8f6465bb9980336914e2ede4d2207f89b3ba60dcd09214c97f9f64",
+    "scripts/formal_orchestrator.py": "fb848090d060e248d30e1a2c698f1d5b69f6a7b2603bd2234c032948b68a705b",
+    "scripts/finalize_formal_results.py": "e42ea9d471cf6c9ecbc323edc9c3caec095499699f650fe6736b07ad47dfff07"
+  },
+  "fail_closed": true,
+  "authorization_scope": "exact frozen 60-job plan only"
+}

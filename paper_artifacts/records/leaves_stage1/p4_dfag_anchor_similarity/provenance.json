@@ -1,0 +1,92 @@
+{
+  "phase": "Phase2C P4",
+  "training_performed": false,
+  "artifact_type": "existing Phase2A standalone DFAG original-view features",
+  "feature_definition": "anchor_features.npy and specific_features.npy immediately before gate fusion",
+  "D_g": 1536,
+  "folds": [
+    {
+      "fold": 0,
+      "manifest": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\inference\\dfag\\fold_0\\original\\dynamic\\run_manifest.json",
+      "n": 3671,
+      "checkpoint_filename": "weights_stage2_0_1_epoch1_val_acc_0.9771.pth",
+      "checkpoint_recorded_sha256": "0666946c1d798d3d0490fb520475dc2d13acd67cc42bf228f19eeb57442250fd",
+      "anchor_checkpoint_filename": "weights_0_epoch55_val_acc_0.9730.pth",
+      "anchor_checkpoint_recorded_sha256": "5c715032b6c0d3aa4b2f369167e4848e13b7b4cc794fdc9a422dfd37b20e86bc",
+      "feature_sha256": {
+        "anchor_features.npy": "a9b249a3aa8d660d02f365733d9f18647e3e63b4e717239edd4d1d699adac918",
+        "specific_features.npy": "be3d7e2da275b8f3ede2df6436d5197536262d942942b50153c77de1eb998671",
+        "dataset_indices.npy": "fa5ea582758d7f6c55990e6daa6c7060b1428ff525f5b9c14009d3000dbbaa83",
+        "labels.npy": "f1be31c681bec07d35efedf151152a2c8e717f0712b5390b9be757843f56a853",
+        "gate_vectors.npy": "579059f2517a202350cea510fc0e87ba371f7cbea71ce594ad3078b4a48326b9"
+      }
+    },
+    {
+      "fold": 1,
+      "manifest": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\inference\\dfag\\fold_1\\original\\dynamic\\run_manifest.json",
+      "n": 3671,
+      "checkpoint_filename": "weights_stage2_1_0_epoch6_val_acc_0.9782.pth",
+      "checkpoint_recorded_sha256": "5760d8871187f6a8262f324a1b095eac356560c4157d72718aebb300dabb0555",
+      "anchor_checkpoint_filename": "weights_1_epoch140_val_acc_0.9785.pth",
+      "anchor_checkpoint_recorded_sha256": "397426896e0d375f6009264436d785adfa70c40471e3dbc475f696359ddb99df",
+      "feature_sha256": {
+        "anchor_features.npy": "56de75e3d6ccd9c14c4bee8e687c7ef8e9441c3db7d9acf72cc66f0ab4888ded",
+        "specific_features.npy": "ce3a6362ba13b6872607edda1a2758a926e56259ea245552478801793df92414",
+        "dataset_indices.npy": "5168d96f6202121fbec0861d3409c736292a9bfbb0f290fb3995732d4835b3c8",
+        "labels.npy": "328943f60056ec7a7d09be38b8b2d696268bf3bc7a568d147ede46c0c5c78b58",
+        "gate_vectors.npy": "b57619354e655d25bcab721c216141f0975f28bf383a96b3cecef1cc94b22a81"
+      }
+    },
+    {
+      "fold": 2,
+      "manifest": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\inference\\dfag\\fold_2\\original\\dynamic\\run_manifest.json",
+      "n": 3671,
+      "checkpoint_filename": "weights_stage2_2_1_epoch11_val_acc_0.9798.pth",
+      "checkpoint_recorded_sha256": "1151a0beb9d9e8c1fe5f6c6eeb51a1a3ef121108d984b6923eb8717ee57e48db",
+      "anchor_checkpoint_filename": "weights_2_epoch70_val_acc_0.9788.pth",
+      "anchor_checkpoint_recorded_sha256": "1fbe85acdadd3a22b267e053820c28e6ce6a9bc1fdedac96a16a9a7293a2783f",
+      "feature_sha256": {
+        "anchor_features.npy": "72f1cbe2d7ffd5aa23bd88c096140a819c8b2d470d1a8d39c6186fad8903bad7",
+        "specific_features.npy": "e5d61a069f3965c5322d96a49caccbd66193432a5e6141a7b00081c7ff6c8194",
+        "dataset_indices.npy": "bb29ad04652cc3a4712bb9cc3f1013828e95f20faa269fb89bc85466f9030cde",
+        "labels.npy": "f79ff5f6b883ab93b916433ef4e3b09b6d94d3a7946cae664ce552a97d4bc31f",
+        "gate_vectors.npy": "c15032309bd8954cc04a17ada343aa0c60ce8282c72573bd028a8067118ce286"
+      }
+    },
+    {
+      "fold": 3,
+      "manifest": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\inference\\dfag\\fold_3\\original\\dynamic\\run_manifest.json",
+      "n": 3670,
+      "checkpoint_filename": "weights_stage2_3_0_epoch9_val_acc_0.9787.pth",
+      "checkpoint_recorded_sha256": "f7e2a8afbc4ee307499f55a83d14e62a8f101fece1273d29e526e15c5be26638",
+      "anchor_checkpoint_filename": "weights_3_epoch124_val_acc_0.9779.pth",
+      "anchor_checkpoint_recorded_sha256": "6d9c11a0de56db092ef6acc1f7c01dd74214ed71a1612d6e12eb6d7288c6d865",
+      "feature_sha256": {
+        "anchor_features.npy": "983ea1a48b2acd70c6963eec13300221b53553db2661bdd3341a6232c1d9da83",
+        "specific_features.npy": "058a26b63ca32166d74f1df71984596ac890fc75e5500ac233180c8aa48033aa",
+        "dataset_indices.npy": "f6cb6afe2945a01bab9645717f8f660ea21f6fd0e7bf0b1be60b9b85ef30c85f",
+        "labels.npy": "f3e71c037b36748628ecd7e7693af291d9073fa7ddc4bef79c79342c8e758f1f",
+        "gate_vectors.npy": "af34318d471c6280231cf220b324e52270301745e1aa38fbe5c0623170672459"
+      }
+    },
+    {
+      "fold": 4,
+      "manifest": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\inference\\dfag\\fold_4\\original\\dynamic\\run_manifest.json",
+      "n": 3670,
+      "checkpoint_filename": "weights_stage2_4_2_epoch3_val_acc_0.9722.pth",
+      "checkpoint_recorded_sha256": "23ef82ab57155e80f8c7383e19cd2dc59ff689bc43466c23181f63224b5f1a3c",
+      "anchor_checkpoint_filename": "weights_4_epoch43_val_acc_0.9703.pth",
+      "anchor_checkpoint_recorded_sha256": "106b7d60346e6bc41e6c9c9c5145d1965dc99d1d73d4da8c265c7fde21f51900",
+      "feature_sha256": {
+        "anchor_features.npy": "b5b5d00e4cc628cbc7ba26f5d7510a9bd8191c3f60829efe1d032aca01727c66",
+        "specific_features.npy": "05a3afc67f968c24121b084dbd2c7df28305f40f7763080f6a548f2ad652c647",
+        "dataset_indices.npy": "33c6507b05ac35532325b4db95fa8bb966b3842adf25ec94d5e10caf155cebfb",
+        "labels.npy": "9a03fab0a09406416e1fe5e7d6530cc878194e0643a4de1a57b98bdfcc63579e",
+        "gate_vectors.npy": "cf39b8ab396d995031f4e66f08b0bc7732cfef7eeb8e7502fecbfb41101ecf45"
+      }
+    }
+  ],
+  "sample_count": 18353,
+  "unique_sample_count": 18353,
+  "integrity": "PASS"
+}

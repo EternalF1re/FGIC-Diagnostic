@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\phase2d_checkpoint_state_interpolation\scripts\finalize.py", line 86, in <module>
+    if __name__=='__main__':main()
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\phase2d_checkpoint_state_interpolation\scripts\finalize.py", line 52, in main
+    manifests=[json.loads(task_manifest(s,f,a).read_text()) for s in SEEDS for f in FOLDS for a in ALPHAS];checks={'all_165_complete':len(manifests)==165 and all(x['status']=='COMPLETE' for x in manifests),'zero_gradient':all(x['parameter_hash_before']==x['parameter_hash_after'] and x['all_grad_none'] and not x['optimizer'] and not x['scheduler'] and not x['backward'] for x in manifests),'no_bn_refresh':all(x['no_bn_reset'] and x['no_bn_refresh'] and x['model_eval'] and not x['train_mode_forward'] for x in manifests),'endpoint_gate':gate['endpoint_models']==30 and all(x['predictions_exact'] for x in gate['rows']),'source_unchanged':all(sha256(Path(e[f'stage{st}']))==e[f'stage{st}_sha256'] for e in json.loads((ROOT/'manifests'/'preflight_audit.json').read_text())['entries'] for st in (1,2)),'round2a_unchanged':not verify_snapshot('phase2d_round2a_immutability_before.json'),'old_interpolation_unchanged':not verify_snapshot('phase2d_weight_interpolation_immutability_before.json'),'oof_exact':all(len(data[s,a]['sample_id'])==N for s in SEEDS for a in ALPHAS),'no_posthoc_selection':True,'no_dfag':True}
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\phase2d_checkpoint_state_interpolation\scripts\finalize.py", line 52, in <listcomp>
+    manifests=[json.loads(task_manifest(s,f,a).read_text()) for s in SEEDS for f in FOLDS for a in ALPHAS];checks={'all_165_complete':len(manifests)==165 and all(x['status']=='COMPLETE' for x in manifests),'zero_gradient':all(x['parameter_hash_before']==x['parameter_hash_after'] and x['all_grad_none'] and not x['optimizer'] and not x['scheduler'] and not x['backward'] for x in manifests),'no_bn_refresh':all(x['no_bn_reset'] and x['no_bn_refresh'] and x['model_eval'] and not x['train_mode_forward'] for x in manifests),'endpoint_gate':gate['endpoint_models']==30 and all(x['predictions_exact'] for x in gate['rows']),'source_unchanged':all(sha256(Path(e[f'stage{st}']))==e[f'stage{st}_sha256'] for e in json.loads((ROOT/'manifests'/'preflight_audit.json').read_text())['entries'] for st in (1,2)),'round2a_unchanged':not verify_snapshot('phase2d_round2a_immutability_before.json'),'old_interpolation_unchanged':not verify_snapshot('phase2d_weight_interpolation_immutability_before.json'),'oof_exact':all(len(data[s,a]['sample_id'])==N for s in SEEDS for a in ALPHAS),'no_posthoc_selection':True,'no_dfag':True}
+  File "<LOCAL_PATH>", line 1195, in read_text
+    return f.read()
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 216: illegal multibyte sequence
+Traceback (most recent call last):
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\phase2d_checkpoint_state_interpolation\scripts\finalize_after_runs.py", line 10, in <module>
+    if __name__=='__main__':main()
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\phase2d_checkpoint_state_interpolation\scripts\finalize_after_runs.py", line 7, in main
+    subprocess.run([sys.executable,str(A/'scripts'/'finalize.py')],cwd=str(A.parent.parent),check=True)
+  File "<LOCAL_PATH>", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['<LOCAL_PATH>', '<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_checkpoint_state_interpolation\\scripts\\finalize.py']' returned non-zero exit status 1.

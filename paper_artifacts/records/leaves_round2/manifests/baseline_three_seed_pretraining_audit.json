@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "training_authorized_by_step1": true,
+  "samples": 18353,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "stages": [
+    1,
+    2
+  ],
+  "checks_total": 76,
+  "checks_failed": 0,
+  "stop_threshold": {
+    "minimum_disagreement_count": 10,
+    "minimum_disagreement_percentage": 0.1
+  },
+  "stop_reasons": [],
+  "checkpoint_sha256": {
+    "seed42_stage1_fold0": "01dd5f5ed26759a7f71ee7395153af4b428c9b3e978c0ae71939699af2a37672",
+    "seed43_stage1_fold0": "80f6f6a7c00ddc6cdddd1212d06d4379d80b7733a7be865a8b3a2cff70a03ef2",
+    "seed44_stage1_fold0": "9b8888ea9677c2afc6fdb76685c18d963459ba44675b7f2f3bdb5781a9842dad",
+    "seed42_stage1_fold1": "0836ce78e00a782e4a14fdf159706a610c2bf11cb6d3f9b27d45f9b5208cd134",
+    "seed43_stage1_fold1": "11e16b466cc2ebc30689cecedbfb0724ff739ce09c61e586e24df739e2a8d500",
+    "seed44_stage1_fold1": "639f74e21da6c1fa3f6ced44e12527c44541d46810baed7ea419b78611023854",
+    "seed42_stage1_fold2": "faa536d970967c3d46eb89a9eb1c95d4d27924d19e72387f74627c9f646f2ee3",
+    "seed43_stage1_fold2": "1e5eeee30b1722efadbffd30dd6de5843d897702786b5f9153ca51c448eb42e9",
+    "seed44_stage1_fold2": "a657b6a5272e495baefd70efa58b0ee21fafe1b592a12559daaf041618d267e3",
+    "seed42_stage1_fold3": "89fb943b9ab79d207ee52bc20c392680edc4cdb8c6e122ed5cd149ea2cdf7a2d",
+    "seed43_stage1_fold3": "b27290b207c43d4109fd2764b16141291de8a16268d77062694bcfe622940501",
+    "seed44_stage1_fold3": "166d3d03fffac998d0be4614772643a1b15268c29c7a1a086574123f8dc3a140",
+    "seed42_stage1_fold4": "d83dd9f7aec8f1598e50e2be8c543b040f2c5cdacfa3039e23f4ff92abe5fd9a",
+    "seed43_stage1_fold4": "6c306159ffea89ffcf886d6285dd9ba3740199417f43578c5e2d7ce658fbe7a3",
+    "seed44_stage1_fold4": "10305effa72b09ea5933d1a97a381957e1e701c275b05326c77635fb37bf755b",
+    "seed42_stage2_fold0": "883208992c36585f5b4f13189f669166acea4fed8a4b706c100538b7bcdcd043",
+    "seed43_stage2_fold0": "7e53f71573141d9ceda268a773052502a595231b492f25d9f2828872a0581df1",
+    "seed44_stage2_fold0": "ada4f1765ae6d256b761e2cf0ec9d1a1371aa5ed1311001a1c0990781507f690",
+    "seed42_stage2_fold1": "158559841c702df56ef5c69923d60eef788cddaa8864f7795d64d6d341bc3fe2",
+    "seed43_stage2_fold1": "741f130c8a3832f9d9e191e37f4293740179496635180ba1efc7840cf168c626",
+    "seed44_stage2_fold1": "6ebea29665d7f9fa1e2c301e10177ddd0eb7fb4e0239f85689dc3ced14243453",
+    "seed42_stage2_fold2": "5663424c42a8a71b6563d9d025e30361ee030f10cb04afaeeabb131447f77a00",
+    "seed43_stage2_fold2": "04cd3a580e400de2bbdc0180f9a98302f4550f3639f9f67400cccc7e8e259425",
+    "seed44_stage2_fold2": "f4b1ceebc9f6021fc5b8ffdfdd66a0b24adbb74e935def34288e14b5288bfc9d",
+    "seed42_stage2_fold3": "8be030462db412309a6dc6d82c52866f4083fe2e5b4d826e53abf103ce52917f",
+    "seed43_stage2_fold3": "051d6599a856072b621614f44db13e36e46a40e94972d07ded09153d44af45f7",
+    "seed44_stage2_fold3": "353e133ae36385d7c58d18a2b0fa497758a6d4369d61d4954e0886158c0577dc",
+    "seed42_stage2_fold4": "acd7a72679c894bc83098df58a56221f20545f031e56ef076440689f53632f59",
+    "seed43_stage2_fold4": "bde8f5f3d2a23f1bb8e52b63366f0b07630e9a106ddb0289e7bdce9cd9f59227",
+    "seed44_stage2_fold4": "12ffdeea4b2ccd325e312138e2b870b7fa1fb47db9543a5a7afff56ad7f763f9"
+  },
+  "csv": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\statistics\\baseline_seed42_44_pairwise_prediction_audit.csv",
+  "markdown": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\BASELINE_THREE_SEED_PREDICTION_AUDIT.md"
+}

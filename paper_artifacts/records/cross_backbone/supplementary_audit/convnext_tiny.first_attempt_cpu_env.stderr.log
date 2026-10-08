@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_cross_backbone_evaluation\scripts\supplementary_endpoint_audit.py", line 191, in <module>
+    main()
+    ~~~~^^
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_cross_backbone_evaluation\scripts\supplementary_endpoint_audit.py", line 170, in main
+    row = audit_fold(args.backbone, fold, device, config)
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_cross_backbone_evaluation\scripts\supplementary_endpoint_audit.py", line 135, in audit_fold
+    model = CrossBackboneModel(backbone, "ours_ft", pretrained=False).to(device)
+  File "<LOCAL_PATH>", line 1384, in to
+    return self._apply(convert)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "<LOCAL_PATH>", line 934, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  File "<LOCAL_PATH>", line 934, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  File "<LOCAL_PATH>", line 934, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  File "<LOCAL_PATH>", line 965, in _apply
+    param_applied = fn(param)
+  File "<LOCAL_PATH>", line 1370, in convert
+    return t.to(
+           ~~~~^
+        device,
+        ^^^^^^^
+        dtype if t.is_floating_point() or t.is_complex() else None,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        non_blocking,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "<LOCAL_PATH>", line 471, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled

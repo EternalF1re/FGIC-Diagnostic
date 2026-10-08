@@ -1,0 +1,1857 @@
+{
+  "all_passed": true,
+  "formal_runs": 20,
+  "checks_total": 366,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "preflight_passed",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\manifests\\preflight_audit.json"
+    },
+    {
+      "check": "orchestrator_complete",
+      "status": "PASS",
+      "detail": "{'status': 'ALL_20_COMPLETE', 'formal_runs': 20, 'stop_gate': True, 'completed_unix': 1786437502.3425915}"
+    },
+    {
+      "check": "ledger_20_rows",
+      "status": "PASS",
+      "detail": "rows=20"
+    },
+    {
+      "check": "ledger_all_complete",
+      "status": "PASS",
+      "detail": "{\"COMPLETE\": 20}"
+    },
+    {
+      "check": "events_20_starts",
+      "status": "PASS",
+      "detail": "starts=20"
+    },
+    {
+      "check": "events_20_clean_exits",
+      "status": "PASS",
+      "detail": "exits=20"
+    },
+    {
+      "check": "baseline_seed43_fold0_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_0\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed43_fold0_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed43, fold=0"
+    },
+    {
+      "check": "baseline_seed43_fold0_config_hash",
+      "status": "PASS",
+      "detail": "f53dfaf935e4faa0ccf4004e5e7e093c2b62726d6f3c119a22f7652dde2a4d28"
+    },
+    {
+      "check": "baseline_seed43_fold0_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed43_fold0_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed43_fold0_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed43_fold0_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "80f6f6a7c00ddc6cdddd1212d06d4379d80b7733a7be865a8b3a2cff70a03ef2"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9803868155815854"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9803868155815854, saved=0.9803868155815854"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "7e53f71573141d9ceda268a773052502a595231b492f25d9f2828872a0581df1"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_0/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9784799782075728"
+    },
+    {
+      "check": "baseline_seed43_fold0_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9784799782075728, saved=0.9784799782075728"
+    },
+    {
+      "check": "baseline_seed43_fold1_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_1\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed43_fold1_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed43, fold=1"
+    },
+    {
+      "check": "baseline_seed43_fold1_config_hash",
+      "status": "PASS",
+      "detail": "f53dfaf935e4faa0ccf4004e5e7e093c2b62726d6f3c119a22f7652dde2a4d28"
+    },
+    {
+      "check": "baseline_seed43_fold1_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed43_fold1_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed43_fold1_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed43_fold1_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "11e16b466cc2ebc30689cecedbfb0724ff739ce09c61e586e24df739e2a8d500"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9792971942250068"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9792971942250068, saved=0.9792971942250068"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "741f130c8a3832f9d9e191e37f4293740179496635180ba1efc7840cf168c626"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_1/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9771179515118497"
+    },
+    {
+      "check": "baseline_seed43_fold1_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9771179515118497, saved=0.9771179515118497"
+    },
+    {
+      "check": "baseline_seed43_fold2_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_2\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed43_fold2_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed43, fold=2"
+    },
+    {
+      "check": "baseline_seed43_fold2_config_hash",
+      "status": "PASS",
+      "detail": "f53dfaf935e4faa0ccf4004e5e7e093c2b62726d6f3c119a22f7652dde2a4d28"
+    },
+    {
+      "check": "baseline_seed43_fold2_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed43_fold2_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed43_fold2_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed43_fold2_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "1e5eeee30b1722efadbffd30dd6de5843d897702786b5f9153ca51c448eb42e9"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9809316262598747"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9809316262598747, saved=0.9809316262598747"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "04cd3a580e400de2bbdc0180f9a98302f4550f3639f9f67400cccc7e8e259425"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_2/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9801144102424407"
+    },
+    {
+      "check": "baseline_seed43_fold2_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9801144102424407, saved=0.9801144102424407"
+    },
+    {
+      "check": "baseline_seed43_fold3_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_3\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed43_fold3_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed43, fold=3"
+    },
+    {
+      "check": "baseline_seed43_fold3_config_hash",
+      "status": "PASS",
+      "detail": "f53dfaf935e4faa0ccf4004e5e7e093c2b62726d6f3c119a22f7652dde2a4d28"
+    },
+    {
+      "check": "baseline_seed43_fold3_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed43_fold3_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed43_fold3_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed43_fold3_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "b27290b207c43d4109fd2764b16141291de8a16268d77062694bcfe622940501"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9782016348773842"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9782016348773842, saved=0.9782016348773842"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "051d6599a856072b621614f44db13e36e46a40e94972d07ded09153d44af45f7"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_3/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9768392370572208"
+    },
+    {
+      "check": "baseline_seed43_fold3_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9768392370572208, saved=0.9768392370572208"
+    },
+    {
+      "check": "baseline_seed43_fold4_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed43\\fold_4\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed43_fold4_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed43, fold=4"
+    },
+    {
+      "check": "baseline_seed43_fold4_config_hash",
+      "status": "PASS",
+      "detail": "f53dfaf935e4faa0ccf4004e5e7e093c2b62726d6f3c119a22f7652dde2a4d28"
+    },
+    {
+      "check": "baseline_seed43_fold4_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed43_fold4_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed43_fold4_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed43_fold4_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "6c306159ffea89ffcf886d6285dd9ba3740199417f43578c5e2d7ce658fbe7a3"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9776566757493188"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9776566757493188, saved=0.9776566757493188"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "bde8f5f3d2a23f1bb8e52b63366f0b07630e9a106ddb0289e7bdce9cd9f59227"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed43/fold_4/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 1024)"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9727520435967303"
+    },
+    {
+      "check": "baseline_seed43_fold4_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9727520435967303, saved=0.9727520435967303"
+    },
+    {
+      "check": "baseline_seed44_fold0_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_0\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed44_fold0_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed44, fold=0"
+    },
+    {
+      "check": "baseline_seed44_fold0_config_hash",
+      "status": "PASS",
+      "detail": "2313c9b2533eb0e7474c98a2af7bbe72cffd24be32a92e452e676f0c328c306d"
+    },
+    {
+      "check": "baseline_seed44_fold0_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed44_fold0_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed44_fold0_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed44_fold0_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "9b8888ea9677c2afc6fdb76685c18d963459ba44675b7f2f3bdb5781a9842dad"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9795695995641515"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9795695995641515, saved=0.9795695995641515"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "ada4f1765ae6d256b761e2cf0ec9d1a1371aa5ed1311001a1c0990781507f690"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_0/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.976028330155271"
+    },
+    {
+      "check": "baseline_seed44_fold0_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.976028330155271, saved=0.976028330155271"
+    },
+    {
+      "check": "baseline_seed44_fold1_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_1\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed44_fold1_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed44, fold=1"
+    },
+    {
+      "check": "baseline_seed44_fold1_config_hash",
+      "status": "PASS",
+      "detail": "2313c9b2533eb0e7474c98a2af7bbe72cffd24be32a92e452e676f0c328c306d"
+    },
+    {
+      "check": "baseline_seed44_fold1_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed44_fold1_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed44_fold1_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed44_fold1_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "639f74e21da6c1fa3f6ced44e12527c44541d46810baed7ea419b78611023854"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9776627621901389"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9776627621901389, saved=0.9776627621901389"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "6ebea29665d7f9fa1e2c301e10177ddd0eb7fb4e0239f85689dc3ced14243453"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_1/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9776627621901389"
+    },
+    {
+      "check": "baseline_seed44_fold1_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9776627621901389, saved=0.9776627621901389"
+    },
+    {
+      "check": "baseline_seed44_fold2_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_2\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed44_fold2_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed44, fold=2"
+    },
+    {
+      "check": "baseline_seed44_fold2_config_hash",
+      "status": "PASS",
+      "detail": "2313c9b2533eb0e7474c98a2af7bbe72cffd24be32a92e452e676f0c328c306d"
+    },
+    {
+      "check": "baseline_seed44_fold2_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed44_fold2_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed44_fold2_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed44_fold2_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "a657b6a5272e495baefd70efa58b0ee21fafe1b592a12559daaf041618d267e3"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9801144102424407"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9801144102424407, saved=0.9801144102424407"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "f4b1ceebc9f6021fc5b8ffdfdd66a0b24adbb74e935def34288e14b5288bfc9d"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_2/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9792971942250068"
+    },
+    {
+      "check": "baseline_seed44_fold2_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9792971942250068, saved=0.9792971942250068"
+    },
+    {
+      "check": "baseline_seed44_fold3_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_3\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed44_fold3_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed44, fold=3"
+    },
+    {
+      "check": "baseline_seed44_fold3_config_hash",
+      "status": "PASS",
+      "detail": "2313c9b2533eb0e7474c98a2af7bbe72cffd24be32a92e452e676f0c328c306d"
+    },
+    {
+      "check": "baseline_seed44_fold3_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed44_fold3_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed44_fold3_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed44_fold3_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "166d3d03fffac998d0be4614772643a1b15268c29c7a1a086574123f8dc3a140"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9782016348773842"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9782016348773842, saved=0.9782016348773842"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "353e133ae36385d7c58d18a2b0fa497758a6d4369d61d4954e0886158c0577dc"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_3/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9787465940054496"
+    },
+    {
+      "check": "baseline_seed44_fold3_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9787465940054496, saved=0.9787465940054496"
+    },
+    {
+      "check": "baseline_seed44_fold4_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_4\\run_manifest.json"
+    },
+    {
+      "check": "baseline_seed44_fold4_identity",
+      "status": "PASS",
+      "detail": "run_id=baseline_seed44, fold=4"
+    },
+    {
+      "check": "baseline_seed44_fold4_config_hash",
+      "status": "PASS",
+      "detail": "2313c9b2533eb0e7474c98a2af7bbe72cffd24be32a92e452e676f0c328c306d"
+    },
+    {
+      "check": "baseline_seed44_fold4_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "baseline_seed44_fold4_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "baseline_seed44_fold4_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "baseline_seed44_fold4_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "10305effa72b09ea5933d1a97a381957e1e701c275b05326c77635fb37bf755b"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9746594005449591"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9746594005449591, saved=0.9746594005449591"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "12ffdeea4b2ccd325e312138e2b870b7fa1fb47db9543a5a7afff56ad7f763f9"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/baseline_seed44/fold_4/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 1024)"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.973841961852861"
+    },
+    {
+      "check": "baseline_seed44_fold4_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.973841961852861, saved=0.973841961852861"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_7_seed42\\fold_0\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_7_seed42, fold=0"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_config_hash",
+      "status": "PASS",
+      "detail": "7ea72232c0cc262f93616a4563ffabdfa248c908f32754c2d63080611401756d"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "2df48d7930ad4a4ba079dcdb746c3668f8db6cce201d02cd6b1c3ba3a52bc742"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9787523835467176"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9787523835467176, saved=0.9787523835467176"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "53c17dae7948751e3f06fc50f35d26469034fa3f3d5df7e321db1613e59a10e0"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_0/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9776627621901389"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold0_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9776627621901389, saved=0.9776627621901389"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_7_seed42\\fold_1\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_7_seed42, fold=1"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_config_hash",
+      "status": "PASS",
+      "detail": "7ea72232c0cc262f93616a4563ffabdfa248c908f32754c2d63080611401756d"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "821d076fae373cb31ecb0aab15a1eb8f66d9f1ddece88d666ac8fb12cc69b1c1"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9773903568509943"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9773903568509943, saved=0.9773903568509943"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "6a60dd7609d332c65a2e34dd25113be6d801ecb095d8bd3d07cf95a0b0a4d8eb"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_1/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9776627621901389"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold1_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9776627621901389, saved=0.9776627621901389"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_7_seed42\\fold_2\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_7_seed42, fold=2"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_config_hash",
+      "status": "PASS",
+      "detail": "7ea72232c0cc262f93616a4563ffabdfa248c908f32754c2d63080611401756d"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "7c2562d75d78c5205571224ba536dceeab7221706ba85cab36b82b651af171f9"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9801144102424407"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9801144102424407, saved=0.9801144102424407"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "45ca797a88414acfa20ebde2d88bb831325546165e2219095d66852f71afb897"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_2/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9787523835467176"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold2_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9787523835467176, saved=0.9787523835467176"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_7_seed42\\fold_3\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_7_seed42, fold=3"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_config_hash",
+      "status": "PASS",
+      "detail": "7ea72232c0cc262f93616a4563ffabdfa248c908f32754c2d63080611401756d"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "0ee57371fb5c704f88d18334a4d9ae41dd13464f8a2e96ca13210de48bcb93cd"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9790190735694823"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9790190735694823, saved=0.9790190735694823"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "08f1bdc79b3ebffac76c10ffaed7a8d67d8172b76573afd306582cedc6448468"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_3/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9776566757493188"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold3_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9776566757493188, saved=0.9776566757493188"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_7_seed42\\fold_4\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_7_seed42, fold=4"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_config_hash",
+      "status": "PASS",
+      "detail": "7ea72232c0cc262f93616a4563ffabdfa248c908f32754c2d63080611401756d"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "3f437b25a2cda98d6f915a0bfea29d87b83694b21855ce0d40c27a05618eb882"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9741144414168937"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9741144414168937, saved=0.9741144414168937"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "bf1e6a9582d60fc8d87af80f40cc6a50ae63dc59c337540c41f6f8c2d3a2e45a"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_7_seed42/fold_4/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 256)"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9719346049046321"
+    },
+    {
+      "check": "lambda_0_7_seed42_fold4_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9719346049046321, saved=0.9719346049046321"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_9_seed42\\fold_0\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_9_seed42, fold=0"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_config_hash",
+      "status": "PASS",
+      "detail": "e72ae171656c7e9c45c414d21644a49ee848407a3d98f22b1bdacd4b2f3b43e4"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "a08e6eebf7af610b03f270bd978fc3ddf01af581557dcb65d622ab67df9f6708"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.976845546172705"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.976845546172705, saved=0.976845546172705"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "d42a66c5eb6c3da0978bd3545374dcc04a117afc15100cf7fe818753c2bdefc7"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_0/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9776627621901389"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold0_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9776627621901389, saved=0.9776627621901389"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_9_seed42\\fold_1\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_9_seed42, fold=1"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_config_hash",
+      "status": "PASS",
+      "detail": "e72ae171656c7e9c45c414d21644a49ee848407a3d98f22b1bdacd4b2f3b43e4"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "7d35900f85d7a5d8a4ab457e9f734a888e7e1f2c31455660b9a80eef21374268"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9773903568509943"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9773903568509943, saved=0.9773903568509943"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "e47a97082b5d96207013dd359575edef6c563e262b36388691eaad57c2ee8cce"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_1/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9749387087986925"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold1_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9749387087986925, saved=0.9749387087986925"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_9_seed42\\fold_2\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_9_seed42, fold=2"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_config_hash",
+      "status": "PASS",
+      "detail": "e72ae171656c7e9c45c414d21644a49ee848407a3d98f22b1bdacd4b2f3b43e4"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "285947b7e3be932a9622eb12bcc3d9033f57579c070461eaa79eea277a22cbbc"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9790247888858622"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9790247888858622, saved=0.9790247888858622"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "f55e87d7d8a8f04b7028c05e7f2307a44471176b96b0c24963c8b307cc4e3b99"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_2/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3671, logits=(3671, 176), features=(3671, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9784799782075728"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold2_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9784799782075728, saved=0.9784799782075728"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_9_seed42\\fold_3\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_9_seed42, fold=3"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_config_hash",
+      "status": "PASS",
+      "detail": "e72ae171656c7e9c45c414d21644a49ee848407a3d98f22b1bdacd4b2f3b43e4"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "1cb86cfde045e2643c6895f51493671e3da86c9f95e9b3bd19615c8ebbf19a15"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9790190735694823"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9790190735694823, saved=0.9790190735694823"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "807f28808e80252e331dbd294c34b0fa8fb9f69264b75bbe772ece3299031322"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_3/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9776566757493188"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold3_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9776566757493188, saved=0.9776566757493188"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_manifest_complete",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\lambda_0_9_seed42\\fold_4\\run_manifest.json"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_identity",
+      "status": "PASS",
+      "detail": "run_id=lambda_0_9_seed42, fold=4"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_config_hash",
+      "status": "PASS",
+      "detail": "e72ae171656c7e9c45c414d21644a49ee848407a3d98f22b1bdacd4b2f3b43e4"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_runner_hash",
+      "status": "PASS",
+      "detail": "d204cb1c428a377ea93e6f82f885394eb5d85c0d89037dd8a17f031e39beb2e6"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_frozen_source_hashes",
+      "status": "PASS",
+      "detail": "{\"train_one.py\": \"d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c\", \"screen_core.py\": \"d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921\"}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_history_counts",
+      "status": "PASS",
+      "detail": "stage1=150, total=210"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_manifest_history_counts",
+      "status": "PASS",
+      "detail": "{'stage1': 150, 'stage2': 60}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage1_checkpoint_hash",
+      "status": "PASS",
+      "detail": "e80bacc379ca28e7bb3d88c8c7685b1b9c6ea918d4649ccc98438d57661fe030"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage1_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage1_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage1_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage1_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage1_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage1_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage1_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage1_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage1_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.97574931880109"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage1_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.97574931880109, saved=0.97574931880109"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage2_checkpoint_hash",
+      "status": "PASS",
+      "detail": "e837c29779fca139a3312678e23d7a3a9eea12711e9c8bd37c3423218ea47c9e"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage2_artifact_set",
+      "status": "PASS",
+      "detail": "{'sample_ids': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage2_validation_sample_ids.npy'), 'labels': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage2_validation_labels.npy'), 'features': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage2_validation_features.npy'), 'logits': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage2_validation_logits.npy'), 'predictions': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage2_validation_predictions.npy'), 'image_names': WindowsPath('<EXPERIMENT_ROOT>/phase2_controlled_validation/phase2d_round1/lambda_0_9_seed42/fold_4/stage2_validation_image_names.npy')}"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage2_array_shapes",
+      "status": "PASS",
+      "detail": "n=3670, logits=(3670, 176), features=(3670, 256)"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage2_prediction_integrity",
+      "status": "PASS",
+      "detail": "accuracy=0.9730245231607629"
+    },
+    {
+      "check": "lambda_0_9_seed42_fold4_stage2_metric_accuracy",
+      "status": "PASS",
+      "detail": "computed=0.9730245231607629, saved=0.9730245231607629"
+    },
+    {
+      "check": "formal_run_count",
+      "status": "PASS",
+      "detail": "runs=20"
+    },
+    {
+      "check": "validated_numeric_arrays",
+      "status": "PASS",
+      "detail": "arrays=200"
+    },
+    {
+      "check": "eight_new_oof_files",
+      "status": "PASS",
+      "detail": "files=8"
+    },
+    {
+      "check": "oof_baseline_seed43_stage1_oof",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\oof\\baseline_seed43_stage1_oof.npz"
+    },
+    {
+      "check": "oof_baseline_seed43_stage2_oof",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\oof\\baseline_seed43_stage2_oof.npz"
+    },
+    {
+      "check": "oof_baseline_seed44_stage1_oof",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\oof\\baseline_seed44_stage1_oof.npz"
+    },
+    {
+      "check": "oof_baseline_seed44_stage2_oof",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\oof\\baseline_seed44_stage2_oof.npz"
+    },
+    {
+      "check": "oof_lambda_0_7_seed42_stage1_oof",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\oof\\lambda_0_7_seed42_stage1_oof.npz"
+    },
+    {
+      "check": "oof_lambda_0_7_seed42_stage2_oof",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\oof\\lambda_0_7_seed42_stage2_oof.npz"
+    },
+    {
+      "check": "oof_lambda_0_9_seed42_stage1_oof",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\oof\\lambda_0_9_seed42_stage1_oof.npz"
+    },
+    {
+      "check": "oof_lambda_0_9_seed42_stage2_oof",
+      "status": "PASS",
+      "detail": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\oof\\lambda_0_9_seed42_stage2_oof.npz"
+    },
+    {
+      "check": "csv_round1_oof_metrics_rows",
+      "status": "PASS",
+      "detail": "rows=48, expected=48"
+    },
+    {
+      "check": "csv_stage1_vs_stage2_paired_rows",
+      "status": "PASS",
+      "detail": "rows=4, expected=4"
+    },
+    {
+      "check": "csv_stage1_vs_stage2_per_fold_rows",
+      "status": "PASS",
+      "detail": "rows=20, expected=20"
+    },
+    {
+      "check": "csv_baseline_multiseed_per_seed_rows",
+      "status": "PASS",
+      "detail": "rows=3, expected=3"
+    },
+    {
+      "check": "csv_baseline_multiseed_summary_rows",
+      "status": "PASS",
+      "detail": "rows=1, expected=1"
+    },
+    {
+      "check": "csv_lambda_direct_paired_rows",
+      "status": "PASS",
+      "detail": "rows=12, expected=12"
+    },
+    {
+      "check": "csv_lambda_direct_paired_per_fold_rows",
+      "status": "PASS",
+      "detail": "rows=60, expected=60"
+    },
+    {
+      "check": "csv_lambda_0_9_vs_0_7_paired_rows",
+      "status": "PASS",
+      "detail": "rows=2, expected=2"
+    },
+    {
+      "check": "csv_lambda_0_9_vs_0_7_paired_per_fold_rows",
+      "status": "PASS",
+      "detail": "rows=10, expected=10"
+    }
+  ],
+  "result_sha256": {
+    "oof/round1_oof_metrics.csv": "4768626992e398f550b21ba48f85f5922ac45abb9e422e0927c34047c82b9f61",
+    "statistics/stage1_vs_stage2_paired.csv": "311a56dd29328bd18e459c4cae005e07737f745f884a0348546f0b4ef82e0923",
+    "statistics/stage1_vs_stage2_per_fold.csv": "208c4aceb7377773ef9c1200df2c8a9028d25f9674913951992179212458f9c8",
+    "statistics/baseline_multiseed_per_seed.csv": "0ba9002f46f38d6a704e01d9a63426bc883f614200509b2a3142ad98d41e5c95",
+    "statistics/baseline_multiseed_summary.csv": "17c2a5be92fe8f9cea3085478314d38d63ccf860096ae791a70e917a7574ec4c",
+    "statistics/lambda_direct_paired.csv": "7940213c47841e607ff310e35041a1562e2586e21dc7d35a0ac3b048c47e26f4",
+    "statistics/lambda_direct_paired_per_fold.csv": "6745b366ef942ce6fac3ed2fc6ad93e4c06911171fd562cecf6d5cde3a176e7a",
+    "statistics/lambda_0_9_vs_0_7_paired.csv": "a91fafbf82c5fd8436805847199d85e35593a23d5e5ee51a76cf1e639343dd99",
+    "statistics/lambda_0_9_vs_0_7_paired_per_fold.csv": "6965fc084b10c8b43ee800e9d9a08fb5bb20a38419570ff13214e3fb4e6681b9",
+    "oof/baseline_seed43_stage1_oof.npz": "b511a225c231d468c5656d0a747147595da3ede31e54ce1f83a6f863ad32da71",
+    "oof/baseline_seed43_stage2_oof.npz": "33688501b7869521fdd317d7ad68aa660c8a620b97f842826d4583b91ac58183",
+    "oof/baseline_seed44_stage1_oof.npz": "53d07fc2d707e48840a4eb85cfe19b3a298bfa8ebe612a0bde16fa9729816c50",
+    "oof/baseline_seed44_stage2_oof.npz": "9089ce9efde9772a0168a9de7221a48375368a5fc5413c61597bb47b2f7ed72b",
+    "oof/lambda_0_7_seed42_stage1_oof.npz": "9ddd3c37bb7aafbfdd691957a415936014f5af7205d3d87d4269a22d00bb1962",
+    "oof/lambda_0_7_seed42_stage2_oof.npz": "be4f74ca6c933ba4626c36a3f82de990ef7b1c6fb9b18bbac96ab7a929515b8f",
+    "oof/lambda_0_9_seed42_stage1_oof.npz": "e5883a667aa3b886e7abdf75079ee7b4eb3dc8d3b43af830b1a2e3664b3b9157",
+    "oof/lambda_0_9_seed42_stage2_oof.npz": "f0b83ddf047898b08d6db534910edd09e53c405161c33f643c0dedbcf4570969"
+  }
+}

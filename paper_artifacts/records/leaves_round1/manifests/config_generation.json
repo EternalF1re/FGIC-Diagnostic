@@ -1,0 +1,30 @@
+{
+  "phase": "Phase2D Round1",
+  "source_config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\configs\\controlled_screen.json",
+  "source_config_sha256": "751ced4f261d822cf20f59bbb346e95f8de465d6bf2075586822a9c213682659",
+  "effective_configs": [
+    {
+      "run_id": "baseline_seed43",
+      "config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\configs\\baseline_seed43.json",
+      "sha256": "f53dfaf935e4faa0ccf4004e5e7e093c2b62726d6f3c119a22f7652dde2a4d28"
+    },
+    {
+      "run_id": "baseline_seed44",
+      "config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\configs\\baseline_seed44.json",
+      "sha256": "2313c9b2533eb0e7474c98a2af7bbe72cffd24be32a92e452e676f0c328c306d"
+    },
+    {
+      "run_id": "lambda_0_7_seed42",
+      "config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\configs\\lambda_0_7_seed42.json",
+      "sha256": "7ea72232c0cc262f93616a4563ffabdfa248c908f32754c2d63080611401756d"
+    },
+    {
+      "run_id": "lambda_0_9_seed42",
+      "config": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\configs\\lambda_0_9_seed42.json",
+      "sha256": "e72ae171656c7e9c45c414d21644a49ee848407a3d98f22b1bdacd4b2f3b43e4"
+    }
+  ],
+  "formal_runs": 20,
+  "training_authorized": true,
+  "stop_after_round1": true
+}

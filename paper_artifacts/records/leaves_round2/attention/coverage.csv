@@ -1,0 +1,7 @@
+lambda_key,lambda,stage,samples,unique_samples,heads,queries,keys,atomic_units,atomic_unit_definition,covers_0_to_18352
+lambda_0_1,0.1,1,18353,18353,4,5,5,367060,sample_x_head_x_query_before_aggregation,True
+lambda_0_1,0.1,2,18353,18353,4,5,5,367060,sample_x_head_x_query_before_aggregation,True
+lambda_0_7,0.7,1,18353,18353,4,5,5,367060,sample_x_head_x_query_before_aggregation,True
+lambda_0_7,0.7,2,18353,18353,4,5,5,367060,sample_x_head_x_query_before_aggregation,True
+lambda_1_0,1.0,1,18353,18353,4,5,5,367060,sample_x_head_x_query_before_aggregation,True
+lambda_1_0,1.0,2,18353,18353,4,5,5,367060,sample_x_head_x_query_before_aggregation,True

@@ -1,0 +1,21 @@
+{
+  "status": "ALL_COMPLETE",
+  "task_count": 15,
+  "counts": {
+    "COMPLETE": 15
+  },
+  "devices": [
+    "cuda:0"
+  ],
+  "completed_by_device": {
+    "cuda:0": 15
+  },
+  "busy_seconds_by_device": {
+    "cuda:0": 4277.5539791584015
+  },
+  "longest_first": false,
+  "started_unix": 1786518799.9491248,
+  "finished_unix": 1786523077.5135574,
+  "wall_seconds": 4277.564432621002,
+  "fail_closed": true
+}

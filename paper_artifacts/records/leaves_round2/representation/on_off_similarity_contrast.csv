@@ -1,0 +1,7 @@
+lambda_key,lambda,stage,on_minus_off_mean_offdiagonal_cosine,on_minus_off_mean_centered_linear_cka,inference
+lambda_0_1,0.1,1,0.12002195538629898,0.10939376014328062,descriptive_only
+lambda_0_1,0.1,2,0.16507184268559932,0.12193831703992897,descriptive_only
+lambda_0_7,0.7,1,0.14359212901536966,0.042020856911568205,descriptive_only
+lambda_0_7,0.7,2,0.2164259689236797,0.08547973135059006,descriptive_only
+lambda_1_0,1.0,1,0.14562817633726777,0.05755995634623756,descriptive_only
+lambda_1_0,1.0,2,0.15644039731084636,0.0855370895668246,descriptive_only

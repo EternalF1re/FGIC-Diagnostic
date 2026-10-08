@@ -1,0 +1,10 @@
+{
+  "status": "STOPPED_AFTER_#0_#1_#2",
+  "training_seed": 42,
+  "split_random_state": 42,
+  "rows": 18353,
+  "q1_evidence": "pooled Δ=-0.1308 pp, paired 95% CI [-0.3160, +0.0490] pp; fold directions +/−/= 1/4/0; changed predictions 322, correctness discordants 292; Macro-F1 Δ=-0.1323 pp, balanced-accuracy Δ=-0.0976 pp.",
+  "q2_evidence": "pooled Δ=+0.0381 pp, paired 95% CI [-0.1471, +0.2234] pp; fold directions +/−/= 4/1/0; changed predictions 337, correctness discordants 301; Macro-F1 Δ=+0.0651 pp, balanced-accuracy Δ=+0.0299 pp.",
+  "human_decision_required": true,
+  "forbidden_training_started": false
+}

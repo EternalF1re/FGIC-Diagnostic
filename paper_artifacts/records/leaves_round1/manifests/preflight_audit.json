@@ -1,0 +1,232 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "baseline_seed43_dataset_exact",
+      "status": "PASS",
+      "detail": "dataset block equals Phase2B"
+    },
+    {
+      "check": "baseline_seed43_split_exact",
+      "status": "PASS",
+      "detail": "split block equals Phase2B"
+    },
+    {
+      "check": "baseline_seed43_protocol_exact",
+      "status": "PASS",
+      "detail": "training protocol block equals Phase2B"
+    },
+    {
+      "check": "baseline_seed43_seed",
+      "status": "PASS",
+      "detail": "seed=43, same every fold"
+    },
+    {
+      "check": "baseline_seed43_parameter_count",
+      "status": "PASS",
+      "detail": "total=57114448"
+    },
+    {
+      "check": "baseline_seed43_no_mhsa",
+      "status": "PASS",
+      "detail": "no MultiheadAttention module"
+    },
+    {
+      "check": "baseline_seed43_no_terminal_residual",
+      "status": "PASS",
+      "detail": "declared false; frozen Phase2B head"
+    },
+    {
+      "check": "baseline_seed43_trace",
+      "status": "PASS",
+      "detail": "{'backbone_gap': (3, 1536), 'hidden_1': (3, 1024), 'feature_pre_classifier': (3, 1024), 'logits': (3, 176)}"
+    },
+    {
+      "check": "baseline_seed44_dataset_exact",
+      "status": "PASS",
+      "detail": "dataset block equals Phase2B"
+    },
+    {
+      "check": "baseline_seed44_split_exact",
+      "status": "PASS",
+      "detail": "split block equals Phase2B"
+    },
+    {
+      "check": "baseline_seed44_protocol_exact",
+      "status": "PASS",
+      "detail": "training protocol block equals Phase2B"
+    },
+    {
+      "check": "baseline_seed44_seed",
+      "status": "PASS",
+      "detail": "seed=44, same every fold"
+    },
+    {
+      "check": "baseline_seed44_parameter_count",
+      "status": "PASS",
+      "detail": "total=57114448"
+    },
+    {
+      "check": "baseline_seed44_no_mhsa",
+      "status": "PASS",
+      "detail": "no MultiheadAttention module"
+    },
+    {
+      "check": "baseline_seed44_no_terminal_residual",
+      "status": "PASS",
+      "detail": "declared false; frozen Phase2B head"
+    },
+    {
+      "check": "baseline_seed44_trace",
+      "status": "PASS",
+      "detail": "{'backbone_gap': (3, 1536), 'hidden_1': (3, 1024), 'feature_pre_classifier': (3, 1024), 'logits': (3, 176)}"
+    },
+    {
+      "check": "lambda_0_7_seed42_dataset_exact",
+      "status": "PASS",
+      "detail": "dataset block equals Phase2B"
+    },
+    {
+      "check": "lambda_0_7_seed42_split_exact",
+      "status": "PASS",
+      "detail": "split block equals Phase2B"
+    },
+    {
+      "check": "lambda_0_7_seed42_protocol_exact",
+      "status": "PASS",
+      "detail": "training protocol block equals Phase2B"
+    },
+    {
+      "check": "lambda_0_7_seed42_seed",
+      "status": "PASS",
+      "detail": "seed=42, same every fold"
+    },
+    {
+      "check": "lambda_0_7_seed42_parameter_count",
+      "status": "PASS",
+      "detail": "total=55076688"
+    },
+    {
+      "check": "lambda_0_7_seed42_no_mhsa",
+      "status": "PASS",
+      "detail": "no MultiheadAttention module"
+    },
+    {
+      "check": "lambda_0_7_seed42_no_terminal_residual",
+      "status": "PASS",
+      "detail": "declared false; frozen Phase2B head"
+    },
+    {
+      "check": "lambda_0_7_seed42_lambda",
+      "status": "PASS",
+      "detail": "lambda=0.7"
+    },
+    {
+      "check": "lambda_0_7_seed42_trace",
+      "status": "PASS",
+      "detail": "{'backbone_gap': (3, 1536), 'input_projection': (3, 256), 'mapping_stage_1': (3, 256), 'mapping_stage_2': (3, 256), 'mapping_stage_3': (3, 256), 'mapping_stage_4': (3, 256), 'mapping_stage_5': (3, 256), 'stacked_stages': (3, 5, 256), 'mean_aggregation_pre_classifier': (3, 256), 'logits': (3, 176)}"
+    },
+    {
+      "check": "lambda_0_9_seed42_dataset_exact",
+      "status": "PASS",
+      "detail": "dataset block equals Phase2B"
+    },
+    {
+      "check": "lambda_0_9_seed42_split_exact",
+      "status": "PASS",
+      "detail": "split block equals Phase2B"
+    },
+    {
+      "check": "lambda_0_9_seed42_protocol_exact",
+      "status": "PASS",
+      "detail": "training protocol block equals Phase2B"
+    },
+    {
+      "check": "lambda_0_9_seed42_seed",
+      "status": "PASS",
+      "detail": "seed=42, same every fold"
+    },
+    {
+      "check": "lambda_0_9_seed42_parameter_count",
+      "status": "PASS",
+      "detail": "total=55076688"
+    },
+    {
+      "check": "lambda_0_9_seed42_no_mhsa",
+      "status": "PASS",
+      "detail": "no MultiheadAttention module"
+    },
+    {
+      "check": "lambda_0_9_seed42_no_terminal_residual",
+      "status": "PASS",
+      "detail": "declared false; frozen Phase2B head"
+    },
+    {
+      "check": "lambda_0_9_seed42_lambda",
+      "status": "PASS",
+      "detail": "lambda=0.9"
+    },
+    {
+      "check": "lambda_0_9_seed42_trace",
+      "status": "PASS",
+      "detail": "{'backbone_gap': (3, 1536), 'input_projection': (3, 256), 'mapping_stage_1': (3, 256), 'mapping_stage_2': (3, 256), 'mapping_stage_3': (3, 256), 'mapping_stage_4': (3, 256), 'mapping_stage_5': (3, 256), 'stacked_stages': (3, 5, 256), 'mean_aggregation_pre_classifier': (3, 256), 'logits': (3, 176)}"
+    },
+    {
+      "check": "fold0_assignment",
+      "status": "PASS",
+      "detail": "train=14682, val=3671"
+    },
+    {
+      "check": "fold0_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    },
+    {
+      "check": "fold1_assignment",
+      "status": "PASS",
+      "detail": "train=14682, val=3671"
+    },
+    {
+      "check": "fold1_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    },
+    {
+      "check": "fold2_assignment",
+      "status": "PASS",
+      "detail": "train=14682, val=3671"
+    },
+    {
+      "check": "fold2_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    },
+    {
+      "check": "fold3_assignment",
+      "status": "PASS",
+      "detail": "train=14683, val=3670"
+    },
+    {
+      "check": "fold3_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    },
+    {
+      "check": "fold4_assignment",
+      "status": "PASS",
+      "detail": "train=14683, val=3670"
+    },
+    {
+      "check": "fold4_class_weights",
+      "status": "PASS",
+      "detail": "exact Phase2B weights"
+    }
+  ],
+  "source_hashes": {
+    "train_one.py": "d67aa5037d7a700122e8e59e4008161f1014bcaaf36dc54699e9188993560f5c",
+    "screen_core.py": "d9a282e7e306d314206009b58751ce1654279680127d0c1ee8b3cc3374444921"
+  },
+  "formal_runs": 20,
+  "forbidden_variants_absent": true,
+  "training_performed": false
+}

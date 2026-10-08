@@ -1,0 +1,1 @@
+{"status": "COMPLETE", "job_id": "mc_loss_cars_fold3", "metrics": {"accuracy": 0.6040515653775322, "macro_f1": 0.5975766868786132, "balanced_accuracy": 0.6015650307742144}}

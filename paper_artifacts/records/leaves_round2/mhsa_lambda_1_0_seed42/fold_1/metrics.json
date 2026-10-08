@@ -1,0 +1,20 @@
+{
+  "run_id": "mhsa_lambda_1_0_seed42",
+  "fold": 1,
+  "n": 3671,
+  "stage1": {
+    "accuracy": 0.9776627621901389,
+    "macro_f1": 0.9809548527166111,
+    "balanced_accuracy": 0.9815677139089078,
+    "best_epoch_zero_based": 104,
+    "best_accuracy": 0.9776627621901389
+  },
+  "stage2": {
+    "accuracy": 0.9773903568509943,
+    "macro_f1": 0.9801345585788094,
+    "balanced_accuracy": 0.9805924298311514,
+    "best_epoch_zero_based": 14,
+    "best_accuracy": 0.9773903568509943
+  },
+  "feature_extraction_location": "256-D fused mean pooling after Dropout and before classifier"
+}

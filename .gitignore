@@ -20,3 +20,5 @@ checkpoints/
 *.sqlite
 *.log
 wandb/
+# Audited, sanitized historical logs are part of the publication snapshot.
+!paper_artifacts/**

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_external_protocol\aggregate_formal.py", line 166, in <module>
+    main()
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_external_protocol\aggregate_formal.py", line 54, in main
+    "stage": stage, "fold": int(row.fold), "n": int(json.loads((run / "run_manifest.json").read_text())["validation_count"]),
+  File "<LOCAL_PATH>", line 1195, in read_text
+    return f.read()
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 354: illegal multibyte sequence

@@ -1,0 +1,128 @@
+{"time": 1787217346.8871105, "event": "FORMAL_60_JOB_RUN_STARTED", "plan_sha256": "1e4af9ba95615f58a08fe01371f9f0714ed4baf0e5768b5522ba1a28a5935e91", "pid": 4733}
+{"time": 1787217346.8876956, "event": "PHASE_STARTED", "phase": "single_gpu_independent", "jobs": 40}
+{"time": 1787217346.8931189, "event": "JOB_STARTED", "job_id": "l2_sp_cub_fold0", "gpu": "0"}
+{"time": 1787217346.8989263, "event": "JOB_STARTED", "job_id": "l2_sp_cub_fold1", "gpu": "1"}
+{"time": 1787219186.279306, "event": "JOB_FINISHED", "job_id": "l2_sp_cub_fold0", "gpu": "0", "returncode": 0}
+{"time": 1787219186.2855794, "event": "JOB_STARTED", "job_id": "l2_sp_cub_fold2", "gpu": "0"}
+{"time": 1787219263.8609934, "event": "JOB_FINISHED", "job_id": "l2_sp_cub_fold1", "gpu": "1", "returncode": 0}
+{"time": 1787219263.8676217, "event": "JOB_STARTED", "job_id": "l2_sp_cub_fold3", "gpu": "1"}
+{"time": 1787221032.4050143, "event": "JOB_FINISHED", "job_id": "l2_sp_cub_fold2", "gpu": "0", "returncode": 0}
+{"time": 1787221032.411261, "event": "JOB_STARTED", "job_id": "l2_sp_cub_fold4", "gpu": "0"}
+{"time": 1787221187.0108016, "event": "JOB_FINISHED", "job_id": "l2_sp_cub_fold3", "gpu": "1", "returncode": 0}
+{"time": 1787221187.0174036, "event": "JOB_STARTED", "job_id": "l2_sp_cars_fold0", "gpu": "1"}
+{"time": 1787222909.6132705, "event": "JOB_FINISHED", "job_id": "l2_sp_cub_fold4", "gpu": "0", "returncode": 0}
+{"time": 1787222909.6215782, "event": "JOB_STARTED", "job_id": "l2_sp_cars_fold1", "gpu": "0"}
+{"time": 1787223199.7606447, "event": "JOB_FINISHED", "job_id": "l2_sp_cars_fold0", "gpu": "1", "returncode": 0}
+{"time": 1787223199.7671058, "event": "JOB_STARTED", "job_id": "l2_sp_cars_fold2", "gpu": "1"}
+{"time": 1787224789.9122303, "event": "JOB_FINISHED", "job_id": "l2_sp_cars_fold1", "gpu": "0", "returncode": 0}
+{"time": 1787224789.9190986, "event": "JOB_STARTED", "job_id": "l2_sp_cars_fold3", "gpu": "0"}
+{"time": 1787225232.589127, "event": "JOB_FINISHED", "job_id": "l2_sp_cars_fold2", "gpu": "1", "returncode": 0}
+{"time": 1787225232.5967636, "event": "JOB_STARTED", "job_id": "l2_sp_cars_fold4", "gpu": "1"}
+{"time": 1787226668.9654465, "event": "JOB_FINISHED", "job_id": "l2_sp_cars_fold3", "gpu": "0", "returncode": 0}
+{"time": 1787226668.9721346, "event": "JOB_STARTED", "job_id": "mc_loss_cub_fold0", "gpu": "0"}
+{"time": 1787227258.32453, "event": "JOB_FINISHED", "job_id": "l2_sp_cars_fold4", "gpu": "1", "returncode": 0}
+{"time": 1787227258.332199, "event": "JOB_STARTED", "job_id": "mc_loss_cub_fold1", "gpu": "1"}
+{"time": 1787235482.9543989, "event": "JOB_FINISHED", "job_id": "mc_loss_cub_fold0", "gpu": "0", "returncode": 0}
+{"time": 1787235482.9611373, "event": "JOB_STARTED", "job_id": "mc_loss_cub_fold2", "gpu": "0"}
+{"time": 1787236559.6303883, "event": "JOB_FINISHED", "job_id": "mc_loss_cub_fold1", "gpu": "1", "returncode": 0}
+{"time": 1787236559.6380122, "event": "JOB_STARTED", "job_id": "mc_loss_cub_fold3", "gpu": "1"}
+{"time": 1787244263.649212, "event": "JOB_FINISHED", "job_id": "mc_loss_cub_fold2", "gpu": "0", "returncode": 0}
+{"time": 1787244263.655319, "event": "JOB_STARTED", "job_id": "mc_loss_cub_fold4", "gpu": "0"}
+{"time": 1787245816.3704867, "event": "JOB_FINISHED", "job_id": "mc_loss_cub_fold3", "gpu": "1", "returncode": 0}
+{"time": 1787245816.3759022, "event": "JOB_STARTED", "job_id": "mc_loss_cars_fold0", "gpu": "1"}
+{"time": 1787253041.7255397, "event": "JOB_FINISHED", "job_id": "mc_loss_cub_fold4", "gpu": "0", "returncode": 0}
+{"time": 1787253041.7317722, "event": "JOB_STARTED", "job_id": "mc_loss_cars_fold1", "gpu": "0"}
+{"time": 1787257950.0131717, "event": "JOB_FINISHED", "job_id": "mc_loss_cars_fold0", "gpu": "1", "returncode": 0}
+{"time": 1787257950.020467, "event": "JOB_STARTED", "job_id": "mc_loss_cars_fold2", "gpu": "1"}
+{"time": 1787264925.4763937, "event": "JOB_FINISHED", "job_id": "mc_loss_cars_fold1", "gpu": "0", "returncode": 0}
+{"time": 1787264925.4820085, "event": "JOB_STARTED", "job_id": "mc_loss_cars_fold3", "gpu": "0"}
+{"time": 1787270158.3810287, "event": "JOB_FINISHED", "job_id": "mc_loss_cars_fold2", "gpu": "1", "returncode": 0}
+{"time": 1787270158.3891072, "event": "JOB_STARTED", "job_id": "mc_loss_cars_fold4", "gpu": "1"}
+{"time": 1787276715.8436468, "event": "JOB_FINISHED", "job_id": "mc_loss_cars_fold3", "gpu": "0", "returncode": 0}
+{"time": 1787276715.8507707, "event": "JOB_STARTED", "job_id": "ours_ft_cub_fold0", "gpu": "0"}
+{"time": 1787280400.2198308, "event": "JOB_FINISHED", "job_id": "ours_ft_cub_fold0", "gpu": "0", "returncode": 0}
+{"time": 1787280400.2257836, "event": "JOB_STARTED", "job_id": "ours_ft_cub_fold1", "gpu": "0"}
+{"time": 1787282872.3610153, "event": "JOB_FINISHED", "job_id": "mc_loss_cars_fold4", "gpu": "1", "returncode": 0}
+{"time": 1787282872.3683996, "event": "JOB_STARTED", "job_id": "ours_ft_cub_fold2", "gpu": "1"}
+{"time": 1787284107.3779519, "event": "JOB_FINISHED", "job_id": "ours_ft_cub_fold1", "gpu": "0", "returncode": 0}
+{"time": 1787284107.386208, "event": "JOB_STARTED", "job_id": "ours_ft_cub_fold3", "gpu": "0"}
+{"time": 1787286816.9706657, "event": "JOB_FINISHED", "job_id": "ours_ft_cub_fold2", "gpu": "1", "returncode": 0}
+{"time": 1787286816.9778845, "event": "JOB_STARTED", "job_id": "ours_ft_cub_fold4", "gpu": "1"}
+{"time": 1787287825.8848016, "event": "JOB_FINISHED", "job_id": "ours_ft_cub_fold3", "gpu": "0", "returncode": 0}
+{"time": 1787287825.8911467, "event": "JOB_STARTED", "job_id": "ours_ft_cars_fold0", "gpu": "0"}
+{"time": 1787290709.6884785, "event": "JOB_FINISHED", "job_id": "ours_ft_cub_fold4", "gpu": "1", "returncode": 0}
+{"time": 1787290709.694638, "event": "JOB_STARTED", "job_id": "ours_ft_cars_fold1", "gpu": "1"}
+{"time": 1787293121.5974524, "event": "JOB_FINISHED", "job_id": "ours_ft_cars_fold0", "gpu": "0", "returncode": 0}
+{"time": 1787293121.6078827, "event": "JOB_STARTED", "job_id": "ours_ft_cars_fold2", "gpu": "0"}
+{"time": 1787296315.284921, "event": "JOB_FINISHED", "job_id": "ours_ft_cars_fold1", "gpu": "1", "returncode": 0}
+{"time": 1787296315.291355, "event": "JOB_STARTED", "job_id": "ours_ft_cars_fold3", "gpu": "1"}
+{"time": 1787298492.3419685, "event": "JOB_FINISHED", "job_id": "ours_ft_cars_fold2", "gpu": "0", "returncode": 0}
+{"time": 1787298492.3489158, "event": "JOB_STARTED", "job_id": "ours_ft_cars_fold4", "gpu": "0"}
+{"time": 1787301925.143149, "event": "JOB_FINISHED", "job_id": "ours_ft_cars_fold3", "gpu": "1", "returncode": 0}
+{"time": 1787301925.1513498, "event": "JOB_STARTED", "job_id": "progressive_cub_fold0", "gpu": "1"}
+{"time": 1787303864.7515912, "event": "JOB_FINISHED", "job_id": "ours_ft_cars_fold4", "gpu": "0", "returncode": 0}
+{"time": 1787303864.7581902, "event": "JOB_STARTED", "job_id": "progressive_cub_fold1", "gpu": "0"}
+{"time": 1787305893.121945, "event": "JOB_FINISHED", "job_id": "progressive_cub_fold0", "gpu": "1", "returncode": 0}
+{"time": 1787305893.1294103, "event": "JOB_STARTED", "job_id": "progressive_cub_fold2", "gpu": "1"}
+{"time": 1787307625.614845, "event": "JOB_FINISHED", "job_id": "progressive_cub_fold1", "gpu": "0", "returncode": 0}
+{"time": 1787307625.6219711, "event": "JOB_STARTED", "job_id": "progressive_cub_fold3", "gpu": "0"}
+{"time": 1787309809.3696766, "event": "JOB_FINISHED", "job_id": "progressive_cub_fold2", "gpu": "1", "returncode": 0}
+{"time": 1787309809.3765795, "event": "JOB_STARTED", "job_id": "progressive_cub_fold4", "gpu": "1"}
+{"time": 1787311385.832484, "event": "JOB_FINISHED", "job_id": "progressive_cub_fold3", "gpu": "0", "returncode": 0}
+{"time": 1787311385.8406718, "event": "JOB_STARTED", "job_id": "progressive_cars_fold0", "gpu": "0"}
+{"time": 1787313739.9923856, "event": "JOB_FINISHED", "job_id": "progressive_cub_fold4", "gpu": "1", "returncode": 0}
+{"time": 1787313739.9995413, "event": "JOB_STARTED", "job_id": "progressive_cars_fold1", "gpu": "1"}
+{"time": 1787316715.5728598, "event": "JOB_FINISHED", "job_id": "progressive_cars_fold0", "gpu": "0", "returncode": 0}
+{"time": 1787316715.579069, "event": "JOB_STARTED", "job_id": "progressive_cars_fold2", "gpu": "0"}
+{"time": 1787319139.7227542, "event": "JOB_FINISHED", "job_id": "progressive_cars_fold1", "gpu": "1", "returncode": 0}
+{"time": 1787319139.7275994, "event": "JOB_STARTED", "job_id": "progressive_cars_fold3", "gpu": "1"}
+{"time": 1787321999.0584946, "event": "JOB_FINISHED", "job_id": "progressive_cars_fold2", "gpu": "0", "returncode": 0}
+{"time": 1787321999.0647504, "event": "JOB_STARTED", "job_id": "progressive_cars_fold4", "gpu": "0"}
+{"time": 1787324571.4208105, "event": "JOB_FINISHED", "job_id": "progressive_cars_fold3", "gpu": "1", "returncode": 0}
+{"time": 1787327191.4965723, "event": "JOB_FINISHED", "job_id": "progressive_cars_fold4", "gpu": "0", "returncode": 0}
+{"time": 1787327191.4973586, "event": "PHASE_COMPLETE", "phase": "single_gpu_independent"}
+{"time": 1787327191.4979131, "event": "PHASE_STARTED", "phase": "dfag_after_same_fold_ours", "jobs": 10}
+{"time": 1787327191.503708, "event": "JOB_STARTED", "job_id": "dfag_cub_fold0", "gpu": "0"}
+{"time": 1787327191.509967, "event": "JOB_STARTED", "job_id": "dfag_cub_fold1", "gpu": "1"}
+{"time": 1787328510.6191988, "event": "JOB_FINISHED", "job_id": "dfag_cub_fold0", "gpu": "0", "returncode": 0}
+{"time": 1787328510.6256547, "event": "JOB_STARTED", "job_id": "dfag_cub_fold2", "gpu": "0"}
+{"time": 1787328591.7166603, "event": "JOB_FINISHED", "job_id": "dfag_cub_fold1", "gpu": "1", "returncode": 0}
+{"time": 1787328591.7236724, "event": "JOB_STARTED", "job_id": "dfag_cub_fold3", "gpu": "1"}
+{"time": 1787329825.6510944, "event": "JOB_FINISHED", "job_id": "dfag_cub_fold2", "gpu": "0", "returncode": 0}
+{"time": 1787329825.6574104, "event": "JOB_STARTED", "job_id": "dfag_cub_fold4", "gpu": "0"}
+{"time": 1787329995.5216398, "event": "JOB_FINISHED", "job_id": "dfag_cub_fold3", "gpu": "1", "returncode": 0}
+{"time": 1787329995.529198, "event": "JOB_STARTED", "job_id": "dfag_cars_fold0", "gpu": "1"}
+{"time": 1787331143.1323278, "event": "JOB_FINISHED", "job_id": "dfag_cub_fold4", "gpu": "0", "returncode": 0}
+{"time": 1787331143.1383445, "event": "JOB_STARTED", "job_id": "dfag_cars_fold1", "gpu": "0"}
+{"time": 1787331853.240128, "event": "JOB_FINISHED", "job_id": "dfag_cars_fold0", "gpu": "1", "returncode": 0}
+{"time": 1787331853.2481608, "event": "JOB_STARTED", "job_id": "dfag_cars_fold2", "gpu": "1"}
+{"time": 1787332926.9004495, "event": "JOB_FINISHED", "job_id": "dfag_cars_fold1", "gpu": "0", "returncode": 0}
+{"time": 1787332926.906406, "event": "JOB_STARTED", "job_id": "dfag_cars_fold3", "gpu": "0"}
+{"time": 1787333710.50512, "event": "JOB_FINISHED", "job_id": "dfag_cars_fold2", "gpu": "1", "returncode": 0}
+{"time": 1787333710.5118897, "event": "JOB_STARTED", "job_id": "dfag_cars_fold4", "gpu": "1"}
+{"time": 1787334720.5425916, "event": "JOB_FINISHED", "job_id": "dfag_cars_fold3", "gpu": "0", "returncode": 0}
+{"time": 1787335556.6284025, "event": "JOB_FINISHED", "job_id": "dfag_cars_fold4", "gpu": "1", "returncode": 0}
+{"time": 1787335556.6289248, "event": "PHASE_COMPLETE", "phase": "dfag_after_same_fold_ours"}
+{"time": 1787335556.6293814, "event": "PHASE_STARTED", "phase": "cal_exclusive", "jobs": 10}
+{"time": 1787335556.6349378, "event": "JOB_STARTED", "job_id": "cal_cub_fold0", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787349364.5064397, "event": "JOB_FINISHED", "job_id": "cal_cub_fold0", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787349364.5137303, "event": "JOB_STARTED", "job_id": "cal_cub_fold1", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787363145.9338923, "event": "JOB_FINISHED", "job_id": "cal_cub_fold1", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787363145.9399898, "event": "JOB_STARTED", "job_id": "cal_cub_fold2", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787376765.6401677, "event": "JOB_FINISHED", "job_id": "cal_cub_fold2", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787376765.645687, "event": "JOB_STARTED", "job_id": "cal_cub_fold3", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787390291.761929, "event": "JOB_FINISHED", "job_id": "cal_cub_fold3", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787390291.7673838, "event": "JOB_STARTED", "job_id": "cal_cub_fold4", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787403908.8421545, "event": "JOB_FINISHED", "job_id": "cal_cub_fold4", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787403908.8501034, "event": "JOB_STARTED", "job_id": "cal_cars_fold0", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787422137.016163, "event": "JOB_FINISHED", "job_id": "cal_cars_fold0", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787422137.0216134, "event": "JOB_STARTED", "job_id": "cal_cars_fold1", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787440243.7026196, "event": "JOB_FINISHED", "job_id": "cal_cars_fold1", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787440243.7084131, "event": "JOB_STARTED", "job_id": "cal_cars_fold2", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787458546.3841674, "event": "JOB_FINISHED", "job_id": "cal_cars_fold2", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787458546.390048, "event": "JOB_STARTED", "job_id": "cal_cars_fold3", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787477259.3927217, "event": "JOB_FINISHED", "job_id": "cal_cars_fold3", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787477259.399523, "event": "JOB_STARTED", "job_id": "cal_cars_fold4", "gpu": "0,1 exclusive", "topology": "2-rank NCCL SyncBN 2x8"}
+{"time": 1787495994.7750597, "event": "JOB_FINISHED", "job_id": "cal_cars_fold4", "gpu": "0,1 exclusive", "returncode": 0}
+{"time": 1787495994.7755828, "event": "PHASE_COMPLETE", "phase": "cal_exclusive"}
+{"time": 1787496024.1725578, "event": "FORMAL_RUN_COMPLETE", "completed_jobs": 60, "failed_jobs": 0}

@@ -1,0 +1,20 @@
+{
+  "run_id": "lambda_0_7_seed42",
+  "fold": 2,
+  "n": 3671,
+  "stage1": {
+    "accuracy": 0.9801144102424407,
+    "macro_f1": 0.9832294337760374,
+    "balanced_accuracy": 0.9834129506423372,
+    "best_epoch_zero_based": 143,
+    "best_accuracy": 0.9801144102424407
+  },
+  "stage2": {
+    "accuracy": 0.9787523835467176,
+    "macro_f1": 0.9816375348919234,
+    "balanced_accuracy": 0.9815650895498546,
+    "best_epoch_zero_based": 53,
+    "best_accuracy": 0.9787523835467176
+  },
+  "feature_extraction_location": "256-D mean aggregation after Dropout and immediately before classifier"
+}

@@ -1,0 +1,342 @@
+{
+  "backbone": "convnext_tiny",
+  "device": "cuda:1",
+  "folds": [
+    {
+      "backbone": "convnext_tiny",
+      "fold": 0,
+      "device": "cuda:1",
+      "stage1_checkpoint": "<LOCAL_PATH>",
+      "stage2_checkpoint": "<LOCAL_PATH>",
+      "stage1_checkpoint_sha256": "9499cf14c572ace66235373c8273e6dac45050de0f18c66af02c1342054f3b12",
+      "stage2_checkpoint_sha256": "9e08cfccba51fcb832c3be616e0389aa697382f396be4135acd1ce239272066a",
+      "state_checks": {
+        "total_state_tensors": 196,
+        "floating_state_tensors": 194,
+        "nonfloating_state_tensors": 2,
+        "running_mean_tensors": 2,
+        "running_var_tensors": 2,
+        "num_batches_tracked_tensors": 2,
+        "stage1_vs_stage2_nonfloating_difference_count": 2,
+        "stage1_vs_stage2_nonfloating_difference_keys": [
+          "head.bn1.num_batches_tracked",
+          "head.bn2.num_batches_tracked"
+        ],
+        "alpha0_all_state_exact_stage2": true,
+        "alpha0_floating_state_exact_stage2": true,
+        "alpha0_nonfloating_state_exact_stage2": true,
+        "alpha1_all_state_exact_stage1": false,
+        "alpha1_floating_state_exact_stage1": true,
+        "alpha1_nonfloating_state_exact_stage1": false,
+        "alpha1_nonfloating_state_exact_stage2": true,
+        "alpha0_running_mean_exact_stage2": true,
+        "alpha0_running_var_exact_stage2": true,
+        "alpha1_running_mean_exact_stage1": true,
+        "alpha1_running_var_exact_stage1": true,
+        "alpha0_num_batches_tracked_exact_stage2": true,
+        "alpha1_num_batches_tracked_exact_stage1": false,
+        "alpha1_num_batches_tracked_exact_stage2": true,
+        "alpha0_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 0.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        },
+        "alpha1_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 1.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        }
+      },
+      "alpha0_vs_stage2": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "alpha1_vs_stage1": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "endpoint_prediction_logits_pass": true
+    },
+    {
+      "backbone": "convnext_tiny",
+      "fold": 1,
+      "device": "cuda:1",
+      "stage1_checkpoint": "<LOCAL_PATH>",
+      "stage2_checkpoint": "<LOCAL_PATH>",
+      "stage1_checkpoint_sha256": "5b3eecb6179240b598d48a9cbcb3da25bbb7005f8c227396ab281909b9c4c56e",
+      "stage2_checkpoint_sha256": "439027dcb18a4bfe8787832d8690976c3e34f6a21369e557af52d218f73d3fcb",
+      "state_checks": {
+        "total_state_tensors": 196,
+        "floating_state_tensors": 194,
+        "nonfloating_state_tensors": 2,
+        "running_mean_tensors": 2,
+        "running_var_tensors": 2,
+        "num_batches_tracked_tensors": 2,
+        "stage1_vs_stage2_nonfloating_difference_count": 2,
+        "stage1_vs_stage2_nonfloating_difference_keys": [
+          "head.bn1.num_batches_tracked",
+          "head.bn2.num_batches_tracked"
+        ],
+        "alpha0_all_state_exact_stage2": true,
+        "alpha0_floating_state_exact_stage2": true,
+        "alpha0_nonfloating_state_exact_stage2": true,
+        "alpha1_all_state_exact_stage1": false,
+        "alpha1_floating_state_exact_stage1": true,
+        "alpha1_nonfloating_state_exact_stage1": false,
+        "alpha1_nonfloating_state_exact_stage2": true,
+        "alpha0_running_mean_exact_stage2": true,
+        "alpha0_running_var_exact_stage2": true,
+        "alpha1_running_mean_exact_stage1": true,
+        "alpha1_running_var_exact_stage1": true,
+        "alpha0_num_batches_tracked_exact_stage2": true,
+        "alpha1_num_batches_tracked_exact_stage1": false,
+        "alpha1_num_batches_tracked_exact_stage2": true,
+        "alpha0_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 0.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        },
+        "alpha1_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 1.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        }
+      },
+      "alpha0_vs_stage2": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "alpha1_vs_stage1": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "endpoint_prediction_logits_pass": true
+    },
+    {
+      "backbone": "convnext_tiny",
+      "fold": 2,
+      "device": "cuda:1",
+      "stage1_checkpoint": "<LOCAL_PATH>",
+      "stage2_checkpoint": "<LOCAL_PATH>",
+      "stage1_checkpoint_sha256": "74716343174de46b13cc13c6fbe02dac1a12277334b1138a73635995f9a51164",
+      "stage2_checkpoint_sha256": "0286d6161b7bcaac8126c1c2d10377fe2e4af0c679b4b3bc0ef3aba9d168d4f7",
+      "state_checks": {
+        "total_state_tensors": 196,
+        "floating_state_tensors": 194,
+        "nonfloating_state_tensors": 2,
+        "running_mean_tensors": 2,
+        "running_var_tensors": 2,
+        "num_batches_tracked_tensors": 2,
+        "stage1_vs_stage2_nonfloating_difference_count": 2,
+        "stage1_vs_stage2_nonfloating_difference_keys": [
+          "head.bn1.num_batches_tracked",
+          "head.bn2.num_batches_tracked"
+        ],
+        "alpha0_all_state_exact_stage2": true,
+        "alpha0_floating_state_exact_stage2": true,
+        "alpha0_nonfloating_state_exact_stage2": true,
+        "alpha1_all_state_exact_stage1": false,
+        "alpha1_floating_state_exact_stage1": true,
+        "alpha1_nonfloating_state_exact_stage1": false,
+        "alpha1_nonfloating_state_exact_stage2": true,
+        "alpha0_running_mean_exact_stage2": true,
+        "alpha0_running_var_exact_stage2": true,
+        "alpha1_running_mean_exact_stage1": true,
+        "alpha1_running_var_exact_stage1": true,
+        "alpha0_num_batches_tracked_exact_stage2": true,
+        "alpha1_num_batches_tracked_exact_stage1": false,
+        "alpha1_num_batches_tracked_exact_stage2": true,
+        "alpha0_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 0.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        },
+        "alpha1_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 1.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        }
+      },
+      "alpha0_vs_stage2": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "alpha1_vs_stage1": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "endpoint_prediction_logits_pass": true
+    },
+    {
+      "backbone": "convnext_tiny",
+      "fold": 3,
+      "device": "cuda:1",
+      "stage1_checkpoint": "<LOCAL_PATH>",
+      "stage2_checkpoint": "<LOCAL_PATH>",
+      "stage1_checkpoint_sha256": "52fb3b890335b4fa29854e96f111b0f84dee4cc021094256ccb0f40c831e8f9e",
+      "stage2_checkpoint_sha256": "5717c551cd628833db70d12cf99512e6bbc391c2d2f542be8893c46da8b2cc04",
+      "state_checks": {
+        "total_state_tensors": 196,
+        "floating_state_tensors": 194,
+        "nonfloating_state_tensors": 2,
+        "running_mean_tensors": 2,
+        "running_var_tensors": 2,
+        "num_batches_tracked_tensors": 2,
+        "stage1_vs_stage2_nonfloating_difference_count": 2,
+        "stage1_vs_stage2_nonfloating_difference_keys": [
+          "head.bn1.num_batches_tracked",
+          "head.bn2.num_batches_tracked"
+        ],
+        "alpha0_all_state_exact_stage2": true,
+        "alpha0_floating_state_exact_stage2": true,
+        "alpha0_nonfloating_state_exact_stage2": true,
+        "alpha1_all_state_exact_stage1": false,
+        "alpha1_floating_state_exact_stage1": true,
+        "alpha1_nonfloating_state_exact_stage1": false,
+        "alpha1_nonfloating_state_exact_stage2": true,
+        "alpha0_running_mean_exact_stage2": true,
+        "alpha0_running_var_exact_stage2": true,
+        "alpha1_running_mean_exact_stage1": true,
+        "alpha1_running_var_exact_stage1": true,
+        "alpha0_num_batches_tracked_exact_stage2": true,
+        "alpha1_num_batches_tracked_exact_stage1": false,
+        "alpha1_num_batches_tracked_exact_stage2": true,
+        "alpha0_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 0.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        },
+        "alpha1_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 1.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        }
+      },
+      "alpha0_vs_stage2": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "alpha1_vs_stage1": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "endpoint_prediction_logits_pass": true
+    },
+    {
+      "backbone": "convnext_tiny",
+      "fold": 4,
+      "device": "cuda:1",
+      "stage1_checkpoint": "<LOCAL_PATH>",
+      "stage2_checkpoint": "<LOCAL_PATH>",
+      "stage1_checkpoint_sha256": "cdb9f9e1c1a29411273c3ca89862627f10efdb2a52a1712513e7152e1a5635ed",
+      "stage2_checkpoint_sha256": "3065e439863d436092a1b4f7ba18b67b733415bdb13c87f4249888529123511f",
+      "state_checks": {
+        "total_state_tensors": 196,
+        "floating_state_tensors": 194,
+        "nonfloating_state_tensors": 2,
+        "running_mean_tensors": 2,
+        "running_var_tensors": 2,
+        "num_batches_tracked_tensors": 2,
+        "stage1_vs_stage2_nonfloating_difference_count": 2,
+        "stage1_vs_stage2_nonfloating_difference_keys": [
+          "head.bn1.num_batches_tracked",
+          "head.bn2.num_batches_tracked"
+        ],
+        "alpha0_all_state_exact_stage2": true,
+        "alpha0_floating_state_exact_stage2": true,
+        "alpha0_nonfloating_state_exact_stage2": true,
+        "alpha1_all_state_exact_stage1": false,
+        "alpha1_floating_state_exact_stage1": true,
+        "alpha1_nonfloating_state_exact_stage1": false,
+        "alpha1_nonfloating_state_exact_stage2": true,
+        "alpha0_running_mean_exact_stage2": true,
+        "alpha0_running_var_exact_stage2": true,
+        "alpha1_running_mean_exact_stage1": true,
+        "alpha1_running_var_exact_stage1": true,
+        "alpha0_num_batches_tracked_exact_stage2": true,
+        "alpha1_num_batches_tracked_exact_stage1": false,
+        "alpha1_num_batches_tracked_exact_stage2": true,
+        "alpha0_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 0.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        },
+        "alpha1_interpolation_metadata": {
+          "formula": "alpha*Stage1+(1-alpha)*Stage2",
+          "alpha": 1.0,
+          "floating_state_tensors_interpolated": 194,
+          "nonfloating_state_tensors_copied_from_stage2": 2
+        }
+      },
+      "alpha0_vs_stage2": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "alpha1_vs_stage1": {
+        "sample_id_exact": true,
+        "labels_exact": true,
+        "predictions_exact": true,
+        "prediction_mismatch_count": 0,
+        "logits_exact": true,
+        "logits_max_abs_difference": 0.0,
+        "pass": true
+      },
+      "endpoint_prediction_logits_pass": true
+    }
+  ],
+  "all_folds_endpoint_prediction_logits_pass": true
+}

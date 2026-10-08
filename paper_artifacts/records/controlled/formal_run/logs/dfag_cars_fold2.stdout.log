@@ -1,0 +1,1 @@
+{"status": "COMPLETE", "job_id": "dfag_cars_fold2", "metrics": {"accuracy": 0.894413750767342, "macro_f1": 0.891801935743841, "balanced_accuracy": 0.8943620580100172}}

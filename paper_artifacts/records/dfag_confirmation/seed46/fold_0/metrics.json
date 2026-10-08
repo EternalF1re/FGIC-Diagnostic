@@ -1,0 +1,75 @@
+{
+  "seed": 46,
+  "fold": 0,
+  "n": 3671,
+  "selected_epoch_zero_based": 0,
+  "selected_accuracy": 0.9784799782075728,
+  "modes": {
+    "dynamic": {
+      "accuracy": 0.9784799782075728,
+      "macro_f1": 0.9802564468964903,
+      "balanced_accuracy": 0.9802950818221924
+    },
+    "mean_vector": {
+      "accuracy": 0.9784799782075728,
+      "macro_f1": 0.9802564468964903,
+      "balanced_accuracy": 0.9802950818221924
+    },
+    "mean_scalar": {
+      "accuracy": 0.9782075728684282,
+      "macro_f1": 0.9800331342440297,
+      "balanced_accuracy": 0.9800245190516296
+    },
+    "constant_0_5": {
+      "accuracy": 0.9779351675292836,
+      "macro_f1": 0.979741936620515,
+      "balanced_accuracy": 0.9797539562810669
+    },
+    "anchor_forced": {
+      "accuracy": 0.9773903568509943,
+      "macro_f1": 0.979250996092807,
+      "balanced_accuracy": 0.9792289669122927
+    },
+    "plastic_forced": {
+      "accuracy": 0.9689457913375102,
+      "macro_f1": 0.970207592911586,
+      "balanced_accuracy": 0.9694672044718895
+    }
+  },
+  "training_side_mean_gate_count": 14682,
+  "training_side_mean_gate_scalar": 0.5119816064834595,
+  "sanity": {
+    "gate_initial_parameter_norm": 23.324686950676227,
+    "gate_selected_parameter_norm": 23.33556233613103,
+    "gate_initial_output": {
+      "mean": 0.499880850315094,
+      "std": 0.01385621726512909,
+      "min": 0.44263455271720886,
+      "max": 0.5506121516227722,
+      "n": 98304
+    },
+    "gate_selected_output": {
+      "mean": 0.5119839310646057,
+      "std": 0.054083507508039474,
+      "min": 0.27729421854019165,
+      "max": 0.7805981040000916,
+      "n": 5638656
+    },
+    "gate_initial_state_sha256": "7f201a5b424dd43140cef5a4c6965a38fc06cdc51335087601684ce1bd847954",
+    "gate_selected_state_sha256": "98027e46ee34ab4f5a12ff087e3491ae27821ea042c8b7dee87364a45ed1ec8e",
+    "gate_parameters_changed": true,
+    "gate_gradient_observed_batches": 13800,
+    "gate_gradient_nonzero_batches": 13800,
+    "gate_gradients_not_permanently_zero": true,
+    "anchor_state_sha256_before": "80e3fa8a51e986fab9cbc4a603bcde1ebe4b2b78b87e84aea23c595e85a377bf",
+    "anchor_state_sha256_after": "80e3fa8a51e986fab9cbc4a603bcde1ebe4b2b78b87e84aea23c595e85a377bf",
+    "anchor_unchanged": true,
+    "anchor_bn_sha256_before": "8e6ff33278e61b80b2a21011a3c8829d971b86dcef8301d5c7071fdd706d60c5",
+    "anchor_bn_sha256_after": "8e6ff33278e61b80b2a21011a3c8829d971b86dcef8301d5c7071fdd706d60c5",
+    "anchor_bn_unchanged": true,
+    "anchor_gradients_absent": true,
+    "max_abs_fanc_minus_fspec": 0.9257098436355591,
+    "branches_not_bitwise_identical": true,
+    "all_outputs_finite": true
+  }
+}

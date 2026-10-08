@@ -1,0 +1,1531 @@
+{
+  "schema_version": 1,
+  "generated_local": "2026-08-18T20:15:42+0800",
+  "elapsed_seconds": 0.336456298828125,
+  "protocol": {
+    "experiment_id": "FINAL_NEWLY_FROZEN_UNIFIED_CROSS_DATASET_VALIDATION_PROTOCOL",
+    "historical_reproduction": false,
+    "config_sha256": "7f667c125983ca82ec36214b727ee8fbe3215f21562abd260f4018559f87e3e5",
+    "primary_unit": "complete pooled five-fold OOF samples",
+    "official_test_used_for_significance": false,
+    "tta_used": false,
+    "cross_fold_ensemble_used": false
+  },
+  "provenance": {
+    "checks": {
+      "config_sha256": "7f667c125983ca82ec36214b727ee8fbe3215f21562abd260f4018559f87e3e5",
+      "config_sha256_pass": true,
+      "formal_jobs_complete": 40,
+      "formal_jobs_failed": 0,
+      "formal_jobs_pass": true,
+      "oof_coverage_pass": true,
+      "recorded_artifact_count": 16,
+      "filesystem_artifact_count": 16,
+      "artifact_count_pass": true,
+      "artifact_hashes_pass": true,
+      "summary_rows": 16,
+      "summary_oof_coverage_pass": true,
+      "fold_metric_rows": 80,
+      "provenance_pass": true
+    },
+    "artifacts": [
+      {
+        "dataset": "CUB-200-2011",
+        "method": "Ours-FT",
+        "lambda": "",
+        "stage": 1,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage1.npz",
+        "expected_sha256": "48023bf399a857ca73bbebe8302af2b0fd089e6d17764162b49357c0d77a16a5",
+        "actual_sha256": "48023bf399a857ca73bbebe8302af2b0fd089e6d17764162b49357c0d77a16a5",
+        "hash_match": true
+      },
+      {
+        "dataset": "CUB-200-2011",
+        "method": "Ours-FT",
+        "lambda": "",
+        "stage": 2,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage2.npz",
+        "expected_sha256": "06725054bda9eabf03bf48dd6d6900e77f96806d79a79525a7dad7a5bfed41e0",
+        "actual_sha256": "06725054bda9eabf03bf48dd6d6900e77f96806d79a79525a7dad7a5bfed41e0",
+        "hash_match": true
+      },
+      {
+        "dataset": "CUB-200-2011",
+        "method": "Progressive Head",
+        "lambda": "0.7",
+        "stage": 1,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage1.npz",
+        "expected_sha256": "11e34f9b433f00c9362fa55d275d0825ffc7c387ffdd93a2c8168945e6063bfe",
+        "actual_sha256": "11e34f9b433f00c9362fa55d275d0825ffc7c387ffdd93a2c8168945e6063bfe",
+        "hash_match": true
+      },
+      {
+        "dataset": "CUB-200-2011",
+        "method": "Progressive Head",
+        "lambda": "0.7",
+        "stage": 2,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage2.npz",
+        "expected_sha256": "0511927c3763fd73e430bd1818e5ef1218acf469262f3abcb9ba148ccf8c7635",
+        "actual_sha256": "0511927c3763fd73e430bd1818e5ef1218acf469262f3abcb9ba148ccf8c7635",
+        "hash_match": true
+      },
+      {
+        "dataset": "CUB-200-2011",
+        "method": "Progressive Head",
+        "lambda": "0.1",
+        "stage": 1,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_1__stage1.npz",
+        "expected_sha256": "c3cf20a5208dec41ca10dae3b9f2b5aee9ae83001a1ffabe91eaabfffea9daa2",
+        "actual_sha256": "c3cf20a5208dec41ca10dae3b9f2b5aee9ae83001a1ffabe91eaabfffea9daa2",
+        "hash_match": true
+      },
+      {
+        "dataset": "CUB-200-2011",
+        "method": "Progressive Head",
+        "lambda": "0.1",
+        "stage": 2,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_1__stage2.npz",
+        "expected_sha256": "cd1f472ffca07fbd313e61e31b217764256c243104cd7482230163d56c4db062",
+        "actual_sha256": "cd1f472ffca07fbd313e61e31b217764256c243104cd7482230163d56c4db062",
+        "hash_match": true
+      },
+      {
+        "dataset": "CUB-200-2011",
+        "method": "Progressive Head",
+        "lambda": "1.0",
+        "stage": 1,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_1_0__stage1.npz",
+        "expected_sha256": "226893bdf9202edc71a3b2769e21a96381986cc8658fa0a88c5a0c12ac962d9b",
+        "actual_sha256": "226893bdf9202edc71a3b2769e21a96381986cc8658fa0a88c5a0c12ac962d9b",
+        "hash_match": true
+      },
+      {
+        "dataset": "CUB-200-2011",
+        "method": "Progressive Head",
+        "lambda": "1.0",
+        "stage": 2,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_1_0__stage2.npz",
+        "expected_sha256": "df7dbe06720b5178d8238840248dc2a3943ce41befd35c9c9ca2b3033fecba01",
+        "actual_sha256": "df7dbe06720b5178d8238840248dc2a3943ce41befd35c9c9ca2b3033fecba01",
+        "hash_match": true
+      },
+      {
+        "dataset": "Stanford Cars",
+        "method": "Ours-FT",
+        "lambda": "",
+        "stage": 1,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cars__ours_ft__stage1.npz",
+        "expected_sha256": "7b6679341297f520fbe967c8fec466f9880fdf4970ab88ac4456626452d9f32a",
+        "actual_sha256": "7b6679341297f520fbe967c8fec466f9880fdf4970ab88ac4456626452d9f32a",
+        "hash_match": true
+      },
+      {
+        "dataset": "Stanford Cars",
+        "method": "Ours-FT",
+        "lambda": "",
+        "stage": 2,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cars__ours_ft__stage2.npz",
+        "expected_sha256": "7c67ffe477a3282525c2e518aa97179b9caa04cdd9be6ccb59bb7491c9493815",
+        "actual_sha256": "7c67ffe477a3282525c2e518aa97179b9caa04cdd9be6ccb59bb7491c9493815",
+        "hash_match": true
+      },
+      {
+        "dataset": "Stanford Cars",
+        "method": "Progressive Head",
+        "lambda": "0.7",
+        "stage": 1,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cars__progressive_lambda_0_7__stage1.npz",
+        "expected_sha256": "b7139a862d72ea3f3e8633300edec888b068a603cb4f1aaea56192ad6f5509fe",
+        "actual_sha256": "b7139a862d72ea3f3e8633300edec888b068a603cb4f1aaea56192ad6f5509fe",
+        "hash_match": true
+      },
+      {
+        "dataset": "Stanford Cars",
+        "method": "Progressive Head",
+        "lambda": "0.7",
+        "stage": 2,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cars__progressive_lambda_0_7__stage2.npz",
+        "expected_sha256": "abde4a7e95a4501db432bb1687df5643192d081b4b17814eb181b5ca7321e14d",
+        "actual_sha256": "abde4a7e95a4501db432bb1687df5643192d081b4b17814eb181b5ca7321e14d",
+        "hash_match": true
+      },
+      {
+        "dataset": "Oxford Flowers-102",
+        "method": "Ours-FT",
+        "lambda": "",
+        "stage": 1,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\flowers__ours_ft__stage1.npz",
+        "expected_sha256": "aecb82ed9b7c37fb01b30138f2fe633e17923917412c29979c71aa4d06e0f77c",
+        "actual_sha256": "aecb82ed9b7c37fb01b30138f2fe633e17923917412c29979c71aa4d06e0f77c",
+        "hash_match": true
+      },
+      {
+        "dataset": "Oxford Flowers-102",
+        "method": "Ours-FT",
+        "lambda": "",
+        "stage": 2,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\flowers__ours_ft__stage2.npz",
+        "expected_sha256": "e73b0b46eac53e5492763862ba29ae12d4c97ca4c3ed9495184fe6702363bec6",
+        "actual_sha256": "e73b0b46eac53e5492763862ba29ae12d4c97ca4c3ed9495184fe6702363bec6",
+        "hash_match": true
+      },
+      {
+        "dataset": "Oxford Flowers-102",
+        "method": "Progressive Head",
+        "lambda": "0.7",
+        "stage": 1,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\flowers__progressive_lambda_0_7__stage1.npz",
+        "expected_sha256": "fb1cd928ac478d968e2cf5305ab42b8f05527424a73dee1d52c6faf357c42c7a",
+        "actual_sha256": "fb1cd928ac478d968e2cf5305ab42b8f05527424a73dee1d52c6faf357c42c7a",
+        "hash_match": true
+      },
+      {
+        "dataset": "Oxford Flowers-102",
+        "method": "Progressive Head",
+        "lambda": "0.7",
+        "stage": 2,
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\flowers__progressive_lambda_0_7__stage2.npz",
+        "expected_sha256": "b275989cbdf5bb6ff11014cd6a8b7b1fcfaeb6f0a58611f6a428f666ec2119b2",
+        "actual_sha256": "b275989cbdf5bb6ff11014cd6a8b7b1fcfaeb6f0a58611f6a428f666ec2119b2",
+        "hash_match": true
+      }
+    ],
+    "input_file_sha256": {
+      "final_external_protocol_config.json": "7f667c125983ca82ec36214b727ee8fbe3215f21562abd260f4018559f87e3e5",
+      "final_external_validation_results.json": "d82eeefc3423c8db8705f8e9260010d661b1999c0ff950afeb3bb75c4c751e5b",
+      "final_external_oof_summary.csv": "c11e3826ff2c0fabeccd989c3d8fa8aad2885ecc96ce28bcafa6b34421d2c3a7",
+      "final_external_fold_metrics.csv": "a1a714983a14470054951f2c82aa3a473c95366337f48d6c2840f40b173db300",
+      "final_cub_lambda_representation_diagnostics.csv": "8c3bf1845cc1cdeaf298d47e716a057576afeef69fa8d4abd14bcbc8020d4bbc"
+    }
+  },
+  "alignment": {
+    "explicit_alignment_key": "sample_id",
+    "all_comparisons_pass": true,
+    "required_equal_fields": [
+      "N",
+      "sample_id",
+      "ground_truth_label",
+      "fold_assignment"
+    ]
+  },
+  "definitions": {
+    "difference": "accuracy(method_b) - accuracy(method_a), in percentage points",
+    "n10": "method_a correct and method_b wrong",
+    "n01": "method_a wrong and method_b correct",
+    "prediction_disagreement": "predicted class differs, including cases where both predictions are wrong",
+    "mcnemar": "exact two-sided binomial McNemar test on n10 and n01"
+  },
+  "bootstrap": {
+    "seed": 20260818,
+    "resamples": 100000,
+    "unit": "paired sample",
+    "ci_method": "percentile 95% CI",
+    "implementation": "multinomial counts over paired correctness differences {-1,0,+1}; exactly distribution-equivalent to paired sample-index resampling for delta accuracy"
+  },
+  "comparisons": [
+    {
+      "comparison_scope": "primary_external",
+      "dataset": "CUB-200-2011",
+      "stage": 1,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.7",
+      "n": 5994,
+      "accuracy_a": 0.8078078078078078,
+      "accuracy_b": 0.7914581247914582,
+      "delta_accuracy_pp": -1.6349683016349648,
+      "ci95_low_pp": -2.535869202535869,
+      "ci95_high_pp": -0.7507507507507507,
+      "n10": 423,
+      "n01": 325,
+      "mcnemar_p": 0.00038337066976712534,
+      "prediction_disagreement_count": 1123,
+      "prediction_disagreement_rate": 0.18735402068735402,
+      "negative_fold_count": 5,
+      "positive_fold_count": 0,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -1.5846538782318564
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -3.5029190992493686
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -2.251876563803179
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -0.6672226855713115
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -0.16694490818031094
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage1.npz",
+        "sha256": "48023bf399a857ca73bbebe8302af2b0fd089e6d17764162b49357c0d77a16a5",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage1.npz",
+        "sha256": "11e34f9b433f00c9362fa55d275d0825ffc7c387ffdd93a2c8168945e6063bfe",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "primary_external",
+      "dataset": "CUB-200-2011",
+      "stage": 2,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.7",
+      "n": 5994,
+      "accuracy_a": 0.805638972305639,
+      "accuracy_b": 0.7826159492826159,
+      "delta_accuracy_pp": -2.302302302302306,
+      "ci95_low_pp": -3.23656990323657,
+      "ci95_high_pp": -1.384718051384718,
+      "n10": 470,
+      "n01": 332,
+      "mcnemar_p": 1.2407308522113177e-06,
+      "prediction_disagreement_count": 1200,
+      "prediction_disagreement_rate": 0.2002002002002002,
+      "negative_fold_count": 5,
+      "positive_fold_count": 0,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -2.251876563803168
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -2.5020850708924125
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -3.085904920767313
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -1.9182652210175122
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -1.7529215358931594
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage2.npz",
+        "sha256": "06725054bda9eabf03bf48dd6d6900e77f96806d79a79525a7dad7a5bfed41e0",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage2.npz",
+        "sha256": "0511927c3763fd73e430bd1818e5ef1218acf469262f3abcb9ba148ccf8c7635",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "primary_external",
+      "dataset": "Stanford Cars",
+      "stage": 1,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.7",
+      "n": 8144,
+      "accuracy_a": 0.9141699410609038,
+      "accuracy_b": 0.9071709233791748,
+      "delta_accuracy_pp": -0.6999017681728947,
+      "ci95_low_pp": -1.2401768172888015,
+      "ci95_high_pp": -0.15962671905697445,
+      "n10": 283,
+      "n01": 226,
+      "mcnemar_p": 0.012982013121811627,
+      "prediction_disagreement_count": 633,
+      "prediction_disagreement_rate": 0.07772593320235756,
+      "negative_fold_count": 4,
+      "positive_fold_count": 1,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -1.0435850214855713
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -1.0435850214855713
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": 0.7366482504604033
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -1.104972375690616
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -1.0442260442260487
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cars__ours_ft__stage1.npz",
+        "sha256": "7b6679341297f520fbe967c8fec466f9880fdf4970ab88ac4456626452d9f32a",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cars__progressive_lambda_0_7__stage1.npz",
+        "sha256": "b7139a862d72ea3f3e8633300edec888b068a603cb4f1aaea56192ad6f5509fe",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "primary_external",
+      "dataset": "Stanford Cars",
+      "stage": 2,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.7",
+      "n": 8144,
+      "accuracy_a": 0.912573673870334,
+      "accuracy_b": 0.9018909626719057,
+      "delta_accuracy_pp": -1.068271119842823,
+      "ci95_low_pp": -1.6331041257367387,
+      "ci95_high_pp": -0.5034381139489195,
+      "n10": 316,
+      "n01": 229,
+      "mcnemar_p": 0.00022339145363201466,
+      "prediction_disagreement_count": 698,
+      "prediction_disagreement_rate": 0.08570726915520628,
+      "negative_fold_count": 5,
+      "positive_fold_count": 0,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -1.3505217925107393
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -1.4732965009208066
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -0.24554941682013443
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -1.4732965009208177
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -0.7985257985257954
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cars__ours_ft__stage2.npz",
+        "sha256": "7c67ffe477a3282525c2e518aa97179b9caa04cdd9be6ccb59bb7491c9493815",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cars__progressive_lambda_0_7__stage2.npz",
+        "sha256": "abde4a7e95a4501db432bb1687df5643192d081b4b17814eb181b5ca7321e14d",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "primary_external",
+      "dataset": "Oxford Flowers-102",
+      "stage": 1,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.7",
+      "n": 2040,
+      "accuracy_a": 0.9784313725490196,
+      "accuracy_b": 0.9705882352941176,
+      "delta_accuracy_pp": -0.7843137254901933,
+      "ci95_low_pp": -1.3725490196078431,
+      "ci95_high_pp": -0.19607843137254902,
+      "n10": 26,
+      "n01": 10,
+      "mcnemar_p": 0.011330984183587134,
+      "prediction_disagreement_count": 45,
+      "prediction_disagreement_rate": 0.022058823529411766,
+      "negative_fold_count": 4,
+      "positive_fold_count": 0,
+      "tie_fold_count": 1,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -0.7352941176470562
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -1.4705882352941124
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": 0.0
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -0.7352941176470562
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -0.9803921568627416
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\flowers__ours_ft__stage1.npz",
+        "sha256": "aecb82ed9b7c37fb01b30138f2fe633e17923917412c29979c71aa4d06e0f77c",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\flowers__progressive_lambda_0_7__stage1.npz",
+        "sha256": "fb1cd928ac478d968e2cf5305ab42b8f05527424a73dee1d52c6faf357c42c7a",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "primary_external",
+      "dataset": "Oxford Flowers-102",
+      "stage": 2,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.7",
+      "n": 2040,
+      "accuracy_a": 0.9745098039215686,
+      "accuracy_b": 0.9676470588235294,
+      "delta_accuracy_pp": -0.6862745098039191,
+      "ci95_low_pp": -1.4215686274509804,
+      "ci95_high_pp": 0.0,
+      "n10": 35,
+      "n01": 21,
+      "mcnemar_p": 0.08142681460950618,
+      "prediction_disagreement_count": 68,
+      "prediction_disagreement_rate": 0.03333333333333333,
+      "negative_fold_count": 4,
+      "positive_fold_count": 1,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": 0.2450980392156854
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -0.2450980392156854
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -0.7352941176470673
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -1.4705882352941124
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -1.225490196078427
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\flowers__ours_ft__stage2.npz",
+        "sha256": "e73b0b46eac53e5492763862ba29ae12d4c97ca4c3ed9495184fe6702363bec6",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\flowers__progressive_lambda_0_7__stage2.npz",
+        "sha256": "b275989cbdf5bb6ff11014cd6a8b7b1fcfaeb6f0a58611f6a428f666ec2119b2",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_vs_ours",
+      "dataset": "CUB-200-2011",
+      "stage": 1,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.1",
+      "n": 5994,
+      "accuracy_a": 0.8078078078078078,
+      "accuracy_b": 0.7987987987987988,
+      "delta_accuracy_pp": -0.9009009009009028,
+      "ci95_low_pp": -1.8018018018018016,
+      "ci95_high_pp": 0.0,
+      "n10": 405,
+      "n01": 351,
+      "mcnemar_p": 0.05383409440060493,
+      "prediction_disagreement_count": 1120,
+      "prediction_disagreement_rate": 0.18685352018685353,
+      "negative_fold_count": 4,
+      "positive_fold_count": 1,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -0.6672226855713115
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -1.7514595496246788
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -1.7514595496246899
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -0.917431192660545
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": 0.5843071786310494
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage1.npz",
+        "sha256": "48023bf399a857ca73bbebe8302af2b0fd089e6d17764162b49357c0d77a16a5",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_1__stage1.npz",
+        "sha256": "c3cf20a5208dec41ca10dae3b9f2b5aee9ae83001a1ffabe91eaabfffea9daa2",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_vs_ours",
+      "dataset": "CUB-200-2011",
+      "stage": 1,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.7",
+      "n": 5994,
+      "accuracy_a": 0.8078078078078078,
+      "accuracy_b": 0.7914581247914582,
+      "delta_accuracy_pp": -1.6349683016349648,
+      "ci95_low_pp": -2.535869202535869,
+      "ci95_high_pp": -0.7507507507507507,
+      "n10": 423,
+      "n01": 325,
+      "mcnemar_p": 0.00038337066976712534,
+      "prediction_disagreement_count": 1123,
+      "prediction_disagreement_rate": 0.18735402068735402,
+      "negative_fold_count": 5,
+      "positive_fold_count": 0,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -1.5846538782318564
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -3.5029190992493686
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -2.251876563803179
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -0.6672226855713115
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -0.16694490818031094
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage1.npz",
+        "sha256": "48023bf399a857ca73bbebe8302af2b0fd089e6d17764162b49357c0d77a16a5",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage1.npz",
+        "sha256": "11e34f9b433f00c9362fa55d275d0825ffc7c387ffdd93a2c8168945e6063bfe",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_vs_ours",
+      "dataset": "CUB-200-2011",
+      "stage": 1,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "1.0",
+      "n": 5994,
+      "accuracy_a": 0.8078078078078078,
+      "accuracy_b": 0.7972972972972973,
+      "delta_accuracy_pp": -1.0510510510510551,
+      "ci95_low_pp": -1.9352686019352685,
+      "ci95_high_pp": -0.1668335001668335,
+      "n10": 398,
+      "n01": 335,
+      "mcnemar_p": 0.02195590825492199,
+      "prediction_disagreement_count": 1128,
+      "prediction_disagreement_rate": 0.1881881881881882,
+      "negative_fold_count": 5,
+      "positive_fold_count": 0,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -0.6672226855713115
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -2.5854879065888237
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -1.1676396997498006
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -0.4170141784820669
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -0.4173622704507607
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage1.npz",
+        "sha256": "48023bf399a857ca73bbebe8302af2b0fd089e6d17764162b49357c0d77a16a5",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_1_0__stage1.npz",
+        "sha256": "226893bdf9202edc71a3b2769e21a96381986cc8658fa0a88c5a0c12ac962d9b",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_to_lambda",
+      "dataset": "CUB-200-2011",
+      "stage": 1,
+      "method_a": "Progressive Head",
+      "method_b": "Progressive Head",
+      "lambda_a": "0.1",
+      "lambda_b": "0.7",
+      "n": 5994,
+      "accuracy_a": 0.7987987987987988,
+      "accuracy_b": 0.7914581247914582,
+      "delta_accuracy_pp": -0.734067400734062,
+      "ci95_low_pp": -1.634968301634968,
+      "ci95_high_pp": 0.1668335001668335,
+      "n10": 396,
+      "n01": 352,
+      "mcnemar_p": 0.11583612740569506,
+      "prediction_disagreement_count": 1117,
+      "prediction_disagreement_rate": 0.186353019686353,
+      "negative_fold_count": 4,
+      "positive_fold_count": 1,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -0.917431192660545
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -1.7514595496246899
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -0.5004170141784892
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": 0.2502085070892335
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -0.7512520868113604
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_1__stage1.npz",
+        "sha256": "c3cf20a5208dec41ca10dae3b9f2b5aee9ae83001a1ffabe91eaabfffea9daa2",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage1.npz",
+        "sha256": "11e34f9b433f00c9362fa55d275d0825ffc7c387ffdd93a2c8168945e6063bfe",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_to_lambda",
+      "dataset": "CUB-200-2011",
+      "stage": 1,
+      "method_a": "Progressive Head",
+      "method_b": "Progressive Head",
+      "lambda_a": "0.1",
+      "lambda_b": "1.0",
+      "n": 5994,
+      "accuracy_a": 0.7987987987987988,
+      "accuracy_b": 0.7972972972972973,
+      "delta_accuracy_pp": -0.15015015015015232,
+      "ci95_low_pp": -1.051051051051051,
+      "ci95_high_pp": 0.7507507507507507,
+      "n10": 378,
+      "n01": 369,
+      "mcnemar_p": 0.769770752998695,
+      "prediction_disagreement_count": 1135,
+      "prediction_disagreement_rate": 0.18935602268935603,
+      "negative_fold_count": 2,
+      "positive_fold_count": 2,
+      "tie_fold_count": 1,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": 0.0
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -0.8340283569641449
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": 0.5838198498748892
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": 0.5004170141784781
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -1.00166944908181
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_1__stage1.npz",
+        "sha256": "c3cf20a5208dec41ca10dae3b9f2b5aee9ae83001a1ffabe91eaabfffea9daa2",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_1_0__stage1.npz",
+        "sha256": "226893bdf9202edc71a3b2769e21a96381986cc8658fa0a88c5a0c12ac962d9b",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_to_lambda",
+      "dataset": "CUB-200-2011",
+      "stage": 1,
+      "method_a": "Progressive Head",
+      "method_b": "Progressive Head",
+      "lambda_a": "0.7",
+      "lambda_b": "1.0",
+      "n": 5994,
+      "accuracy_a": 0.7914581247914582,
+      "accuracy_b": 0.7972972972972973,
+      "delta_accuracy_pp": 0.5839172505839096,
+      "ci95_low_pp": -0.3169836503169836,
+      "ci95_high_pp": 1.484818151484818,
+      "n10": 357,
+      "n01": 392,
+      "mcnemar_p": 0.21408610311172527,
+      "prediction_disagreement_count": 1136,
+      "prediction_disagreement_rate": 0.18952285618952286,
+      "negative_fold_count": 1,
+      "positive_fold_count": 4,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": 0.917431192660545
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": 0.917431192660545
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": 1.0842368640533784
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": 0.2502085070892446
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -0.25041736227044975
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage1.npz",
+        "sha256": "11e34f9b433f00c9362fa55d275d0825ffc7c387ffdd93a2c8168945e6063bfe",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_1_0__stage1.npz",
+        "sha256": "226893bdf9202edc71a3b2769e21a96381986cc8658fa0a88c5a0c12ac962d9b",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_vs_ours",
+      "dataset": "CUB-200-2011",
+      "stage": 2,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.1",
+      "n": 5994,
+      "accuracy_a": 0.805638972305639,
+      "accuracy_b": 0.793626960293627,
+      "delta_accuracy_pp": -1.2012012012011963,
+      "ci95_low_pp": -2.1354688021354686,
+      "ci95_high_pp": -0.28361695028361694,
+      "n10": 438,
+      "n01": 366,
+      "mcnemar_p": 0.012233086953769267,
+      "prediction_disagreement_count": 1202,
+      "prediction_disagreement_rate": 0.20053386720053387,
+      "negative_fold_count": 5,
+      "positive_fold_count": 0,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -1.7514595496246788
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -0.7506255212677226
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -2.0016680567139344
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -0.8340283569641338
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -0.6677796327211993
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage2.npz",
+        "sha256": "06725054bda9eabf03bf48dd6d6900e77f96806d79a79525a7dad7a5bfed41e0",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_1__stage2.npz",
+        "sha256": "cd1f472ffca07fbd313e61e31b217764256c243104cd7482230163d56c4db062",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_vs_ours",
+      "dataset": "CUB-200-2011",
+      "stage": 2,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "0.7",
+      "n": 5994,
+      "accuracy_a": 0.805638972305639,
+      "accuracy_b": 0.7826159492826159,
+      "delta_accuracy_pp": -2.302302302302306,
+      "ci95_low_pp": -3.23656990323657,
+      "ci95_high_pp": -1.384718051384718,
+      "n10": 470,
+      "n01": 332,
+      "mcnemar_p": 1.2407308522113177e-06,
+      "prediction_disagreement_count": 1200,
+      "prediction_disagreement_rate": 0.2002002002002002,
+      "negative_fold_count": 5,
+      "positive_fold_count": 0,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -2.251876563803168
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -2.5020850708924125
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -3.085904920767313
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -1.9182652210175122
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -1.7529215358931594
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage2.npz",
+        "sha256": "06725054bda9eabf03bf48dd6d6900e77f96806d79a79525a7dad7a5bfed41e0",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage2.npz",
+        "sha256": "0511927c3763fd73e430bd1818e5ef1218acf469262f3abcb9ba148ccf8c7635",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_vs_ours",
+      "dataset": "CUB-200-2011",
+      "stage": 2,
+      "method_a": "Ours-FT",
+      "method_b": "Progressive Head",
+      "lambda_a": "",
+      "lambda_b": "1.0",
+      "n": 5994,
+      "accuracy_a": 0.805638972305639,
+      "accuracy_b": 0.7942942942942943,
+      "delta_accuracy_pp": -1.1344678011344644,
+      "ci95_low_pp": -2.0520520520520518,
+      "ci95_high_pp": -0.21688355021688355,
+      "n10": 426,
+      "n01": 358,
+      "mcnemar_p": 0.016662930395092482,
+      "prediction_disagreement_count": 1180,
+      "prediction_disagreement_rate": 0.19686353019686353,
+      "negative_fold_count": 4,
+      "positive_fold_count": 1,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -1.0008340283569561
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -2.5020850708924125
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -2.251876563803179
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -0.33361134278565574
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": 0.4173622704507496
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__ours_ft__stage2.npz",
+        "sha256": "06725054bda9eabf03bf48dd6d6900e77f96806d79a79525a7dad7a5bfed41e0",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_1_0__stage2.npz",
+        "sha256": "df7dbe06720b5178d8238840248dc2a3943ce41befd35c9c9ca2b3033fecba01",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_to_lambda",
+      "dataset": "CUB-200-2011",
+      "stage": 2,
+      "method_a": "Progressive Head",
+      "method_b": "Progressive Head",
+      "lambda_a": "0.1",
+      "lambda_b": "0.7",
+      "n": 5994,
+      "accuracy_a": 0.793626960293627,
+      "accuracy_b": 0.7826159492826159,
+      "delta_accuracy_pp": -1.1011011011011096,
+      "ci95_low_pp": -2.0687354020687354,
+      "ci95_high_pp": -0.15015015015015015,
+      "n10": 463,
+      "n01": 397,
+      "mcnemar_p": 0.026600993451196906,
+      "prediction_disagreement_count": 1287,
+      "prediction_disagreement_rate": 0.2147147147147147,
+      "negative_fold_count": 5,
+      "positive_fold_count": 0,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": -0.5004170141784892
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -1.7514595496246899
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -1.0842368640533784
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": -1.0842368640533784
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": -1.08514190317196
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_1__stage2.npz",
+        "sha256": "cd1f472ffca07fbd313e61e31b217764256c243104cd7482230163d56c4db062",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage2.npz",
+        "sha256": "0511927c3763fd73e430bd1818e5ef1218acf469262f3abcb9ba148ccf8c7635",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_to_lambda",
+      "dataset": "CUB-200-2011",
+      "stage": 2,
+      "method_a": "Progressive Head",
+      "method_b": "Progressive Head",
+      "lambda_a": "0.1",
+      "lambda_b": "1.0",
+      "n": 5994,
+      "accuracy_a": 0.793626960293627,
+      "accuracy_b": 0.7942942942942943,
+      "delta_accuracy_pp": 0.0667334000667319,
+      "ci95_low_pp": -0.8842175508842175,
+      "ci95_high_pp": 1.0176843510176843,
+      "n10": 417,
+      "n01": 421,
+      "mcnemar_p": 0.917468480675568,
+      "prediction_disagreement_count": 1258,
+      "prediction_disagreement_rate": 0.20987654320987653,
+      "negative_fold_count": 2,
+      "positive_fold_count": 3,
+      "tie_fold_count": 0,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": 0.7506255212677226
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": -1.7514595496246899
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": -0.2502085070892446
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": 0.5004170141784781
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": 1.085141903171949
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_1__stage2.npz",
+        "sha256": "cd1f472ffca07fbd313e61e31b217764256c243104cd7482230163d56c4db062",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_1_0__stage2.npz",
+        "sha256": "df7dbe06720b5178d8238840248dc2a3943ce41befd35c9c9ca2b3033fecba01",
+        "original_order_was_sorted": true
+      }
+    },
+    {
+      "comparison_scope": "cub_lambda_to_lambda",
+      "dataset": "CUB-200-2011",
+      "stage": 2,
+      "method_a": "Progressive Head",
+      "method_b": "Progressive Head",
+      "lambda_a": "0.7",
+      "lambda_b": "1.0",
+      "n": 5994,
+      "accuracy_a": 0.7826159492826159,
+      "accuracy_b": 0.7942942942942943,
+      "delta_accuracy_pp": 1.1678345011678415,
+      "ci95_low_pp": 0.2502502502502502,
+      "ci95_high_pp": 2.102102102102102,
+      "n10": 362,
+      "n01": 432,
+      "mcnemar_p": 0.014285396150916091,
+      "prediction_disagreement_count": 1226,
+      "prediction_disagreement_rate": 0.20453787120453787,
+      "negative_fold_count": 0,
+      "positive_fold_count": 4,
+      "tie_fold_count": 1,
+      "fold_deltas": [
+        {
+          "fold": 0,
+          "delta_accuracy_pp": 1.2510425354462118
+        },
+        {
+          "fold": 1,
+          "delta_accuracy_pp": 0.0
+        },
+        {
+          "fold": 2,
+          "delta_accuracy_pp": 0.8340283569641338
+        },
+        {
+          "fold": 3,
+          "delta_accuracy_pp": 1.5846538782318564
+        },
+        {
+          "fold": 4,
+          "delta_accuracy_pp": 2.170283806343909
+        }
+      ],
+      "alignment_checks": {
+        "n_match": true,
+        "sample_id_match": true,
+        "label_match": true,
+        "fold_match": true,
+        "sample_ids_unique_a": true,
+        "sample_ids_unique_b": true,
+        "pass": true
+      },
+      "artifact_a": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_0_7__stage2.npz",
+        "sha256": "0511927c3763fd73e430bd1818e5ef1218acf469262f3abcb9ba148ccf8c7635",
+        "original_order_was_sorted": true
+      },
+      "artifact_b": {
+        "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_oof_predictions\\cub__progressive_lambda_1_0__stage2.npz",
+        "sha256": "df7dbe06720b5178d8238840248dc2a3943ce41befd35c9c9ca2b3033fecba01",
+        "original_order_was_sorted": true
+      }
+    }
+  ],
+  "cub_representation_diagnostics": {
+    "aggregation": "unweighted arithmetic mean of five fold-level values",
+    "cross_fold_feature_concatenation": false,
+    "checks": [
+      {
+        "stage": 1,
+        "lambda": "0.1",
+        "five_fold_rows": 5,
+        "cosine_mean_match": true,
+        "cka_mean_match": true,
+        "pass": true
+      },
+      {
+        "stage": 1,
+        "lambda": "0.7",
+        "five_fold_rows": 5,
+        "cosine_mean_match": true,
+        "cka_mean_match": true,
+        "pass": true
+      },
+      {
+        "stage": 1,
+        "lambda": "1.0",
+        "five_fold_rows": 5,
+        "cosine_mean_match": true,
+        "cka_mean_match": true,
+        "pass": true
+      },
+      {
+        "stage": 2,
+        "lambda": "0.1",
+        "five_fold_rows": 5,
+        "cosine_mean_match": true,
+        "cka_mean_match": true,
+        "pass": true
+      },
+      {
+        "stage": 2,
+        "lambda": "0.7",
+        "five_fold_rows": 5,
+        "cosine_mean_match": true,
+        "cka_mean_match": true,
+        "pass": true
+      },
+      {
+        "stage": 2,
+        "lambda": "1.0",
+        "five_fold_rows": 5,
+        "cosine_mean_match": true,
+        "cka_mean_match": true,
+        "pass": true
+      }
+    ],
+    "summary_rows": [
+      {
+        "record_type": "lambda_summary",
+        "stage": 1,
+        "lambda": "0.1",
+        "oof_accuracy": 0.7987987987987988,
+        "mean_off_diagonal_cosine": 0.2621501888630235,
+        "centered_linear_cka": 0.6385329737883186,
+        "contrast": "",
+        "accuracy_delta_pp": "",
+        "cosine_delta": "",
+        "cka_delta": ""
+      },
+      {
+        "record_type": "lambda_summary",
+        "stage": 1,
+        "lambda": "0.7",
+        "oof_accuracy": 0.7914581247914582,
+        "mean_off_diagonal_cosine": 0.6930309541175463,
+        "centered_linear_cka": 0.8834517403548133,
+        "contrast": "",
+        "accuracy_delta_pp": "",
+        "cosine_delta": "",
+        "cka_delta": ""
+      },
+      {
+        "record_type": "lambda_summary",
+        "stage": 1,
+        "lambda": "1.0",
+        "oof_accuracy": 0.7972972972972973,
+        "mean_off_diagonal_cosine": 0.8579786379368857,
+        "centered_linear_cka": 0.9332445115527092,
+        "contrast": "",
+        "accuracy_delta_pp": "",
+        "cosine_delta": "",
+        "cka_delta": ""
+      },
+      {
+        "record_type": "descriptive_contrast",
+        "stage": 1,
+        "lambda": "",
+        "oof_accuracy": "",
+        "mean_off_diagonal_cosine": "",
+        "centered_linear_cka": "",
+        "contrast": "lambda_1.0_minus_lambda_0.1",
+        "accuracy_delta_pp": -0.15015015015015232,
+        "cosine_delta": 0.5958284490738621,
+        "cka_delta": 0.2947115377643905
+      },
+      {
+        "record_type": "lambda_summary",
+        "stage": 2,
+        "lambda": "0.1",
+        "oof_accuracy": 0.793626960293627,
+        "mean_off_diagonal_cosine": 0.2262868318690025,
+        "centered_linear_cka": 0.5572558143819212,
+        "contrast": "",
+        "accuracy_delta_pp": "",
+        "cosine_delta": "",
+        "cka_delta": ""
+      },
+      {
+        "record_type": "lambda_summary",
+        "stage": 2,
+        "lambda": "0.7",
+        "oof_accuracy": 0.7826159492826159,
+        "mean_off_diagonal_cosine": 0.6716533388369881,
+        "centered_linear_cka": 0.8681864917764532,
+        "contrast": "",
+        "accuracy_delta_pp": "",
+        "cosine_delta": "",
+        "cka_delta": ""
+      },
+      {
+        "record_type": "lambda_summary",
+        "stage": 2,
+        "lambda": "1.0",
+        "oof_accuracy": 0.7942942942942943,
+        "mean_off_diagonal_cosine": 0.8412303368734573,
+        "centered_linear_cka": 0.9119492691953202,
+        "contrast": "",
+        "accuracy_delta_pp": "",
+        "cosine_delta": "",
+        "cka_delta": ""
+      },
+      {
+        "record_type": "descriptive_contrast",
+        "stage": 2,
+        "lambda": "",
+        "oof_accuracy": "",
+        "mean_off_diagonal_cosine": "",
+        "centered_linear_cka": "",
+        "contrast": "lambda_1.0_minus_lambda_0.1",
+        "accuracy_delta_pp": 0.0667334000667319,
+        "cosine_delta": 0.6149435050044547,
+        "cka_delta": 0.354693454813399
+      }
+    ]
+  }
+}

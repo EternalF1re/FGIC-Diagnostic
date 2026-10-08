@@ -1,0 +1,36 @@
+{
+  "job_id": "cars__progressive_lambda_0_7__fold_4",
+  "dataset": "Stanford Cars",
+  "method": "Progressive Head",
+  "shortcut_lambda": 0.7,
+  "fold": 4,
+  "stage1": {
+    "validation": {
+      "accuracy": 0.9084766584766585,
+      "macro_f1": 0.9044772940548356,
+      "balanced_accuracy": 0.9065030774214449
+    },
+    "secondary_official_test": {
+      "accuracy": 0.9003855241885338,
+      "macro_f1": 0.8995237971947905,
+      "balanced_accuracy": 0.899616104008118
+    },
+    "best_epoch_zero_based": 66,
+    "best_validation_accuracy": 0.9084766584766585
+  },
+  "stage2": {
+    "validation": {
+      "accuracy": 0.9084766584766585,
+      "macro_f1": 0.9063139359622426,
+      "balanced_accuracy": 0.9077198736637513
+    },
+    "secondary_official_test": {
+      "accuracy": 0.8944161173983335,
+      "macro_f1": 0.893211697717091,
+      "balanced_accuracy": 0.8937602264659511
+    },
+    "best_epoch_zero_based": 31,
+    "best_validation_accuracy": 0.9084766584766585
+  },
+  "representation_diagnostics": {}
+}

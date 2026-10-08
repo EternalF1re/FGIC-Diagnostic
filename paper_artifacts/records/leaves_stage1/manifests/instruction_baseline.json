@@ -1,0 +1,8 @@
+{
+  "source_path": "<LOCAL_PATH>",
+  "frozen_copy": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2c_inference_diagnostic\\manifests\\instruction_E1EC0AD1AE186BF8E6AEE0599F628F4A203A45F4270DD3D84C504ED5077DF337.txt",
+  "bytes": 24433,
+  "sha256": "E1EC0AD1AE186BF8E6AEE0599F628F4A203A45F4270DD3D84C504ED5077DF337",
+  "phase": "Phase 2C Inference-only / Provenance Diagnostic",
+  "training_allowed": false
+}

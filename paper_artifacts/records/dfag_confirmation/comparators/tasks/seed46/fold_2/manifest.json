@@ -1,0 +1,78 @@
+{
+  "status": "COMPLETE",
+  "seed": 46,
+  "fold": 2,
+  "device": "cuda:1",
+  "inference_only": true,
+  "optimizer": false,
+  "scheduler": false,
+  "backward": false,
+  "bn_refresh": false,
+  "model_eval": true,
+  "alphas": [
+    0.0,
+    1.0,
+    0.5
+  ],
+  "started_unix": 1786853706.3014605,
+  "completed_unix": 1786853746.5127556,
+  "elapsed_seconds": 40.21129512786865,
+  "stage1_checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed46\\fold_2\\best_stage1.pth",
+  "stage1_sha256": "f7e94837f905b0bed60c05e6e51e083b7c5b42810c04e8bef61d09e675d56c4b",
+  "stage2_checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed46\\fold_2\\best_stage2.pth",
+  "stage2_sha256": "2c5b3b17ca7222eda9f85a802055cbf8588534c5adf958efd8cb3242f0c05565",
+  "endpoint_fidelity": [
+    {
+      "alpha": 0.0,
+      "state_rule": {
+        "endpoint_direct_full_state": "Stage2"
+      },
+      "parameter_state_unchanged": true,
+      "all_gradients_none": true,
+      "accuracy": 0.9790247888858622,
+      "macro_f1": 0.9825690208528809,
+      "balanced_accuracy": 0.982583912808321,
+      "endpoint_stage": 2,
+      "sample_ids_exact": true,
+      "labels_exact": true,
+      "predictions_exact": true,
+      "logits_allclose_1e_6": true,
+      "max_abs_logit_difference": 0.0
+    },
+    {
+      "alpha": 1.0,
+      "state_rule": {
+        "endpoint_direct_full_state": "Stage1"
+      },
+      "parameter_state_unchanged": true,
+      "all_gradients_none": true,
+      "accuracy": 0.9801144102424407,
+      "macro_f1": 0.9832035441927419,
+      "balanced_accuracy": 0.9840719308983495,
+      "endpoint_stage": 1,
+      "sample_ids_exact": true,
+      "labels_exact": true,
+      "predictions_exact": true,
+      "logits_allclose_1e_6": true,
+      "max_abs_logit_difference": 0.0
+    },
+    {
+      "alpha": 0.5,
+      "state_rule": {
+        "formula": "alpha*Stage1+(1-alpha)*Stage2",
+        "alpha": 0.5,
+        "floating_state_tensors_interpolated": 1114,
+        "intermediate_nonfloating_buffer_rule": "copy Stage2",
+        "nonfloating_state_tensors_copied": 206
+      },
+      "parameter_state_unchanged": true,
+      "all_gradients_none": true,
+      "accuracy": 0.9792971942250068,
+      "macro_f1": 0.9825437153613652,
+      "balanced_accuracy": 0.9828242620585832
+    }
+  ],
+  "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\comparators\\tasks\\seed46\\fold_2\\alpha_0_5.npz",
+  "artifact_sha256": "2c8f3237e3f28a33120dd06efe87952afcf769a064051833a6fd398c162fbb7d",
+  "counterfactual_training": false
+}

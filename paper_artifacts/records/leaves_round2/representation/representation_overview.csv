@@ -1,0 +1,13 @@
+lambda_key,lambda,mhsa,stage,pooled_mean_offdiagonal_cosine,pooled_sd_offdiagonal_cosine,mean_centered_linear_cka,sd_centered_linear_cka_across_folds,interpretation
+lambda_0_1,0.1,OFF,1,0.160734827081059,0.061337142152871,0.5777766421034966,0.011901081998080277,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_0_1,0.1,OFF,2,0.11932484965316237,0.0694657169385995,0.558377489243275,0.012252573527083215,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_0_1,0.1,ON,1,0.28075678246735797,0.04820702003789443,0.6871704022467772,0.02685174492921334,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_0_1,0.1,ON,2,0.2843966923387617,0.046551937232023555,0.680315806283204,0.028799408390286996,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_0_7,0.7,OFF,1,0.6505282792686223,0.034824835421296746,0.8559166858932159,0.005356210185832066,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_0_7,0.7,OFF,2,0.6354486647683706,0.03910042800085842,0.8399639377267332,0.005369306815409168,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_0_7,0.7,ON,1,0.794120408283992,0.03265260277230908,0.8979375428047841,0.005193521235887868,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_0_7,0.7,ON,2,0.8518746336920503,0.03358219265028764,0.9254436690773232,0.0036149582322474337,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_1_0,1.0,OFF,1,0.8231090586991362,0.019397228843768825,0.9188286220080215,0.006018070276194091,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_1_0,1.0,OFF,2,0.8243619959468229,0.026384532770680025,0.8987248751296784,0.005514576670139471,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_1_0,1.0,ON,1,0.968737235036404,0.00987487908574698,0.9763885783542591,0.0015072585999714267,descriptive geometry diagnostic; not representation quality or causal evidence
+lambda_1_0,1.0,ON,2,0.9808023932576693,0.006918787506446519,0.984261964696503,0.002401681422454544,descriptive geometry diagnostic; not representation quality or causal evidence

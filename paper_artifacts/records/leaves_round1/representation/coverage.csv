@@ -1,0 +1,9 @@
+lambda_key,lambda,stage,n,unique_n,covers_0_to_18352
+lambda_0_1,0.1,1,18353,18353,True
+lambda_0_1,0.1,2,18353,18353,True
+lambda_0_7,0.7,1,18353,18353,True
+lambda_0_7,0.7,2,18353,18353,True
+lambda_0_9,0.9,1,18353,18353,True
+lambda_0_9,0.9,2,18353,18353,True
+lambda_1_0,1.0,1,18353,18353,True
+lambda_1_0,1.0,2,18353,18353,True

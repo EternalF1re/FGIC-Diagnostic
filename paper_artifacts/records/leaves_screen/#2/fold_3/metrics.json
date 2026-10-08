@@ -1,0 +1,13 @@
+{
+  "accuracy": 0.9760217983651226,
+  "macro_f1": 0.9784648741035377,
+  "balanced_accuracy": 0.9785465357008967,
+  "variant": "#2",
+  "fold": 3,
+  "n": 3670,
+  "best_stage1_epoch_zero_based": 133,
+  "best_stage1_accuracy": 0.9782016348773842,
+  "best_stage2_epoch_zero_based": 58,
+  "best_stage2_accuracy": 0.9760217983651226,
+  "feature_extraction_location": "256-D mean aggregation after Dropout and immediately before classifier"
+}

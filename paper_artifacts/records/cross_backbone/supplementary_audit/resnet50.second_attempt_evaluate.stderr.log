@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_cross_backbone_evaluation\scripts\supplementary_endpoint_audit.py", line 191, in <module>
+    main()
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_cross_backbone_evaluation\scripts\supplementary_endpoint_audit.py", line 170, in main
+    row = audit_fold(args.backbone, fold, device, config)
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_cross_backbone_evaluation\scripts\supplementary_endpoint_audit.py", line 136, in audit_fold
+    alpha0_eval = endpoint_result(model, alpha0, val_loader, device, stage2_prediction)
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_cross_backbone_evaluation\scripts\supplementary_endpoint_audit.py", line 61, in endpoint_result
+    sample_id_exact = np.array_equal(result["sample_id"], reference["sample_id"])
+TypeError: 'float' object is not subscriptable

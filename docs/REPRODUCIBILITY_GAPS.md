@@ -1,0 +1,15 @@
+# Reproducibility scope and gaps
+
+1. **Current manuscript/SI mapping:** the exact current submitted main manuscript and SI were not found in the supplied manuscript folder. The public mapping uses result topics and previously recorded section numbers. Exact table identifiers and text rounding are not independently verified.
+2. **Original source identity:** consult `paper_artifacts/SOURCE_HASH_AUDIT.csv`. A recorded hash with no original file match is explicitly marked. Finding a maintained implementation is not proof that it produced a historical output.
+3. **Private paths:** original configs/manifests/logs may contain machine paths. Public copies remove these; the original SHA-256 remains in MANIFEST. Downloaded redacted configs cannot have the original monolithic SHA. This is an intentional documented transformation.
+4. **Weights and raw arrays:** checkpoints, raw images, logits/probabilities, per-sample gate tensors, and large representation feature matrices are not in this release. The full sample-level predicted class/label/fold CSVs needed to recompute classification and paired statistics are included. Original array hashes and fold run records are retained.
+5. **Diagnostic summaries:** cosine, centered-linear CKA, feature norms, attention allocation, branch similarity, gate variation, and hardware profile tables are published from actual recorded results. Without the omitted feature tensors or weights they are historical summaries, not independently regenerated diagnostics. Hardware latencies also depend on the recorded environment.
+6. **Held-out semantics:** per-fold OOF is outside the training partition, but checkpoint selection uses that held-out validation fold. Do not describe it as untouched nested validation.
+7. **Training replay:** public path-free runners/config projections generate new runs. Bitwise identity to historical training is not claimed. Ordered data manifests, source identity, environment, selected checkpoint and RNG matter.
+8. **Superseded attempts:** aborted training and smoke-result metrics are excluded from the publication sets. Original implementation code used by formal runs may reside in an earlier smoke-named directory; only its source is included as `records/protocol_source/`.
+9. **Storage cleanup:** earlier cleanup removed temporary and superseded smoke weights. Their surviving logs/metrics do not substitute for downloadable checkpoints.
+10. **Archival DOI:** no Zenodo DOI has been created or asserted. Git commit/tag and the release ZIP identify this publication snapshot.
+11. **Comparator config identity:** the seed45/46 alpha=0.5 comparator NPZ files have verified source hashes and complete sample-level predictions, but no standalone comparator configuration hash was recovered. Their two OOF index entries deliberately leave the config reference/hash empty. They are not represented as independently config-locked training runs; interpolation and comparison records remain available.
+
+`paper_artifacts/EXPORT_GAPS.json` also lists legacy log transcoding and any exporter-discovered missing mappings. These informational records do not authorize fabricated replacement data.

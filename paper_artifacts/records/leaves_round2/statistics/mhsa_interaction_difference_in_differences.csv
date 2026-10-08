@@ -1,0 +1,4 @@
+contrast,role,effect_a,effect_b,n_paired_oof,difference_in_differences_pp,ci95_low_pp,ci95_high_pp,bootstrap_replicates,bootstrap_seed,direct_sample_level_paired_bootstrap
+I_0.1_minus_1.0,primary,lambda_0_1,lambda_1_0,18353,-0.06538440581921212,-0.3214733286111262,0.18525581648776768,100000,20260807,True
+I_0.1_minus_0.7,secondary,lambda_0_1,lambda_0_7,18353,0.09262790824388384,-0.14711491309322725,0.33237072958099495,100000,20260807,True
+I_0.7_minus_1.0,secondary,lambda_0_7,lambda_1_0,18353,-0.15801231406309596,-0.40865253637007576,0.09262790824388384,100000,20260807,True

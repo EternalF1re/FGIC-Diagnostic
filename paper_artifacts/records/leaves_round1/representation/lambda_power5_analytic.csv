@@ -1,0 +1,5 @@
+lambda,lambda_power_5,interpretation
+0.1,1.0000000000000003e-05,direct repeated-shortcut coefficient after five mappings (analytic; not an empirical contribution estimate)
+0.7,0.16806999999999994,direct repeated-shortcut coefficient after five mappings (analytic; not an empirical contribution estimate)
+0.9,0.5904900000000001,direct repeated-shortcut coefficient after five mappings (analytic; not an empirical contribution estimate)
+1.0,1.0,direct repeated-shortcut coefficient after five mappings (analytic; not an empirical contribution estimate)

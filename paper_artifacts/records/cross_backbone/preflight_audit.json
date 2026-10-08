@@ -1,0 +1,413 @@
+{
+  "status": "PASS",
+  "created_unix": 1787061274.7946472,
+  "checks": {
+    "authoritative_source_sha": true,
+    "dfag_authority_exists": true,
+    "interpolation_authority_exists": true,
+    "runner_exists": true,
+    "authoritative_protocol_values_exact": true,
+    "split_exact": true,
+    "training_seed_exact": true,
+    "dataset_path": true,
+    "dataset_n_18353": true,
+    "class_count_176": true,
+    "all_images_exist": true,
+    "image_names_unique": true,
+    "no_fold_leakage": true,
+    "fivefold_exact_oof_coverage": true,
+    "architecture_hard_checks": true,
+    "fixed_H_256": true,
+    "compression_ratio_not_constant": true,
+    "same_batch_size_within_and_across_backbones": true,
+    "gpu_memory_feasibility_all_six": true,
+    "oof_schema_complete": true,
+    "checkpoint_tie_break_source": true,
+    "dfag_stage1_reuse_authorized": true,
+    "no_joint_no_lambda_sweep": true
+  },
+  "protocol_value_match": {
+    "stage1_epochs": true,
+    "stage2_epochs": true,
+    "optimizer": true,
+    "adam_betas": true,
+    "adam_eps": true,
+    "stage1_backbone_lr": true,
+    "stage1_head_lr": true,
+    "stage1_weight_decay": true,
+    "stage1_warmup_epochs": true,
+    "stage1_scheduler": true,
+    "stage1_label_smoothing": true,
+    "stage2_all_parameter_lr": true,
+    "stage2_weight_decay": true,
+    "stage2_scheduler": true,
+    "stage2_label_smoothing": true,
+    "amp": true,
+    "amp_dtype": true,
+    "amp_grad_scaler_init_scale": true,
+    "gradient_clip_norm": true,
+    "bn_adaptation_batches_before_stage2": true,
+    "checkpoint_selection": true,
+    "stage1_batch_augmentation": true,
+    "stage2_batch_augmentation": true,
+    "spatial_augmentation_both_stages": true
+  },
+  "source_hashes": {
+    "authoritative_config": "751ced4f261d822cf20f59bbb346e95f8de465d6bf2075586822a9c213682659",
+    "authoritative_dfag_implementation": "c2ca689f226ddc79869b83a253ed117298a4a6e83f54fe1d6734e5a8fb8e5c68",
+    "authoritative_interpolation": "3ed21faa0c931d2eb7e8c9b77331168da8bf063090527e6a016ce60365f8911c",
+    "new_config": "1a075d4241358e4681f2e7c70523a85bf286d97193fb1104b18bd713c5006fee",
+    "runner": "ceb08c86c53a0fcbe8f0f3e9bc04c404e65eeb3ad190dafaa915260102fcdb21"
+  },
+  "dataset": {
+    "n": 18353,
+    "classes": 176,
+    "missing_images": [],
+    "folds": [
+      {
+        "fold": 0,
+        "train_n": 14682,
+        "validation_n": 3671,
+        "intersection_n": 0,
+        "validation_classes": 176
+      },
+      {
+        "fold": 1,
+        "train_n": 14682,
+        "validation_n": 3671,
+        "intersection_n": 0,
+        "validation_classes": 176
+      },
+      {
+        "fold": 2,
+        "train_n": 14682,
+        "validation_n": 3671,
+        "intersection_n": 0,
+        "validation_classes": 176
+      },
+      {
+        "fold": 3,
+        "train_n": 14683,
+        "validation_n": 3670,
+        "intersection_n": 0,
+        "validation_classes": 176
+      },
+      {
+        "fold": 4,
+        "train_n": 14683,
+        "validation_n": 3670,
+        "intersection_n": 0,
+        "validation_classes": 176
+      }
+    ]
+  },
+  "architectures": {
+    "resnet50": {
+      "status": "PASS",
+      "backbone": "resnet50",
+      "actual_dimension": 2048,
+      "forward_shape": [
+        2,
+        2048
+      ],
+      "hidden_dimension": 256,
+      "D_over_H": 8.0,
+      "pretrained_cfg": {
+        "url": "http<LOCAL_PATH>",
+        "hf_hub_id": "timm/resnet50.a1_in1k",
+        "architecture": "resnet50",
+        "tag": "a1_in1k",
+        "custom_load": false,
+        "input_size": [
+          3,
+          224,
+          224
+        ],
+        "test_input_size": [
+          3,
+          288,
+          288
+        ],
+        "fixed_input_size": false,
+        "interpolation": "bicubic",
+        "crop_pct": 0.95,
+        "test_crop_pct": 1.0,
+        "crop_mode": "center",
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "num_classes": 1000,
+        "pool_size": [
+          7,
+          7
+        ],
+        "first_conv": "conv1",
+        "classifier": "fc",
+        "license": "apache-2.0",
+        "origin_url": "http<LOCAL_PATH>",
+        "paper_ids": "arXiv:2110.00476"
+      },
+      "gate_parameters": 524288,
+      "parameter_counts": {
+        "ours_ft": {
+          "resident_parameters": 26840304,
+          "executed_parameters": 26840304,
+          "backbone_parameters": 23508032,
+          "head_parameters": 3332272,
+          "gate_parameters": 0,
+          "branch_count": 1
+        },
+        "progressive": {
+          "resident_parameters": 24409328,
+          "executed_parameters": 24409328,
+          "backbone_parameters": 23508032,
+          "head_parameters": 901296,
+          "gate_parameters": 0,
+          "branch_count": 1
+        },
+        "dfag": {
+          "resident_parameters": 54204896,
+          "executed_parameters": 50872624,
+          "anchor_parameters": 26840304,
+          "plastic_parameters": 26840304,
+          "gate_parameters": 524288,
+          "head_parameters": 3332272,
+          "branch_count": 2
+        }
+      },
+      "checks": {
+        "actual_dimension_matches_expectation": true,
+        "actual_forward_shape": true,
+        "classifier_input_dimension": true,
+        "conventional_head_exact": true,
+        "progressive_projection_D_to_256": true,
+        "five_mapping_blocks": true,
+        "mapping_block_exact": true,
+        "lambda_exact_0_7": true,
+        "mean_f1_to_f5": true,
+        "mhsa_absent": true,
+        "terminal_residual_absent": true,
+        "progressive_one_branch": true,
+        "dfag_two_branches": true,
+        "dfag_dimension": true,
+        "gate_structure": true,
+        "gate_bias_free": true,
+        "gate_input_fspec_only": true,
+        "fusion_exact": true,
+        "adaptive_gate_parameter_count": true,
+        "anchor_frozen": true,
+        "dfag_no_progressive_head": true
+      }
+    },
+    "convnext_tiny": {
+      "status": "PASS",
+      "backbone": "convnext_tiny",
+      "actual_dimension": 768,
+      "forward_shape": [
+        2,
+        768
+      ],
+      "hidden_dimension": 256,
+      "D_over_H": 3.0,
+      "pretrained_cfg": {
+        "url": "",
+        "hf_hub_id": "timm/convnext_tiny.in12k_ft_in1k",
+        "architecture": "convnext_tiny",
+        "tag": "in12k_ft_in1k",
+        "custom_load": false,
+        "input_size": [
+          3,
+          224,
+          224
+        ],
+        "test_input_size": [
+          3,
+          288,
+          288
+        ],
+        "fixed_input_size": false,
+        "interpolation": "bicubic",
+        "crop_pct": 0.95,
+        "test_crop_pct": 1.0,
+        "crop_mode": "center",
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "num_classes": 1000,
+        "pool_size": [
+          7,
+          7
+        ],
+        "first_conv": "stem.0",
+        "classifier": "head.fc",
+        "license": "apache-2.0"
+      },
+      "gate_parameters": 73728,
+      "parameter_counts": {
+        "ours_ft": {
+          "resident_parameters": 29841680,
+          "executed_parameters": 29841680,
+          "backbone_parameters": 27820128,
+          "head_parameters": 2021552,
+          "gate_parameters": 0,
+          "branch_count": 1
+        },
+        "progressive": {
+          "resident_parameters": 28393744,
+          "executed_parameters": 28393744,
+          "backbone_parameters": 27820128,
+          "head_parameters": 573616,
+          "gate_parameters": 0,
+          "branch_count": 1
+        },
+        "dfag": {
+          "resident_parameters": 59757088,
+          "executed_parameters": 57735536,
+          "anchor_parameters": 29841680,
+          "plastic_parameters": 29841680,
+          "gate_parameters": 73728,
+          "head_parameters": 2021552,
+          "branch_count": 2
+        }
+      },
+      "checks": {
+        "actual_dimension_matches_expectation": true,
+        "actual_forward_shape": true,
+        "classifier_input_dimension": true,
+        "conventional_head_exact": true,
+        "progressive_projection_D_to_256": true,
+        "five_mapping_blocks": true,
+        "mapping_block_exact": true,
+        "lambda_exact_0_7": true,
+        "mean_f1_to_f5": true,
+        "mhsa_absent": true,
+        "terminal_residual_absent": true,
+        "progressive_one_branch": true,
+        "dfag_two_branches": true,
+        "dfag_dimension": true,
+        "gate_structure": true,
+        "gate_bias_free": true,
+        "gate_input_fspec_only": true,
+        "fusion_exact": true,
+        "adaptive_gate_parameter_count": true,
+        "anchor_frozen": true,
+        "dfag_no_progressive_head": true
+      }
+    }
+  },
+  "memory_feasibility": [
+    {
+      "status": "PASS",
+      "backbone": "resnet50",
+      "method": "ours_ft",
+      "batch_size": 64,
+      "loss_finite": true,
+      "gradient_finite": true,
+      "gate_gradient_nonzero": true,
+      "peak_memory_bytes": 5448580096,
+      "peak_memory_mib": 5196.1708984375,
+      "gpu_total_memory_mib": 16302.5625
+    },
+    {
+      "status": "PASS",
+      "backbone": "resnet50",
+      "method": "progressive",
+      "batch_size": 64,
+      "loss_finite": true,
+      "gradient_finite": true,
+      "gate_gradient_nonzero": true,
+      "peak_memory_bytes": 5430340096,
+      "peak_memory_mib": 5178.77587890625,
+      "gpu_total_memory_mib": 16302.5625
+    },
+    {
+      "status": "PASS",
+      "backbone": "resnet50",
+      "method": "dfag",
+      "batch_size": 64,
+      "loss_finite": true,
+      "gradient_finite": true,
+      "gate_gradient_nonzero": true,
+      "peak_memory_bytes": 5560072704,
+      "peak_memory_mib": 5302.49853515625,
+      "gpu_total_memory_mib": 16302.5625
+    },
+    {
+      "status": "PASS",
+      "backbone": "convnext_tiny",
+      "method": "ours_ft",
+      "batch_size": 64,
+      "loss_finite": true,
+      "gradient_finite": true,
+      "gate_gradient_nonzero": true,
+      "peak_memory_bytes": 7111874048,
+      "peak_memory_mib": 6782.41162109375,
+      "gpu_total_memory_mib": 16302.5625
+    },
+    {
+      "status": "PASS",
+      "backbone": "convnext_tiny",
+      "method": "progressive",
+      "batch_size": 64,
+      "loss_finite": true,
+      "gradient_finite": true,
+      "gate_gradient_nonzero": true,
+      "peak_memory_bytes": 7106077696,
+      "peak_memory_mib": 6776.8837890625,
+      "gpu_total_memory_mib": 16302.5625
+    },
+    {
+      "status": "PASS",
+      "backbone": "convnext_tiny",
+      "method": "dfag",
+      "batch_size": 64,
+      "loss_finite": true,
+      "gradient_finite": true,
+      "gate_gradient_nonzero": true,
+      "peak_memory_bytes": 7233615360,
+      "peak_memory_mib": 6898.51318359375,
+      "gpu_total_memory_mib": 16302.5625
+    }
+  ],
+  "gpu_state_before": {
+    "name": "NVIDIA GeForce RTX 5070 Ti",
+    "utilization_percent": 7,
+    "memory_used_mib": 333,
+    "memory_total_mib": 16303
+  },
+  "gpu_state_after": {
+    "name": "NVIDIA GeForce RTX 5070 Ti",
+    "utilization_percent": 2,
+    "memory_used_mib": 1115,
+    "memory_total_mib": 16303
+  },
+  "oof_schema": [
+    "sample_id",
+    "fold",
+    "y_true",
+    "y_pred",
+    "logits",
+    "probabilities",
+    "image_name",
+    "backbone",
+    "configuration",
+    "stage",
+    "training_seed"
+  ],
+  "dfag_stage1_provenance": "same-backbone/same-fold selected Ours-FT Stage-1 checkpoint from this new run; copied to frozen anchor and plastic; no separate DFAG Stage-1 training",
+  "limitations": "H=256 is fixed across backbones, so the projection compression ratio differs across architectures and is not independently controlled."
+}

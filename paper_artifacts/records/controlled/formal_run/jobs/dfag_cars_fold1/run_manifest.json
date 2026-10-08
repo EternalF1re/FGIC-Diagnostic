@@ -1,0 +1,89 @@
+{
+  "status": "COMPLETE",
+  "formal_result": true,
+  "job": {
+    "job_id": "dfag_cars_fold1",
+    "ordinal": 57,
+    "method": "dfag",
+    "dataset": "cars",
+    "fold": 1,
+    "seed": 42,
+    "config_path": "configs/dfag_cars.json",
+    "config_sha256": "b4d919e739d25245992b4ed0e9b809e836adac69d7e726c4a89542a788154914",
+    "source_commit": "workspace-audited-final-cross-backbone-semantics",
+    "pretrained_artifact_sha256": "773525d5821de224f8f30c33377b7a795d7863e08522698200d3217d3f2a41bb",
+    "initial_backbone_state_sha256": "45179af731d5ea5470ba5906fadf0b55b884338ca64d2b7f53f46096665ec6c6",
+    "fold_manifest_sha256": "e2a18afd04c54105215b97cd02a2687b4ead9ac87c6dbe77a58b9508e02507df",
+    "class_map_sha256": "2cf8d881310afbf88fb3785191403a54ca1d4fff90d187fb68391286db646dcc",
+    "input_resolution": [
+      299,
+      299
+    ],
+    "training_protocol_identifier": "controlled_reimplementation_dfag_v1",
+    "evaluation_protocol_identifier": "pooled_oof_original_view_no_tta_no_fold_ensemble_v1",
+    "depends_on": "ours_ft_cars_fold1",
+    "resources": {
+      "gpu_count": 1,
+      "ddp_processes": 1,
+      "per_process_batch": null,
+      "device_affinity_required": false
+    },
+    "execution_blocker": null,
+    "status": "PLANNED_NOT_AUTHORIZED"
+  },
+  "started_unix": 1787331147.8004806,
+  "device": "cuda:0",
+  "runner_sha256": "e6588fe0334b6bcc60cd0070b4dae300a703e9ab3a4c921b0a96b0966a333a0a",
+  "runtime_sha256": "f76e5747cb066907e24549f98709b4fcace26d777eed08e69d66af2bd03ee0e5",
+  "protocol_core_sha256": "a4ec8e36e4850f6710d4b9854b315e77ff3e084ccd2bb28c3cac80c5906e6f42",
+  "cars_lookup_implementation": "one_pass_per_split_filename_index_v1",
+  "no_official_test_access": true,
+  "tta": false,
+  "fold_ensemble": false,
+  "runtime_precision": "BF16 autocast training; FP32 parameters/optimizer and deterministic FP32 original-view inference",
+  "activation_checkpointing": true,
+  "pin_memory": false,
+  "dfag_stage1_source": {
+    "path": "<LOCAL_PATH>",
+    "sha256": "bf676ef5be5c68479da04c7e96ed6469001b8f9318a2472e0b0ee7987bd6e5c4",
+    "same_dataset": true,
+    "same_fold": true,
+    "stage1_retrained": false
+  },
+  "completed_unix": 1787332925.6721199,
+  "elapsed_seconds": 1777.8716394901276,
+  "train_count": 6515,
+  "heldout_count": 1629,
+  "best_checkpoint": "<LOCAL_PATH>",
+  "best_checkpoint_sha256": "fc34761fd658ecc5b4b11d2f34e684f13688feeaeff4ea0659a09dd4e5840ba3",
+  "best_stage1_checkpoint": null,
+  "best_stage1_sha256": null,
+  "stage1_export": null,
+  "bn_recalibration": {
+    "reset": false,
+    "whole_model_train": true,
+    "no_grad": true,
+    "batches": 50
+  },
+  "final_export": {
+    "path": "<LOCAL_PATH>",
+    "sha256": "61ec6a42289f6ca5a5769a1e8f7d8dea0a5f302dbcb20a9cf04dfa21a589a635",
+    "alignment": {
+      "count": true,
+      "sample_ids": true,
+      "labels": true,
+      "dataset_indices": true,
+      "fold_ids": true,
+      "unique_ids": true,
+      "finite_logits": true,
+      "all_pass": true
+    },
+    "metrics": {
+      "accuracy": 0.8858195211786372,
+      "macro_f1": 0.8835099605176567,
+      "balanced_accuracy": 0.8849165856818918
+    }
+  },
+  "all_finite": true,
+  "checkpoint_roundtrip": true
+}

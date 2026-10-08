@@ -1,0 +1,43 @@
+{
+  "pass": true,
+  "technical_check_only_not_experiment": true,
+  "device": "cuda:0",
+  "legal_training_batch_size": 32,
+  "records": {
+    "ours_ft": {
+      "batch_size": 32,
+      "criterion": "CrossEntropyLoss(label_smoothing=0.05)",
+      "class_weights": null,
+      "augmentation_type": "mixup",
+      "augmentation_scale": 1.0,
+      "finite_loss": true,
+      "gradient_tensor_count": 702,
+      "finite_gradients": true,
+      "nonzero_gradient_tensor_count": 702,
+      "backward_pass_completed": true,
+      "optimizer_step_performed": false,
+      "checkpoint_saved": false,
+      "accuracy_computed": false
+    },
+    "progressive_lambda_0_7": {
+      "batch_size": 32,
+      "criterion": "CrossEntropyLoss(label_smoothing=0.05)",
+      "class_weights": null,
+      "augmentation_type": "mixup",
+      "augmentation_scale": 1.0,
+      "finite_loss": true,
+      "gradient_tensor_count": 716,
+      "finite_gradients": true,
+      "nonzero_gradient_tensor_count": 716,
+      "backward_pass_completed": true,
+      "optimizer_step_performed": false,
+      "checkpoint_saved": false,
+      "accuracy_computed": false
+    }
+  },
+  "checkpoint_files_before": [],
+  "checkpoint_files_after": [],
+  "formal_ledger_sha256_before": "e784505f07d7f97e75644cf49735c1ec8111524ff9922c7e5aeaf2f878e27f6f",
+  "formal_ledger_sha256_after": "e784505f07d7f97e75644cf49735c1ec8111524ff9922c7e5aeaf2f878e27f6f",
+  "formal_ledger_unchanged": true
+}

@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "all_passed": true,
+  "created_unix": 1786706670.8926015,
+  "checks": [
+    {
+      "check": "all_25_formal_training_jobs_complete",
+      "status": "PASS"
+    },
+    {
+      "check": "all_30_checkpoint_only_diagnostics_pass",
+      "status": "PASS"
+    },
+    {
+      "check": "diagnostics_performed_no_training",
+      "status": "PASS"
+    },
+    {
+      "check": "diagnostic_predictions_exact",
+      "status": "PASS"
+    },
+    {
+      "check": "three_mhsa_pairwise_statistics_present",
+      "status": "PASS"
+    },
+    {
+      "check": "three_predeclared_interactions_present",
+      "status": "PASS"
+    },
+    {
+      "check": "five_seed_baseline_present",
+      "status": "PASS"
+    },
+    {
+      "check": "five_seed_pairwise_prediction_audit_complete",
+      "status": "PASS"
+    },
+    {
+      "check": "representation_on_off_stage_coverage_exact",
+      "status": "PASS"
+    },
+    {
+      "check": "attention_sample_head_query_coverage_exact",
+      "status": "PASS"
+    },
+    {
+      "check": "required_review_files_nonempty",
+      "status": "PASS"
+    },
+    {
+      "check": "forbidden_result_dependent_variants_not_launched",
+      "status": "PASS"
+    }
+  ],
+  "formal_training_jobs": 25,
+  "checkpoint_only_diagnostic_jobs": 30,
+  "training_performed_by_diagnostics": false,
+  "paired_oof_n": 18353,
+  "bootstrap_replicates": 100000,
+  "bootstrap_seed": 20260807,
+  "attention_atomic_unit": "sample_x_head_x_query_before_aggregation",
+  "representation_scope": "true post-shortcut f1..f5; descriptive geometry diagnostic",
+  "inference_boundary": "seed is the independent repetition unit; folds construct OOF and are not independent repetitions",
+  "required_file_sha256": {
+    "statistics\\mhsa_on_vs_off_lambda_0_1.csv": "070fbf9c9625d1d73f1506bca6336d114c0b63928f9e16a7aac4e9b75efc7883",
+    "statistics\\mhsa_on_vs_off_lambda_0_7.csv": "2871302353e24ab223e28da1e097ab5675543f0296d6c537d39f05793741f75c",
+    "statistics\\mhsa_on_vs_off_lambda_1_0.csv": "2ccfc1f52e12b979fc6bc46829ab8b3b53231a5cd8dbbd1a2da348fcfc3986ba",
+    "statistics\\mhsa_interaction_difference_in_differences.csv": "e6652fdc2f8ac781a3bb863ac668f9a8162318a6d5657a285069d340ce2cbf7d",
+    "statistics\\baseline_five_seed_per_seed.csv": "096b1a05aac5a6fb53b3b09b12318d066a8001193e5b2b798661c76704c81962",
+    "statistics\\baseline_five_seed_summary.csv": "fca0ee4af3aab60fa9821f49fa61819332b107a266eeb8602f6ce3aec03ea9e6",
+    "statistics\\baseline_five_seed_prediction_audit.csv": "122ce69558505223126a9f41d1faa66542d2f6fa7b17e1ef7a79614ef159a56c",
+    "representation\\cosine_pooled_summary.csv": "620104fcbf665d8f13d1965700f313694816315c3059006ab4ec5580660a5242",
+    "representation\\cka_summary.csv": "790ad1dc56fc93d0d11071ee45c3484085304d1fcd10aa3474979bdbf042e4cf",
+    "representation\\representation_overview.csv": "cbf3ddda3cc1c722a4aea696aacc59533b9565ecfcd6f8ba8556b2b22483a93c",
+    "attention\\attention_overview.csv": "87445e430caae8a12858833c59511fce6f7782399f5bd777d928d617affef74d",
+    "attention\\position_allocation_summary.csv": "d3d408c35bd9def9e166b2f5b24f2b383ef3cadd633259ae943f619df8e89723"
+  },
+  "elapsed_seconds": 23.651583671569824
+}

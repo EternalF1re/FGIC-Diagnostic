@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "status": "FORMAL_RUN_COMPLETE",
+  "all_blockers_resolved": true,
+  "blockers": [],
+  "closed_blockers": [
+    {
+      "id": "CAL_DDP_SYNCBN_ENVIRONMENT",
+      "state": "CLOSED",
+      "evidence": [
+        "preflight/wsl2_final/cub/summary.json",
+        "preflight/wsl2_final/cars/summary.json"
+      ]
+    }
+  ],
+  "method_status": {
+    "l2_sp": "READY_NOT_AUTHORIZED",
+    "mc_loss": "READY_NOT_AUTHORIZED",
+    "cal": "READY_NOT_AUTHORIZED",
+    "ours_ft": "READY_NOT_AUTHORIZED",
+    "progressive": "READY_NOT_AUTHORIZED",
+    "dfag": "READY_NOT_AUTHORIZED_DEPENDS_ON_OURS_STAGE1"
+  },
+  "common_protocol_status": "PASS_LOCKED",
+  "source_lock_status": "PASS_LOCKED",
+  "protocol_identity_status": "PASS",
+  "augmentation_manifest_status": "PASS_FROZEN",
+  "unit_tests_status": "PASS",
+  "smoke_status": "PASS",
+  "cal_syncbn_topology_status": "PASS_CLOSED",
+  "cal_cub_preflight_status": "PASS",
+  "cal_cars_preflight_status": "PASS",
+  "formal_job_count": 60,
+  "training_authorized": true,
+  "formal_jobs_started": 60,
+  "formal_outputs_created": 60,
+  "stop_point_observed": false,
+  "frozen_plan_sha256": "1e4af9ba95615f58a08fe01371f9f0714ed4baf0e5768b5522ba1a28a5935e91",
+  "execution_manifest": "CONTROLLED_REIMPLEMENTATION_WSL2_EXECUTION_MANIFEST.json",
+  "final_gate": "PASS",
+  "final_gate_manifest": "FORMAL_RUN_AUTHORIZATION.json"
+}

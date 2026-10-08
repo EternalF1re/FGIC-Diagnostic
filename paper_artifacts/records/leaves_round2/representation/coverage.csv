@@ -1,0 +1,13 @@
+lambda_key,lambda,mhsa,stage,n,unique_n,covers_0_to_18352
+lambda_0_1,0.1,OFF,1,18353,18353,True
+lambda_0_1,0.1,OFF,2,18353,18353,True
+lambda_0_1,0.1,ON,1,18353,18353,True
+lambda_0_1,0.1,ON,2,18353,18353,True
+lambda_0_7,0.7,OFF,1,18353,18353,True
+lambda_0_7,0.7,OFF,2,18353,18353,True
+lambda_0_7,0.7,ON,1,18353,18353,True
+lambda_0_7,0.7,ON,2,18353,18353,True
+lambda_1_0,1.0,OFF,1,18353,18353,True
+lambda_1_0,1.0,OFF,2,18353,18353,True
+lambda_1_0,1.0,ON,1,18353,18353,True
+lambda_1_0,1.0,ON,2,18353,18353,True

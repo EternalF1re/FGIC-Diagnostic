@@ -1,0 +1,36 @@
+{
+  "job_id": "cub__ours_ft__fold_2",
+  "dataset": "CUB-200-2011",
+  "method": "Ours-FT",
+  "shortcut_lambda": null,
+  "fold": 2,
+  "stage1": {
+    "validation": {
+      "accuracy": 0.810675562969141,
+      "macro_f1": 0.8073156312641607,
+      "balanced_accuracy": 0.8106666666666666
+    },
+    "secondary_official_test": {
+      "accuracy": 0.8070417673455299,
+      "macro_f1": 0.8072505252031084,
+      "balanced_accuracy": 0.8091461144124878
+    },
+    "best_epoch_zero_based": 130,
+    "best_validation_accuracy": 0.810675562969141
+  },
+  "stage2": {
+    "validation": {
+      "accuracy": 0.810675562969141,
+      "macro_f1": 0.8074099160643279,
+      "balanced_accuracy": 0.8105
+    },
+    "secondary_official_test": {
+      "accuracy": 0.8123921297894373,
+      "macro_f1": 0.8140342904456744,
+      "balanced_accuracy": 0.8143610608429712
+    },
+    "best_epoch_zero_based": 0,
+    "best_validation_accuracy": 0.810675562969141
+  },
+  "representation_diagnostics": {}
+}

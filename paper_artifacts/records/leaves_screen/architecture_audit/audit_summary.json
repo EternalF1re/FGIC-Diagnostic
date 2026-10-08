@@ -1,0 +1,12 @@
+{
+  "variants": [
+    "#0",
+    "#1",
+    "#2"
+  ],
+  "all_passed": true,
+  "one_vs_two_same_tensor_graph": true,
+  "one_vs_two_same_parameter_counts": true,
+  "one_vs_two_only_declared_forward_change": "fixed shortcut lambda 1.0 -> 0.1",
+  "formal_training_started": false
+}

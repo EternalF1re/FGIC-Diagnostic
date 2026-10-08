@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "phase": "Phase2C P3",
+  "training_performed": false,
+  "variant": "#2",
+  "fold": 3,
+  "n": 3670,
+  "actual_stage_shape": [
+    3670,
+    5,
+    256
+  ],
+  "feature_semantics": "f1..f5 are outputs after mapping(x)+lambda*x, exactly as used by model.forward",
+  "shortcut_lambda": 0.1,
+  "mhsa": false,
+  "aggregation": "unweighted mean of f1..f5, then Dropout(0.2), then classifier",
+  "checkpoint_path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#2\\fold_3\\best_stage2.pth",
+  "checkpoint_sha256": "91281673b55c491cc82676a3581ee4f8e887f48877e87a2553d5cd2ab4ba244c",
+  "source_manifest": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#2\\fold_3\\run_manifest.json",
+  "split_indices": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#2\\fold_3\\split_indices.npz",
+  "source_logits_exact": true,
+  "source_logits_max_abs_diff": 0.0,
+  "source_predictions_exact": true,
+  "forward_equivalence_exact": true,
+  "deterministic_repeat_exact": true,
+  "eval_mode": true,
+  "inference_mode": true,
+  "transform": "Resize(299,299), ToTensor, ImageNet normalization; original view only",
+  "elapsed_seconds": 20.020399570465088
+}

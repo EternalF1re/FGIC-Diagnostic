@@ -1,0 +1,6 @@
+comparison,mean_delta_accuracy_pp,sample_sd_delta_accuracy_pp,positive_seed_count,independent_unit,diagnostic_type
+dynamic_vs_anchor_forced,0.14348244610327132,0.06568641391970578,3,training seed,counterfactual inference diagnostic
+dynamic_vs_constant_0_5,-0.003632466989955674,0.011342374540760718,1,training seed,counterfactual inference diagnostic
+dynamic_vs_mean_scalar,-0.007264933979915049,0.0319264712966958,2,training seed,counterfactual inference diagnostic
+dynamic_vs_mean_vector,0.0,0.005448700484933511,1,training seed,counterfactual inference diagnostic
+dynamic_vs_plastic_forced,3.7487059336348256,1.026859612763183,3,training seed,counterfactual inference diagnostic

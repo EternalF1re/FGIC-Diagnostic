@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "architecture": {
+    "backbone": "Inception-ResNet-v2",
+    "backbone_pooled_dimension": 1536,
+    "projection": "1536 -> 256",
+    "hidden_dimension": 256,
+    "mapping_blocks": 5,
+    "mapping_block": "Linear -> BatchNorm1d -> SiLU -> Dropout(p=0.3)",
+    "shortcut_formula": "f_i = F_i(f_(i-1)) + 0.7 * f_(i-1)",
+    "aggregation": "mean(f1,...,f5) -> Dropout(p=0.2)",
+    "classifier": "256 -> 176",
+    "mhsa": false,
+    "terminal_residual": false,
+    "dfag": false,
+    "branches": 1
+  },
+  "counts": {
+    "backbone_parameters": 54306464,
+    "baseline_head_parameters": 2807984,
+    "baseline_total_parameters": 57114448,
+    "progressive_head_parameters": 770224,
+    "progressive_total_parameters": 55076688,
+    "historical_progressive_sanity_reference": 55076688
+  },
+  "checks": {
+    "backbone_is_inception_resnet_v2": true,
+    "backbone_pooled_dimension_1536": true,
+    "single_backbone_branch": true,
+    "head_is_frozen_matched_shortcut_implementation": true,
+    "projection_1536_to_256": true,
+    "five_mapping_blocks": true,
+    "shortcut_lambda_0_7": true,
+    "mapping_sequence_linear_bn_silu_dropout": true,
+    "aggregation_dropout_0_2": true,
+    "classifier_256_to_176": true,
+    "mhsa_absent": true,
+    "mhsa_layernorm_absent": true,
+    "mean_f1_to_f5_exact": true,
+    "terminal_residual_absent": true,
+    "forward_source_uses_stage_mean": true,
+    "baseline_head_formula_match": true,
+    "progressive_head_formula_match": true,
+    "same_backbone_parameter_count": true,
+    "baseline_total_reference_exact": true,
+    "progressive_total_accounting_exact": true
+  }
+}

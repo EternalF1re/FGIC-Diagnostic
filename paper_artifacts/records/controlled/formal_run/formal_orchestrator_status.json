@@ -1,0 +1,12 @@
+{
+  "status": "FORMAL_RUN_COMPLETE",
+  "updated_unix": 1787496024.168272,
+  "counts": {
+    "PENDING": 0,
+    "RUNNING": 0,
+    "COMPLETE": 60,
+    "FAILED": 0
+  },
+  "training_authorized": true,
+  "formal_jobs": 60
+}

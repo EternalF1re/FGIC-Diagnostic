@@ -1,0 +1,1 @@
+{"status": "COMPLETE", "job_id": "progressive_cub_fold2", "metrics": {"accuracy": 0.8015012510425354, "macro_f1": 0.7979846542346541, "balanced_accuracy": 0.8014999999999999}}

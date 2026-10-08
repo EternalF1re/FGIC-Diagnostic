@@ -1,0 +1,897 @@
+请继续 Phase 2D controlled validation。
+
+这一次不要训练新模型，不要修改 Round2A，不要启动 fixed-g DFAG、dynamic DFAG、anchor-only、gating-source ablation 或任何新的模块实验。
+
+当前目标只有两个，而且都必须作为**独立于 Round2A 的零梯度推理/诊断任务**执行：
+
+1. endpoint-faithful checkpoint-state interpolation
+2. Stage1 BN-refresh isolation diagnostic
+
+请先审计现有 Phase2B / Phase2D Round1 的正式 baseline checkpoint、OOF、split manifest、training seed、fold mapping 和 Stage2 BN-refresh 实现，再写代码。不要猜路径、fold、checkpoint 或 augmentation。
+
+---
+
+# 一、全局约束
+
+使用现有 baseline：
+
+* training seeds = 42, 43, 44
+* 5 folds per seed
+* 每个 pooled OOF 必须覆盖同一批 18,353 个 held-out 样本，每个样本恰好一次
+* seed42 使用已经确认过的正式 Phase2B/Phase2C baseline source
+* seeds43/44 使用 Phase2D Round1 正式 baseline source
+* Stage1 和 Stage2 checkpoint 必须来自同一 seed、同一 fold 的正式配对
+
+严禁：
+
+* optimizer
+* scheduler
+* backward
+* gradient update
+* learned-parameter optimization
+* 新训练
+* 修改 source checkpoints
+* 修改 Round2A scripts/config/manifests/results
+* 修改已有 Phase2B/Phase2C/Phase2D Round1 artifacts
+* 删除旧 interpolation run
+
+旧的：
+
+`phase2d_weight_interpolation`
+
+必须完整保留。
+
+把旧的 `reset_running_stats() + recalibration` 插值实验降级为 diagnostic evidence，不覆盖、不重命名、不删除。
+
+所有新任务使用新的独立目录，例如：
+
+```text
+phase2_controlled_validation/
+  phase2d_checkpoint_state_interpolation/
+  phase2d_bn_refresh_diagnostic/
+```
+
+Round2A 继续运行，不得中断。
+
+如果 GPU 正被 Round2A 使用：
+
+* 优先使用空闲 GPU；
+* 若没有安全的空闲资源，则排队；
+* 不允许为了这些纯推理任务停止、重启或改变 Round2A。
+
+---
+
+# 二、任务 A：Endpoint-faithful checkpoint-state interpolation
+
+## A1. 科学问题
+
+回答：
+
+> Along the direct checkpoint-state path between the selected Stage~1 checkpoint and its corresponding Stage~2 checkpoint, can a fixed single-branch interpolated model match or exceed Stage1-only?
+
+这里研究的是：
+
+**checkpoint-state interpolation**
+
+不是：
+
+* BN activation statistics reconstruction
+* probability mixture of two models
+* learned weight averaging
+* WiSE-FT hyperparameter search
+* model soup optimization
+
+因此不要声称中间状态的 BN running statistics 是“真实激活分布”。
+
+---
+
+# 三、checkpoint-state interpolation 定义
+
+对每个：
+
+```text
+seed × fold
+```
+
+加载对应的完整 Stage1 和 Stage2 `state_dict`。
+
+固定：
+
+```text
+alpha ∈ {0.0, 0.1, 0.2, 0.3, 0.4, 0.5,
+         0.6, 0.7, 0.8, 0.9, 1.0}
+```
+
+其中：
+
+```text
+alpha = 0.5
+```
+
+继续作为唯一 **pre-registered primary comparator**。
+
+不要根据结果选择 alpha。
+
+---
+
+## A2. 浮点 state tensors
+
+对于 Stage1 / Stage2 中：
+
+* key 完全一致
+* shape 完全一致
+* dtype compatible
+* floating-point state tensor
+
+统一定义：
+
+```python
+state_alpha = alpha * state_stage1 + (1.0 - alpha) * state_stage2
+```
+
+包括但不限于：
+
+* trainable weights
+* biases
+* BatchNorm affine parameters
+* BatchNorm `running_mean`
+* BatchNorm `running_var`
+* 其他 compatible floating-point buffers
+
+这里对 `running_var` 做线性 interpolation 的含义只是：
+
+> it is a floating-point component of the checkpoint state along the defined state-space interpolation path.
+
+不要解释为中间网络真实 activation variance。
+
+---
+
+## A3. 非浮点 buffers
+
+例如：
+
+```text
+num_batches_tracked
+```
+
+不要做数值线性插值。
+
+对于 `0 < alpha < 1`：
+
+* 使用一个固定、预先声明、全实验一致的 endpoint rule，例如统一复制 Stage2 的 non-floating buffer；
+* 在报告里明确写出规则。
+
+这些 buffer 在 `eval()` inference 中不应影响预测。
+
+但最重要的是：
+
+### alpha=0 和 alpha=1 不通过 generic interpolation 构造。
+
+必须：
+
+```text
+alpha = 0:
+直接加载 original Stage2 full state
+
+alpha = 1:
+直接加载 original Stage1 full state
+```
+
+这样保证 endpoint fidelity。
+
+---
+
+# 四、绝对禁止 BN recalibration
+
+任务 A 中：
+
+```text
+NO reset_running_stats()
+NO BN refresh
+NO train-mode forward
+NO calibration loader
+NO Dropout activation
+```
+
+构造 state 后直接：
+
+```python
+model.load_state_dict(...)
+model.eval()
+```
+
+然后对原始 held-out OOF samples 做 deterministic inference。
+
+不使用 TTA。
+
+---
+
+# 五、任务 A endpoint 验收
+
+这是 HARD GATE。
+
+对每个 seed：
+
+### alpha=0
+
+必须复现：
+
+```text
+original Stage2 pooled OOF
+```
+
+### alpha=1
+
+必须复现：
+
+```text
+original Stage1 pooled OOF
+```
+
+至少验证：
+
+* sample IDs 完全一致
+* true labels 完全一致
+* predicted labels 逐样本完全一致
+* Accuracy 完全一致
+* Macro-F1 完全一致
+* Balanced Accuracy 完全一致
+
+如果原始 logits 和当前 inference 环境允许 deterministic bitwise reproduction，则同时检查 logits；否则至少要求 argmax prediction exact match。
+
+如果：
+
+```text
+alpha=0 != Stage2
+```
+
+或：
+
+```text
+alpha=1 != Stage1
+```
+
+任何一个 endpoint prediction 不一致：
+
+**STOP。**
+
+不要继续解释中间 alpha。
+
+先 debug implementation。
+
+---
+
+# 六、任务 A 输出
+
+每个 seed、每个 alpha 保存 pooled OOF：
+
+```text
+sample_id
+true_label
+prediction
+logits/probabilities（如果现有格式支持）
+fold_id
+training_seed
+alpha
+```
+
+指标：
+
+* Accuracy
+* Macro-F1
+* Balanced Accuracy
+
+生成：
+
+```text
+checkpoint_interpolation_curve_per_seed.csv
+checkpoint_interpolation_curve_multiseed_summary.csv
+```
+
+三 seed 汇总：
+
+```text
+mean ± sample SD
+```
+
+seed 是 independent training replicate。
+
+绝对不要把：
+
+```text
+3 × 18,353 = 55,059
+```
+
+当作独立样本池做一个 pooled significance test。
+
+---
+
+# 七、任务 A primary statistics
+
+只对：
+
+```text
+alpha=0.5
+```
+
+做 primary paired statistics。
+
+分别比较：
+
+```text
+alpha=.5 vs original Stage1
+alpha=.5 vs original Stage2
+```
+
+每个 seed 单独：
+
+* Accuracy delta in pp
+* 100,000 paired bootstrap replicates
+* 95% percentile CI
+* exact two-sided McNemar
+* n10
+* n01
+* changed correctness count
+* Macro-F1 delta
+* Balanced Accuracy delta
+
+bootstrap seed 固定并记录。
+
+再报告三 independent seeds 的：
+
+```text
+delta mean ± sample SD
+```
+
+---
+
+# 八、任务 A prediction-level analysis
+
+对 alpha=.5 分别与：
+
+```text
+original Stage1
+original Stage2
+```
+
+计算每 seed：
+
+* prediction disagreement count
+* prediction disagreement %
+* alpha correct / reference wrong
+* alpha wrong / reference correct
+* both wrong
+* error-set Jaccard
+
+目的是回答：
+
+> alpha=.5 更接近哪个 endpoint？
+
+但不要用“attractor”“basin”“collapse”等机制语言。
+
+---
+
+# 九、完整 alpha curve 只能 descriptive
+
+11 个 alpha 全部报告。
+
+但是：
+
+* 不选最优 alpha
+* 不 refinement search
+* 不在 0.5/0.6 附近继续细搜
+* 不把最高点称为 optimal / best alpha
+* 不把 curve 用作 model selection
+
+特别是：
+
+```text
+alpha=0.6
+```
+
+继续保持：
+
+**descriptive only**
+
+旧 reset/recalibration run 中 alpha=.6 比 .5 只高约 0.0163 pp，不构成选择依据。
+
+---
+
+# 十、任务 B：Stage1 BN-refresh isolation diagnostic
+
+这是与任务 A 独立的诊断。
+
+科学问题：
+
+> Does the BN-refresh procedure actually used before Stage~2 fine-tuning change the held-out performance of the selected Stage~1 checkpoint, and if so, is the change attributable to Dropout-active refresh or to resetting BN statistics?
+
+重点：
+
+论文正式 Stage2 做的是：
+
+```text
+50-batch BN refresh without reset
+```
+
+旧 interpolation experiment 做的是：
+
+```text
+reset_running_stats() + 50-batch recalibration
+```
+
+这两个操作绝对不能混为一谈。
+
+---
+
+# 十一、任务 B source
+
+使用和任务 A 相同的：
+
+```text
+3 seeds × 5 folds
+```
+
+每个 fold 的：
+
+**selected original Stage1 checkpoint**
+
+每个条件都必须从磁盘重新加载同一个 pristine Stage1 checkpoint。
+
+禁止：
+
+```text
+condition 1 → condition 2 → condition 3
+```
+
+连续在同一个已被修改 BN stats 的模型对象上执行。
+
+每个 condition 都：
+
+```python
+load fresh Stage1 checkpoint
+```
+
+然后单独执行。
+
+---
+
+# 十二、四个条件
+
+## Condition 1 — Original Stage1
+
+```text
+fresh Stage1 checkpoint
+model.eval()
+no BN refresh
+no reset
+```
+
+直接 held-out inference。
+
+这必须精确复现 original Stage1 OOF。
+
+---
+
+## Condition 2 — Current paper Stage2 refresh
+
+严格复现论文当前真实 Stage2 在 optimizer 创建/Stage2 更新之前使用的 BN refresh 实现。
+
+要求：
+
+```text
+fresh Stage1 checkpoint
+NO reset_running_stats()
+whole model train mode
+no_grad
+50 training-fold-only batches
+使用实际 Stage2 BN-refresh loader / transform
+Mixup OFF
+CutMix OFF
+Dropout remains active because whole model is train()
+then model.eval()
+held-out inference
+```
+
+不要重新实现一个“差不多”的 loader。
+
+必须复用/调用现有正式 Stage2 pipeline 中实际使用的：
+
+* fold training subset
+* batch size
+* number of batches
+* augmentation/transforms
+* shuffle/dataloader seed
+* preprocessing
+
+并在 audit report 中逐项记录。
+
+---
+
+## Condition 3 — BN-only refresh
+
+目的是隔离 Dropout 的影响。
+
+```text
+fresh Stage1 checkpoint
+NO reset_running_stats()
+
+首先 model.eval()
+
+然后只把 BatchNorm modules 设置为 train mode
+其他模块保持 eval
+特别是 Dropout 必须保持 eval
+
+no_grad
+使用与 Condition 2 完全相同的：
+- training-fold samples
+- batch order
+- transforms
+- 50 batches
+
+完成后：
+model.eval()
+held-out inference
+```
+
+除 BN/Dropout mode 外，其余条件必须和 Condition 2 matched。
+
+---
+
+## Condition 4 — Reset + current refresh
+
+用于复现旧 interpolation experiment 中造成大 endpoint penalty 的处理。
+
+```text
+fresh Stage1 checkpoint
+
+对所有 BatchNorm:
+reset_running_stats()
+
+whole model train mode
+no_grad
+
+与 Condition 2 完全相同的：
+- training-fold samples
+- batch order
+- augmentation
+- 50 batches
+
+Dropout active
+
+完成后：
+model.eval()
+held-out inference
+```
+
+这不是论文正式 Stage2 流程。
+
+必须在输出中标为：
+
+```text
+diagnostic reset+refresh condition
+```
+
+---
+
+# 十三、四条件公平性要求
+
+Conditions 2 / 3 / 4 必须尽可能使用完全相同的：
+
+* training-fold sample sequence
+* random seed
+* augmentation seed
+* batch size
+* 50 batches
+* image preprocessing
+
+最好先把本次 refresh 使用的：
+
+```text
+sample IDs / batch indices / augmentation seed
+```
+
+冻结成 manifest，然后三个条件复用。
+
+不要让 dataloader randomness 变成额外变量。
+
+---
+
+# 十四、任务 B 主要比较
+
+每个 seed 分别做：
+
+### B1. Condition2 vs Condition1
+
+回答：
+
+> 当前论文正式 Stage2 BN refresh 是否改变 Stage1 checkpoint performance？
+
+### B2. Condition3 vs Condition1
+
+回答：
+
+> BN-only refresh 是否改变 Stage1 checkpoint performance？
+
+### B3. Condition2 vs Condition3
+
+回答：
+
+> whole-model train mode / Dropout-active refresh 相比 BN-only refresh 是否额外改变性能？
+
+### B4. Condition4 vs Condition2
+
+回答：
+
+> reset_running_stats() 在 current refresh 基础上增加了多少额外扰动？
+
+必要时补：
+
+### B5. Condition4 vs Condition1
+
+用于和旧 interpolation endpoint penalty 对照。
+
+---
+
+# 十五、任务 B statistics
+
+以上每个 paired comparison，每个 seed：
+
+* Accuracy delta pp
+* 100,000 paired bootstrap 95% CI
+* exact two-sided McNemar
+* n10 / n01
+* changed correctness
+* Macro-F1 delta
+* Balanced Accuracy delta
+* prediction disagreement
+* both-wrong count
+* error-set Jaccard
+
+三 seeds：
+
+```text
+delta mean ± sample SD
+```
+
+不要将不同 seed predictions 合并为一个 55,059-sample statistical test。
+
+---
+
+# 十六、额外 BN diagnostics
+
+对于 Conditions 2 / 3 / 4，保存 BN state 变化摘要。
+
+至少记录：
+
+* BN module count
+* per-layer running_mean L2 change from original Stage1
+* per-layer running_var L2 change from original Stage1
+
+生成 summary：
+
+```text
+mean
+median
+max
+min
+```
+
+如果很容易，再记录变化最大的 top-10 BN layers。
+
+目的只是定位：
+
+> 不同 refresh 规则到底改变了多少 BN state。
+
+不要把这些数值解释成 representation quality。
+
+---
+
+# 十七、端点样本级方向性
+
+利用旧的 reset/recalibration endpoint artifacts，如果现有文件可直接读取，不要重新训练。
+
+比较：
+
+```text
+old alpha=0 recalibrated endpoint vs original Stage2
+old alpha=1 recalibrated endpoint vs original Stage1
+```
+
+补充：
+
+* 两个 endpoint 因 reset/recalibration 新增错误的 sample-ID overlap
+* Jaccard
+* 共同丢失样本数
+* 各自独有丢失样本数
+
+这是 diagnostic only。
+
+不要因此推导语义机制。
+
+---
+
+# 十八、必须输出的文件
+
+任务 A：
+
+```text
+CHECKPOINT_STATE_INTERPOLATION_RESULTS_AUDIT.md
+curves/checkpoint_interpolation_curve_per_seed.csv
+curves/checkpoint_interpolation_curve_multiseed_summary.csv
+statistics/alpha_0_5_vs_stage1.csv
+statistics/alpha_0_5_vs_stage2.csv
+statistics/prediction_overlap.csv
+manifests/preflight_audit.json
+manifests/postflight_audit.json
+```
+
+任务 B：
+
+```text
+BN_REFRESH_DIAGNOSTIC_RESULTS_AUDIT.md
+metrics/bn_refresh_conditions_per_seed.csv
+statistics/current_refresh_vs_original.csv
+statistics/bn_only_vs_original.csv
+statistics/current_vs_bn_only.csv
+statistics/reset_refresh_vs_current.csv
+statistics/reset_refresh_vs_original.csv
+statistics/endpoint_error_overlap.csv
+diagnostics/bn_state_change_summary.csv
+manifests/preflight_audit.json
+manifests/postflight_audit.json
+```
+
+另外保存所有必要的 pooled OOF NPZ/CSV 和 source hash manifests。
+
+---
+
+# 十九、preflight / postflight
+
+Preflight 必须验证：
+
+* 30 source Stage1/Stage2 checkpoints 可读取
+* state keys / shapes / dtype compatible
+* seed-fold mapping 正确
+* 18,353 OOF sample universe 一致
+* old formal reference OOF 可读取
+* Round2A 当前文件 hash 快照已保存
+* source checkpoint hash 已保存
+* Stage2 BN refresh loader / transform 已确定
+* 不会写入旧目录
+
+Postflight 必须验证：
+
+* 所有任务完成
+* no gradient update
+* no optimizer/scheduler/backward
+* source checkpoints unchanged
+* Round2A files unchanged
+* exact OOF coverage
+* alpha=0 exact Stage2 prediction reproduction
+* alpha=1 exact Stage1 prediction reproduction
+* Condition1 exact original Stage1 prediction reproduction
+* all statistics generated
+* no post-hoc alpha selection
+* no DFAG task launched
+
+任何 endpoint fidelity check FAIL：
+
+不要输出科学结论。
+
+先修复。
+
+---
+
+# 二十、最终报告的结论边界
+
+## 可以讨论
+
+如果数据支持，可以报告：
+
+* checkpoint-state interpolation 相对 Stage1 / Stage2 的实际性能差异；
+* alpha=.5 是否与 Stage1 或 Stage2 可区分；
+* alpha=.5 prediction pattern 更接近哪个 endpoint；
+* tested alpha curve 的 descriptive shape；
+* current Stage2 BN refresh 是否改变 Stage1 checkpoint performance；
+* BN-only 和 whole-model-train refresh 是否不同；
+* reset 是否产生额外性能扰动。
+
+## 禁止直接声称
+
+除非有额外证据，不要写：
+
+* semantic knowledge preservation
+* representation degradation mitigation
+* Stage2 collapse
+* optimization attractor
+* better basin
+* optimal alpha
+* alpha=.6 best
+* BN refresh explains Stage2 decline
+* Dropout causes Stage2 decline
+* DFAG is necessary
+* DFAG is unnecessary
+
+特别注意：
+
+即使 Condition2−Condition1 的下降数值恰好接近 historical Stage2−Stage1：
+
+也只能说：
+
+```text
+the magnitudes are comparable
+```
+
+不能自动说：
+
+```text
+BN refresh explains the Stage2 decline
+```
+
+因为 Stage2 后面还有 60 epoch parameter updates。
+
+---
+
+# 二十一、执行顺序
+
+这两个任务可以互相独立并行：
+
+```text
+A. checkpoint-state interpolation
+B. BN-refresh diagnostic
+```
+
+Round2A：
+
+```text
+CONTINUE
+```
+
+以下全部：
+
+```text
+PAUSE
+```
+
+* fixed-g DFAG
+* dynamic DFAG
+* anchor-only
+* gating-source ablation
+* terminal-residual new experiment
+* cross-dataset rerun
+* cross-architecture rerun
+
+等：
+
+1. Round2A
+2. checkpoint-state interpolation
+3. BN-refresh diagnostic
+
+三组结果汇总后，再决定下一轮训练实验。
+
+---
+
+# 二十二、最终回复格式
+
+完成后不要只回复一句“done”。
+
+请给我：
+
+1. Integrity / PASS-FAIL
+2. Task A endpoint reproduction
+3. alpha=.5 primary results
+4. full descriptive alpha curve
+5. prediction-overlap findings
+6. Task B four-condition results
+7. Condition2 vs Condition3：Dropout-mode diagnostic
+8. Condition4 vs Condition2：reset diagnostic
+9. BN-state-change summary
+10. across-seed consistency
+11. supported conclusions
+12. unsupported conclusions
+13. implications for whether Stage1-only remains strongest simple comparator
+14. exact output paths
+15. confirmation that Round2A was not modified
+16. explicit STOP — no DFAG started
+
+如果发现 protocol ambiguity，不要自行改实验定义；先在报告中指出并停止对应分支。

@@ -8,3 +8,5 @@
 *.md text eol=lf
 *.txt text eol=lf
 *.csv text eol=lf
+# Preserve historical artifact bytes exactly, including sanitized .log files.
+paper_artifacts/** -text

@@ -1,0 +1,20 @@
+{
+  "run_id": "baseline_seed43",
+  "fold": 0,
+  "n": 3671,
+  "stage1": {
+    "accuracy": 0.9803868155815854,
+    "macro_f1": 0.9827689940331926,
+    "balanced_accuracy": 0.9830854203235966,
+    "best_epoch_zero_based": 137,
+    "best_accuracy": 0.9803868155815854
+  },
+  "stage2": {
+    "accuracy": 0.9784799782075728,
+    "macro_f1": 0.9812439152901095,
+    "balanced_accuracy": 0.9809637078220121,
+    "best_epoch_zero_based": 24,
+    "best_accuracy": 0.9784799782075728
+  },
+  "feature_extraction_location": "second 1024-D block output after Dropout and immediately before final Linear"
+}

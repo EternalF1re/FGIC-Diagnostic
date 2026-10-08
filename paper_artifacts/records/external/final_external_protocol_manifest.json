@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-17 09:25:01 +0800",
+  "instruction_sha256": "B70F752377437D7D76EAA4CEBF17CEEA436B7A49EB5F7950D5341075C7E0C93B",
+  "protocol_identity": "FINAL NEWLY FROZEN UNIFIED CROSS-DATASET VALIDATION PROTOCOL",
+  "historical_protocol_reproduction": false,
+  "previous_config_sha256": "a4a975bf1636e91e27621bd666d91e8bab3b5f960e7d964bbf50fd50f1e990fc",
+  "reason_for_supersession": "Stage1 label smoothing corrected from manuscript-recorded 0.03 to audited controlled-protocol value 0.05 before formal training.",
+  "new_config_path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_external_protocol_config.json",
+  "formal_results_under_previous_config": 0,
+  "formal_results_under_new_config": 0,
+  "final_config": {
+    "schema_version": 3,
+    "experiment_id": "FINAL_NEWLY_FROZEN_UNIFIED_CROSS_DATASET_VALIDATION_PROTOCOL",
+    "historical_reproduction": false,
+    "instruction_sha256": "B70F752377437D7D76EAA4CEBF17CEEA436B7A49EB5F7950D5341075C7E0C93B",
+    "primary_comparison": [
+      "ours_ft",
+      "progressive_lambda_0_7"
+    ],
+    "smoke_scope": {
+      "dataset": "CUB-200-2011",
+      "fold": 0,
+      "training_seed": 42,
+      "runs": [
+        "ours_ft",
+        "progressive_lambda_0_7"
+      ],
+      "reuse_previous_smoke": false,
+      "stop_after_smoke": true,
+      "full_40_job_run_authorized": false
+    },
+    "datasets": {
+      "cub": {
+        "name": "CUB-200-2011",
+        "root": "<LOCAL_PATH>",
+        "num_classes": 200,
+        "development_count": 5994,
+        "official_test_count": 5794,
+        "development_definition": "train_test_split.txt == 1",
+        "official_test_definition": "train_test_split.txt == 0",
+        "bounding_boxes": false,
+        "parts": false,
+        "attributes": false
+      },
+      "cars": {
+        "name": "Stanford Cars",
+        "root": "<LOCAL_PATH>",
+        "train_csv": "<LOCAL_PATH>",
+        "test_csv": "<LOCAL_PATH>",
+        "train_image_root": "<LOCAL_PATH>",
+        "test_image_root": "<LOCAL_PATH>",
+        "num_classes": 196,
+        "development_count": 8144,
+        "official_test_count": 8041,
+        "bounding_boxes": false
+      },
+      "flowers": {
+        "name": "Oxford Flowers-102",
+        "root": "<LOCAL_PATH>",
+        "image_root": "<LOCAL_PATH>",
+        "labels_mat": "<LOCAL_PATH>",
+        "split_mat": "<LOCAL_PATH>",
+        "num_classes": 102,
+        "official_train_count": 1020,
+        "official_validation_count": 1020,
+        "development_count": 2040,
+        "official_test_count": 6149,
+        "development_definition": "official train union official validation"
+      }
+    },
+    "split": {
+      "type": "StratifiedKFold",
+      "n_splits": 5,
+      "shuffle": true,
+      "random_state": 42,
+      "primary_semantics": "complete-development-pool OOF metrics recomputed from one held-out prediction per sample after five folds; never arithmetic mean of fold metrics"
+    },
+    "transforms": {
+      "input_size": [
+        3,
+        299,
+        299
+      ],
+      "cub_train": [
+        "Resize(size=(299, 299))",
+        "RandomHorizontalFlip(p=0.5)",
+        "ColorJitter(brightness=(0.9, 1.1), contrast=(0.9, 1.1), saturation=(0.9, 1.1), hue=(-0.1, 0.1))",
+        "RandomAffine(degrees=[0.0, 0.0], shear=[-5.0, 5.0])",
+        "ToTensor()",
+        "Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])"
+      ],
+      "cars_train": [
+        "Resize(size=(299, 299))",
+        "RandomHorizontalFlip(p=0.5)",
+        "ColorJitter(brightness=(0.9, 1.1), contrast=(0.9, 1.1), saturation=(0.9, 1.1), hue=(-0.1, 0.1))",
+        "RandomAffine(degrees=[0.0, 0.0], shear=[-5.0, 5.0])",
+        "ToTensor()",
+        "Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])"
+      ],
+      "flowers_train": [
+        "Resize(size=(299, 299))",
+        "RandomHorizontalFlip(p=0.5)",
+        "RandomRotation(degrees=(-180, 180), fill=(255, 255, 255))",
+        "ColorJitter(brightness=(0.9, 1.1), contrast=(0.9, 1.1), saturation=(0.9, 1.1), hue=(-0.1, 0.1))",
+        "RandomAffine(degrees=[0.0, 0.0], shear=[-5.0, 5.0])",
+        "ToTensor()",
+        "Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])"
+      ],
+      "vertical_flip": {
+        "cub": false,
+        "cars": false,
+        "flowers": false
+      },
+      "validation_and_test": [
+        "Resize(size=(299, 299))",
+        "ToTensor()",
+        "Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])"
+      ],
+      "primary_tta": false
+    },
+    "architectures": {
+      "backbone": "timm inception_resnet_v2, ImageNet pretrained, num_classes=0, 1536-D GAP",
+      "ours_ft": "1536 -> Linear(1024) -> BN -> SiLU -> Dropout(0.2) -> Linear(1024) -> BN -> SiLU -> Dropout(0.2) -> Linear(num_classes)",
+      "progressive_lambda_0_7": "1536 -> Linear(256) -> five [Linear(256), BN, SiLU, Dropout(0.3)] blocks with f_i=F_i(f_{i-1})+0.7*f_{i-1} -> arithmetic mean(f1..f5) -> Dropout(0.2) -> Linear(num_classes)",
+      "mhsa": false,
+      "terminal_residual": false,
+      "dfag": false
+    },
+    "training": {
+      "batch_size": 32,
+      "num_workers": 4,
+      "class_weights": null,
+      "amp": true,
+      "amp_dtype": "float16",
+      "amp_grad_scaler_init_scale": 4096,
+      "gradient_clip_norm": 5.0,
+      "stage1": {
+        "epochs": 150,
+        "optimizer": "AdamW",
+        "backbone_lr": 0.0001,
+        "head_lr": 0.001,
+        "weight_decay": 0.001,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "warmup_epochs": 3,
+        "scheduler": "CosineAnnealingLR(T_max=147, eta_min=1e-5) after 3-epoch linear warmup",
+        "label_smoothing": 0.05,
+        "mixup": {
+          "alpha": 0.4,
+          "probability": 0.4
+        },
+        "cutmix": {
+          "alpha": 1.0,
+          "probability": 0.5
+        },
+        "none_probability": 0.1,
+        "strong_augmentation_anneal": "scale=1 through zero-based epoch 105; for epoch>105, scale=max(0,1-(epoch-105)/45)",
+        "checkpoint_selection": "strict maximum deterministic original-view validation accuracy; ties keep earlier epoch"
+      },
+      "stage2": {
+        "start": "strictly load the selected Stage1 checkpoint for the same run/fold",
+        "epochs": 60,
+        "optimizer": "AdamW",
+        "all_parameter_lr": 5e-05,
+        "weight_decay": 0.0005,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "scheduler": "CosineAnnealingLR(T_max=60, eta_min=1e-6)",
+        "label_smoothing": 0.03,
+        "mixup": false,
+        "cutmix": false,
+        "checkpoint_selection": "strict maximum deterministic original-view validation accuracy within Stage2; ties keep earlier epoch",
+        "bn_recalibration": "no reset; whole model train mode; 50 augmented training-fold batches; torch.no_grad; Dropout active; before optimizer creation"
+      }
+    },
+    "evaluation": {
+      "primary": "deterministic original-view five-fold OOF after all folds; no TTA; no cross-fold ensemble",
+      "metrics": [
+        "accuracy",
+        "macro_f1",
+        "balanced_accuracy"
+      ],
+      "official_test": "secondary external-test result; labels never used for checkpoint selection",
+      "smoke_limitation": "fold0 validation metrics are technical smoke metrics, not final OOF metrics"
+    },
+    "cub_lambda_diagnostic": {
+      "authorized_lambdas": [
+        0.1,
+        0.7,
+        1.0
+      ],
+      "smoke_lambda": 0.7,
+      "features": "post-shortcut f1..f5 at selected Stage1 and selected Stage2",
+      "per_fold_statistics": [
+        "mean off-diagonal cosine similarity",
+        "centered-linear CKA"
+      ],
+      "five_fold_aggregation": "retain each fold value, then unweighted arithmetic mean across five fold-level values",
+      "forbidden_aggregation": "do not concatenate feature matrices from different fold models for global CKA",
+      "interpretation": "representation similarity only, not quality"
+    },
+    "protocol_supersession": {
+      "previous_config_path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\corrected_external_protocol_smoke\\config.json",
+      "previous_config_sha256": "a4a975bf1636e91e27621bd666d91e8bab3b5f960e7d964bbf50fd50f1e990fc",
+      "reason_for_supersession": "Stage1 label smoothing corrected from manuscript-recorded 0.03 to audited controlled-protocol value 0.05 before formal training.",
+      "formal_results_under_previous_config": 0,
+      "formal_results_under_final_config_at_creation": 0,
+      "provenance_change_not_result_tuning": true
+    },
+    "batch_size_provenance": {
+      "classify_leaves_controlled_batch_size": 64,
+      "new_external_validation_batch_size": 32,
+      "within_each_external_dataset_same_across_compared_configurations": true,
+      "explicit_protocol_difference_not_error": true
+    },
+    "stage2_epoch_index_invariant": "zero-based Stage2 epoch 0 denotes validation performed after the first completed gradient-based Stage2 training epoch",
+    "future_cross_dataset_lambda_reporting_rule": {
+      "common_leaves_cub_points": [
+        0.1,
+        0.7,
+        1.0
+      ],
+      "leaves_only_descriptive_point": 0.9,
+      "four_point_leaves_and_three_point_cub_not_fully_matched": true,
+      "changes_formal_jobs": false
+    }
+  },
+  "formal_ledger": {
+    "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\formal_job_ledger.csv",
+    "sha256": "e784505f07d7f97e75644cf49735c1ec8111524ff9922c7e5aeaf2f878e27f6f",
+    "rows": 40,
+    "pending": 40,
+    "started": 0
+  },
+  "lightweight_sanity": {
+    "pass": true,
+    "technical_check_only_not_experiment": true,
+    "device": "cuda:0",
+    "legal_training_batch_size": 32,
+    "records": {
+      "ours_ft": {
+        "batch_size": 32,
+        "criterion": "CrossEntropyLoss(label_smoothing=0.05)",
+        "class_weights": null,
+        "augmentation_type": "mixup",
+        "augmentation_scale": 1.0,
+        "finite_loss": true,
+        "gradient_tensor_count": 702,
+        "finite_gradients": true,
+        "nonzero_gradient_tensor_count": 702,
+        "backward_pass_completed": true,
+        "optimizer_step_performed": false,
+        "checkpoint_saved": false,
+        "accuracy_computed": false
+      },
+      "progressive_lambda_0_7": {
+        "batch_size": 32,
+        "criterion": "CrossEntropyLoss(label_smoothing=0.05)",
+        "class_weights": null,
+        "augmentation_type": "mixup",
+        "augmentation_scale": 1.0,
+        "finite_loss": true,
+        "gradient_tensor_count": 716,
+        "finite_gradients": true,
+        "nonzero_gradient_tensor_count": 716,
+        "backward_pass_completed": true,
+        "optimizer_step_performed": false,
+        "checkpoint_saved": false,
+        "accuracy_computed": false
+      }
+    },
+    "checkpoint_files_before": [],
+    "checkpoint_files_after": [],
+    "formal_ledger_sha256_before": "e784505f07d7f97e75644cf49735c1ec8111524ff9922c7e5aeaf2f878e27f6f",
+    "formal_ledger_sha256_after": "e784505f07d7f97e75644cf49735c1ec8111524ff9922c7e5aeaf2f878e27f6f",
+    "formal_ledger_unchanged": true
+  },
+  "epoch0_semantics": {
+    "confirmed": true,
+    "invariant": "zero-based Stage2 epoch 0 denotes validation after the first completed gradient-based Stage2 epoch",
+    "runner_path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\corrected_external_protocol_smoke\\scripts\\train_cub_smoke.py",
+    "runner_sha256": "a2d851317dc69ee0f6e70b5b08ca3053dc6f79a9d67e6e8b551d9e1fb9cf1f63",
+    "stage2_function_one_based_lines": {
+      "epoch_loop": 221,
+      "training_batch_loop": 225,
+      "loss_backward": 235,
+      "optimizer_step": 245,
+      "validation": 250,
+      "checkpoint_condition": 251,
+      "checkpoint_save": 253
+    },
+    "control_flow_order_verified": true,
+    "corrected_smoke_epoch0_rows": {
+      "ours_ft": {
+        "epoch0_row_count": 1,
+        "epoch0_finite_train_loss": true,
+        "epoch0_finite_validation_accuracy": true,
+        "epoch0_amp_overflow_batches": 0
+      },
+      "progressive_lambda_0_7": {
+        "epoch0_row_count": 1,
+        "epoch0_finite_train_loss": true,
+        "epoch0_finite_validation_accuracy": true,
+        "epoch0_amp_overflow_batches": 0
+      }
+    }
+  },
+  "corrected_smoke_stage2_curve_export": {
+    "csv": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\corrected_smoke_stage2_curves.csv",
+    "csv_sha256": "f3d0230507505c63fd9898c7d2303fc4afd98e960745526e171d95d3cfdc23ad",
+    "audit": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\CORRECTED_SMOKE_STAGE2_CURVE_AUDIT.md",
+    "audit_sha256": "bef8a2fb74a47ccbd1b49adbe7ea779291a891eace5dea3babca3f77f0898aa5",
+    "summaries": [
+      {
+        "run_id": "ours_ft",
+        "epoch0_validation_accuracy": 0.8165137614678899,
+        "minimum_validation_accuracy": 0.7798165137614679,
+        "maximum_validation_accuracy": 0.8165137614678899,
+        "final_epoch_accuracy": 0.7889908256880734,
+        "best_epoch_zero_based": 0,
+        "higher_than_previous": 27,
+        "lower_than_previous": 31,
+        "equal_to_previous": 1,
+        "strictly_monotonic_decreasing": false,
+        "local_recoveries_after_epoch0": true
+      },
+      {
+        "run_id": "progressive_lambda_0_7",
+        "epoch0_validation_accuracy": 0.7973311092577148,
+        "minimum_validation_accuracy": 0.7447873227689742,
+        "maximum_validation_accuracy": 0.7973311092577148,
+        "final_epoch_accuracy": 0.7814845704753962,
+        "best_epoch_zero_based": 0,
+        "higher_than_previous": 34,
+        "lower_than_previous": 25,
+        "equal_to_previous": 0,
+        "strictly_monotonic_decreasing": false,
+        "local_recoveries_after_epoch0": true
+      }
+    ]
+  },
+  "final_checks": {
+    "previous_config_hash_exact": true,
+    "stage1_label_smoothing_0_05": true,
+    "stage2_label_smoothing_0_03": true,
+    "external_batch_size_32": true,
+    "ledger_rows_40": true,
+    "ledger_unique_40": true,
+    "ledger_pending_40": true,
+    "formal_jobs_started_0": true,
+    "ledger_seed42": true,
+    "ledger_split42": true,
+    "ledger_new_hash_every_row": true,
+    "epoch0_semantics_confirmed": true,
+    "lightweight_sanity_pass": true,
+    "curve_rows_120": true,
+    "no_checkpoint_created": true
+  },
+  "STAGE1_LABEL_SMOOTHING": 0.05,
+  "STAGE2_LABEL_SMOOTHING": 0.03,
+  "EXTERNAL_BATCH_SIZE": 32,
+  "NEW_CONFIG_SHA256": "7f667c125983ca82ec36214b727ee8fbe3215f21562abd260f4018559f87e3e5",
+  "FORMAL_LEDGER_ROWS": 40,
+  "FORMAL_LEDGER_PENDING": 40,
+  "FORMAL_JOBS_STARTED": 0,
+  "EPOCH0_SEMANTICS_CONFIRMED": "YES",
+  "LIGHTWEIGHT_SANITY_PASS": "YES",
+  "FINAL_40_JOB_RUN_READY": "YES",
+  "stop_before_formal_training": true,
+  "config_identity": {
+    "path": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\final_external_protocol\\final_external_protocol_config.json",
+    "sha256": "7f667c125983ca82ec36214b727ee8fbe3215f21562abd260f4018559f87e3e5"
+  }
+}

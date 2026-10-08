@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETE",
+  "seed": 44,
+  "fold": 2,
+  "alpha": 0.0,
+  "primary": false,
+  "device": "cuda:0",
+  "elapsed_seconds": 24.92448329925537,
+  "stage1_checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_2\\best_stage1.pth",
+  "stage1_sha256": "a657b6a5272e495baefd70efa58b0ee21fafe1b592a12559daaf041618d267e3",
+  "stage2_checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round1\\baseline_seed44\\fold_2\\best_stage2.pth",
+  "stage2_sha256": "f4b1ceebc9f6021fc5b8ffdfdd66a0b24adbb74e935def34288e14b5288bfc9d",
+  "state_rule": {
+    "endpoint_direct_full_state": "Stage2"
+  },
+  "no_bn_reset": true,
+  "no_bn_refresh": true,
+  "model_eval": true,
+  "train_mode_forward": false,
+  "optimizer": false,
+  "scheduler": false,
+  "backward": false,
+  "parameter_hash_before": "8cc6dfb36f68bb1770430c115366f3c84ef2e8372bebdb5835ea6c2055b95009",
+  "parameter_hash_after": "8cc6dfb36f68bb1770430c115366f3c84ef2e8372bebdb5835ea6c2055b95009",
+  "all_grad_none": true,
+  "endpoint_fidelity": {
+    "stage": 2,
+    "sample_ids_exact": true,
+    "labels_exact": true,
+    "predictions_exact": true,
+    "logits_bitwise_equal": true,
+    "max_abs_logit_difference": 0.0
+  },
+  "artifact": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_checkpoint_state_interpolation\\tasks\\seed44\\fold_2\\alpha_0_0.npz",
+  "artifact_sha256": "a7821fb61802b7e1a05f261a8e631f28e606185e6e04325a3c1a6e5078895985",
+  "accuracy": 0.9792971942250068,
+  "macro_f1": 0.9814089394587078,
+  "balanced_accuracy": 0.9811660890124387
+}

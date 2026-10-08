@@ -1,0 +1,136 @@
+{
+  "status": "COMPLETE",
+  "phase": "Phase2F unified standalone dynamic DFAG",
+  "seed": 46,
+  "fold": 3,
+  "split_id": "skf42_fold3",
+  "split_random_state": 42,
+  "device": "cuda:1",
+  "formal_training": true,
+  "stage1_retrained": false,
+  "stage2_only": true,
+  "dfag": "standalone_dynamic",
+  "ssph": false,
+  "mhsa": false,
+  "terminal": false,
+  "fixed_g_training": false,
+  "anchor_sweep": false,
+  "gating_source_ablation": false,
+  "joint_model": false,
+  "source_stage1_checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\baseline_seed46\\fold_3\\best_stage1.pth",
+  "source_stage1_sha256": "a097858979d08bbedb82104b17d75a454cc8d04909f303fd73edd322dd7ddced",
+  "source_stage1_epoch_zero_based": 112,
+  "config_sha256": "33903fad46740df7f90c81dc9019e3c9d20f9b864004e4caa2f66a72f78b25ed",
+  "runner_sha256": "c539698d87bacd73c6d4a057e5939c06b6b75630b9eea2aef081e4ade50f9294",
+  "started_unix": 1786875530.5061376,
+  "completed_unix": 1786882640.0486534,
+  "elapsed_seconds": 7109.5425157547,
+  "environment": {
+    "python_executable": "<LOCAL_PATH>",
+    "python_version": "3.9.23",
+    "torch": "2.8.0+cu129",
+    "torchvision": "0.23.0+cu129",
+    "timm": "1.0.21",
+    "numpy": "1.24.3",
+    "sklearn": "1.6.1",
+    "device": "cuda:1",
+    "cuda_runtime": "12.9",
+    "cudnn": 91002,
+    "gpu_name": "NVIDIA GeForce RTX 5070 Ti",
+    "gpu_memory_bytes": 17094475776
+  },
+  "parameter_counts": {
+    "resident_parameters": 114523808,
+    "executed_parameters": 111715824,
+    "trainable_parameters": 57409360,
+    "frozen_parameters": 57114448,
+    "gate_parameters": 294912,
+    "anchor_branch_parameters": 57114448,
+    "plastic_branch_parameters": 57114448
+  },
+  "bn_adaptation_batches_completed": 50,
+  "bn_refresh_modules": [
+    "plastic.backbone BatchNorm",
+    "plastic.head.bn1",
+    "plastic.head.bn2"
+  ],
+  "optimizer_modules": [
+    "plastic.backbone",
+    "plastic.head",
+    "dfag_gate"
+  ],
+  "anchor_in_optimizer": false,
+  "best_checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2f_seed45_46_confirmation\\seed46\\fold_3\\best_stage2.pth",
+  "best_checkpoint_sha256": "cd24db500de669b75f9fdb74c9198461687da0a31318bea1545dc50bf72201ac",
+  "selected_epoch_zero_based": 2,
+  "selected_accuracy": 0.9790190735694823,
+  "history_epochs": 60,
+  "heldout_artifact": "heldout_dfag_artifacts.npz",
+  "training_side_mean_gate_vector": "training_side_mean_gate_vector.npy",
+  "metrics": {
+    "dynamic": {
+      "accuracy": 0.9790190735694823,
+      "macro_f1": 0.9814289602871945,
+      "balanced_accuracy": 0.98165325578063
+    },
+    "mean_vector": {
+      "accuracy": 0.9790190735694823,
+      "macro_f1": 0.9814289602871945,
+      "balanced_accuracy": 0.98165325578063
+    },
+    "mean_scalar": {
+      "accuracy": 0.9790190735694823,
+      "macro_f1": 0.9814289602871945,
+      "balanced_accuracy": 0.98165325578063
+    },
+    "constant_0_5": {
+      "accuracy": 0.9787465940054496,
+      "macro_f1": 0.9812242800453987,
+      "balanced_accuracy": 0.981369164871539
+    },
+    "anchor_forced": {
+      "accuracy": 0.9782016348773842,
+      "macro_f1": 0.9805430992866847,
+      "balanced_accuracy": 0.9813072627874189
+    },
+    "plastic_forced": {
+      "accuracy": 0.9613079019073569,
+      "macro_f1": 0.9622112352945209,
+      "balanced_accuracy": 0.9624154279968316
+    }
+  },
+  "sanity": {
+    "gate_initial_parameter_norm": 23.324686950676227,
+    "gate_selected_parameter_norm": 23.350410297718053,
+    "gate_initial_output": {
+      "mean": 0.4998589754104614,
+      "std": 0.01331031322479248,
+      "min": 0.44145363569259644,
+      "max": 0.549714207649231,
+      "n": 98304
+    },
+    "gate_selected_output": {
+      "mean": 0.5225170850753784,
+      "std": 0.08507903665304184,
+      "min": 0.19644297659397125,
+      "max": 0.8426595330238342,
+      "n": 5637120
+    },
+    "gate_initial_state_sha256": "7f201a5b424dd43140cef5a4c6965a38fc06cdc51335087601684ce1bd847954",
+    "gate_selected_state_sha256": "03d42c2bf33bed65bb038d3de02b22003f063d0080e9a6a2af8cb29f32406ef1",
+    "gate_parameters_changed": true,
+    "gate_gradient_observed_batches": 13800,
+    "gate_gradient_nonzero_batches": 13800,
+    "gate_gradients_not_permanently_zero": true,
+    "anchor_state_sha256_before": "979d826e2206521fb6ccfc78aacf0ad758d6f779b52c9b6949a4dbf61f425e35",
+    "anchor_state_sha256_after": "979d826e2206521fb6ccfc78aacf0ad758d6f779b52c9b6949a4dbf61f425e35",
+    "anchor_unchanged": true,
+    "anchor_bn_sha256_before": "a4d7a61bc4aa073d2d4fa351ae71607549fc4aaf89f3d8c7da76ac03d115086b",
+    "anchor_bn_sha256_after": "a4d7a61bc4aa073d2d4fa351ae71607549fc4aaf89f3d8c7da76ac03d115086b",
+    "anchor_bn_unchanged": true,
+    "anchor_gradients_absent": true,
+    "max_abs_fanc_minus_fspec": 1.363825798034668,
+    "branches_not_bitwise_identical": true,
+    "all_outputs_finite": true
+  }
+}

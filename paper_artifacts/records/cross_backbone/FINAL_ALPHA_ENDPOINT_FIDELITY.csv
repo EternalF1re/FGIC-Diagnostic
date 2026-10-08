@@ -1,0 +1,11 @@
+backbone,fold,alpha0_predictions_exact_stage2,alpha0_prediction_mismatch_count,alpha0_logits_exact_stage2,alpha0_logits_max_abs_difference,alpha0_all_state_exact_stage2,alpha1_predictions_exact_stage1,alpha1_prediction_mismatch_count,alpha1_logits_exact_stage1,alpha1_logits_max_abs_difference,alpha1_all_state_exact_stage1,alpha1_floating_state_exact_stage1,alpha1_running_mean_exact_stage1,alpha1_running_var_exact_stage1,alpha1_num_batches_tracked_exact_stage1,alpha1_num_batches_tracked_exact_stage2,nonfloating_state_tensor_count,stage1_vs_stage2_nonfloating_difference_count,inference_endpoint_pass
+resnet50,0,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,55,55,True
+resnet50,1,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,55,55,True
+resnet50,2,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,55,55,True
+resnet50,3,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,55,55,True
+resnet50,4,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,55,55,True
+convnext_tiny,0,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,2,2,True
+convnext_tiny,1,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,2,2,True
+convnext_tiny,2,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,2,2,True
+convnext_tiny,3,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,2,2,True
+convnext_tiny,4,True,0,True,0.0,True,True,0,True,0.0,False,True,True,True,False,True,2,2,True

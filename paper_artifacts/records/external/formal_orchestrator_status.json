@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE",
+  "started_unix": 1786931137.0874395,
+  "updated_unix": 1787051070.9445324,
+  "elapsed_seconds": 119184.98007917404,
+  "expected_jobs": 40,
+  "counts": {
+    "PENDING": 0,
+    "RUNNING": 0,
+    "COMPLETE": 40,
+    "FAILED": 0
+  },
+  "config_sha256": "7f667c125983ca82ec36214b727ee8fbe3215f21562abd260f4018559f87e3e5",
+  "shared_dynamic_queue": true,
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "result_independent_scheduling": true,
+  "aggregation_returncode": 0,
+  "aggregation_retry": true,
+  "aggregation_retry_entrypoint": "aggregate_formal_retry.py",
+  "initial_aggregation_status": "AGGREGATION_FAILED",
+  "initial_aggregation_returncode": 1,
+  "post_retry_checks": {
+    "ledger_40_complete": true,
+    "results_40_complete": true,
+    "oof_coverage_pass": true,
+    "oof_artifact_count_16": true,
+    "audit_exists": true
+  }
+}

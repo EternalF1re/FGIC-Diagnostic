@@ -1,0 +1,1 @@
+{"status": "COMPLETE", "job_id": "progressive_cars_fold2", "metrics": {"accuracy": 0.910988336402701, "macro_f1": 0.9080403581240758, "balanced_accuracy": 0.9092754043009145}}

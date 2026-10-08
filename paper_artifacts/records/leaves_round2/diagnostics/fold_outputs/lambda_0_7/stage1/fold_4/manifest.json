@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "run_id": "mhsa_lambda_0_7_seed42",
+  "lambda_key": "lambda_0_7",
+  "lambda": 0.7,
+  "mhsa": "ON",
+  "stage": 1,
+  "fold": 4,
+  "n": 3670,
+  "post_shortcut_shape": [
+    3670,
+    5,
+    256
+  ],
+  "attention_shape": [
+    3670,
+    4,
+    5,
+    5
+  ],
+  "attention_atomic_unit": "sample_x_head_x_query",
+  "checkpoint": "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2d_round2a\\mhsa_lambda_0_7_seed42\\fold_4\\best_stage1.pth",
+  "checkpoint_sha256": "e47e956d26c80eb5d7f2a7a9a7f89e8454a3d2a595d7840dbbb9222c6d54bdc1",
+  "source_predictions_exact": true,
+  "source_sample_order_exact": true,
+  "source_labels_exact": true,
+  "source_logits_max_abs_error": 0.0,
+  "attention_rows_max_abs_error": 2.384185791015625e-07,
+  "training_performed": false,
+  "device": "cuda:1"
+}

@@ -1,0 +1,14 @@
+{
+  "phase": "Phase2C P2",
+  "training_performed": false,
+  "source_paths": [
+    "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#0",
+    "<EXPERIMENT_ROOT>\\phase2_controlled_validation\\phase2b_screen\\#2"
+  ],
+  "expected_accuracies": {
+    "#0": 0.977006483953577,
+    "#2": 0.9760802048711382
+  },
+  "sample_count": 18353,
+  "integrity": "PASS"
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_external_protocol\orchestrate_formal.py", line 239, in <module>
+    main()
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_external_protocol\orchestrate_formal.py", line 208, in main
+    rows, _ = prelaunch()
+  File "<EXPERIMENT_ROOT>\phase2_controlled_validation\final_external_protocol\orchestrate_formal.py", line 73, in prelaunch
+    raise RuntimeError("formal runtime outputs already exist; refusing ambiguous relaunch")
+RuntimeError: formal runtime outputs already exist; refusing ambiguous relaunch

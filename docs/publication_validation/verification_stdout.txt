@@ -1,0 +1,17 @@
+$ python -B scripts/verify_published_results.py --artifact-root paper_artifacts --output verification.json
+{
+  "status": "PASS",
+  "files_verified": 2376,
+  "oof_sets": 134,
+  "oof_prediction_rows": 2118934,
+  "historical_metric_assertions": 438,
+  "paired_comparisons": 96,
+  "independent_seed_summary_assertions": 84,
+  "archived_split_checks": 130,
+  "configuration_source_references": 132,
+  "configuration_reference_gaps": 2,
+  "portable_config_hash_assertions": 24,
+  "bootstrap_recomputed": true,
+  "differences_outside_tolerance": 0
+}
+exit_code=0

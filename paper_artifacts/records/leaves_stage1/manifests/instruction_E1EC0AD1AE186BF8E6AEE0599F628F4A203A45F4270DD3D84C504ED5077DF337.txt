@@ -1,0 +1,1307 @@
+请开始一个新的只读诊断阶段：
+
+============================================================
+Phase 2C — Inference-only / Provenance Diagnostic
+============================================================
+
+项目根目录：
+<EXPERIMENT_ROOT>
+
+最高优先级原则：
+
+1. 本阶段绝对禁止任何新的正式训练。
+2. 禁止启动 #3/#4/#5。
+3. 禁止重新训练 DFAG。
+4. 禁止 optimizer.step()。
+5. 禁止 backward()。
+6. 禁止创建会改变现有 checkpoint 的训练流程。
+7. 禁止覆盖、删除、重命名任何现有实验 artifact。
+8. 所有分析必须尽量复用现有：
+   - checkpoints
+   - OOF predictions
+   - logits
+   - features
+   - run ledger
+   - configs
+   - manifests
+9. 如果某个分析缺少必要 artifact：
+   - 不猜；
+   - 不自动补训练；
+   - 明确标记 BLOCKED / NOT RECOVERED；
+   - 报告缺少什么。
+10. 本阶段只允许：
+   - provenance audit
+   - checkpoint loading
+   - deterministic inference
+   - feature extraction
+   - statistical recomputation
+   - diagnostic plotting
+11. 不修改论文正文。
+12. 不修改 Fig.1–Fig.4。
+13. 不自动根据结果启动下一阶段。
+14. 所有科学解释必须区分：
+   - directly measured result
+   - inference
+   - unresolved provenance
+15. 当前 Phase2B 是：
+   single training seed = 42
+   five-fold controlled screen，
+   不能包装成 independent multi-seed confirmation。
+
+============================================================
+A. 新建独立输出目录
+============================================================
+
+请创建：
+
+<EXPERIMENT_ROOT>\
+phase2_controlled_validation\
+phase2c_inference_diagnostic\
+
+建议目录结构：
+
+phase2c_inference_diagnostic/
+    00_PHASE2C_MASTER_REPORT.md
+    p0_phase2a_vs_phase2b/
+    p1_stage1_only_oof/
+    p2_direct_paired_stats/
+    p3_mslfa_representation/
+    p4_dfag_anchor_similarity/
+    p5_historical_motivation_provenance/
+    manifests/
+    scripts/
+
+所有新脚本放进 scripts/。
+
+所有输出文本使用 UTF-8。
+
+Windows 控制台输出尽量使用 ASCII "-"，
+避免再次因为 Unicode minus "−" 导致 GBK console SUMMARY_FAILED。
+
+============================================================
+P0. Phase 2A vs Phase 2B baseline protocol provenance audit
+============================================================
+
+背景：
+
+Phase 2A 中曾得到一个 unified original-view OOF：
+
+Ours-FT ≈ 97.5372%
+
+而最新 Phase 2B controlled screen 中：
+
+#0 Original baseline = 97.700648...%
+
+两者相差约：
+
++0.1634 pp
+
+这个差异已经与当前讨论的模块 effect size 同量级，
+因此在任何跨 Phase 比较之前必须先解释协议差异。
+
+目标：
+
+找到 Phase2A 中产生：
+
+Ours-FT original-view OOF ≈ 97.5372%
+
+的确切 artifact / script / config / prediction source。
+
+然后与 Phase2B #0 做逐项 provenance 对照。
+
+--------------------------------
+P0.1 必须核对的字段
+--------------------------------
+
+至少比较：
+
+1. dataset root
+2. train.csv
+3. label mapping
+4. num classes
+5. input resolution
+
+6. split method
+7. number of folds
+8. shuffle
+9. split_random_state
+10. exact fold assignments
+
+11. training seed
+12. seed 是否 +fold
+13. DataLoader seed
+14. worker seed
+
+15. model backbone
+16. pretrained source
+17. baseline head architecture
+18. feature extraction location
+
+19. batch size
+20. num_workers
+
+21. Stage1 epochs
+22. Stage1 optimizer
+23. backbone LR
+24. head LR
+25. weight decay
+26. scheduler
+27. warmup
+28. label smoothing
+
+29. Mixup
+30. CutMix
+31. augmentation attenuation schedule
+32. spatial augmentation
+
+33. class weighting
+34. class weight 是否基于 full train.csv
+35. class weight 是否基于 fold training subset
+
+36. Stage1 checkpoint candidate mechanism
+37. 是否曾使用 top-3 candidate
+38. 当前是否 single-best checkpoint
+39. exact checkpoint selection rule
+
+40. Stage2 epochs
+41. Stage2 optimizer
+42. Stage2 LR
+43. Stage2 weight decay
+44. Stage2 scheduler
+45. Stage2 label smoothing
+46. Stage2 augmentation
+
+47. BN adaptation
+48. 是否有 50-batch no-grad train-mode BN update
+49. BN adaptation 在 optimizer 创建前还是后
+
+50. gradient clipping
+51. gradient clipping semantics / historical bug
+52. AMP
+53. GradScaler
+
+54. validation transform
+55. original view / TTA
+56. softmax averaging
+57. fold ensemble
+58. OOF assembly rule
+59. final metric source
+
+--------------------------------
+P0.2 输出
+--------------------------------
+
+生成：
+
+p0_phase2a_vs_phase2b/
+    protocol_comparison.csv
+    protocol_comparison.md
+    provenance_sources.json
+
+每一项必须标记：
+
+SAME
+DIFFERENT
+UNRESOLVED
+
+并附：
+- source file
+- source line / config key / artifact path
+- Phase2A value
+- Phase2B value
+
+最后给一个结论：
+
+A. DIRECTLY COMPARABLE
+B. PARTIALLY COMPARABLE
+C. NOT DIRECTLY COMPARABLE
+
+不要凭 intuition 归因：
+
+例如不能写：
+“0.1634 pp 是 top-3 candidate 导致的”
+
+除非存在真正 controlled evidence。
+
+只能写：
+
+“these protocol differences prevent direct attribution.”
+
+如果无法找到 Phase2A 的 97.5372 artifact，
+明确写：
+
+PHASE2A_BASELINE_PROVENANCE_NOT_FULLY_RECOVERED
+
+不要猜。
+
+============================================================
+P1. Phase 2B #0/#1/#2 Stage1-only pooled OOF
+============================================================
+
+这是当前最高优先级的 quantitative diagnostic。
+
+现有 Phase2B：
+
+#0 Original baseline
+#1 Deep/narrow lambda=1.0
+#2 Scaling-only lambda=0.1
+
+都已经有：
+
+5 folds
+best Stage1 checkpoint
+best Stage2 checkpoint
+
+目标：
+
+使用每一个 fold 已经保存的
+best Stage1 checkpoint，
+
+对该 fold 的 held-out validation samples
+重新执行 deterministic original-view inference。
+
+禁止任何参数更新。
+
+--------------------------------
+P1.1 Evaluation protocol 必须严格复用 Phase2B
+--------------------------------
+
+必须：
+
+model.eval()
+
+torch.inference_mode()
+
+deterministic:
+Resize(299,299)
+ImageNet normalization
+original view only
+
+不做：
+HFlip TTA
+VFlip TTA
+fold ensemble
+
+FP32 logits 用于评价。
+
+每一个 fold 都必须使用和原 Phase2B 完全相同的：
+
+sample IDs
+labels
+fold assignment
+class mapping
+
+--------------------------------
+P1.2 checkpoint reproduction gate
+--------------------------------
+
+在继续 OOF 汇总前：
+
+重新计算每个 best Stage1 checkpoint
+在对应 held-out fold 上的 accuracy。
+
+必须与 run_ledger 中：
+
+best_stage1_accuracy
+
+进行核对。
+
+由于 accuracy 是离散样本计数，
+理论上应精确匹配。
+
+如果任意 fold 的正确样本数不一致：
+
+STOP P1
+
+标记：
+
+STAGE1_CHECKPOINT_REPRODUCTION_FAILED
+
+输出：
+- expected correct count
+- reproduced correct count
+- expected accuracy
+- reproduced accuracy
+- checkpoint path
+- fold
+- suspected difference
+
+不要继续生成伪 OOF。
+
+--------------------------------
+P1.3 Stage1-only OOF
+--------------------------------
+
+如果 15 个 Stage1 checkpoint 全部通过 reproduction：
+
+分别生成：
+
+#0 Stage1-only OOF
+#1 Stage1-only OOF
+#2 Stage1-only OOF
+
+必须覆盖：
+
+18,353 / 18,353 samples
+
+检查：
+
+- no duplicates
+- no missing samples
+- labels exactly aligned
+- fold assignment exactly aligned
+
+保存：
+
+sample_id
+fold
+label
+prediction
+logits
+
+如果 logits 文件过大，
+允许保存 compressed NPZ，
+但 metadata CSV 必须存在。
+
+计算：
+
+Accuracy
+Macro-F1
+Balanced Accuracy
+
+同时保留 per-fold metrics。
+
+--------------------------------
+P1.4 Stage1-only vs Stage2 paired comparison
+--------------------------------
+
+对每个 variant：
+
+#0:
+Stage1-only vs Stage2
+
+#1:
+Stage1-only vs Stage2
+
+#2:
+Stage1-only vs Stage2
+
+计算：
+
+delta Stage2 - Stage1 in pp
+
+paired bootstrap 95% CI
+100,000 replicates
+seed = 20260807
+
+exact two-sided McNemar
+
+prediction_changed_n
+
+n11 both correct
+n10 Stage1 correct / Stage2 wrong
+n01 Stage1 wrong / Stage2 correct
+n00 both wrong
+
+correctness_discordant_n
+
+fold directions:
+positive / negative / equal
+
+同时报告：
+
+Macro-F1 delta
+Balanced Accuracy delta
+
+注意：
+
+这里最终要回答的是：
+
+“Stage1 -> Stage2 decline
+是否在 pooled OOF prediction level 上存在？”
+
+不要只引用 run_ledger 的
+best validation accuracy。
+
+--------------------------------
+P1.5 输出
+--------------------------------
+
+p1_stage1_only_oof/
+    stage1_oof_metrics.csv
+    stage1_vs_stage2_paired.csv
+    stage1_vs_stage2_per_fold.csv
+    stage1_checkpoint_reproduction.csv
+    stage1_oof_predictions_*.npz
+    README.md
+
+============================================================
+P2. 补 Phase2B #0 vs #2 direct paired statistics
+============================================================
+
+当前 paired_comparisons 只有：
+
+#0 vs #1
+#1 vs #2
+
+缺少：
+
+#0 vs #2
+
+不要重新训练。
+
+优先直接使用现有 Phase2B Stage2 OOF predictions。
+
+计算：
+
+#0 Original baseline
+vs
+#2 Scaling-only lambda=0.1
+
+输出：
+
+Accuracy A
+Accuracy B
+
+delta #2 - #0 pp
+
+paired bootstrap 95% CI
+100000 replicates
+bootstrap seed 20260807
+
+exact two-sided McNemar
+
+prediction_changed_n
+
+n11
+n10
+n01
+n00
+
+correctness_discordant_n
+
+fold-wise delta
+fold direction + / - / =
+
+Macro-F1 delta
+Balanced accuracy delta
+
+并验证：
+
+pooled accuracies 必须复现：
+
+#0 = 0.977006483953577
+#2 = 0.9760802048711382
+
+否则停止并报告 prediction provenance mismatch。
+
+输出：
+
+p2_direct_paired_stats/
+    #0_vs_#2_paired.csv
+    #0_vs_#2_per_fold.csv
+    verification.md
+
+============================================================
+P3. #1 vs #2 MS-LFA representation diagnostic
+============================================================
+
+目标：
+
+不问“lambda=0.1 是否显著提高 accuracy”。
+
+当前已知它没有。
+
+现在真正的问题是：
+
+固定 shortcut scaling 从：
+
+lambda=1.0
+变成
+lambda=0.1
+
+是否实质性改变了
+f1,...,f5 progressive representations 的行为？
+
+#1 和 #2：
+
+- tensor graph 相同
+- parameters 数量相同
+- mean aggregation 相同
+- protocol 相同
+- only declared forward difference = lambda
+
+因此这是当前最干净的 mechanism diagnostic。
+
+--------------------------------
+P3.1 feature extraction
+--------------------------------
+
+使用：
+
+每 fold best Stage2 checkpoint
+
+held-out fold only
+
+eval()
+inference_mode()
+original deterministic view
+
+需要捕获：
+
+f1
+f2
+f3
+f4
+f5
+
+定义必须与模型 forward 中真实：
+
+post-shortcut stage output
+
+一致。
+
+不要捕获 shortcut 前 tensor。
+
+不要捕获 classifier output。
+
+每个 f_i shape 应为：
+
+[N_fold, 256]
+
+如果实际不是，
+报告真实 shape，
+不要强行 reshape。
+
+#1 与 #2：
+sample IDs 必须完全对齐。
+
+--------------------------------
+P3.2 Pairwise cosine similarity
+--------------------------------
+
+对每个 variant、每个 fold：
+
+对 10 个 pair：
+
+(f1,f2)
+(f1,f3)
+...
+(f4,f5)
+
+逐 sample 计算 feature-vector cosine similarity。
+
+输出每个 pair：
+
+mean
+std
+median
+p05
+p25
+p75
+p95
+
+另外计算每个 sample 的：
+
+mean off-diagonal cosine
+
+再汇总其分布。
+
+最终输出：
+
+#1
+vs
+#2
+
+每 fold paired difference：
+
+cosine_#2 - cosine_#1
+
+不要把 5 folds 的 feature vectors
+拼成一个统一 feature space 后再算一次 CKA。
+
+--------------------------------
+P3.3 Fold-wise linear CKA
+--------------------------------
+
+对每个 fold：
+
+在同一 fold 的 samples 内，
+
+分别计算 #1：
+
+CKA(fi,fj)
+
+以及 #2：
+
+CKA(fi,fj)
+
+共 10 对。
+
+要求：
+
+- centered linear CKA
+- 清楚记录公式
+- float64 accumulate 若可行
+- 检查 NaN / degenerate Gram
+
+然后对 5 folds 汇总：
+
+mean CKA
+std across folds
+
+以及：
+
+CKA_#2 - CKA_#1
+
+注意：
+
+fold-to-fold CKA 是 5 个模型的 diagnostic，
+不是 independent training-seed statistical significance。
+
+不要给它包装 p<0.05 结论。
+
+--------------------------------
+P3.4 Adjacent representation change
+--------------------------------
+
+对：
+
+i = 2...5
+
+逐样本计算：
+
+raw_change_i =
+||f_i - f_{i-1}||_2
+
+以及推荐的 normalized change：
+
+normalized_change_i =
+||f_i - f_{i-1}||_2 /
+(||f_{i-1}||_2 + 1e-12)
+
+同时计算：
+
+adjacent_cosine_distance =
+1 - cos(f_i, f_{i-1})
+
+分别对 #1/#2 汇总。
+
+这样避免只因为 feature scale 不同
+就把 Euclidean change 解释为 semantic change。
+
+--------------------------------
+P3.5 必须避免的过度解释
+--------------------------------
+
+不要自动写：
+
+lambda=0.1 increases semantic diversity
+
+除非数据支持。
+
+更安全的 wording：
+
+“lambda=0.1 is associated with lower/higher
+inter-stage representation similarity
+under the controlled screen.”
+
+也不要把：
+
+lower CKA
+=
+better representations
+
+二者不能等价。
+
+--------------------------------
+P3.6 可视化
+--------------------------------
+
+可以生成：
+
+1.
+#1 cosine matrix
+#2 cosine matrix
+
+2.
+#1 CKA matrix
+#2 CKA matrix
+
+3.
+adjacent normalized-change curve
+
+4.
+fold-wise delta plot
+
+全部用于内部诊断。
+
+暂时不作为论文 figure。
+
+输出：
+
+p3_mslfa_representation/
+    cosine_pairwise.csv
+    cosine_fold_summary.csv
+    cka_foldwise.csv
+    cka_summary.csv
+    adjacent_change.csv
+    feature_manifest.json
+    diagnostic_*.pdf
+    diagnostic_*.png
+    README.md
+
+============================================================
+P4. DFAG anchor-plastic similarity diagnostic
+============================================================
+
+背景：
+
+之前 Phase2A 已观察到：
+
+mean gate ≈ 0.504
+sample-wise mean-gate std ≈ 0.0034
+
+dynamic gate vs
+mean-vector / scalar / alpha=0.5
+分类差异极小。
+
+当前一个重要假设是：
+
+f_anc 和 f_spec 本身太相似，
+导致 gate 没有足够 routing pressure。
+
+现在直接诊断。
+
+--------------------------------
+P4.1 找到正确 DFAG artifacts
+--------------------------------
+
+请在 Phase2A artifacts 中找到
+用于统一 Leaves OOF 的 standalone DFAG checkpoints。
+
+必须确认：
+
+- anchor checkpoint source
+- plastic checkpoint source
+- fold
+- sample IDs
+- feature location
+- D_g
+
+不要把 Joint 的 D_g=256
+和 standalone DFAG 的 D_g=1536
+混在一起。
+
+本阶段优先 standalone DFAG。
+
+如果 provenance 不够明确：
+
+P4 标记 BLOCKED
+
+不要猜。
+
+--------------------------------
+P4.2 feature definition
+--------------------------------
+
+对于 held-out sample x：
+
+提取真正进入 gate fusion 前的：
+
+f_anc
+f_spec
+
+必须与 DFAG forward 使用的 tensor
+完全一致。
+
+anchor：
+frozen Stage1 branch representation
+
+plastic：
+Stage2 task-adapted branch representation
+
+然后逐样本计算：
+
+cosine_similarity =
+cos(f_anc,f_spec)
+
+cosine_distance =
+1 - cos(f_anc,f_spec)
+
+--------------------------------
+P4.3 分布
+--------------------------------
+
+全 OOF + 每 fold 报告：
+
+n
+mean
+std
+median
+min
+max
+p01
+p05
+p25
+p75
+p95
+p99
+
+分别针对：
+
+cosine similarity
+1-cosine similarity
+
+再画：
+
+histogram / ECDF
+
+如果 feature norms 允许，
+额外报告：
+
+||f_anc||
+||f_spec||
+
+但不要因此扩展到新机制 claim。
+
+--------------------------------
+P4.4 可选 consistency check
+--------------------------------
+
+如果非常容易且无需扩大 scope：
+
+可以同时重新汇总现有：
+
+gate mean
+gate std
+
+用于确认与旧 Phase2A diagnostic
+是否一致。
+
+但不要重新训练 gate。
+
+--------------------------------
+P4.5 输出
+--------------------------------
+
+p4_dfag_anchor_similarity/
+    anchor_plastic_similarity.csv
+    fold_summary.csv
+    feature_norm_summary.csv
+    provenance.json
+    similarity_distribution.pdf
+    similarity_distribution.png
+    README.md
+
+结论只允许描述：
+
+- high / moderate / low observed similarity
+- distribution shape
+- fold consistency
+
+如果相似度很高，可以写：
+
+“high anchor–plastic similarity is consistent
+with the hypothesis that the gate receives
+limited pressure to make strongly sample-dependent
+routing decisions.”
+
+必须写：
+consistent with
+
+不能写：
+proves the cause of gate collapse
+
+============================================================
+P5. 历史“普通深分类头中间表示冗余”动机 provenance search
+============================================================
+
+这是一个纯历史审计。
+
+背景：
+
+MS-LFA 最初存在一个动机：
+
+“普通更深 classification head 的
+intermediate representations 可能高度相似 /
+中间层没有被充分利用。”
+
+但当前 controlled #0 baseline 只有：
+
+1536
+-> 1024
+-> 1024
+-> 176
+
+它并不是一个五层 deep head。
+
+因此必须搞清楚：
+
+这个原始观察究竟来自：
+
+A. 当前 #0
+B. 某个历史 deep-head baseline
+C. 旧 MS-LFA prototype
+D. Figure 1(b) exploratory configuration
+E. 无法恢复的历史实验
+
+--------------------------------
+P5.1 搜索范围
+--------------------------------
+
+搜索整个项目中：
+
+scripts
+old experiments
+CSV
+JSON
+NPY
+NPZ
+plots
+figure generators
+logs
+markdown
+txt
+LaTeX
+checkpoint names
+
+关键词包括但不限于：
+
+deep head
+classification head
+intermediate
+feature
+cosine
+CKA
+similarity
+redundancy
+representation
+f1
+f2
+f3
+f4
+f5
+micro shortcut
+MS-LFA
+lambda
+attention
+Figure1
+fig1
+6-source
+progressive
+
+不要只靠文件名搜索，
+也搜索源码内容。
+
+--------------------------------
+P5.2 如果找到证据
+--------------------------------
+
+必须报告：
+
+experiment name
+date if available
+script
+config
+architecture
+number of layers
+hidden dimension
+dataset
+fold
+seed
+checkpoint
+feature definition
+metric definition
+numeric result
+artifact path
+
+并回答：
+
+“该历史 observation
+是否可以合法用于当前论文 motivation？”
+
+分类：
+
+SUPPORTED_CURRENTLY
+HISTORICAL_ONLY
+PROVENANCE_INCOMPLETE
+NOT_RECOVERED
+
+--------------------------------
+P5.3 特别检查 Figure 1(b)
+--------------------------------
+
+我们当前已知 Figure1(b)
+是一个 exploratory six-source configuration：
+
+f0,f1,...,f5
+
+Epoch 150
+
+五行 archived model-index records
+
+平均 attention weights 约：
+
+f0 0.27656
+f1 0.16156
+f2 0.10922
+f3 0.08326
+f4 0.08240
+f5 0.28696
+
+但：
+
+exact fold
+checkpoint
+sample count
+head/query aggregation
+
+目前未完全恢复。
+
+请尝试进一步恢复 provenance。
+
+如果恢复不了：
+
+维持：
+
+EXPLORATORY / PROVENANCE PARTIAL
+
+绝对不要补造 sample count 或 aggregation rule。
+
+============================================================
+P6. Master cross-check
+============================================================
+
+完成 P0-P5 后，
+生成：
+
+00_PHASE2C_MASTER_REPORT.md
+
+报告必须分成：
+
+================================================
+1. EXECUTIVE SUMMARY
+================================================
+
+只写已经测到的事实。
+
+================================================
+2. P0 — Cross-phase comparability
+================================================
+
+回答：
+
+Phase2A Ours-FT 97.5372
+与
+Phase2B #0 97.7006
+
+能否直接比较？
+
+为什么？
+
+================================================
+3. P1 — Does Stage2 reduce OOF performance?
+================================================
+
+分别给：
+
+#0
+#1
+#2
+
+Stage1-only
+Stage2
+
+delta
+CI
+McNemar
+fold direction
+
+================================================
+4. P2 — #0 vs #2
+================================================
+
+给直接 paired result。
+
+================================================
+5. P3 — Does lambda=0.1 change representation behavior?
+================================================
+
+必须区分：
+
+accuracy effect
+representation effect
+
+不要把两者混起来。
+
+================================================
+6. P4 — Are anchor and plastic representations too similar?
+================================================
+
+给：
+
+cosine distribution
+
+只讨论 consistency with hypothesis。
+
+================================================
+7. P5 — Can the historical MS-LFA motivation be recovered?
+================================================
+
+明确 provenance 状态。
+
+================================================
+8. SCIENTIFIC DECISION TABLE
+================================================
+
+不要替人自动做最终决定，
+但给 evidence table：
+
+Question A:
+Deep/narrow architecture 是否值得继续？
+
+Evidence:
+#0 vs #1 performance
+representation behavior
+historical motivation provenance
+
+Question B:
+Shortcut scaling 是否改变 representation？
+
+Evidence:
+#1 vs #2 cosine
+CKA
+adjacent change
+
+Question C:
+是否值得启动 MHSA #3/#4？
+
+只写：
+evidence for / evidence against / unresolved
+
+不要自动启动。
+
+Question D:
+Stage2 decline 是否在 pooled OOF 上复现？
+
+Evidence:
+Stage1-only vs Stage2
+
+Question E:
+DFAG gate 弱动态是否可能与 branch similarity 有关？
+
+Evidence:
+1-cos(f_anc,f_spec)
+gate old diagnostics
+
+Question F:
+Phase2A DFAG vs Phase2B baseline
+是否允许跨 Phase 直接做 effect subtraction？
+
+回答必须由 P0 决定。
+
+================================================
+9. RECOMMENDED NEXT HUMAN DECISION
+================================================
+
+只给建议，
+不执行任何新训练。
+
+============================================================
+P7. Validation / integrity requirements
+============================================================
+
+所有分析完成前必须检查：
+
+1. no NaN / Inf
+2. exact sample count
+3. exact sample ID alignment
+4. no duplicate OOF samples
+5. fold IDs correct
+6. checkpoint SHA256 如已有 manifest 则核对
+7. checkpoint architecture compatible
+8. logits argmax == saved prediction
+9. deterministic repeated inference spot-check
+10. source paths全部记录
+
+任何 integrity failure：
+
+不要悄悄跳过。
+
+写入：
+
+INTEGRITY_FAILURES.md
+
+============================================================
+P8. 不要做的事情
+============================================================
+
+本阶段明确不要：
+
+- 不跑 #3
+- 不跑 #4
+- 不跑 #5
+- 不重新训练 MS-LFA
+- 不重新训练 DFAG
+- 不跑新 random seeds
+- 不跑 CUB/Cars/Flowers 新训练
+- 不做 weight-space averaging 正式实验
+- 不做 earlier-anchor 正式重训练
+- 不修改 manuscript
+- 不修改 figures
+- 不重新定义当前 architecture
+- 不根据结果自动改论文 claim
+
+如果发现新的重要问题，
+写入：
+
+OPEN_QUESTIONS.md
+
+然后停止等待人工 review。
+
+============================================================
+P9. 最终回复我时
+============================================================
+
+不要只说“完成”。
+
+请按以下格式回复：
+
+1. P0:
+   Phase2A vs Phase2B 是否可直接比较？
+   关键差异是什么？
+
+2. P1:
+   #0/#1/#2 的
+   Stage1-only vs Stage2
+   完整数值。
+
+3. P2:
+   #0 vs #2 direct paired result。
+
+4. P3:
+   #1 vs #2 representation diagnostic：
+   cosine / CKA / adjacent change
+   最重要数字。
+
+5. P4:
+   f_anc vs f_spec similarity distribution。
+
+6. P5:
+   历史 deep-head motivation
+   是否成功恢复 provenance。
+
+7. 当前最关键的 3 个科学结论。
+
+8. 当前仍不能声称的结论。
+
+9. 下一步建议：
+   但不要自动执行。
+
+10. 输出目录与关键文件路径。
+
+再次强调：
+
+这是 inference-only / provenance-only 阶段。
+禁止任何新训练。

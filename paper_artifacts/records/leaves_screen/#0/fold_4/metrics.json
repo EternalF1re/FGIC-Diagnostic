@@ -1,0 +1,13 @@
+{
+  "accuracy": 0.9724795640326975,
+  "macro_f1": 0.9755086976086528,
+  "balanced_accuracy": 0.975254511879703,
+  "variant": "#0",
+  "fold": 4,
+  "n": 3670,
+  "best_stage1_epoch_zero_based": 114,
+  "best_stage1_accuracy": 0.97574931880109,
+  "best_stage2_epoch_zero_based": 20,
+  "best_stage2_accuracy": 0.9724795640326975,
+  "feature_extraction_location": "second 1024-D block output after Dropout and immediately before final Linear"
+}

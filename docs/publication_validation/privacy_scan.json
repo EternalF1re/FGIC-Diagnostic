@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "scope": "all published historical artifact text; secret pattern scan is not a proof of absence",
+  "files_scanned": 2377,
+  "structured_json_validated": 928,
+  "findings": []
+}

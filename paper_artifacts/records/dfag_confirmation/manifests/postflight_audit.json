@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "all_passed": true,
+  "created_unix": 1786887765.642126,
+  "checks": {
+    "ten_of_ten_complete": true,
+    "zero_failed_folds": true,
+    "oof_18353_per_new_seed": true,
+    "oof_sample_ids_labels_and_folds_exact": true,
+    "anchor_unchanged": true,
+    "anchor_bn_unchanged": true,
+    "plastic_stage2_protocol_matched": true,
+    "gate_architecture_exact": true,
+    "seed45_46_exact": true,
+    "counterfactual_inference_only": true,
+    "historical_seed42_44_artifacts_unchanged": true,
+    "no_pooled_five_seed_significance_test": true,
+    "statistics_independent_unit_seed": true,
+    "no_fixed_g_training": true,
+    "no_anchor_sweep": true,
+    "no_gating_source_ablation": true,
+    "no_joint_or_progressive_training": true,
+    "no_seed47_plus": true,
+    "scheduler_contains_only_ten_authorized_tasks": true,
+    "gate_training_sanity_pass": true,
+    "final_classification_not_borderline": true
+  },
+  "final_decision": {
+    "classification": "FAIL",
+    "criteria": {
+      "A_stage1_5_of_5_positive": true,
+      "B_alpha_0_5_5_of_5_positive": true,
+      "C_at_least_one_primary_has_3_of_5_strictly_positive_ci": false,
+      "D_other_primary_has_no_negative_direction_or_fully_negative_ci": true
+    },
+    "supporting_reference_for_C": [],
+    "reference_checked_for_D": [
+      "stage1",
+      "alpha_0_5"
+    ],
+    "evidence": {
+      "stage1": {
+        "seed_deltas_pp": {
+          "42": 0.0272435024246675,
+          "43": 0.032692202909601,
+          "44": 0.0926279082438807,
+          "45": 0.06538440581921323,
+          "46": 0.06538440581921323
+        },
+        "positive_seed_count": 5,
+        "negative_direction_seed_count": 0,
+        "ci_strictly_positive_count": 0,
+        "ci_fully_below_zero_count": 0,
+        "mean_delta_pp": 0.05666648504331513,
+        "sample_sd_delta_pp": 0.026859385482192313
+      },
+      "alpha_0_5": {
+        "seed_deltas_pp": {
+          "42": 0.032692202909601,
+          "43": 0.1253201111534929,
+          "44": 0.0871792077589472,
+          "45": 0.05448700484934621,
+          "46": 0.13621751212335997
+        },
+        "positive_seed_count": 5,
+        "negative_direction_seed_count": 0,
+        "ci_strictly_positive_count": 0,
+        "ci_fully_below_zero_count": 0,
+        "mean_delta_pp": 0.08717920775894947,
+        "sample_sd_delta_pp": 0.044432807797910014
+      }
+    },
+    "independent_unit": "training seed",
+    "pooled_91765_significance_test": false,
+    "borderline_allowed": false,
+    "additional_seed47_plus_authorized": false,
+    "rule": "PASS iff A and B and C and D; otherwise FAIL"
+  },
+  "new_seed_metrics": [
+    {
+      "seed": 45,
+      "n": 18353,
+      "accuracy": 0.9785866070942081,
+      "macro_f1": 0.981277737215454,
+      "balanced_accuracy": 0.9813624588277651
+    },
+    {
+      "seed": 46,
+      "n": 18353,
+      "accuracy": 0.9789680161281534,
+      "macro_f1": 0.9813170235440795,
+      "balanced_accuracy": 0.9813172412424371
+    }
+  ],
+  "protected_source_changes": [],
+  "output_sha256": {
+    "dfag_five_seed_per_seed.csv": "4ee60f8cd07548ba8cd2ffa4c01f07621a37cda13e75493e936b657186f7ec95",
+    "dfag_five_seed_summary.csv": "8b54602852fa61ee5163226e1eef313101756e5297146270b19147ea9f2f1ce4",
+    "dfag_vs_stage1_five_seed.csv": "0b111c34d42da77c2084c419fa18f9f831af1266b985b5152ae43ade98a478c8",
+    "dfag_vs_alpha_0_5_five_seed.csv": "a856fcd775d2be0be70a120458952ca8f76c8ff6d6813141f29edc8575db35f7",
+    "dfag_vs_stage2_five_seed.csv": "4cc45ac8cb0b7c2c8d60dd505dcdbd797fe20b2b426602b3f461de3fa7aafbad",
+    "gate_summary_five_seed.csv": "dc92bf43d03be7350de2021527eaeed3629a99f2b0c905c629ae7ba1b4fc8d6d",
+    "anchor_plastic_similarity_five_seed.csv": "d7aee970a9d0c2a81c70924fb322b3a3c2ba78c5041f6ea150850c21815b648a",
+    "gate_counterfactual_five_seed.csv": "e1242beb67b50d265cbcc7cb0a76390af883f2f5c61ce3d0db06caba35d2c1b5",
+    "final_decision.json": "1ff64052e2d302c0cbd8d02a97649ba7a3be703ab87f7790f96d6954f00de153"
+  }
+}
